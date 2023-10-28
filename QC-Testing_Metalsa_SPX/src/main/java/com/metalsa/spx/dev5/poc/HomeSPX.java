@@ -1,9 +1,9 @@
-package metalsa.spx.dev5.poc;
+package com.metalsa.spx.dev5.poc;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import metalsa.spx.dev5.main.SPXBase;
+import com.metalsa.spx.dev5.main.SPXBase;
 
 public class HomeSPX extends SPXBase{
 

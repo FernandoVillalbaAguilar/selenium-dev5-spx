@@ -1,4 +1,4 @@
-package metalsa.spx.dev5;
+package com.metalsa.spx.dev5;
 
 import org.testng.annotations.Test;
 

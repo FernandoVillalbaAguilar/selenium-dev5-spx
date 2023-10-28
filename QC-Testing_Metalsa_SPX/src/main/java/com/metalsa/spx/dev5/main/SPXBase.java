@@ -1,4 +1,4 @@
-package metalsa.spx.dev5.main;
+package com.metalsa.spx.dev5.main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
