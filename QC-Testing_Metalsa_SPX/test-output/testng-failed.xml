@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="metalsa.spx.qctesting.FirstTest">
+      <class name="metalsa.spx.dev5.Login">
         <methods>
-          <include name="f"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="TC001_Login"/>
         </methods>
-      </class> <!-- metalsa.spx.qctesting.FirstTest -->
+      </class> <!-- metalsa.spx.dev5.Login -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
