@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="metalsa.spx.dev5.Login">
+      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
         <methods>
-          <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="TC001_Login"/>
+          <include name="tc001QCTestingSPXDev5CrearRequisicionSpot"/>
+          <include name="afterTest"/>
         </methods>
-      </class> <!-- metalsa.spx.dev5.Login -->
+      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

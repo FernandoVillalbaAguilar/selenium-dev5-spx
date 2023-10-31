@@ -30,6 +30,7 @@ public class LoginSPX extends SPXBase {
 	 * @description: Este metodo permite capturar usuario y contraseña, así como dar click en el botón login
 	 */
 	public void login(String username, String password) {
+		reporterLog("Logging to SPX ...");
 		waitForElementPresent(btnLogin);
 		type(txtUsername, username);
 		type(txtPassword, password);

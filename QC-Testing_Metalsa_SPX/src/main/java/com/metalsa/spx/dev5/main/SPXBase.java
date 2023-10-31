@@ -1,5 +1,7 @@
 package com.metalsa.spx.dev5.main;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
@@ -9,7 +11,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class SPXBase {
@@ -57,6 +58,7 @@ public class SPXBase {
 	 */
 	public void launchBrowser(String url) {
 		try {
+			reporterLog("Launching ... " + url);
 			driver.get(url);
 			driver.manage().window().maximize();
 		} catch (TimeoutException e) {
@@ -98,6 +100,7 @@ public class SPXBase {
 	 * default
 	 */
 	public void waitForElementPresent(By locator) {
+		reporterLog("Wait for Element Present...");
 		WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
@@ -117,6 +120,7 @@ public class SPXBase {
 	 * hasta que se muestre el elemento requerido con un valor de segundos variable
 	 */
 	public void waitForElementPresent(By locator, int seconds) {
+		reporterLog("Wait for Element Present...");
 		WebDriverWait wait = new WebDriverWait(driver, seconds);
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
@@ -136,6 +140,7 @@ public class SPXBase {
 	 */
 	public void type(By locator, String inputText) {
 		try {
+			reporterLog("Input Text to Field");
 			driver.findElement(locator).sendKeys(inputText);
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
@@ -158,6 +163,7 @@ public class SPXBase {
 	 */
 	public void click(By locator) {
 		try {
+			reporterLog("Click to Field or Button");
 			driver.findElement(locator).click();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
@@ -181,10 +187,34 @@ public class SPXBase {
 	 */
 	public boolean isDisplayed(By locator) {
 		try {
+			reporterLog("Validate if Element is Displayed");
 			return driver.findElement(locator).isDisplayed();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			return false;
+		}
+	}
+
+	/*
+	 * @name: uploadFile
+	 * 
+	 * @date: 28/Oct/2023
+	 * 
+	 * @param: String path, By locator
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite cargar archivos del sistema a SPX
+	 */
+	public void uploadFile(String path, By locator) {
+		try {
+			File file = new File(path);
+			String absolutePath = file.getAbsolutePath();
+			driver.findElement(locator).sendKeys(absolutePath);
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
 		}
 	}
 }

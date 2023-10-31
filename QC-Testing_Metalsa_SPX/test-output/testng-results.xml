@@ -2,48 +2,450 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Step 1 - Launch Browser and maximize SPX dev5]]>
+      <![CDATA[Launching ... http://gpmtest2-app6:9203/SPX/]]>
     </line>
     <line>
-      <![CDATA[Step 2 - Enter username and password]]>
+      <![CDATA[Logging to SPX ...]]>
     </line>
     <line>
-      <![CDATA[Step 3 - Click button Entrar]]>
+      <![CDATA[Wait for Element Present...]]>
     </line>
     <line>
-      <![CDATA[Step 4 - Validate acces to spx]]>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Access to SPX ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Validate if Element is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Access to Spot Buy Requisitions ...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Access to Spot Buy Requisitions ...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Access to Spot Buy Requisitions Page ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Validate if Element is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Capture Information to Spot Buy Requisitions First Section]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-10-28T08:20:19Z" name="Default suite" finished-at="2023-10-28T08:20:29Z" duration-ms="10179">
+  <suite started-at="2023-10-31T22:48:13Z" name="Default suite" finished-at="2023-10-31T22:49:01Z" duration-ms="47860">
     <groups>
     </groups>
-    <test started-at="2023-10-28T08:20:19Z" name="Default test" finished-at="2023-10-28T08:20:29Z" duration-ms="10179">
-      <class name="metalsa.spx.dev5.Login">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:metalsa.spx.dev5.Login@39ac0c0a]" started-at="2023-10-28T08:20:19Z" name="beforeTest" finished-at="2023-10-28T08:20:19Z" duration-ms="9" status="PASS">
+    <test started-at="2023-10-31T22:48:13Z" name="Default test" finished-at="2023-10-31T22:49:01Z" duration-ms="47860">
+      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-10-31T22:48:13Z" name="beforeTest" finished-at="2023-10-31T22:48:15Z" duration-ms="2640" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="TC001_Login()[pri:0, instance:metalsa.spx.dev5.Login@39ac0c0a]" started-at="2023-10-28T08:20:19Z" name="TC001_Login" finished-at="2023-10-28T08:20:29Z" duration-ms="10140" status="PASS">
+        <test-method signature="tc001QCTestingSPXDev5CrearRequisicionSpot()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-10-31T22:48:16Z" name="tc001QCTestingSPXDev5CrearRequisicionSpot" finished-at="2023-10-31T22:49:01Z" duration-ms="45184" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Step 1 - Launch Browser and maximize SPX dev5]]>
+              <![CDATA[Launching ... http://gpmtest2-app6:9203/SPX/]]>
             </line>
             <line>
-              <![CDATA[Step 2 - Enter username and password]]>
+              <![CDATA[Logging to SPX ...]]>
             </line>
             <line>
-              <![CDATA[Step 3 - Click button Entrar]]>
+              <![CDATA[Wait for Element Present...]]>
             </line>
             <line>
-              <![CDATA[Step 4 - Validate acces to spx]]>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Access to SPX ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Validate if Element is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Access to Spot Buy Requisitions ...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Access to Spot Buy Requisitions ...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Access to Spot Buy Requisitions Page ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Validate if Element is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Capture Information to Spot Buy Requisitions First Section]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
             </line>
           </reporter-output>
-        </test-method> <!-- TC001_Login -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:metalsa.spx.dev5.Login@39ac0c0a]" started-at="2023-10-28T08:20:29Z" name="afterTest" finished-at="2023-10-28T08:20:29Z" duration-ms="0" status="PASS">
+        </test-method> <!-- tc001QCTestingSPXDev5CrearRequisicionSpot -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-10-31T22:49:01Z" name="afterTest" finished-at="2023-10-31T22:49:01Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- metalsa.spx.dev5.Login -->
+      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
