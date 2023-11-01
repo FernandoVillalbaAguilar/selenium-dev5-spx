@@ -209,22 +209,88 @@
       <![CDATA[Click to Field or Button]]>
     </line>
     <line>
+      <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
+    </line>
+    <line>
       <![CDATA[Input Text to Field]]>
     </line>
     <line>
       <![CDATA[Click to Field or Button]]>
     </line>
+    <line>
+      <![CDATA[Access to Shopping Page ...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Validate if Element is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Select Requisition of Shopping Cart]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Access to Account Configuration Page ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Validate if Element is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Select Type Account For Requisition ...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
   </reporter-output>
-  <suite started-at="2023-10-31T22:48:13Z" name="Default suite" finished-at="2023-10-31T22:49:01Z" duration-ms="47860">
+  <suite started-at="2023-11-01T22:46:37Z" name="Default suite" finished-at="2023-11-01T22:48:03Z" duration-ms="85517">
     <groups>
     </groups>
-    <test started-at="2023-10-31T22:48:13Z" name="Default test" finished-at="2023-10-31T22:49:01Z" duration-ms="47860">
+    <test started-at="2023-11-01T22:46:37Z" name="Default test" finished-at="2023-11-01T22:48:03Z" duration-ms="85517">
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-10-31T22:48:13Z" name="beforeTest" finished-at="2023-10-31T22:48:15Z" duration-ms="2640" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@12d2ce03]" started-at="2023-11-01T22:46:37Z" name="beforeTest" finished-at="2023-11-01T22:46:40Z" duration-ms="2412" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc001QCTestingSPXDev5CrearRequisicionSpot()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-10-31T22:48:16Z" name="tc001QCTestingSPXDev5CrearRequisicionSpot" finished-at="2023-10-31T22:49:01Z" duration-ms="45184" status="PASS">
+        <test-method signature="tc001QCTestingSPXDev5CrearRequisicionSpot()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@12d2ce03]" started-at="2023-11-01T22:46:40Z" name="tc001QCTestingSPXDev5CrearRequisicionSpot" finished-at="2023-11-01T22:48:03Z" duration-ms="83057" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Launching ... http://gpmtest2-app6:9203/SPX/]]>
@@ -434,14 +500,80 @@
               <![CDATA[Click to Field or Button]]>
             </line>
             <line>
+              <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
+            </line>
+            <line>
               <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Access to Shopping Page ...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Validate if Element is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Select Requisition of Shopping Cart]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Access to Account Configuration Page ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Validate if Element is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Select Type Account For Requisition ...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
             </line>
             <line>
               <![CDATA[Click to Field or Button]]>
             </line>
           </reporter-output>
         </test-method> <!-- tc001QCTestingSPXDev5CrearRequisicionSpot -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-10-31T22:49:01Z" name="afterTest" finished-at="2023-10-31T22:49:01Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@12d2ce03]" started-at="2023-11-01T22:48:03Z" name="afterTest" finished-at="2023-11-01T22:48:03Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

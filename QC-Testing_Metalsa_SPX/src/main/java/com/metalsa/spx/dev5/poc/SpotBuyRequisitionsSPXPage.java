@@ -3,25 +3,29 @@ package com.metalsa.spx.dev5.poc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
-public class SpotBuyRequisitionsPage extends SPXBase {
+public class SpotBuyRequisitionsSPXPage extends SPXBase {
 
-	public SpotBuyRequisitionsPage(WebDriver driver) {
+	public SpotBuyRequisitionsSPXPage(WebDriver driver) {
 		super(driver);
 	}
 
 	// Objects
 	By spanSpotBuyRequisitionsPage = By.xpath("//span[@class='spx-card-header__title']");
 	By txtDescription = By.id("formSpot:desc_1");
-	By txtMaterial = By.id("formSpot:j_idt388");
-	By txtColor = By.id("formSpot:j_idt392");
-	By txtBrand = By.id("formSpot:j_idt396");
-	By txtMeasurements = By.id("formSpot:j_idt400");
-	By txtModelPartNumber = By.id("formSpot:j_idt404");
-	By txtGenericName = By.id("formSpot:j_idt408");
+	By txtMaterial = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[1]//div[2]//input[1]");
+	By txtColor = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[2]//div[2]//input[1]");
+	By txtBrand = By.xpath("//div[@class='ui-grid-row']//div[1]//div[3]//div[2]//input[1]");
+	By txtMeasurements = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[1]/div[2]/input[1]");
+	By txtModelPartNumber = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[2]/div[2]/input[1]");
+	By txtGenericName = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[3]/div[2]/input[1]");
 	By lblCategory = By.id("formSpot:nwcboCategorias0_label");
 	By txtSearchCategory = By.id("formSpot:nwcboCategorias0_filter");
 	By selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
@@ -31,7 +35,8 @@ public class SpotBuyRequisitionsPage extends SPXBase {
 	By lblSubFamily = By.id("formSpot:nwcboSubFamilias0_label");
 	By txtSearchSubFamily = By.id("formSpot:nwcboSubFamilias0_filter");
 	By selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE);
-	By txtGenericItem = By.id("formSpot:j_idt464");
+	By txtGenericItem = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[1]/fieldset[1]/div[1]/div[4]/div[1]/div[2]/input[1]");
 	By txtQuantity = By.id("formSpot:cantidadReq_input");
 	By lblUnitOfMeasure = By.id("formSpot:comboUDM_label");
 	By txtSearchUnitOfMeasure = By.id("formSpot:comboUDM_filter");
@@ -42,9 +47,10 @@ public class SpotBuyRequisitionsPage extends SPXBase {
 	By clssYearNeedByDate = By.xpath("//select[@class='ui-datepicker-year']");
 	By selectYearNeedByDate = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE);
 	By selectDayNeedByDate = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_DAY_NEED_BY_DATE_SPOT_PAGE);
-	By txtCommentsToBuyer = By.id("formSpot:j_idt483");
+	By txtCommentsToBuyer = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]");
 	By btnChooseFiles = By.id("formSpot:fileUpload_input");
-	By btnAddToCart=By.id("formSpot:add-cart-btn");
+	By btnAddToCart = By.id("formSpot:add-cart-btn");
 
 	/*
 	 * @name: textSpotBuyRequisitionsPageIsDisplayed
@@ -192,12 +198,15 @@ public class SpotBuyRequisitionsPage extends SPXBase {
 	 * @description: Este metodo permite capturar los datos de la tercera sección de
 	 * la pagina
 	 */
-	public void captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot) throws InterruptedException {
+	public void captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot)
+			throws InterruptedException {
 		try {
+			reporterLog("Capture Information to Spot Buy Requisitions Third Section");
 			type(txtCommentsToBuyer, commentsToBuyer);
 			uploadFile(pathFileSpot, btnChooseFiles);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 			click(btnAddToCart);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 		}

@@ -8,16 +8,20 @@ import org.testng.annotations.Test;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
+import com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage;
 import com.metalsa.spx.dev5.poc.HomeSPX;
 import com.metalsa.spx.dev5.poc.LoginSPX;
-import com.metalsa.spx.dev5.poc.SpotBuyRequisitionsPage;
+import com.metalsa.spx.dev5.poc.ShoppingCartSPXPage;
+import com.metalsa.spx.dev5.poc.SpotBuyRequisitionsSPXPage;
 
 public class QC_Testing_SPX_DEV5_TestCases {
 	WebDriver driver;
 	SPXBase spxBase;
 	LoginSPX loginSPXPage;
 	HomeSPX homeSPXPage;
-	SpotBuyRequisitionsPage spotBuyRequisitionsPage;
+	SpotBuyRequisitionsSPXPage spotBuyRequisitionsSPXPage;
+	ShoppingCartSPXPage shoppingCartSPXPage;
+	AccountConfigurationSPXPage accountConfigurationSPXPage;
 
 	// TestDataCalling
 	String url = GlobalVariablesSPX.SPX_DEV5_URL, username = GlobalVariablesSPX.SPX_DEV5_USERNAME_REQUESTER,
@@ -35,7 +39,9 @@ public class QC_Testing_SPX_DEV5_TestCases {
 			genericItem = GlobalVariablesSPX.SPX_DEV5_GENERIC_ITEM_SPOT_PAGE,
 			unitOfMeasure = GlobalVariablesSPX.SPX_DEV5_UNIT_OF_MEASURE_SPOT_PAGE,
 			commentsToBuyer = GlobalVariablesSPX.SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE,
-			pathFileSpot = GlobalVariablesSPX.SPX_DEV5_PATH_FILES;
+			pathFileSpot = GlobalVariablesSPX.SPX_DEV5_PATH_FILES,
+			commentsShoppingCart = GlobalVariablesSPX.SPX_DEV5_COMMENTS_SHOPPING_CART,
+			costCenter = GlobalVariablesSPX.SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE;
 
 	int seconds = GlobalVariablesSPX.SHORT_TIMEOUT;
 
@@ -46,7 +52,9 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		driver = spxBase.chromeDriverConection();
 		loginSPXPage = new LoginSPX(driver);
 		homeSPXPage = new HomeSPX(driver);
-		spotBuyRequisitionsPage = new SpotBuyRequisitionsPage(driver);
+		spotBuyRequisitionsSPXPage = new SpotBuyRequisitionsSPXPage(driver);
+		shoppingCartSPXPage = new ShoppingCartSPXPage(driver);
+		accountConfigurationSPXPage = new AccountConfigurationSPXPage(driver);
 	}
 
 	@Test
@@ -65,15 +73,22 @@ public class QC_Testing_SPX_DEV5_TestCases {
 
 		// Step 6 - Access to Spot Buy Requisitions
 		homeSPXPage.accesToSpotBuyRequisitions();
-		Assert.assertEquals(spotBuyRequisitionsPage.textSpotBuyRequisitionsPageIsDisplayed(), true);
+		Assert.assertEquals(spotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(), true);
 
 		// Step 7 - Data Capture Spot Buy Requisition
-		spotBuyRequisitionsPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
 				measurements, modelPartNumber, genericName);
-		spotBuyRequisitionsPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
 				subFamily, genericItem, unitOfMeasure);
-		spotBuyRequisitionsPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
 
+		// Step 8 - Select to Requisition
+		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
+		shoppingCartSPXPage.selectSpotRequisitionShoppingCart();
+		
+		// Step 9 - Select Type Account For Requisition
+		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
+		accountConfigurationSPXPage.selectTypeAccountForRequisition(costCenter);
 	}
 
 	@AfterTest
