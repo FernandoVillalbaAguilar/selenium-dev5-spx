@@ -82,8 +82,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @date: 30/Oct/2023
 	 * 
-	 * @param: String description, String material, String color, String Brand,
-	 * String measurements, String modelPartNumber, String genericName
+	 * @param: String description, String material, String color,
+			String Brand, String measurements, String modelPartNumber, String genericName
 	 * 
 	 * @return: N/A
 	 * 
@@ -114,8 +114,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @date: 31/Oct/2023
 	 * 
-	 * @param: String cantidad, String category, String family, String subFamily,
-	 * String itemGenerico, String unidadMedida
+	 * @param: String quantity, String category, String family,
+			String subFamily, String genericItem, String unitOfMeasure
 	 * 
 	 * @return: N/A
 	 * 
@@ -188,8 +188,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @date: 31/Oct/2023
 	 * 
-	 * @param: String cantidad, String category, String family, String subFamily,
-	 * String itemGenerico, String unidadMedida
+	 * @param: String commentsToBuyer, String pathFileSpot
 	 * 
 	 * @return: N/A
 	 * 

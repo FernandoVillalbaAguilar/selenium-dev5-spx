@@ -11,6 +11,7 @@ import com.metalsa.spx.dev5.main.SPXBase;
 import com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage;
 import com.metalsa.spx.dev5.poc.HomeSPX;
 import com.metalsa.spx.dev5.poc.LoginSPX;
+import com.metalsa.spx.dev5.poc.PreviewConfirmationSPXPage;
 import com.metalsa.spx.dev5.poc.ShoppingCartSPXPage;
 import com.metalsa.spx.dev5.poc.SpotBuyRequisitionsSPXPage;
 
@@ -22,6 +23,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	SpotBuyRequisitionsSPXPage spotBuyRequisitionsSPXPage;
 	ShoppingCartSPXPage shoppingCartSPXPage;
 	AccountConfigurationSPXPage accountConfigurationSPXPage;
+	PreviewConfirmationSPXPage previewConfirmationSPXPage;
 
 	// TestDataCalling
 	String url = GlobalVariablesSPX.SPX_DEV5_URL, username = GlobalVariablesSPX.SPX_DEV5_USERNAME_REQUESTER,
@@ -55,6 +57,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		spotBuyRequisitionsSPXPage = new SpotBuyRequisitionsSPXPage(driver);
 		shoppingCartSPXPage = new ShoppingCartSPXPage(driver);
 		accountConfigurationSPXPage = new AccountConfigurationSPXPage(driver);
+		previewConfirmationSPXPage = new PreviewConfirmationSPXPage(driver);
 	}
 
 	@Test
@@ -89,6 +92,10 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		// Step 9 - Select Type Account For Requisition
 		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
 		accountConfigurationSPXPage.selectTypeAccountForRequisition(costCenter);
+		
+		// Step 10 - Accept to Requisition
+				Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
+				previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage();
 	}
 
 	@AfterTest

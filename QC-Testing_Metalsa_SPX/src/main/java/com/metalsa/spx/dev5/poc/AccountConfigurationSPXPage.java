@@ -14,7 +14,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	}
 
 // Objects
-	By txtAccountConfiguration = By.xpath("//div[@class='carro-compras-steps--name']");
+	By txtAccountConfiguration = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
 	By btnBack = By.id("formCarroCompras:goBack1");
 	By chkMultiCheck = By.id("multiCheck");
 	By iconExpandColapse = By.id("//i[@class='fa fa-chevron-down chevron-icon fa-2x']");
@@ -35,8 +35,10 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	By slctSelectResourse = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_RESOURSE_ACCOUNT_CONFIGURATION_PAGE);
 	By lblSelectBuyer = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:j_idt263_label");
 	By slctSelectBuyer = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE);
-	By btnCC = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
-	By lblCostCenter = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]");
+	By btnCC = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
+	By lblCostCenter = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]");
 	By txtCostCenter = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:cbmCC_filter");
 	By slctCostCenter = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE);
 	By chkSegmentProduct = By.xpath("//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
@@ -69,25 +71,26 @@ public class AccountConfigurationSPXPage extends SPXBase {
 
 		}
 	}
-	
+
 	/*
 	 * @name: textAccountConfigurationPageIsDisplayed
 	 * 
 	 * @date: 30/Oct/2023
 	 * 
-	 * @param: N/A
+	 * @param: String costCenter
 	 * 
-	 * @return: isDisplayed(txtAccountConfiguration);
+	 * @return: N/A
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	
+
 	public void selectTypeAccountForRequisition(String costCenter) throws InterruptedException {
 		try {
-			reporterLog("Select Type Account For Requisition ...");	
+			reporterLog("Select Type Account For Requisition ...");
 			click(btnCC);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 			waitForElementPresent(lblCostCenter);
 			click(lblCostCenter);
 			waitForElementPresent(txtCostCenter);

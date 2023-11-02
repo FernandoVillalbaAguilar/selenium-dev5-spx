@@ -1,8 +1,8 @@
 package com.metalsa.spx.dev5.main;
 
 public class GlobalVariablesSPX {
-	public static final int DEFAULT_TIMEOUT = 30;
-	public static final int SHORT_TIMEOUT = 6000;
+	public static final int DEFAULT_TIMEOUT = 20;
+	public static final int SHORT_TIMEOUT = 4000;
 
 	// Data Logging
 	public static final String SPX_DEV5_URL = "http://gpmtest2-app6:9203/SPX/";

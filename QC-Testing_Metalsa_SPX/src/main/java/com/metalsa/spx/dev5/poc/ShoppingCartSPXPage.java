@@ -35,12 +35,21 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public boolean textShoppingCartPageIsDisplayed() {
+	public boolean textShoppingCartPageIsDisplayed() throws InterruptedException {
 		try {
 			reporterLog("Access to Shopping Page ...");
-			click(btnShoppingCart);
-			waitForElementPresent(textShoppingCart);
-			return isDisplayed(textShoppingCart);
+			if(textValidateSameLine.equals(textValidateSameLine)) {
+				System.out.println("The Same Name Line Exist");
+				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+				click(btnShoppingCart);
+				waitForElementPresent(textShoppingCart);
+				return isDisplayed(textShoppingCart);
+			}else {
+				click(btnShoppingCart);
+				waitForElementPresent(textShoppingCart);
+				return isDisplayed(textShoppingCart);
+			}
+			
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 			return false;
@@ -53,7 +62,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * 
 	 * @date: 28/Oct/2023
 	 * 
-	 * @param: String commentsShoppingCart
+	 * @param: N/A
 	 * 
 	 * @return: N/A
 	 * 
