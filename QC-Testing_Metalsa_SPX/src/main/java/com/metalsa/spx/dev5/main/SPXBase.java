@@ -1,7 +1,15 @@
 package com.metalsa.spx.dev5.main;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 
+import javax.imageio.ImageIO;
+
+import org.apache.commons.codec.binary.Base64;
+import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
@@ -10,8 +18,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.Reporter;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
 
 public class SPXBase {
 
@@ -59,7 +71,7 @@ public class SPXBase {
 	public void launchBrowser(String url) {
 		try {
 			reporterLog("Launching ... " + url);
-			driver.get(url);
+			driver.get(getEncrypted(url));
 			driver.manage().window().maximize();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
@@ -187,8 +199,14 @@ public class SPXBase {
 	 */
 	public boolean isDisplayed(By locator) {
 		try {
-			reporterLog("Validate if Element is Displayed");
-			return driver.findElement(locator).isDisplayed();
+			if (driver.findElement(locator).isDisplayed()) {
+				reporterLog("Validate if Element is Displayed");
+				return driver.findElement(locator).isDisplayed();
+			} else {
+				System.out.println("The element " + locator + " is not found");
+				return driver.findElement(locator).isDisplayed();
+			}
+
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 			return false;
@@ -215,6 +233,121 @@ public class SPXBase {
 			driver.findElement(locator).sendKeys(absolutePath);
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+		}
+	}
+
+	/*
+	 * @name: getJSONValue
+	 * 
+	 * @date: 23/Feb/2023
+	 * 
+	 * @param: String jsonFileObj, String jsonKey
+	 * 
+	 * @return: jsonValue / null
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite leer la información de un archivo JSON
+	 */
+	public String getJSONValue(String jsonFileObj, String jsonKey) {
+		try {
+
+			// JSON Data
+			InputStream inputStream = new FileInputStream(GlobalVariablesSPX.PATH_JSON_DATA + jsonFileObj + ".json");
+			JSONObject jsonObject = new JSONObject(new JSONTokener(inputStream));
+
+			// Get Data
+			String jsonValueString = (String) jsonObject.get(jsonKey);
+			return jsonValueString;
+		} catch (FileNotFoundException e) {
+			Assert.fail("JSON file is not found");
+			return null;
+		}
+	}
+
+	/*
+	 * @name: getEncrypted
+	 * 
+	 * @date: 23/Feb/2023
+	 * 
+	 * @param: String encrypted
+	 * 
+	 * @return: String(decodedBytes)
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite decodificar un dato almacenado en el JSON
+	 */
+	public String getEncrypted(String encrypted) {
+		byte[] decodedBytes = Base64.decodeBase64(encrypted);
+		return new String(decodedBytes);
+	}
+
+	/*
+	 * @name: getText
+	 * 
+	 * @date: 02/Nov/2023
+	 * 
+	 * @param: By locator
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite obtener el texto de un elemento
+	 */
+	public void getText(By locator) {
+		String nameProduct;
+		nameProduct = driver.findElement(locator).getText();
+		System.out.println("ID Requeriment SPOT is: " + nameProduct);
+	}
+
+	/*
+	 * @name: getText
+	 * 
+	 * @date: 02/Nov/2023
+	 * 
+	 * @param: By locator, String requiredField
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite obtener el texto de un elemento
+	 */
+	public void requiredFields(By locator, String requiredField) {
+		reporterLog("Validate Required Fields...");
+		if (requiredField == "") {
+			System.out.println("The " + locator + " field is required and cannot be left empty");
+			driver.close();
+		} else {
+			System.out.println("The required field " + locator + " contains information ");
+		}
+	}
+
+	/*
+	 * @name: takeScreenshot
+	 * 
+	 * @date: 02/Nov/2023
+	 * 
+	 * @param: By locator, String requiredField
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite obtener el texto de un elemento
+	 */
+	public String takeScreenshot(String fileName) {
+		try {
+			String pathFileName = GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + fileName + ".png";
+			Screenshot screenshot = new AShot().takeScreenshot(driver);
+			ImageIO.write(screenshot.getImage(), "PNG", new File(pathFileName));
+			System.out.println("I take a screeshot...");
+			return pathFileName;
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+			return null;
 		}
 	}
 }

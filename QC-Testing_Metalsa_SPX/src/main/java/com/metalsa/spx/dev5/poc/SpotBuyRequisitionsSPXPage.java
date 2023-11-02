@@ -82,8 +82,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @date: 30/Oct/2023
 	 * 
-	 * @param: String description, String material, String color,
-			String Brand, String measurements, String modelPartNumber, String genericName
+	 * @param: String description, String material, String color, String Brand,
+	 * String measurements, String modelPartNumber, String genericName
 	 * 
 	 * @return: N/A
 	 * 
@@ -103,7 +103,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			type(txtMeasurements, measurements);
 			type(txtModelPartNumber, modelPartNumber);
 			type(txtGenericName, genericName);
-
+			requiredFields(txtDescription,description);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 		}
@@ -114,8 +114,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @date: 31/Oct/2023
 	 * 
-	 * @param: String quantity, String category, String family,
-			String subFamily, String genericItem, String unitOfMeasure
+	 * @param: String quantity, String category, String family, String subFamily,
+	 * String genericItem, String unitOfMeasure
 	 * 
 	 * @return: N/A
 	 * 
@@ -134,7 +134,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			waitForElementPresent(selectOptionCategory);
 			click(selectOptionCategory);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-
+			
 			waitForElementPresent(lblFamily);
 			click(lblFamily);
 			waitForElementPresent(txtSearchFamily);
@@ -142,6 +142,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			waitForElementPresent(selectOptionFamily);
 			click(selectOptionFamily);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+
 
 			waitForElementPresent(lblSubFamily);
 			click(lblSubFamily);
@@ -177,7 +178,13 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			click(selectYearNeedByDate);
 
 			click(selectDayNeedByDate);
-
+			
+			//Required Fields Validate
+			requiredFields(txtSearchCategory,category);
+			requiredFields(txtSearchFamily,family);
+			requiredFields(txtSearchSubFamily,subFamily);
+			requiredFields(txtQuantity, quantity);
+			requiredFields(txtSearchUnitOfMeasure, unitOfMeasure);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 		}

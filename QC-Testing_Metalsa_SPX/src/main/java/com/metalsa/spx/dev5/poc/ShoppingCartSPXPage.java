@@ -20,7 +20,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	By checkRequisitionShoppingCart = By.id("formCarroCompras:carroCompra0:0:simpleCheck0");
 	By txtCommentsShoppingCart = By.id("formCarroCompras:carroCompra0:0:txtObservaciones");
 	By btnSetupPurchase = By.id("formCarroCompras:j_idt823");
-	By textValidateSameLine = By.id("val-message_fad");
+	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
 
 	/*
 	 * @name: textSpotBuyRequisitionsPageIsDisplayed
@@ -38,18 +38,19 @@ public class ShoppingCartSPXPage extends SPXBase {
 	public boolean textShoppingCartPageIsDisplayed() throws InterruptedException {
 		try {
 			reporterLog("Access to Shopping Page ...");
-			if(textValidateSameLine.equals(textValidateSameLine)) {
+			if (isDisplayed(textValidateSameLine)) {
 				System.out.println("The Same Name Line Exist");
 				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 				click(btnShoppingCart);
 				waitForElementPresent(textShoppingCart);
 				return isDisplayed(textShoppingCart);
-			}else {
+			} else {
+				System.out.println("The Name Line is New");
 				click(btnShoppingCart);
 				waitForElementPresent(textShoppingCart);
 				return isDisplayed(textShoppingCart);
 			}
-			
+
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 			return false;

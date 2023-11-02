@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 
+import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
 public class PreviewConfirmationSPXPage extends SPXBase {
@@ -17,7 +18,8 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	By btnBack = By.id("formCarroCompras:goBack1");
 	By iconTypeRequisition = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/i[1]");
-	By btnAccept=By.id("formCarroCompras:j_idt360");
+	By btnAccept = By.id("formCarroCompras:j_idt360");
+	By txtRequisitionGenerate = By.id("formCarroCompras:j_idt412:0:j_idt417");
 
 	/*
 	 * @name: textPreviewConfirmationPageIsDisplayed
@@ -42,7 +44,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 			return false;
 		}
 	}
-	
+
 	/*
 	 * @name: acceptToRequisitionPreviewConfirmationPage
 	 * 
@@ -56,13 +58,15 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public void acceptToRequisitionPreviewConfirmationPage() {
+	public void acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
 		try {
 			reporterLog("Accept to Requisition");
 			click(btnAccept);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			getText(txtRequisitionGenerate);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
-			
+
 		}
 	}
 }

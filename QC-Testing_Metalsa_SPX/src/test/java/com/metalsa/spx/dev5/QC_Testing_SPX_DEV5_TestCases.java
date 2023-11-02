@@ -26,9 +26,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	PreviewConfirmationSPXPage previewConfirmationSPXPage;
 
 	// TestDataCalling
-	String url = GlobalVariablesSPX.SPX_DEV5_URL, username = GlobalVariablesSPX.SPX_DEV5_USERNAME_REQUESTER,
-			password = GlobalVariablesSPX.SPX_DEV5_PASSWORD_REQUESTER,
-			description = GlobalVariablesSPX.SPX_DEV5_DESCRIPTION_SPOT_PAGE,
+	String url, username, password, description = GlobalVariablesSPX.SPX_DEV5_DESCRIPTION_SPOT_PAGE,
 			material = GlobalVariablesSPX.SPX_DEV5_MATERIAL_SPOT_PAGE,
 			color = GlobalVariablesSPX.SPX_DEV5_COLOR_SPOT_PAGE, brand = GlobalVariablesSPX.SPX_DEV5_BRAND_SPOT_PAGE,
 			measurements = GlobalVariablesSPX.SPX_DEV5_MEASUREMENTS_SPOT_PAGE,
@@ -44,9 +42,6 @@ public class QC_Testing_SPX_DEV5_TestCases {
 			pathFileSpot = GlobalVariablesSPX.SPX_DEV5_PATH_FILES,
 			commentsShoppingCart = GlobalVariablesSPX.SPX_DEV5_COMMENTS_SHOPPING_CART,
 			costCenter = GlobalVariablesSPX.SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE;
-
-	int seconds = GlobalVariablesSPX.SHORT_TIMEOUT;
-
 	@BeforeTest
 	public void beforeTest() {
 		// Instanciar valores de conexión con Chrome
@@ -58,6 +53,11 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		shoppingCartSPXPage = new ShoppingCartSPXPage(driver);
 		accountConfigurationSPXPage = new AccountConfigurationSPXPage(driver);
 		previewConfirmationSPXPage = new PreviewConfirmationSPXPage(driver);
+
+		// Test Data
+		this.username = spxBase.getJSONValue("TestDataLoginSPX", "username");
+		this.password = spxBase.getJSONValue("TestDataLoginSPX", "password");
+		this.url = spxBase.getJSONValue("TestDataLoginSPX", "url");
 	}
 
 	@Test
@@ -88,19 +88,19 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		// Step 8 - Select to Requisition
 		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
 		shoppingCartSPXPage.selectSpotRequisitionShoppingCart();
-		
+
 		// Step 9 - Select Type Account For Requisition
 		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
 		accountConfigurationSPXPage.selectTypeAccountForRequisition(costCenter);
-		
+
 		// Step 10 - Accept to Requisition
-				Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
-				previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage();
+		Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
+		previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage();
 	}
 
 	@AfterTest
 	public void afterTest() {
-		// driver.close();
+		driver.close();
 	}
 
 }

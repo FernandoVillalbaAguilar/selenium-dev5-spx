@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
 public class LoginSPX extends SPXBase {
@@ -29,11 +30,13 @@ public class LoginSPX extends SPXBase {
 	 * 
 	 * @description: Este metodo permite capturar usuario y contraseña, así como dar click en el botón login
 	 */
-	public void login(String username, String password) {
+	public void login(String username, String password) throws InterruptedException {
 		reporterLog("Logging to SPX ...");
+		takeScreenshot("Login");
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnLogin);
-		type(txtUsername, username);
-		type(txtPassword, password);
+		type(txtUsername, getEncrypted(username));
+		type(txtPassword, getEncrypted(password));
 		click(btnLogin);
 		
 	}

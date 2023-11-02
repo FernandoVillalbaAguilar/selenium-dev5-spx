@@ -2,12 +2,12 @@ package com.metalsa.spx.dev5.main;
 
 public class GlobalVariablesSPX {
 	public static final int DEFAULT_TIMEOUT = 20;
-	public static final int SHORT_TIMEOUT = 4000;
+	public static final int SHORT_TIMEOUT = 3000;
+	public static final String SPX_DEV5_PATH_SCREENSHOTS = "C:\\\\Users\\\\fernando.villalba\\\\Documents\\\\files";
+	public static final String SPX_DEV5_PATH_FILES = System.getProperty("user.dir")+"/test-output/screenshots/";
 
 	// Data Logging
-	public static final String SPX_DEV5_URL = "http://gpmtest2-app6:9203/SPX/";
-	public static final String SPX_DEV5_USERNAME_REQUESTER = "edna.garza@metalsa.com";
-	public static final String SPX_DEV5_PASSWORD_REQUESTER = "1234";
+	public static final String PATH_JSON_DATA = "./src/test/resources/testDataSPX/json/";
 
 	// Data Home
 	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:300000871351061']";
@@ -38,7 +38,6 @@ public class GlobalVariablesSPX {
 			+ GlobalVariablesSPX.SPX_DEV5_SUBFAMILY_SPOT_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_UNIT_OF_MEASURE_OPTION_SPOT_PAGE = "//li[contains(.,'"
 			+ GlobalVariablesSPX.SPX_DEV5_UNIT_OF_MEASURE_SPOT_PAGE + "')]";
-	public static final String SPX_DEV5_PATH_FILES = "C:\\Users\\fernando.villalba\\Documents\\files\\DocumentoDePrueba.txt";
 
 	// Data Shopping Cart
 	public static final String SPX_DEV5_COMMENTS_SHOPPING_CART = "COMENTARIOS EN EL CARRITO DE COMPRAS";
@@ -62,5 +61,4 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE + "')]";
-
 }

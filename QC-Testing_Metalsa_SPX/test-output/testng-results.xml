@@ -2,7 +2,7 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
-      <![CDATA[Launching ... http://gpmtest2-app6:9203/SPX/]]>
+      <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
     </line>
     <line>
       <![CDATA[Logging to SPX ...]]>
@@ -96,6 +96,9 @@
     </line>
     <line>
       <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
     </line>
     <line>
       <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
@@ -209,6 +212,21 @@
       <![CDATA[Click to Field or Button]]>
     </line>
     <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
       <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
     </line>
     <line>
@@ -280,20 +298,35 @@
     <line>
       <![CDATA[Click to Field or Button]]>
     </line>
+    <line>
+      <![CDATA[Access to Preview & Confirmation Page ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Validate if Element is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Accept to Requisition]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
   </reporter-output>
-  <suite started-at="2023-11-01T22:46:37Z" name="Default suite" finished-at="2023-11-01T22:48:03Z" duration-ms="85517">
+  <suite started-at="2023-11-02T23:56:11Z" name="Default suite" finished-at="2023-11-02T23:57:21Z" duration-ms="70344">
     <groups>
     </groups>
-    <test started-at="2023-11-01T22:46:37Z" name="Default test" finished-at="2023-11-01T22:48:03Z" duration-ms="85517">
+    <test started-at="2023-11-02T23:56:11Z" name="Default test" finished-at="2023-11-02T23:57:21Z" duration-ms="70344">
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@12d2ce03]" started-at="2023-11-01T22:46:37Z" name="beforeTest" finished-at="2023-11-01T22:46:40Z" duration-ms="2412" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-11-02T23:56:11Z" name="beforeTest" finished-at="2023-11-02T23:56:14Z" duration-ms="3829" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc001QCTestingSPXDev5CrearRequisicionSpot()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@12d2ce03]" started-at="2023-11-01T22:46:40Z" name="tc001QCTestingSPXDev5CrearRequisicionSpot" finished-at="2023-11-01T22:48:03Z" duration-ms="83057" status="PASS">
+        <test-method signature="tc001QCTestingSPXDev5CrearRequisicionSpot()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-11-02T23:56:14Z" name="tc001QCTestingSPXDev5CrearRequisicionSpot" finished-at="2023-11-02T23:57:20Z" duration-ms="65936" status="PASS">
           <reporter-output>
             <line>
-              <![CDATA[Launching ... http://gpmtest2-app6:9203/SPX/]]>
+              <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
             </line>
             <line>
               <![CDATA[Logging to SPX ...]]>
@@ -387,6 +420,9 @@
             </line>
             <line>
               <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
             </line>
             <line>
               <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
@@ -500,6 +536,21 @@
               <![CDATA[Click to Field or Button]]>
             </line>
             <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
               <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
             </line>
             <line>
@@ -571,9 +622,24 @@
             <line>
               <![CDATA[Click to Field or Button]]>
             </line>
+            <line>
+              <![CDATA[Access to Preview & Confirmation Page ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Validate if Element is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Accept to Requisition]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
           </reporter-output>
         </test-method> <!-- tc001QCTestingSPXDev5CrearRequisicionSpot -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@12d2ce03]" started-at="2023-11-01T22:48:03Z" name="afterTest" finished-at="2023-11-01T22:48:03Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@413f69cc]" started-at="2023-11-02T23:57:20Z" name="afterTest" finished-at="2023-11-02T23:57:21Z" duration-ms="548" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
