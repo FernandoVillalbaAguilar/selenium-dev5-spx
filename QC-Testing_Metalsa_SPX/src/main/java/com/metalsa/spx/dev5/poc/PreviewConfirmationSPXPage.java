@@ -18,8 +18,8 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	By btnBack = By.id("formCarroCompras:goBack1");
 	By iconTypeRequisition = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/i[1]");
-	By btnAccept = By.id("formCarroCompras:j_idt360");
-	By txtRequisitionGenerate = By.id("formCarroCompras:j_idt412:0:j_idt417");
+	By btnAccept = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[4]/button[1]/span[1]");
+	By txtRequisitionGenerate = By.id("formCarroCompras:j_idt413:0:j_idt418");
 
 	/*
 	 * @name: textPreviewConfirmationPageIsDisplayed
@@ -34,15 +34,11 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public boolean textPreviewConfirmationPageIsDisplayed() {
-		try {
-			reporterLog("Access to Preview & Confirmation Page ...");
-			waitForElementPresent(btnAccept);
-			return isDisplayed(btnAccept);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-			return false;
-		}
+	public boolean textPreviewConfirmationPageIsDisplayed() throws InterruptedException {
+		reporterLog("Access to Preview & Confirmation Page ...");
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForElementPresent(btnAccept);
+		return isDisplayed(btnAccept);
 	}
 
 	/*
@@ -59,14 +55,12 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
 	public void acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
-		try {
-			reporterLog("Accept to Requisition");
-			click(btnAccept);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			getText(txtRequisitionGenerate);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
+		reporterLog("Accept to Requisition");
+		click(btnAccept);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForElementPresent(txtRequisitionGenerate);
+		System.out.print("ID Requisition is: ");
+		getText(txtRequisitionGenerate);
 
-		}
 	}
 }

@@ -14,8 +14,8 @@ public class HomeSPX extends SPXBase {
 	}
 
 	// Objects
-	By selectUEN=By.name("uens");
-	By optUEN=By.xpath(GlobalVariablesSPX.SPX_DEV5_UEN_HOME);
+	By selectUEN = By.name("uens");
+	By optUEN = By.xpath(GlobalVariablesSPX.SPX_DEV5_UEN_HOME);
 	By iconMenu = By.xpath("//i[@class='fa fa-bars gn-icon-menu']");
 	By iconMenuRequisitions = By.xpath("//a[@href='#_menu_191']");
 	By iconMenuRequisitionsCreateRequisition = By.xpath("//a[@href='#_menu_192']");
@@ -36,14 +36,30 @@ public class HomeSPX extends SPXBase {
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
 	public boolean menuHeaderHomeIsDisplayed() {
-		try {
-			reporterLog("Access to SPX ...");
-			waitForElementPresent(iconMenu);
-			return isDisplayed(iconMenu);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-			return false;
-		}
+		reporterLog("Access to SPX ...");
+		waitForElementPresent(iconMenu);
+		return isDisplayed(iconMenu);
+	}
+
+	/*
+	 * @name: selectToUenFromHome
+	 * 
+	 * @date: 30/Oct/2023
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite seleccionar una UEN
+	 */
+
+	public void selectToUenFromHome() {
+		reporterLog("Access to Spot Buy Requisitions ...");
+		click(selectUEN);
+		waitForElementPresent(optUEN);
+		click(optUEN);
 	}
 
 	/*
@@ -60,44 +76,13 @@ public class HomeSPX extends SPXBase {
 	 * @description: Este metodo permite acceder a la pagina indicada
 	 */
 	public void accesToSpotBuyRequisitions() {
-		try {
-			reporterLog("Access to Spot Buy Requisitions ...");
-			click(iconMenu);
-			waitForElementPresent(iconMenuRequisitions);
-			click(iconMenuRequisitions);
-			waitForElementPresent(iconMenuRequisitionsCreateRequisition);
-			click(iconMenuRequisitionsCreateRequisition);
-			waitForElementPresent(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
-			click(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
-
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-		}
-
-	}
-	
-	/*
-	 * @name: selectToUenFromHome
-	 * 
-	 * @date: 30/Oct/2023
-	 * 
-	 * @param: N/A
-	 * 
-	 * @return: N/A
-	 * 
-	 * @author: Fernando Villalba Aguilar
-	 * 
-	 * @description: Este metodo permite seleccionar una UEN
-	 */
-	
-	public void selectToUenFromHome() {
-		try {
 		reporterLog("Access to Spot Buy Requisitions ...");
-		click(selectUEN);
-		waitForElementPresent(optUEN);
-		click(optUEN);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-		}
+		click(iconMenu);
+		waitForElementPresent(iconMenuRequisitions);
+		click(iconMenuRequisitions);
+		waitForElementPresent(iconMenuRequisitionsCreateRequisition);
+		click(iconMenuRequisitionsCreateRequisition);
+		waitForElementPresent(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
+		click(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
 	}
 }

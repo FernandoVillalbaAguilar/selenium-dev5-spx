@@ -14,7 +14,8 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	}
 
 // Objects
-	By txtAccountConfiguration = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
+	By txtAccountConfiguration = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
 	By btnBack = By.id("formCarroCompras:goBack1");
 	By chkMultiCheck = By.id("multiCheck");
 	By iconExpandColapse = By.id("//i[@class='fa fa-chevron-down chevron-icon fa-2x']");
@@ -39,10 +40,11 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
 	By lblCostCenter = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]");
-	By txtCostCenter = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:cbmCC_filter");
+	By txtCostCenter = By.xpath("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCC_filter");
 	By slctCostCenter = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE);
 	By chkSegmentProduct = By.xpath("//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
-	By lblSelectAccount = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:cbmCuenta_label");
+	By lblSelectAccount = By.xpath(
+			"//div[@class='cart-line__cuenta']//label[@class='ui-selectonemenu-label ui-inputfield ui-corner-all']");
 	By slctSelectAccount = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE);
 	By btnAddCC = By.id("formCarroCompras:carroCompra0:0:j_idt237");
 	By btnRequisition = By.id("formCarroCompras:crearRequiButton");
@@ -61,15 +63,9 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
 	public boolean textAccountConfigurationPageIsDisplayed() {
-		try {
-			reporterLog("Access to Account Configuration Page ...");
-			waitForElementPresent(txtAccountConfiguration);
-			return isDisplayed(txtAccountConfiguration);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-			return false;
-
-		}
+		reporterLog("Access to Account Configuration Page ...");
+		waitForElementPresent(txtAccountConfiguration);
+		return isDisplayed(txtAccountConfiguration);
 	}
 
 	/*
@@ -87,22 +83,18 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 */
 
 	public void selectTypeAccountForRequisition(String costCenter) throws InterruptedException {
-		try {
-			reporterLog("Select Type Account For Requisition ...");
-			click(btnCC);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			waitForElementPresent(lblCostCenter);
-			click(lblCostCenter);
-			waitForElementPresent(txtCostCenter);
-			type(txtCostCenter, costCenter);
-			waitForElementPresent(slctCostCenter);
-			click(slctCostCenter);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			click(btnRequisition);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
 
-		}
+		reporterLog("Select Type Account For Requisition ...");
+		click(btnCC);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForElementPresent(lblCostCenter);
+		click(lblCostCenter);
+//		waitForElementPresent(txtCostCenter);
+//		type(txtCostCenter, costCenter);
+		waitForElementPresent(slctCostCenter);
+		click(slctCostCenter);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		click(btnRequisition);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 	}
 }

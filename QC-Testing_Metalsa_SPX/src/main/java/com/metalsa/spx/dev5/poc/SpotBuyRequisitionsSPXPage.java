@@ -51,6 +51,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]");
 	By btnChooseFiles = By.id("formSpot:fileUpload_input");
 	By btnAddToCart = By.id("formSpot:add-cart-btn");
+	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
 
 	/*
 	 * @name: textSpotBuyRequisitionsPageIsDisplayed
@@ -66,15 +67,9 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
 	public boolean textSpotBuyRequisitionsPageIsDisplayed() {
-		try {
-			reporterLog("Access to Spot Buy Requisitions Page ...");
-			waitForElementPresent(spanSpotBuyRequisitionsPage);
-			return isDisplayed(spanSpotBuyRequisitionsPage);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-			return false;
-
-		}
+		reporterLog("Access to Spot Buy Requisitions Page ...");
+		waitForElementPresent(spanSpotBuyRequisitionsPage);
+		return isDisplayed(spanSpotBuyRequisitionsPage);
 	}
 
 	/*
@@ -94,19 +89,15 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 */
 	public void captureInformationSpotBuyRequisitionFirstSection(String description, String material, String color,
 			String Brand, String measurements, String modelPartNumber, String genericName) {
-		try {
-			reporterLog("Capture Information to Spot Buy Requisitions First Section");
-			type(txtDescription, description);
-			type(txtMaterial, material);
-			type(txtColor, color);
-			type(txtBrand, Brand);
-			type(txtMeasurements, measurements);
-			type(txtModelPartNumber, modelPartNumber);
-			type(txtGenericName, genericName);
-			requiredFields(txtDescription,description);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-		}
+		reporterLog("Capture Information to Spot Buy Requisitions First Section");
+		type(txtDescription, description);
+		type(txtMaterial, material);
+		type(txtColor, color);
+		type(txtBrand, Brand);
+		type(txtMeasurements, measurements);
+		type(txtModelPartNumber, modelPartNumber);
+		type(txtGenericName, genericName);
+		requiredFields(txtDescription);
 	}
 
 	/*
@@ -126,68 +117,63 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 */
 	public void captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category, String family,
 			String subFamily, String genericItem, String unitOfMeasure) throws InterruptedException {
-		try {
-			reporterLog("Capture Information to Spot Buy Requisitions Second Section");
-			click(lblCategory);
-			waitForElementPresent(txtSearchCategory);
-			type(txtSearchCategory, category);
-			waitForElementPresent(selectOptionCategory);
-			click(selectOptionCategory);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			
-			waitForElementPresent(lblFamily);
-			click(lblFamily);
-			waitForElementPresent(txtSearchFamily);
-			type(txtSearchFamily, family);
-			waitForElementPresent(selectOptionFamily);
-			click(selectOptionFamily);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		reporterLog("Capture Information to Spot Buy Requisitions Second Section");
+		// Category
+		click(lblCategory);
+		waitForElementPresent(txtSearchCategory);
+//		type(txtSearchCategory, category);
+		waitForElementPresent(selectOptionCategory);
+		click(selectOptionCategory);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
+		// Family
+		waitForElementPresent(lblFamily);
+		click(lblFamily);
+//		waitForElementPresent(txtSearchFamily);
+//		type(txtSearchFamily, family);
+		waitForElementPresent(selectOptionFamily);
+		click(selectOptionFamily);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
-			waitForElementPresent(lblSubFamily);
-			click(lblSubFamily);
-			waitForElementPresent(txtSearchSubFamily);
-			type(txtSearchSubFamily, subFamily);
-			waitForElementPresent(selectOptionSubFamily);
-			click(selectOptionSubFamily);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		// SubFamily
+		waitForElementPresent(lblSubFamily);
+		click(lblSubFamily);
+//		waitForElementPresent(txtSearchSubFamily);
+//		type(txtSearchSubFamily, subFamily);
+		waitForElementPresent(selectOptionSubFamily);
+		click(selectOptionSubFamily);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
-			type(txtGenericItem, genericItem);
-			type(txtQuantity, quantity);
+		// Rest Fields
+		type(txtGenericItem, genericItem);
+		type(txtQuantity, quantity);
 
-			click(lblUnitOfMeasure);
-			// Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			click(lblUnitOfMeasure);
+		click(lblUnitOfMeasure);
+		click(lblUnitOfMeasure);
+		waitForElementPresent(txtSearchUnitOfMeasure);
+		type(txtSearchUnitOfMeasure, unitOfMeasure);
+		waitForElementPresent(selectOptionUnitOfMeasure);
+		click(selectOptionUnitOfMeasure);
 
-			waitForElementPresent(txtSearchUnitOfMeasure);
-			type(txtSearchUnitOfMeasure, unitOfMeasure);
-			waitForElementPresent(selectOptionUnitOfMeasure);
-			click(selectOptionUnitOfMeasure);
+		// Need By Date
+		waitForElementPresent(fieldNeedByDate);
+		click(fieldNeedByDate);
+		waitForElementPresent(clssMonthNeedByDate);
+		click(clssMonthNeedByDate);
+		waitForElementPresent(selectMonthNeedByDate);
+		click(selectMonthNeedByDate);
+		waitForElementPresent(clssYearNeedByDate);
+		click(clssYearNeedByDate);
+		waitForElementPresent(selectYearNeedByDate);
+		click(selectYearNeedByDate);
+		click(selectDayNeedByDate);
 
-			waitForElementPresent(fieldNeedByDate);
-			click(fieldNeedByDate);
-
-			waitForElementPresent(clssMonthNeedByDate);
-			click(clssMonthNeedByDate);
-			waitForElementPresent(selectMonthNeedByDate);
-			click(selectMonthNeedByDate);
-
-			waitForElementPresent(clssYearNeedByDate);
-			click(clssYearNeedByDate);
-			waitForElementPresent(selectYearNeedByDate);
-			click(selectYearNeedByDate);
-
-			click(selectDayNeedByDate);
-			
-			//Required Fields Validate
-			requiredFields(txtSearchCategory,category);
-			requiredFields(txtSearchFamily,family);
-			requiredFields(txtSearchSubFamily,subFamily);
-			requiredFields(txtQuantity, quantity);
-			requiredFields(txtSearchUnitOfMeasure, unitOfMeasure);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-		}
+		// Required Fields Validate
+		requiredFields(txtSearchCategory);
+		requiredFields(txtSearchFamily);
+		requiredFields(txtSearchSubFamily);
+		requiredFields(txtQuantity);
+		requiredFields(txtSearchUnitOfMeasure);
 	}
 
 	/*
@@ -206,16 +192,23 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 */
 	public void captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot)
 			throws InterruptedException {
-		try {
-			reporterLog("Capture Information to Spot Buy Requisitions Third Section");
-			type(txtCommentsToBuyer, commentsToBuyer);
-			uploadFile(pathFileSpot, btnChooseFiles);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
+		type(txtCommentsToBuyer, commentsToBuyer);
+		uploadFile(pathFileSpot, btnChooseFiles);
+		click(btnAddToCart);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		if (isDisplayed(textValidateSameLine)) {
+			System.out.print("The error message is: ");
+			getText(textValidateSameLine);
+			String randomId = generateRandomId();
+			type(txtDescription, " WITH ID: " + randomId);
+			System.out.print("The name of requisition is ");
+			getText(txtDescription);
+			System.out.println("WITH ID: " + randomId);
 			click(btnAddToCart);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
+		} else {
+			reporterLog("The Name Line is New");
 		}
-
 	}
 }

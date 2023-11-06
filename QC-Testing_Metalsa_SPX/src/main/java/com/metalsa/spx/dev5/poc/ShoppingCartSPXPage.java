@@ -19,8 +19,9 @@ public class ShoppingCartSPXPage extends SPXBase {
 	By btnShoppingCart = By.id("spxBusquedaMenu:btn-ir-carro-compra");
 	By checkRequisitionShoppingCart = By.id("formCarroCompras:carroCompra0:0:simpleCheck0");
 	By txtCommentsShoppingCart = By.id("formCarroCompras:carroCompra0:0:txtObservaciones");
-	By btnSetupPurchase = By.id("formCarroCompras:j_idt823");
-	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
+	By btnSetupPurchase = By.xpath(
+			"//div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']");
+	By txtDescription = By.id("formSpot:desc_1");
 
 	/*
 	 * @name: textSpotBuyRequisitionsPageIsDisplayed
@@ -36,26 +37,12 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
 	public boolean textShoppingCartPageIsDisplayed() throws InterruptedException {
-		try {
-			reporterLog("Access to Shopping Page ...");
-			if (isDisplayed(textValidateSameLine)) {
-				System.out.println("The Same Name Line Exist");
-				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				click(btnShoppingCart);
-				waitForElementPresent(textShoppingCart);
-				return isDisplayed(textShoppingCart);
-			} else {
-				System.out.println("The Name Line is New");
-				click(btnShoppingCart);
-				waitForElementPresent(textShoppingCart);
-				return isDisplayed(textShoppingCart);
-			}
-
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-			return false;
-
-		}
+		reporterLog("Access to Shopping Page ...");
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForElementPresent(btnShoppingCart);
+		click(btnShoppingCart);
+		waitForElementPresent(textShoppingCart);
+		return isDisplayed(textShoppingCart);
 	}
 
 	/*
@@ -73,16 +60,12 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * seleccionar una requisición
 	 */
 	public void selectSpotRequisitionShoppingCart() throws InterruptedException {
-		try {
-			reporterLog("Select Requisition of Shopping Cart");
-			waitForElementPresent(checkRequisitionShoppingCart);
-			click(checkRequisitionShoppingCart);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			waitForElementPresent(btnSetupPurchase);
-			click(btnSetupPurchase);
-		} catch (TimeoutException e) {
-			e.printStackTrace();
-		}
+		reporterLog("Select Requisition of Shopping Cart");
+		waitForElementPresent(checkRequisitionShoppingCart);
+		click(checkRequisitionShoppingCart);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForElementPresent(btnSetupPurchase);
+		click(btnSetupPurchase);
 	}
 
 }

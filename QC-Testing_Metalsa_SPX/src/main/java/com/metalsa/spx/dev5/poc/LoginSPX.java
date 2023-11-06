@@ -16,7 +16,7 @@ public class LoginSPX extends SPXBase {
 	By txtUsername = By.id("formLogin:idUsuario");
 	By txtPassword = By.id("formLogin:pass");
 	By btnLogin = By.id("formLogin:btnForm");
-	
+
 	/*
 	 * @name: login
 	 * 
@@ -28,16 +28,15 @@ public class LoginSPX extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite capturar usuario y contraseña, así como dar click en el botón login
+	 * @description: Este metodo permite capturar usuario y contraseña, así como dar
+	 * click en el botón login
 	 */
 	public void login(String username, String password) throws InterruptedException {
 		reporterLog("Logging to SPX ...");
-		takeScreenshot("Login");
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnLogin);
 		type(txtUsername, getEncrypted(username));
 		type(txtPassword, getEncrypted(password));
 		click(btnLogin);
-		
 	}
 }

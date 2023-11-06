@@ -4,9 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.UUID;
 
 import javax.imageio.ImageIO;
-
 import org.apache.commons.codec.binary.Base64;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -14,13 +16,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
@@ -48,10 +50,16 @@ public class SPXBase {
 	 * Chrome y WebDriver
 	 */
 	public WebDriver chromeDriverConection() {
-		ChromeOptions chromeOpt = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver(chromeOpt);
-		return driver;
+		try {
+			ChromeOptions chromeOpt = new ChromeOptions();
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver(chromeOpt);
+			return driver;
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+			System.out.println("The connection was not made correctly...");
+			return null;
+		}
 	}
 
 	/*
@@ -75,6 +83,8 @@ public class SPXBase {
 			driver.manage().window().maximize();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println("Unable to access the url:");
+			System.out.println(url);
 		}
 	}
 
@@ -93,7 +103,12 @@ public class SPXBase {
 	 * testcase
 	 */
 	public void reporterLog(String log) {
-		Reporter.log(log);
+		try {
+			Reporter.log(log);
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+			System.out.println("The report was not made correctly...");
+		}
 	}
 
 	/*
@@ -112,9 +127,15 @@ public class SPXBase {
 	 * default
 	 */
 	public void waitForElementPresent(By locator) {
-		reporterLog("Wait for Element Present...");
-		WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		try {
+			reporterLog("Wait for Element Present...");
+			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			takeScreenshot("QC-Testing_" + date());
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+			System.out.println("The element" + locator + "is not present...");
+		}
 	}
 
 	/*
@@ -132,9 +153,15 @@ public class SPXBase {
 	 * hasta que se muestre el elemento requerido con un valor de segundos variable
 	 */
 	public void waitForElementPresent(By locator, int seconds) {
-		reporterLog("Wait for Element Present...");
-		WebDriverWait wait = new WebDriverWait(driver, seconds);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+		try {
+			reporterLog("Wait for Element Present...");
+			WebDriverWait wait = new WebDriverWait(driver, seconds);
+			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+			takeScreenshot("QC-Testing_" + date());
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+			System.out.println("The element" + locator + "is not present...");
+		}
 	}
 
 	/*
@@ -154,8 +181,10 @@ public class SPXBase {
 		try {
 			reporterLog("Input Text to Field");
 			driver.findElement(locator).sendKeys(inputText);
+			takeScreenshot("QC-Testing_" + date());
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println("It was not possible to capture data in the element: " + locator);
 		}
 
 	}
@@ -177,10 +206,36 @@ public class SPXBase {
 		try {
 			reporterLog("Click to Field or Button");
 			driver.findElement(locator).click();
+			takeScreenshot("QC-Testing_" + date());
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println("It was not possible to click on the item" + locator);
 		}
 
+	}
+
+	/*
+	 * @name: click
+	 * 
+	 * @date: 28/Oct/2023
+	 * 
+	 * @param: By locator
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite dar un click
+	 */
+	public String date() {
+		try {
+			String dateTime = DateTimeFormatter.ofPattern("MMM dd yyyy, hh mm ss a").format(LocalDateTime.now());
+			return dateTime;
+		} catch (NoSuchElementException e) {
+			e.printStackTrace();
+			System.out.println("It was not possible to generate the date...");
+			return null;
+		}
 	}
 
 	/*
@@ -201,14 +256,17 @@ public class SPXBase {
 		try {
 			if (driver.findElement(locator).isDisplayed()) {
 				reporterLog("Validate if Element is Displayed");
+				takeScreenshot("QC-Testing_" + date());
 				return driver.findElement(locator).isDisplayed();
 			} else {
-				System.out.println("The element " + locator + " is not found");
+				System.out.println("Element " + locator + " was not found...");
+				takeScreenshot("QC-Testing_" + date());
 				return driver.findElement(locator).isDisplayed();
 			}
 
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println("Element " + locator + " was not found...");
 			return false;
 		}
 	}
@@ -233,6 +291,7 @@ public class SPXBase {
 			driver.findElement(locator).sendKeys(absolutePath);
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println("It was not possible to upload the file...");
 		}
 	}
 
@@ -279,8 +338,14 @@ public class SPXBase {
 	 * @description: Este metodo permite decodificar un dato almacenado en el JSON
 	 */
 	public String getEncrypted(String encrypted) {
-		byte[] decodedBytes = Base64.decodeBase64(encrypted);
-		return new String(decodedBytes);
+		try {
+			byte[] decodedBytes = Base64.decodeBase64(encrypted);
+			return new String(decodedBytes);
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+			System.out.println("It was not possible to obtain the encryption...");
+			return null;
+		}
 	}
 
 	/*
@@ -297,9 +362,14 @@ public class SPXBase {
 	 * @description: Este metodo permite obtener el texto de un elemento
 	 */
 	public void getText(By locator) {
-		String nameProduct;
-		nameProduct = driver.findElement(locator).getText();
-		System.out.println("ID Requeriment SPOT is: " + nameProduct);
+		try {
+			String nameProduct;
+			nameProduct = driver.findElement(locator).getText();
+			System.out.println(nameProduct);
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+			System.out.println("No text found to display...");
+		}
 	}
 
 	/*
@@ -307,7 +377,7 @@ public class SPXBase {
 	 * 
 	 * @date: 02/Nov/2023
 	 * 
-	 * @param: By locator, String requiredField
+	 * @param: By locator
 	 * 
 	 * @return: N/A
 	 * 
@@ -315,13 +385,20 @@ public class SPXBase {
 	 * 
 	 * @description: Este metodo permite obtener el texto de un elemento
 	 */
-	public void requiredFields(By locator, String requiredField) {
-		reporterLog("Validate Required Fields...");
-		if (requiredField == "") {
-			System.out.println("The " + locator + " field is required and cannot be left empty");
-			driver.close();
-		} else {
-			System.out.println("The required field " + locator + " contains information ");
+	public void requiredFields(By locator) {
+		try {
+			reporterLog("Validate Required Fields...");
+
+			if (isElementNull(driver, locator)) {
+				reporterLog("The required field contains information... ");
+			} else {
+				displayElementName(driver, locator);
+				System.out.println("The" + locator + " field is mandatory and cannot be empty...");
+				driver.close();
+			}
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+			System.out.println("The" + locator + " field is mandatory and cannot be empty...");
 		}
 	}
 
@@ -343,11 +420,85 @@ public class SPXBase {
 			String pathFileName = GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + fileName + ".png";
 			Screenshot screenshot = new AShot().takeScreenshot(driver);
 			ImageIO.write(screenshot.getImage(), "PNG", new File(pathFileName));
-			System.out.println("I take a screeshot...");
 			return pathFileName;
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
+			System.out.println("I could not take the screenshot...");
 			return null;
 		}
+	}
+
+	/*
+	 * @name: isElementNull
+	 * 
+	 * @date: 03/Nov/2023
+	 * 
+	 * @param: WebDriver driver, By locator
+	 * 
+	 * @return: element != null
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite validar si un elemento es null o no
+	 */
+	public static boolean isElementNull(WebDriver driver, By locator) {
+		try {
+			WebElement element = driver.findElement(locator);
+			return element != null;
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			System.out.println("The" + locator + " is empty...");
+			return false;
+		}
+	}
+
+	/*
+	 * @name: displayElementName
+	 * 
+	 * @date: 03/Nov/2023
+	 * 
+	 * @param: WebDriver driver, By locator
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite mostrar el nombre de un elemento
+	 */
+	public static void displayElementName(WebDriver driver, By locator) {
+		try {
+			WebElement element = driver.findElement(locator);
+			String elementName = element.getAttribute("name");
+
+			if (elementName != null && !elementName.isEmpty()) {
+				System.out.println("Element Name: " + elementName);
+			} else {
+				System.out.println("Element" + locator + " does not have a name attribute.");
+			}
+		} catch (org.openqa.selenium.NoSuchElementException e) {
+			System.out.println("Element" + locator + " not found.");
+		}
+	}
+
+	/*
+	 * @name: generateRandomId
+	 * 
+	 * @date: 06/Nov/2023
+	 * 
+	 * @param:N/A
+	 * 
+	 * @return:randomId
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite generar un ID Random
+	 */
+	public static String generateRandomId() {
+		UUID uuid = UUID.randomUUID();
+		String randomId = uuid.toString();
+
+		// Remove any hyphens to get a valid HTML ID
+		randomId = randomId.replace("-", "");
+
+		return randomId;
 	}
 }

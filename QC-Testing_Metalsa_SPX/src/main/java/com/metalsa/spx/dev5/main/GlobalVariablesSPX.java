@@ -1,10 +1,10 @@
 package com.metalsa.spx.dev5.main;
 
 public class GlobalVariablesSPX {
-	public static final int DEFAULT_TIMEOUT = 20;
+	public static final int DEFAULT_TIMEOUT = 10;
 	public static final int SHORT_TIMEOUT = 3000;
-	public static final String SPX_DEV5_PATH_SCREENSHOTS = "C:\\\\Users\\\\fernando.villalba\\\\Documents\\\\files";
-	public static final String SPX_DEV5_PATH_FILES = System.getProperty("user.dir")+"/test-output/screenshots/";
+	public static final String SPX_DEV5_PATH_SCREENSHOTS = System.getProperty("user.dir")+"/test-output/screenshots/";
+	public static final String SPX_DEV5_PATH_FILES = "C:\\Users\\fernando.villalba\\Documents\\files\\DocumentoDePrueba.txt";
 
 	// Data Logging
 	public static final String PATH_JSON_DATA = "./src/test/resources/testDataSPX/json/";
@@ -13,7 +13,7 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:300000871351061']";
 
 	// Data Spot Buy Requisitions
-	public static final String SPX_DEV5_DESCRIPTION_SPOT_PAGE = "PRUEBA AUTOMATIZADA SPOT 001";
+	public static final String SPX_DEV5_DESCRIPTION_SPOT_PAGE = "PRUEBA AUTOMATIZADA SPOT";
 	public static final String SPX_DEV5_MATERIAL_SPOT_PAGE = "ORO";
 	public static final String SPX_DEV5_COLOR_SPOT_PAGE = "DORADO";
 	public static final String SPX_DEV5_BRAND_SPOT_PAGE = "STEREN";
@@ -29,7 +29,7 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE = "COMENTARIOS DE PRUEBA 001";
 	public static final String SPX_DEV5_SELECT_MONTH_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='10']";
 	public static final String SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='2023']";
-	public static final String SPX_DEV5_SELECT_DAY_NEED_BY_DATE_SPOT_PAGE = "//a[@class='ui-state-default'][@href='#'][text()='4']";
+	public static final String SPX_DEV5_SELECT_DAY_NEED_BY_DATE_SPOT_PAGE = "//a[@class='ui-state-default'][@href='#'][text()='28']";
 	public static final String SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE = "//li[contains(.,'"
 			+ GlobalVariablesSPX.SPX_DEV5_CATEGORY_SPOT_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE = "//li[contains(.,'"
