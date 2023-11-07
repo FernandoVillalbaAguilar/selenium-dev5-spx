@@ -243,5 +243,6 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 */
 	public void addNewLine() {
 		click(btnNewLine);
+		System.out.println("New Line");
 	}
 }
