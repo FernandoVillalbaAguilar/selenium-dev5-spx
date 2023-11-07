@@ -84,6 +84,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
 				subFamily, genericItem, unitOfMeasure);
 		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
+		spotBuyRequisitionsSPXPage.addtoCart();
 
 		// Step 8 - Select to Requisition
 		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
