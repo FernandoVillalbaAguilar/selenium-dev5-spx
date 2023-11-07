@@ -52,6 +52,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By btnChooseFiles = By.id("formSpot:fileUpload_input");
 	By btnAddToCart = By.id("formSpot:add-cart-btn");
 	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
+	By btnNewLine=By.id("formSpot:newLineButton");
 
 	/*
 	 * @name: textSpotBuyRequisitionsPageIsDisplayed
@@ -195,6 +196,21 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
 		type(txtCommentsToBuyer, commentsToBuyer);
 		uploadFile(pathFileSpot, btnChooseFiles);
+	}
+	/*
+	 * @name: addtoCart
+	 * 
+	 * @date: 06/Nov/2023
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite agregar la(s) línea(s)
+	 */
+	public void addtoCart() throws InterruptedException {
 		click(btnAddToCart);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		if (isDisplayed(textValidateSameLine)) {
@@ -210,5 +226,22 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		} else {
 			reporterLog("The Name Line is New");
 		}
+	}
+	
+	/*
+	 * @name: addNewLine
+	 * 
+	 * @date: 06/Nov/2023
+	 * 
+	 * @param: 
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite agregar una nueva linea
+	 */
+	public void addNewLine() {
+		click(btnNewLine);
 	}
 }
