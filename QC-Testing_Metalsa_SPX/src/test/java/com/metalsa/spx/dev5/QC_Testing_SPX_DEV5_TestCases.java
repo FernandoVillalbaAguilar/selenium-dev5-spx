@@ -42,6 +42,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 			pathFileSpot = GlobalVariablesSPX.SPX_DEV5_PATH_FILES,
 			commentsShoppingCart = GlobalVariablesSPX.SPX_DEV5_COMMENTS_SHOPPING_CART,
 			costCenter = GlobalVariablesSPX.SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE;
+
 	@BeforeTest
 	public void beforeTest() {
 		// Instanciar valores de conexión con Chrome
@@ -61,7 +62,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	}
 
 	@Test
-	public void tc001QCTestingSPXDev5CrearRequisicionSpot() throws InterruptedException {
+	public void tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC() throws InterruptedException {
 		// Step 1 - Launch Browser
 		spxBase.launchBrowser(url);
 
@@ -88,7 +89,96 @@ public class QC_Testing_SPX_DEV5_TestCases {
 
 		// Step 8 - Select to Requisition
 		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
-		shoppingCartSPXPage.selectSpotRequisitionShoppingCart();
+		shoppingCartSPXPage.CheckSpotRequisitionShoppingCart();
+		shoppingCartSPXPage.clickSetupPurchaseSpotRequisitionShoppingCart();
+
+		// Step 9 - Select Type Account For Requisition
+		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
+		accountConfigurationSPXPage.selectTypeAccountForRequisition(costCenter);
+
+		// Step 10 - Accept to Requisition
+		Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
+		previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage();
+	}
+
+	@Test
+	public void tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC() throws InterruptedException {
+		// Step 1 - Launch Browser
+		spxBase.launchBrowser(url);
+
+		// Step 2 - Enter user name and password and click to button "Enter"
+		loginSPXPage.login(username, password);
+
+		// Step 4 - Validate access to SPX
+		Assert.assertEquals(homeSPXPage.menuHeaderHomeIsDisplayed(), true);
+
+		// Step 5 - Select to UEN
+		homeSPXPage.selectToUenFromHome();
+
+		// Step 6 - Access to Spot Buy Requisitions
+		homeSPXPage.accesToSpotBuyRequisitions();
+		Assert.assertEquals(spotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(), true);
+
+		// Step 7 - Data Capture Spot Buy Requisition
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
+				measurements, modelPartNumber, genericName);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
+				subFamily, genericItem, unitOfMeasure);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
+
+		// Step 8 - Add new line and data capture second line
+		spotBuyRequisitionsSPXPage.addNewLine();
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
+				measurements, modelPartNumber, genericName);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
+				subFamily, genericItem, unitOfMeasure);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
+		spotBuyRequisitionsSPXPage.addtoCart();
+
+		// Step 9 - Select to Requisition
+		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
+		shoppingCartSPXPage.DoubleCheckSpotRequisitionShoppingCart();
+		shoppingCartSPXPage.clickSetupPurchaseSpotRequisitionShoppingCart();
+
+		// Step 10 - Select Type Account For Requisition
+		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
+		accountConfigurationSPXPage.selectTypeAccountForRequisition(costCenter);
+
+		// Step 11 - Accept to Requisition
+		Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
+		previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage();
+	}
+	
+	@Test
+	public void tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC() throws InterruptedException {
+		// Step 1 - Launch Browser
+		spxBase.launchBrowser(url);
+
+		// Step 2 - Enter username and password and click to button "Enter"
+		loginSPXPage.login(username, password);
+
+		// Step 4 - Validate access to SPX
+		Assert.assertEquals(homeSPXPage.menuHeaderHomeIsDisplayed(), true);
+
+		// Step 5 - Select to UEN
+		homeSPXPage.selectToUenFromHome();
+
+		// Step 6 - Access to Spot Buy Requisitions
+		homeSPXPage.accesToSpotBuyRequisitions();
+		Assert.assertEquals(spotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(), true);
+
+		// Step 7 - Data Capture Spot Buy Requisition
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
+				measurements, modelPartNumber, genericName);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
+				subFamily, genericItem, unitOfMeasure);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
+		spotBuyRequisitionsSPXPage.addtoCart();
+
+		// Step 8 - Select to Requisition
+		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
+		shoppingCartSPXPage.CheckSpotRequisitionShoppingCart();
+		shoppingCartSPXPage.clickSetupPurchaseSpotRequisitionShoppingCart();
 
 		// Step 9 - Select Type Account For Requisition
 		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);

@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
@@ -37,17 +38,25 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	By lblSelectBuyer = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:j_idt263_label");
 	By slctSelectBuyer = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE);
 	By btnCC = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
+			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
+	By btnCCNewLine = By.xpath(
+			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
 	By lblCostCenter = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]");
-	By txtCostCenter = By.xpath("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCC_filter");
+	By lblCostCenterNewLine = By.xpath(
+			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]");
+	By txtCostCenter = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCC_filter");
+	By txtCostCenterNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:cbmCC_filter");
 	By slctCostCenter = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE);
+	By slctCostCenterNewLine = By
+			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
 	By chkSegmentProduct = By.xpath("//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
 	By lblSelectAccount = By.xpath(
 			"//div[@class='cart-line__cuenta']//label[@class='ui-selectonemenu-label ui-inputfield ui-corner-all']");
 	By slctSelectAccount = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE);
 	By btnAddCC = By.id("formCarroCompras:carroCompra0:0:j_idt237");
 	By btnRequisition = By.id("formCarroCompras:crearRequiButton");
+	By scrollPage = By.xpath("//div[@id='lyoBdy']//div[@class='ui-layout-unit-content ui-widget-content']");
 
 	/*
 	 * @name: textAccountConfigurationPageIsDisplayed
@@ -64,6 +73,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 */
 	public boolean textAccountConfigurationPageIsDisplayed() {
 		reporterLog("Access to Account Configuration Page ...");
+		System.out.println(AccountConfigurationSPXPage.class.getName());
 		waitForElementPresent(txtAccountConfiguration);
 		return isDisplayed(txtAccountConfiguration);
 	}
@@ -85,15 +95,54 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	public void selectTypeAccountForRequisition(String costCenter) throws InterruptedException {
 
 		reporterLog("Select Type Account For Requisition ...");
+
 		click(btnCC);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblCostCenter);
 		click(lblCostCenter);
-//		waitForElementPresent(txtCostCenter);
-//		type(txtCostCenter, costCenter);
+//			waitForElementPresent(txtCostCenter);
+//			type(txtCostCenter, costCenter);
 		waitForElementPresent(slctCostCenter);
 		click(slctCostCenter);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		if (isDisplayed(btnCCNewLine)) {
+			// Second Line
+			scrollDown(btnCCNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			click(btnCCNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			waitForElementPresent(lblCostCenterNewLine);
+			click(lblCostCenterNewLine);
+			waitForElementPresent(txtCostCenterNewLine);
+			type(txtCostCenterNewLine, costCenter);
+			waitForElementPresent(slctCostCenterNewLine);
+			click(slctCostCenterNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			clickBtnRequisition();
+		} else {
+			System.out.println("I could not find the CC button on the second line...");
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			clickBtnRequisition();
+
+		}
+
+	}
+
+	/*
+	 * @name: clickBtnRequisition
+	 * 
+	 * @date: 07/Nov/2023
+	 * 
+	 * @param: String costCenter
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite verificar que el elemento está disponible
+	 */
+	public void clickBtnRequisition() throws InterruptedException {
+		reporterLog("Click to Requisition ...");
 		click(btnRequisition);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 	}

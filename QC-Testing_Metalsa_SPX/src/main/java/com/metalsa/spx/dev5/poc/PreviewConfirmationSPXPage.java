@@ -20,6 +20,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/i[1]");
 	By btnAccept = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[4]/button[1]/span[1]");
 	By txtRequisitionGenerate = By.id("formCarroCompras:j_idt413:0:j_idt418");
+	By txtDescription = By.id("formCarroCompras:j_idt413:0:j_idt448:0:panel_no_warning_content");
 
 	/*
 	 * @name: textPreviewConfirmationPageIsDisplayed
@@ -36,6 +37,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 */
 	public boolean textPreviewConfirmationPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Preview & Confirmation Page ...");
+		System.out.println(PreviewConfirmationSPXPage.class.getName());
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnAccept);
 		return isDisplayed(btnAccept);
@@ -59,8 +61,9 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 		click(btnAccept);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(txtRequisitionGenerate);
-		System.out.print("ID Requisition is: ");
+		System.out.print("Requisition generated with ID: ");
 		getText(txtRequisitionGenerate);
-
+		System.out.println("Description:");
+		getText(txtDescription);
 	}
 }

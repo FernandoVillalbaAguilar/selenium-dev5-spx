@@ -37,6 +37,7 @@ public class HomeSPX extends SPXBase {
 	 */
 	public boolean menuHeaderHomeIsDisplayed() {
 		reporterLog("Access to SPX ...");
+		System.out.println(HomeSPX.class.getName());
 		waitForElementPresent(iconMenu);
 		return isDisplayed(iconMenu);
 	}

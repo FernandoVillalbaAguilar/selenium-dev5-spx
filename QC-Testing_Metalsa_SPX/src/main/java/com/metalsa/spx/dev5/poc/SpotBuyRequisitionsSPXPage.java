@@ -15,7 +15,24 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	}
 
 	// Objects
+	// Header Objects
+	By btnBack = By.id("formSpot:j_idt327");
 	By spanSpotBuyRequisitionsPage = By.xpath("//span[@class='spx-card-header__title']");
+	By btnBulkLoad = By.id("formSpot:nwbtnCargaMasivaSpot");
+	By btnNewLine = By.id("formSpot:newLineButton");
+	By btnAddToCart = By.id("formSpot:add-cart-btn");
+	By lblGlobalSourcingRFQ = By.id("formSpot:listrfspxview_label");
+	By txtGlobalSourcingRFQ = By.id("formSpot:listrfspxview_filter");
+	By slctGlobalSourcingRFQ = By.id("");
+	
+	//Additional Header Parameters Objects
+	By chkProductServicereceivedwithoutrequisition = By.id("");
+	By chkIncludeSingleSourceFormat = By.id("");
+	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
+
+	// Line Header Objects
+
+	// First Section Objects
 	By txtDescription = By.id("formSpot:desc_1");
 	By txtMaterial = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[1]//div[2]//input[1]");
 	By txtColor = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[2]//div[2]//input[1]");
@@ -26,15 +43,21 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[2]/div[2]/input[1]");
 	By txtGenericName = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[3]/div[2]/input[1]");
+
+	// Second Section Objects
 	By lblCategory = By.id("formSpot:nwcboCategorias0_label");
 	By txtSearchCategory = By.id("formSpot:nwcboCategorias0_filter");
 	By selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
 	By lblFamily = By.id("formSpot:nwcboFamilias0_label");
 	By txtSearchFamily = By.id("formSpot:nwcboFamilias0_filter");
+	By txtSearchFamilyNewLine = By.id("formSpot:nwcboFamilias1_filter");
 	By selectOptionFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE);
+	By selectOptionFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE);
 	By lblSubFamily = By.id("formSpot:nwcboSubFamilias0_label");
 	By txtSearchSubFamily = By.id("formSpot:nwcboSubFamilias0_filter");
+	By txtSearchSubFamilyNewLine = By.id("formSpot:nwcboSubFamilias1_filter");
 	By selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE);
+	By selectOptionSubFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE);
 	By txtGenericItem = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[1]/fieldset[1]/div[1]/div[4]/div[1]/div[2]/input[1]");
 	By txtQuantity = By.id("formSpot:cantidadReq_input");
@@ -47,12 +70,11 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By clssYearNeedByDate = By.xpath("//select[@class='ui-datepicker-year']");
 	By selectYearNeedByDate = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE);
 	By selectDayNeedByDate = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_DAY_NEED_BY_DATE_SPOT_PAGE);
+
+	// Third Section Objects
 	By txtCommentsToBuyer = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]");
 	By btnChooseFiles = By.id("formSpot:fileUpload_input");
-	By btnAddToCart = By.id("formSpot:add-cart-btn");
-	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
-	By btnNewLine=By.id("formSpot:newLineButton");
 
 	/*
 	 * @name: textSpotBuyRequisitionsPageIsDisplayed
@@ -69,6 +91,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 */
 	public boolean textSpotBuyRequisitionsPageIsDisplayed() {
 		reporterLog("Access to Spot Buy Requisitions Page ...");
+		System.out.println(SpotBuyRequisitionsSPXPage.class.getName());
 		waitForElementPresent(spanSpotBuyRequisitionsPage);
 		return isDisplayed(spanSpotBuyRequisitionsPage);
 	}
@@ -91,7 +114,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	public void captureInformationSpotBuyRequisitionFirstSection(String description, String material, String color,
 			String Brand, String measurements, String modelPartNumber, String genericName) {
 		reporterLog("Capture Information to Spot Buy Requisitions First Section");
-		type(txtDescription, description);
+		String randomId = generateRandomId();
+		type(txtDescription, description + " WITH ID: " + randomId);
 		type(txtMaterial, material);
 		type(txtColor, color);
 		type(txtBrand, Brand);
@@ -132,18 +156,30 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		click(lblFamily);
 //		waitForElementPresent(txtSearchFamily);
 //		type(txtSearchFamily, family);
-		waitForElementPresent(selectOptionFamily);
-		click(selectOptionFamily);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		if (isDisplayed(selectOptionFamily)) {
+			waitForElementPresent(selectOptionFamily);
+			click(selectOptionFamily);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		} else {
+			waitForElementPresent(selectOptionFamilyNewLine);
+			click(selectOptionFamilyNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		}
 
 		// SubFamily
 		waitForElementPresent(lblSubFamily);
 		click(lblSubFamily);
 //		waitForElementPresent(txtSearchSubFamily);
 //		type(txtSearchSubFamily, subFamily);
-		waitForElementPresent(selectOptionSubFamily);
-		click(selectOptionSubFamily);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		if (isDisplayed(selectOptionSubFamily)) {
+			waitForElementPresent(selectOptionSubFamily);
+			click(selectOptionSubFamily);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		} else {
+			waitForElementPresent(selectOptionSubFamilyNewLine);
+			click(selectOptionSubFamilyNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		}
 
 		// Rest Fields
 		type(txtGenericItem, genericItem);
@@ -170,11 +206,23 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		click(selectDayNeedByDate);
 
 		// Required Fields Validate
-		requiredFields(txtSearchCategory);
-		requiredFields(txtSearchFamily);
-		requiredFields(txtSearchSubFamily);
-		requiredFields(txtQuantity);
-		requiredFields(txtSearchUnitOfMeasure);
+		if (isDisplayed(selectOptionSubFamilyNewLine)) {
+			requiredFields(txtSearchCategory);
+			requiredFields(txtSearchFamily);
+			requiredFields(txtSearchFamilyNewLine);
+			requiredFields(txtSearchSubFamily);
+			requiredFields(txtSearchSubFamilyNewLine);
+			requiredFields(fieldNeedByDate);
+			requiredFields(txtQuantity);
+			requiredFields(txtSearchUnitOfMeasure);
+		} else {
+			requiredFields(txtSearchCategory);
+			requiredFields(txtSearchFamily);
+			requiredFields(txtSearchSubFamily);
+			requiredFields(fieldNeedByDate);
+			requiredFields(txtQuantity);
+			requiredFields(txtSearchUnitOfMeasure);
+		}
 	}
 
 	/*
@@ -197,6 +245,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		type(txtCommentsToBuyer, commentsToBuyer);
 		uploadFile(pathFileSpot, btnChooseFiles);
 	}
+
 	/*
 	 * @name: addtoCart
 	 * 
@@ -218,22 +267,22 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			getText(textValidateSameLine);
 			String randomId = generateRandomId();
 			type(txtDescription, " WITH ID: " + randomId);
-			System.out.print("The name of requisition is ");
+			System.out.print("Create the requisition with the name: ");
 			getText(txtDescription);
-			System.out.println("WITH ID: " + randomId);
+			System.out.println(randomId);
 			click(btnAddToCart);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		} else {
 			reporterLog("The Name Line is New");
 		}
 	}
-	
+
 	/*
 	 * @name: addNewLine
 	 * 
 	 * @date: 06/Nov/2023
 	 * 
-	 * @param: 
+	 * @param:
 	 * 
 	 * @return: N/A
 	 * 
@@ -241,8 +290,26 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public void addNewLine() {
+	public void addNewLine() throws InterruptedException {
 		click(btnNewLine);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		System.out.println("New Line Add");
+	}
+
+	/*
+	 * @name: addNewLine
+	 * 
+	 * @date: 06/Nov/2023
+	 * 
+	 * @param:
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite agregar una nueva linea
+	 */
+	public void addFADToRequisition() {
+
 	}
 }

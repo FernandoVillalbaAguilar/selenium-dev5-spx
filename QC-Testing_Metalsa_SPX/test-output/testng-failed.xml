@@ -5,8 +5,8 @@
     <classes>
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
         <methods>
+          <include name="tc002QCTestingSPXDev5CrearLineasRequisicionSpot"/>
           <include name="beforeTest"/>
-          <include name="tc001QCTestingSPXDev5CrearRequisicionSpot"/>
           <include name="afterTest"/>
         </methods>
       </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases -->

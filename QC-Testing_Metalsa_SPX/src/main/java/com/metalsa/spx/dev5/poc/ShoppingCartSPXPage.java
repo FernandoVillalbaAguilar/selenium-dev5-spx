@@ -18,6 +18,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	By textShoppingCart = By.xpath("//div[@class='carro-compras-steps--name']");
 	By btnShoppingCart = By.id("spxBusquedaMenu:btn-ir-carro-compra");
 	By checkRequisitionShoppingCart = By.id("formCarroCompras:carroCompra0:0:simpleCheck0");
+	By checkRequisitionShoppingCartNewLine = By.id("formCarroCompras:carroCompra0:1:simpleCheck0");
 	By txtCommentsShoppingCart = By.id("formCarroCompras:carroCompra0:0:txtObservaciones");
 	By btnSetupPurchase = By.xpath(
 			"//div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']");
@@ -38,6 +39,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 */
 	public boolean textShoppingCartPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Shopping Page ...");
+		System.out.println(ShoppingCartSPXPage.class.getName());
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnShoppingCart);
 		click(btnShoppingCart);
@@ -46,7 +48,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	}
 
 	/*
-	 * @name: selectRequisitionShoppingCart
+	 * @name: clickSetupPurchaseSpotRequisitionShoppingCart
 	 * 
 	 * @date: 28/Oct/2023
 	 * 
@@ -59,13 +61,53 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite ingresar al carrito de compras y
 	 * seleccionar una requisición
 	 */
-	public void selectSpotRequisitionShoppingCart() throws InterruptedException {
+	public void clickSetupPurchaseSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Select Requisition of Shopping Cart");
-		waitForElementPresent(checkRequisitionShoppingCart);
-		click(checkRequisitionShoppingCart);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnSetupPurchase);
 		click(btnSetupPurchase);
 	}
 
+	/*
+	 * @name: CheckSpotRequisitionShoppingCart
+	 * 
+	 * @date: 28/Oct/2023
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite ingresar al carrito de compras y
+	 * seleccionar una requisición
+	 */
+	public void CheckSpotRequisitionShoppingCart() throws InterruptedException {
+		reporterLog("Check Requisition of Shopping Cart");
+		waitForElementPresent(checkRequisitionShoppingCart);
+		click(checkRequisitionShoppingCart);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+	}
+
+	/*
+	 * @name: CheckSpotRequisitionShoppingCart
+	 * 
+	 * @date: 28/Oct/2023
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite ingresar al carrito de compras y
+	 * seleccionar una requisición
+	 */
+	public void DoubleCheckSpotRequisitionShoppingCart() throws InterruptedException {
+		reporterLog("Check Requisition of Shopping Cart");
+		waitForElementPresent(checkRequisitionShoppingCart);
+		click(checkRequisitionShoppingCart);
+		waitForElementPresent(checkRequisitionShoppingCartNewLine);
+		click(checkRequisitionShoppingCartNewLine);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+	}
 }

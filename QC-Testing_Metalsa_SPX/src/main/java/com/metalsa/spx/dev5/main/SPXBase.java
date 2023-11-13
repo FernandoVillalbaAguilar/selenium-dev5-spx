@@ -13,6 +13,7 @@ import org.apache.commons.codec.binary.Base64;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
@@ -500,5 +501,28 @@ public class SPXBase {
 		randomId = randomId.replace("-", "");
 
 		return randomId;
+	}
+
+	/*
+	 * @name: scrollDown
+	 * 
+	 * @date: 07/Nov/2023
+	 * 
+	 * @param:int pixels
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Scroll down the webpage to a specified pixel position
+	 */
+	public void scrollDown(By locator) {
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			WebElement flag = driver.findElement(locator);
+			js.executeScript("arguments[0].scrollIntoView();", flag);
+		} catch (Exception e) {
+			System.out.println("No realice Scroll. " + e.getMessage());
+		}
 	}
 }
