@@ -437,7 +437,7 @@ public class SPXBase {
 	 * 
 	 * @description: Este metodo permite tomar una captura de pantalla y guardar en un documento de word
 	 */
-	public String takeScreenshot(String fileName) {
+	public String takeScreenshotX(String fileName) {
 		try {
 			String pathFileName = GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + fileName + ".png";
 			Screenshot screenshot = new AShot().takeScreenshot(driver);
@@ -463,7 +463,7 @@ public class SPXBase {
 	 * 
 	 * @description: Este metodo permite tomar una captura de pantalla y guardar en un documento de word
 	 */
-	public String takeScreenshotAndSavedWord(String fileName) {
+	public String takeScreenshot(String fileName) {
 		try {
 
 			// Take screenshot
