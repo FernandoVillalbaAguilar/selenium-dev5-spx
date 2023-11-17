@@ -1,9 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
@@ -24,13 +22,17 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By lblGlobalSourcingRFQ = By.id("formSpot:listrfspxview_label");
 	By txtGlobalSourcingRFQ = By.id("formSpot:listrfspxview_filter");
 	By slctGlobalSourcingRFQ = By.id("");
-	
-	//Additional Header Parameters Objects
+
+	// Additional Header Parameters Objects
 	By chkProductServicereceivedwithoutrequisition = By.id("");
-	By chkIncludeSingleSourceFormat = By.id("");
+	By chkIncludeSingleSourceFormat = By.xpath(
+			"//div[@id='formSpot:formatoAsignacionDirecta']//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
 	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
 
 	// Line Header Objects
+	By chkLine = By.xpath("");
+	By btnExpanColapse = By.xpath("");
+	By btnDeleteLine = By.xpath("");
 
 	// First Section Objects
 	By txtDescription = By.id("formSpot:desc_1");
@@ -70,6 +72,10 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By clssYearNeedByDate = By.xpath("//select[@class='ui-datepicker-year']");
 	By selectYearNeedByDate = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE);
 	By selectDayNeedByDate = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_DAY_NEED_BY_DATE_SPOT_PAGE);
+	// Check Urgent
+	By chkUrgent = By.id("formSpot:checkUrgente");
+	By lblReasonUrgent = By.id("formSpot:razonUrg_label");
+	By slctReasonUrgent = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE);
 
 	// Third Section Objects
 	By txtCommentsToBuyer = By.xpath(
@@ -91,7 +97,6 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 */
 	public boolean textSpotBuyRequisitionsPageIsDisplayed() {
 		reporterLog("Access to Spot Buy Requisitions Page ...");
-		System.out.println(SpotBuyRequisitionsSPXPage.class.getName());
 		waitForElementPresent(spanSpotBuyRequisitionsPage);
 		return isDisplayed(spanSpotBuyRequisitionsPage);
 	}
@@ -309,7 +314,31 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public void addFADToRequisition() {
+	public void addFADToRequisition() throws InterruptedException {
+		waitForElementPresent(chkIncludeSingleSourceFormat);
+		click(chkIncludeSingleSourceFormat);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+	}
 
+	/*
+	 * @name: addNewLine
+	 * 
+	 * @date: 06/Nov/2023
+	 * 
+	 * @param:
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite agregar una nueva linea
+	 */
+	public void checkUrgent() throws InterruptedException {
+		click(chkUrgent);
+		waitForElementPresent(lblReasonUrgent);
+		click(lblReasonUrgent);
+		waitForElementPresent(slctReasonUrgent);
+		click(slctReasonUrgent);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 	}
 }

@@ -1,9 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
@@ -73,13 +71,12 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 */
 	public boolean textAccountConfigurationPageIsDisplayed() {
 		reporterLog("Access to Account Configuration Page ...");
-		System.out.println(AccountConfigurationSPXPage.class.getName());
 		waitForElementPresent(txtAccountConfiguration);
 		return isDisplayed(txtAccountConfiguration);
 	}
 
 	/*
-	 * @name: textAccountConfigurationPageIsDisplayed
+	 * @name: selectTypeAccountForRequisition
 	 * 
 	 * @date: 30/Oct/2023
 	 * 

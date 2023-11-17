@@ -1,7 +1,6 @@
 package com.metalsa.spx.dev5.poc;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
@@ -37,7 +36,6 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 */
 	public boolean textPreviewConfirmationPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Preview & Confirmation Page ...");
-		System.out.println(PreviewConfirmationSPXPage.class.getName());
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnAccept);
 		return isDisplayed(btnAccept);

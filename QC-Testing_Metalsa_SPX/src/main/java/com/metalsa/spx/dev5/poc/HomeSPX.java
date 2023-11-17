@@ -1,7 +1,6 @@
 package com.metalsa.spx.dev5.poc;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
@@ -37,7 +36,6 @@ public class HomeSPX extends SPXBase {
 	 */
 	public boolean menuHeaderHomeIsDisplayed() {
 		reporterLog("Access to SPX ...");
-		System.out.println(HomeSPX.class.getName());
 		waitForElementPresent(iconMenu);
 		return isDisplayed(iconMenu);
 	}

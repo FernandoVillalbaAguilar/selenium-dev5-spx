@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse--1962548549\testng-customsuite.xml</span>
+                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-788319848\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,16 +100,6 @@
                       <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
                     <div class="method-list-content passed suite-Default_suite">
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases" class="method navigator-link" hash-for-method="tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC">tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases" class="method navigator-link" hash-for-method="tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC">tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases" class="method navigator-link" hash-for-method="tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC">tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC</a> <!-- method navigator-link -->
@@ -135,20 +125,6 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC">
-                  </a> <!-- tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC -->
-                  <span class="method-name">tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC">
-                  </a> <!-- tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC -->
-                  <span class="method-name">tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
                   <a name="tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC">
                   </a> <!-- tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC -->
                   <span class="method-name">tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC</span>
@@ -159,7 +135,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse--1962548549\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-788319848\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -168,7 +144,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases&quot;/&gt;
+      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -208,24 +188,16 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC')
+data.setCell(0, 1, 'tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC')
 data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases')
-data.setCell(0, 3, 171441);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC')
-data.setCell(1, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases')
-data.setCell(1, 3, 118415);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC')
-data.setCell(2, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases')
-data.setCell(2, 3, 115342);
+data.setCell(0, 3, 114288);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 6 minutes</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -236,123 +208,6 @@ return data;
             <span class="header-content">Reporter output for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv</span>
-                <span class="reporter-method-output">Logging to SPX ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to SPX ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions First Section</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Second Section</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Third Section</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">The Name Line is New</span>
-                <span class="reporter-method-output">Access to Shopping Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Check Requisition of Shopping Cart</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Select Requisition of Shopping Cart</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Account Configuration Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Select Type Account For Requisition ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Requisition ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Preview & Confirmation Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Accept to Requisition</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
             <div class="reporter-method-div">
               <span class="reporter-method-name">tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC</span>
               <div class="reporter-method-output-div">
@@ -380,6 +235,24 @@ return data;
                 <span class="reporter-method-output">Access to Spot Buy Requisitions Page ...</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Validate if Element is Displayed</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Access to Single Source Format Page ...</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Validate if Element is Displayed</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Capture Information to Spot Buy Requisitions First Section</span>
                 <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Input Text to Field</span>
@@ -458,190 +331,6 @@ return data;
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Requisition ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Preview & Confirmation Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Accept to Requisition</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-              </div> <!-- reporter-method-output-div -->
-            </div> <!-- reporter-method-div -->
-            <div class="reporter-method-div">
-              <span class="reporter-method-name">tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC</span>
-              <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv</span>
-                <span class="reporter-method-output">Logging to SPX ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to SPX ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions First Section</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Second Section</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Third Section</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions First Section</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Second Section</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Validate Required Fields...</span>
-                <span class="reporter-method-output">The required field contains information... </span>
-                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Third Section</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">The Name Line is New</span>
-                <span class="reporter-method-output">Access to Shopping Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Check Requisition of Shopping Cart</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Select Requisition of Shopping Cart</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Account Configuration Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Select Type Account For Requisition ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Click to Requisition ...</span>
@@ -658,9 +347,20 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">3 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC</span>
+                <br/>
+                <span class="ignored-method-name">tc004QCTestingSPXDev5CrearRequisicionSpotTipoCobroCCUrgent</span>
+                <br/>
+                <span class="ignored-method-name">tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -675,20 +375,12 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">tc001QCTestingSPXDev5CrearRequisicionSpotTipoCobroCC</span>
-                <span class="method-start">4634 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">tc002QCTestingSPXDev5CrearNuevaLineasRequisicionSpotTipoCobroCC</span>
-                <span class="method-start">123053 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
                 <span class="method-name">tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC</span>
-                <span class="method-start">294496 ms</span>
+                <span class="method-start">2407 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">409842 ms</span>
+                <span class="method-start">116698 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

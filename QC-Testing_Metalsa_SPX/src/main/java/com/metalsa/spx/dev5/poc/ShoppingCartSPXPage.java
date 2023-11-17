@@ -1,9 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
@@ -39,7 +37,6 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 */
 	public boolean textShoppingCartPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Shopping Page ...");
-		System.out.println(ShoppingCartSPXPage.class.getName());
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnShoppingCart);
 		click(btnShoppingCart);

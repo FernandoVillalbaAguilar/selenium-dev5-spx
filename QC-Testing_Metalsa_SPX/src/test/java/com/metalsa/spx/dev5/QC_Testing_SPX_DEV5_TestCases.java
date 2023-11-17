@@ -1,5 +1,6 @@
 package com.metalsa.spx.dev5;
 
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -13,6 +14,7 @@ import com.metalsa.spx.dev5.poc.HomeSPX;
 import com.metalsa.spx.dev5.poc.LoginSPX;
 import com.metalsa.spx.dev5.poc.PreviewConfirmationSPXPage;
 import com.metalsa.spx.dev5.poc.ShoppingCartSPXPage;
+import com.metalsa.spx.dev5.poc.SingleSourceFormatSPXPage;
 import com.metalsa.spx.dev5.poc.SpotBuyRequisitionsSPXPage;
 
 public class QC_Testing_SPX_DEV5_TestCases {
@@ -24,6 +26,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	ShoppingCartSPXPage shoppingCartSPXPage;
 	AccountConfigurationSPXPage accountConfigurationSPXPage;
 	PreviewConfirmationSPXPage previewConfirmationSPXPage;
+	SingleSourceFormatSPXPage singleSourceFormatSPXPage;
 
 	// TestDataCalling
 	String url, username, password, description = GlobalVariablesSPX.SPX_DEV5_DESCRIPTION_SPOT_PAGE,
@@ -41,7 +44,10 @@ public class QC_Testing_SPX_DEV5_TestCases {
 			commentsToBuyer = GlobalVariablesSPX.SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE,
 			pathFileSpot = GlobalVariablesSPX.SPX_DEV5_PATH_FILES,
 			commentsShoppingCart = GlobalVariablesSPX.SPX_DEV5_COMMENTS_SHOPPING_CART,
-			costCenter = GlobalVariablesSPX.SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE;
+			costCenter = GlobalVariablesSPX.SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE,
+			descriptionFAD = GlobalVariablesSPX.DESCRIPTION_FAD, supplierNameFAD = GlobalVariablesSPX.SUPPLIER_NAME_FAD,
+			amountFAD = GlobalVariablesSPX.AMOUNT_FAD, detailsFAD = GlobalVariablesSPX.AMOUNT_FAD,
+			commentsFAD = GlobalVariablesSPX.COMMENTS_FAD;
 
 	@BeforeTest
 	public void beforeTest() {
@@ -54,6 +60,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		shoppingCartSPXPage = new ShoppingCartSPXPage(driver);
 		accountConfigurationSPXPage = new AccountConfigurationSPXPage(driver);
 		previewConfirmationSPXPage = new PreviewConfirmationSPXPage(driver);
+		singleSourceFormatSPXPage = new SingleSourceFormatSPXPage(driver);
 
 		// Test Data
 		this.username = spxBase.getJSONValue("TestDataLoginSPX", "username");
@@ -148,9 +155,56 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
 		previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage();
 	}
-	
+
 	@Test
 	public void tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC() throws InterruptedException {
+		// Step 1 - Launch Browser
+		spxBase.launchBrowser(url);
+
+		// Step 2 - Enter username and password and click to button "Enter"
+		loginSPXPage.login(username, password);
+
+		// Step 4 - Validate access to SPX
+		Assert.assertEquals(homeSPXPage.menuHeaderHomeIsDisplayed(), true);
+
+		// Step 5 - Select to UEN
+		homeSPXPage.selectToUenFromHome();
+
+		// Step 6 - Access to Spot Buy Requisitions
+		homeSPXPage.accesToSpotBuyRequisitions();
+		Assert.assertEquals(spotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(), true);
+
+		// Step 7 - Add FAD to Requisition
+		spotBuyRequisitionsSPXPage.addFADToRequisition();
+		singleSourceFormatSPXPage.textSingleSourceFormatPageIsDisplayed();
+		singleSourceFormatSPXPage.captureDataSingleSourceFormat(descriptionFAD, supplierNameFAD, amountFAD, detailsFAD,
+				commentsFAD, pathFileSpot);
+		singleSourceFormatSPXPage.clickSave();
+
+		// Step 8 - Data Capture Spot Buy Requisition
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
+				measurements, modelPartNumber, genericName);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
+				subFamily, genericItem, unitOfMeasure);
+		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
+		spotBuyRequisitionsSPXPage.addtoCart();
+
+		// Step 9 - Select to Requisition
+		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
+		shoppingCartSPXPage.CheckSpotRequisitionShoppingCart();
+		shoppingCartSPXPage.clickSetupPurchaseSpotRequisitionShoppingCart();
+
+		// Step 10 - Select Type Account For Requisition
+		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
+		accountConfigurationSPXPage.selectTypeAccountForRequisition(costCenter);
+
+		// Step 11 - Accept to Requisition
+		Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
+		previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage();
+	}
+	
+	@Test
+	public void tc004QCTestingSPXDev5CrearRequisicionSpotTipoCobroCCUrgent() throws InterruptedException, InvalidFormatException {
 		// Step 1 - Launch Browser
 		spxBase.launchBrowser(url);
 
@@ -173,6 +227,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(quantity, category, family,
 				subFamily, genericItem, unitOfMeasure);
 		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot);
+		spotBuyRequisitionsSPXPage.checkUrgent();
 		spotBuyRequisitionsSPXPage.addtoCart();
 
 		// Step 8 - Select to Requisition

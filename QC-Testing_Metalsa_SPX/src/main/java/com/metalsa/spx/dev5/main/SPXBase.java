@@ -3,27 +3,35 @@ package com.metalsa.spx.dev5.main;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.UUID;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import javax.imageio.ImageIO;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.poi.util.Units;
+import org.apache.poi.xwpf.usermodel.Document;
+import org.apache.poi.xwpf.usermodel.XWPFDocument;
+import org.apache.poi.xwpf.usermodel.XWPFParagraph;
+import org.apache.poi.xwpf.usermodel.XWPFPicture;
+import org.apache.poi.xwpf.usermodel.XWPFRun;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
@@ -58,6 +66,7 @@ public class SPXBase {
 			return driver;
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("The connection was not made correctly...");
 			return null;
 		}
@@ -84,6 +93,7 @@ public class SPXBase {
 			driver.manage().window().maximize();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("Unable to access the url:");
 			System.out.println(url);
 		}
@@ -108,6 +118,7 @@ public class SPXBase {
 			Reporter.log(log);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("The report was not made correctly...");
 		}
 	}
@@ -135,6 +146,7 @@ public class SPXBase {
 			takeScreenshot("QC-Testing_" + date());
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("The element" + locator + "is not present...");
 		}
 	}
@@ -161,6 +173,7 @@ public class SPXBase {
 			takeScreenshot("QC-Testing_" + date());
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("The element" + locator + "is not present...");
 		}
 	}
@@ -185,6 +198,7 @@ public class SPXBase {
 			takeScreenshot("QC-Testing_" + date());
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("It was not possible to capture data in the element: " + locator);
 		}
 
@@ -210,23 +224,24 @@ public class SPXBase {
 			takeScreenshot("QC-Testing_" + date());
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
-			System.out.println("It was not possible to click on the item" + locator);
+			System.out.println(this.getClass().getName());
+			System.out.println("It was not possible to click on the item: " + locator + " because" + e);
 		}
 
 	}
 
 	/*
-	 * @name: click
+	 * @name: date
 	 * 
 	 * @date: 28/Oct/2023
 	 * 
-	 * @param: By locator
+	 * @param: N/A
 	 * 
 	 * @return: N/A
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite dar un click
+	 * @description: Este metodo permite dar la fecha y hora actuales
 	 */
 	public String date() {
 		try {
@@ -234,6 +249,7 @@ public class SPXBase {
 			return dateTime;
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("It was not possible to generate the date...");
 			return null;
 		}
@@ -260,6 +276,7 @@ public class SPXBase {
 				takeScreenshot("QC-Testing_" + date());
 				return driver.findElement(locator).isDisplayed();
 			} else {
+				System.out.println(this.getClass().getName());
 				System.out.println("Element " + locator + " was not found...");
 				takeScreenshot("QC-Testing_" + date());
 				return driver.findElement(locator).isDisplayed();
@@ -267,6 +284,7 @@ public class SPXBase {
 
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("Element " + locator + " was not found...");
 			return false;
 		}
@@ -292,6 +310,7 @@ public class SPXBase {
 			driver.findElement(locator).sendKeys(absolutePath);
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("It was not possible to upload the file...");
 		}
 	}
@@ -369,6 +388,7 @@ public class SPXBase {
 			System.out.println(nameProduct);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("No text found to display...");
 		}
 	}
@@ -393,18 +413,19 @@ public class SPXBase {
 			if (isElementNull(driver, locator)) {
 				reporterLog("The required field contains information... ");
 			} else {
+				System.out.println(this.getClass().getName());
 				displayElementName(driver, locator);
 				System.out.println("The" + locator + " field is mandatory and cannot be empty...");
 				driver.close();
 			}
 		} catch (TimeoutException e) {
 			e.printStackTrace();
+			System.out.println(this.getClass().getName());
 			System.out.println("The" + locator + " field is mandatory and cannot be empty...");
 		}
 	}
-
 	/*
-	 * @name: takeScreenshot
+	 * @name: takeScreenshotAndSavedWord
 	 * 
 	 * @date: 02/Nov/2023
 	 * 
@@ -414,7 +435,7 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite obtener el texto de un elemento
+	 * @description: Este metodo permite tomar una captura de pantalla y guardar en un documento de word
 	 */
 	public String takeScreenshot(String fileName) {
 		try {
@@ -423,9 +444,59 @@ public class SPXBase {
 			ImageIO.write(screenshot.getImage(), "PNG", new File(pathFileName));
 			return pathFileName;
 		} catch (Exception e) {
+			System.out.println(this.getClass().getName());
 			System.out.println(e.getMessage());
 			System.out.println("I could not take the screenshot...");
 			return null;
+		}
+	}
+	/*
+	 * @name: takeScreenshotAndSavedWord
+	 * 
+	 * @date: 02/Nov/2023
+	 * 
+	 * @param: By locator, String requiredField
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite tomar una captura de pantalla y guardar en un documento de word
+	 */
+	public String takeScreenshotAndSavedWord(String fileName) {
+		try {
+
+			// Take screenshot
+			Screenshot screenshot = new AShot().takeScreenshot(driver);
+
+			// Save screenshot as PNG file
+			String pathFileName = GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + fileName + ".png";
+			ImageIO.write(screenshot.getImage(), "PNG", new File(pathFileName));
+			
+			// Save screenshot in Word document
+	        String wordFileName = GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + fileName + ".docx";
+
+	        try (XWPFDocument document = new XWPFDocument();
+	             FileInputStream fis = new FileInputStream(pathFileName);
+	             FileOutputStream fos = new FileOutputStream(wordFileName)) {
+
+	            XWPFParagraph paragraph = document.createParagraph();
+	            XWPFRun run = paragraph.createRun();
+
+	            XWPFPicture picture = run.addPicture(fis, Document.PICTURE_TYPE_PNG, "screenshot.png", Units.toEMU(300), Units.toEMU(200));
+	            String relationId = document.addPictureData(fis, Document.PICTURE_TYPE_PNG);
+	            picture.getCTPicture().getBlipFill().getBlip().setEmbed(relationId);
+
+	            // Save Word document
+	            document.write(fos);
+	        }
+		        
+			return wordFileName;
+		} catch (Exception e) {
+			 System.out.println(this.getClass().getName());
+		        System.out.println(e.getMessage());
+		        System.out.println("I could not take the screenshot and save in Word document...");
+		        return null;
 		}
 	}
 
@@ -522,7 +593,9 @@ public class SPXBase {
 			WebElement flag = driver.findElement(locator);
 			js.executeScript("arguments[0].scrollIntoView();", flag);
 		} catch (Exception e) {
+			System.out.println(this.getClass().getName());
 			System.out.println("No realice Scroll. " + e.getMessage());
 		}
 	}
+
 }
