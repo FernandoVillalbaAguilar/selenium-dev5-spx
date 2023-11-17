@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1182364542\testng-customsuite.xml</span>
+                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1760685117\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -128,16 +128,15 @@
                   <a name="tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC">
                   </a> <!-- tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC -->
                   <span class="method-name">tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=119.0.6045.159)
+                  <div class="stack-trace">org.openqa.selenium.NoSuchSessionException: invalid session id
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;APLXFVILLALVAO&apos;, ip: &apos;10.32.26.209&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59694}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 346312a019d6ff387c37161573605154
-*** Element info: {Using=xpath, value=//span[@class=&apos;spx-card-header__title&apos;]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62835}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e601b53922a85aaed0673a413e3a5ec7
+*** Element info: {Using=id, value=formLogin:idUsuario}
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -148,12 +147,12 @@ Session ID: 346312a019d6ff387c37161573605154
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.metalsa.spx.dev5.main.SPXBase.isDisplayed(SPXBase.java:274)
-	at com.metalsa.spx.dev5.poc.SpotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(SpotBuyRequisitionsSPXPage.java:101)
-	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases.tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC(QC_Testing_SPX_DEV5_TestCases.java:175)
+	at com.metalsa.spx.dev5.main.SPXBase.type(SPXBase.java:203)
+	at com.metalsa.spx.dev5.poc.LoginSPX.login(LoginSPX.java:41)
+	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases.tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC(QC_Testing_SPX_DEV5_TestCases.java:165)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -188,7 +187,7 @@ Session ID: 346312a019d6ff387c37161573605154
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1182364542\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1760685117\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -245,12 +244,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC')
 data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases')
-data.setCell(0, 3, 43398);
+data.setCell(0, 3, 9959);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 43 seconds</span>
+              <span class="suite-total-time">Total running time: 9 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -268,25 +267,6 @@ return data;
                 <span class="reporter-method-output">Logging to SPX ...</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to SPX ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Access to Spot Buy Requisitions Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -324,13 +304,13 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC</span>
-                <span class="method-start">3085 ms</span>
+                <span class="method-start">3429 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">afterTest</span>
-                <span class="method-start">46490 ms</span>
+                <span class="method-start">13402 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

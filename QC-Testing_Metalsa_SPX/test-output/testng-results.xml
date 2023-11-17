@@ -13,97 +13,37 @@
     <line>
       <![CDATA[Input Text to Field]]>
     </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Access to SPX ...]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Validate if Element is Displayed]]>
-    </line>
-    <line>
-      <![CDATA[Access to Spot Buy Requisitions ...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Access to Spot Buy Requisitions ...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Access to Spot Buy Requisitions Page ...]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
   </reporter-output>
-  <suite started-at="2023-11-17T19:38:30Z" name="Default suite" finished-at="2023-11-17T19:39:16Z" duration-ms="46512">
+  <suite started-at="2023-11-17T20:54:55Z" name="Default suite" finished-at="2023-11-17T20:55:08Z" duration-ms="13506">
     <groups>
     </groups>
-    <test started-at="2023-11-17T19:38:30Z" name="Default test" finished-at="2023-11-17T19:39:16Z" duration-ms="46512">
+    <test started-at="2023-11-17T20:54:55Z" name="Default test" finished-at="2023-11-17T20:55:08Z" duration-ms="13506">
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@38b27cdc]" started-at="2023-11-17T19:38:30Z" name="beforeTest" finished-at="2023-11-17T19:38:33Z" duration-ms="3062" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@74bf1791]" started-at="2023-11-17T20:54:55Z" name="beforeTest" finished-at="2023-11-17T20:54:58Z" duration-ms="3372" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@38b27cdc]" started-at="2023-11-17T19:38:33Z" name="tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC" finished-at="2023-11-17T19:39:16Z" duration-ms="43398" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
+        <test-method signature="tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@74bf1791]" started-at="2023-11-17T20:54:58Z" name="tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC" finished-at="2023-11-17T20:55:08Z" duration-ms="9959" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=119.0.6045.159)
+              <![CDATA[invalid session id
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'APLXFVILLALVAO', ip: '10.32.26.209', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59694}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 346312a019d6ff387c37161573605154
-*** Element info: {Using=xpath, value=//span[@class='spx-card-header__title']}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62835}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e601b53922a85aaed0673a413e3a5ec7
+*** Element info: {Using=id, value=formLogin:idUsuario}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=119.0.6045.159)
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'APLXFVILLALVAO', ip: '10.32.26.209', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59694}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 346312a019d6ff387c37161573605154
-*** Element info: {Using=xpath, value=//span[@class='spx-card-header__title']}
-at jdk.internal.reflect.GeneratedConstructorAccessor24.newInstance(Unknown Source)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62835}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e601b53922a85aaed0673a413e3a5ec7
+*** Element info: {Using=id, value=formLogin:idUsuario}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -114,12 +54,12 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.metalsa.spx.dev5.main.SPXBase.isDisplayed(SPXBase.java:274)
-at com.metalsa.spx.dev5.poc.SpotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(SpotBuyRequisitionsSPXPage.java:101)
-at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases.tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC(QC_Testing_SPX_DEV5_TestCases.java:175)
+at com.metalsa.spx.dev5.main.SPXBase.type(SPXBase.java:203)
+at com.metalsa.spx.dev5.poc.LoginSPX.login(LoginSPX.java:41)
+at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases.tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC(QC_Testing_SPX_DEV5_TestCases.java:165)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -147,7 +87,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
             <line>
               <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
@@ -161,86 +101,25 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             <line>
               <![CDATA[Input Text to Field]]>
             </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Access to SPX ...]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Validate if Element is Displayed]]>
-            </line>
-            <line>
-              <![CDATA[Access to Spot Buy Requisitions ...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Access to Spot Buy Requisitions ...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Access to Spot Buy Requisitions Page ...]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
           </reporter-output>
         </test-method> <!-- tc003QCTestingSPXDev5CrearRequisicionSpotConFADTipoCobroCC -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@38b27cdc]" started-at="2023-11-17T19:39:16Z" name="afterTest" finished-at="2023-11-17T19:39:16Z" duration-ms="15" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@74bf1791]" started-at="2023-11-17T20:55:08Z" name="afterTest" finished-at="2023-11-17T20:55:08Z" duration-ms="97" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
             <message>
-              <![CDATA[disconnected: not connected to DevTools
-  (failed to check if window was closed: disconnected: not connected to DevTools)
-  (Session info: chrome=119.0.6045.159)
+              <![CDATA[invalid session id
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'APLXFVILLALVAO', ip: '10.32.26.209', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59694}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 346312a019d6ff387c37161573605154]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62835}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e601b53922a85aaed0673a413e3a5ec7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
-  (failed to check if window was closed: disconnected: not connected to DevTools)
-  (Session info: chrome=119.0.6045.159)
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'APLXFVILLALVAO', ip: '10.32.26.209', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59694}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 346312a019d6ff387c37161573605154
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.159, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62835}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e601b53922a85aaed0673a413e3a5ec7
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -281,7 +160,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
