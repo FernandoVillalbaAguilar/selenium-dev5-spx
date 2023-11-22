@@ -1,6 +1,5 @@
 package com.metalsa.spx.dev5.poc;
 
-import java.util.Iterator;
 import java.util.Map;
 
 import org.openqa.selenium.By;
@@ -34,12 +33,13 @@ public class LoginSPX extends SPXBase {
 	 * @description: Este metodo permite capturar usuario y contraseña, así como dar
 	 * click en el botón login
 	 */
-	public void login(String username, String password) throws InterruptedException {
+	public Map<String, String> login(String username, String password) throws InterruptedException {
 		reporterLog("Logging to SPX ...");
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnLogin);
 		type(txtUsername, getEncrypted(username));
 		type(txtPassword, getEncrypted(password));
 		click(btnLogin);
+		return returnSaveImage(btnLogin);
 	}
 }

@@ -1,5 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -54,7 +56,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public void acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
+	public Map<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
 		reporterLog("Accept to Requisition");
 		click(btnAccept);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
@@ -63,5 +65,6 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 		getText(txtRequisitionGenerate);
 		System.out.println("Description:");
 		getText(txtDescription);
+		return returnSaveImage(txtDescription);
 	}
 }

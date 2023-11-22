@@ -1,5 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -58,10 +60,11 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite ingresar al carrito de compras y
 	 * seleccionar una requisición
 	 */
-	public void clickSetupPurchaseSpotRequisitionShoppingCart() throws InterruptedException {
+	public Map<String, String> clickSetupPurchaseSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Select Requisition of Shopping Cart");
 		waitForElementPresent(btnSetupPurchase);
 		click(btnSetupPurchase);
+		return returnSaveImage(btnSetupPurchase);
 	}
 
 	/*
@@ -78,11 +81,12 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite ingresar al carrito de compras y
 	 * seleccionar una requisición
 	 */
-	public void CheckSpotRequisitionShoppingCart() throws InterruptedException {
+	public Map<String, String> CheckSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Check Requisition of Shopping Cart");
 		waitForElementPresent(checkRequisitionShoppingCart);
 		click(checkRequisitionShoppingCart);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(checkRequisitionShoppingCart);
 	}
 
 	/*
@@ -99,12 +103,13 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite ingresar al carrito de compras y
 	 * seleccionar una requisición
 	 */
-	public void DoubleCheckSpotRequisitionShoppingCart() throws InterruptedException {
+	public Map<String, String> DoubleCheckSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Check Requisition of Shopping Cart");
 		waitForElementPresent(checkRequisitionShoppingCart);
 		click(checkRequisitionShoppingCart);
 		waitForElementPresent(checkRequisitionShoppingCartNewLine);
 		click(checkRequisitionShoppingCartNewLine);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(checkRequisitionShoppingCart);
 	}
 }

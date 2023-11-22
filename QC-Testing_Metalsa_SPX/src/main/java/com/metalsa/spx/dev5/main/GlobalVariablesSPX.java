@@ -60,10 +60,10 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_COMMENTS_SHOPPING_CART = "COMENTARIOS EN EL CARRITO DE COMPRAS";
 
 	// Data Account Configuration
-	public static final String SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "027463 - REPLACEMENT ROBOTIC ARNESS";
-	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "02 Transportation";
-	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Import Freight";
-	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "García Martínez Carlos Israel";
+	public static final String SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "100084 - TEST CAPEX UAT APO";
+	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "02 TEST";
+	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Computer Equipment";
+	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Elizondo Bernal Hortensia Lorena";
 	public static final String SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "A047 - HD - Labor & Compliance";
 	public static final String SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "002 - A047 - 620100000001 / Cuotas y Subscripciones - 0000";
 	public static final String SPX_DEV5_SELECT_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"

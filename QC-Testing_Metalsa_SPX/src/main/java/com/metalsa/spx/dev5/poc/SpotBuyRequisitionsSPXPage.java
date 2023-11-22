@@ -1,5 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -145,7 +147,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * @description: Este metodo permite capturar los datos de la segunda sección de
 	 * la pagina
 	 */
-	public void captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category, String family,
+	public Map<String, String> captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category, String family,
 			String subFamily, String genericItem, String unitOfMeasure) throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Second Section");
 		// Category
@@ -228,6 +230,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			requiredFields(txtQuantity);
 			requiredFields(txtSearchUnitOfMeasure);
 		}
+		return returnSaveImage(selectDayNeedByDate);
 	}
 
 	/*
@@ -244,12 +247,13 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * @description: Este metodo permite capturar los datos de la tercera sección de
 	 * la pagina
 	 */
-	public void captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot)
+	public Map<String, String> captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot)
 			throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
 		type(txtCommentsToBuyer, commentsToBuyer);
 		uploadFile(pathFileSpot, btnChooseFiles);
-	}
+		return returnSaveImage(btnChooseFiles);
+		}
 
 	/*
 	 * @name: addtoCart
@@ -264,7 +268,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar la(s) línea(s)
 	 */
-	public void addtoCart() throws InterruptedException {
+	public Map<String, String> addtoCart() throws InterruptedException {
 		click(btnAddToCart);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		if (isDisplayed(textValidateSameLine)) {
@@ -280,6 +284,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		} else {
 			reporterLog("The Name Line is New");
 		}
+		return returnSaveImage(btnAddToCart);
 	}
 
 	/*
@@ -295,10 +300,11 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public void addNewLine() throws InterruptedException {
+	public Map<String, String> addNewLine() throws InterruptedException {
 		click(btnNewLine);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		System.out.println("New Line Add");
+		return returnSaveImage(btnNewLine);
 	}
 
 	/*
@@ -314,10 +320,11 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public void addFADToRequisition() throws InterruptedException {
+	public Map<String, String> addFADToRequisition() throws InterruptedException {
 		waitForElementPresent(chkIncludeSingleSourceFormat);
 		click(chkIncludeSingleSourceFormat);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(chkIncludeSingleSourceFormat);
 	}
 
 	/*
@@ -333,12 +340,13 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public void checkUrgent() throws InterruptedException {
+	public Map<String, String> checkUrgent() throws InterruptedException {
 		click(chkUrgent);
 		waitForElementPresent(lblReasonUrgent);
 		click(lblReasonUrgent);
 		waitForElementPresent(slctReasonUrgent);
 		click(slctReasonUrgent);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(slctReasonUrgent);
 	}
 }

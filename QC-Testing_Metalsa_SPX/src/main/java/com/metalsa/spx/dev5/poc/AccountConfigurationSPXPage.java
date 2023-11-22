@@ -1,5 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -25,36 +27,50 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	By hrefEditRequisition = By.xpath("//div[@class='cart-container__header--name']");
 	By btnLineDiscarded = By.id("formCarroCompras:carroCompra0:0:j_idt182");
 	By txtQuantity = By.id("formCarroCompras:carroCompra0:0:iNCantidad_input");
-	By btnProject = By.xpath(
-			"//div[@class='ui-radiobutton-box ui-widget ui-corner-all ui-state-default ui-state-hover']//span[@class='ui-radiobutton-icon ui-icon ui-icon-blank']");
-	By lblSelectProject = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:j_idt251_label");
+	// Project
+	By btnProject = By.xpath("//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]");
+	By lblSelectProject = By.xpath("//tbody/tr[@role='row']/td[@role='gridcell']/div/div/div/div/div/div/div/div/div/div/div/div[1]/label[1]");
 	By slctSelectProject = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_PROJECT_ACCOUNT_CONFIGURATION_PAGE);
-	By lblSelectTask = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:j_idt254_label");
+	By lblSelectTask = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:j_idt255_label");
 	By slctSelectTask = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_TASK_ACCOUNT_CONFIGURATION_PAGE);
-	By lblSelectResourse = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:j_idt257_label");
+	By lblSelectResourse = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:j_idt258_label");
 	By slctSelectResourse = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_RESOURSE_ACCOUNT_CONFIGURATION_PAGE);
-	By lblSelectBuyer = By.id("formCarroCompras:carroCompra0:0:j_idt247:0:j_idt263_label");
+	By lblSelectBuyer = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:j_idt264_label");
 	By slctSelectBuyer = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE);
+	// CC
 	By btnCC = By.xpath(
 			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
-	By btnCCNewLine = By.xpath(
-			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
 	By lblCostCenter = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/label[1]");
-	By lblCostCenterNewLine = By.xpath(
-			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]");
 	By txtCostCenter = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCC_filter");
-	By txtCostCenterNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:cbmCC_filter");
 	By slctCostCenter = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE);
-	By slctCostCenterNewLine = By
-			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
-	By chkSegmentProduct = By.xpath("//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
-	By lblSelectAccount = By.xpath(
-			"//div[@class='cart-line__cuenta']//label[@class='ui-selectonemenu-label ui-inputfield ui-corner-all']");
 	By slctSelectAccount = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE);
+
 	By btnAddCC = By.id("formCarroCompras:carroCompra0:0:j_idt237");
 	By btnRequisition = By.id("formCarroCompras:crearRequiButton");
 	By scrollPage = By.xpath("//div[@id='lyoBdy']//div[@class='ui-layout-unit-content ui-widget-content']");
+	By chkSegmentProduct = By.xpath("//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
+	By lblSelectAccount = By.xpath(
+			"//div[@class='cart-line__cuenta']//label[@class='ui-selectonemenu-label ui-inputfield ui-corner-all']");
+
+	// Second Line CC
+	By btnCCNewLine = By.xpath(
+			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
+	By lblCostCenterNewLine = By.xpath(
+			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]");
+	By txtCostCenterNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:cbmCC_filter");
+	By slctCostCenterNewLine = By
+			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
+	// Second Line Project
+	By btnProjectNewLine = By.xpath("");
+	By lblSelectProjectNewLine = By.xpath("");
+	By slctSelectProjectNewLine = By.xpath("");
+	By lblSelectTaskNewLine = By.xpath("");
+	By slctSelectTaskNewLine = By.xpath("");
+	By lblSelectResourseNewLine = By.xpath("");
+	By slctSelectResourseNewLine = By.xpath("");
+	By lblSelectBuyerNewLine = By.id("");
+	By slctSelectBuyerNewLine = By.xpath("");
 
 	/*
 	 * @name: textAccountConfigurationPageIsDisplayed
@@ -76,7 +92,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	}
 
 	/*
-	 * @name: selectTypeAccountForRequisition
+	 * @name: selectTypeAccountForRequisitionCC
 	 * 
 	 * @date: 30/Oct/2023
 	 * 
@@ -86,10 +102,10 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite seleccionar el tipo de cobro CC
 	 */
 
-	public void selectTypeAccountForRequisition(String costCenter) throws InterruptedException {
+	public Map<String, String> selectTypeAccountForRequisitionCC(String costCenter) throws InterruptedException {
 
 		reporterLog("Select Type Account For Requisition ...");
 
@@ -122,7 +138,63 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			clickBtnRequisition();
 
 		}
+		return returnSaveImage(btnCC);
+	}
+	/*
+	 * @name: selectTypeAccountForRequisitionProject
+	 * 
+	 * @date: 30/Oct/2023
+	 * 
+	 * @param: String costCenter
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite seleccionar el tipo de cobro Proyecto
+	 */
 
+	public Map<String, String> selectTypeAccountForRequisitionProject(String project) throws InterruptedException {
+
+		reporterLog("Select Type Account For Requisition ...");
+
+		click(btnProject);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		click(lblSelectProject);
+		click(slctSelectProject);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		click(lblSelectTask);
+		click(slctSelectTask);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		click(lblSelectResourse);
+		click(slctSelectResourse);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		click(lblSelectBuyer);
+		click(slctSelectBuyer);
+
+		if (isDisplayed(btnProjectNewLine)) {
+			// Second Line
+			click(btnProjectNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			click(lblSelectProjectNewLine);
+			click(slctSelectProjectNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			click(lblSelectTaskNewLine);
+			click(slctSelectTaskNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			click(lblSelectResourseNewLine);
+			click(slctSelectResourseNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			click(lblSelectBuyerNewLine);
+			click(slctSelectBuyerNewLine);
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			clickBtnRequisition();
+		} else {
+			System.out.println("I could not find the Proyect button on the second line...");
+			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+			clickBtnRequisition();
+		}
+		return returnSaveImage(btnProject);
 	}
 
 	/*
@@ -138,9 +210,10 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public void clickBtnRequisition() throws InterruptedException {
+	public Map<String, String> clickBtnRequisition() throws InterruptedException {
 		reporterLog("Click to Requisition ...");
 		click(btnRequisition);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(btnRequisition);
 	}
 }

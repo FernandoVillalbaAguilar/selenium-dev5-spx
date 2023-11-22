@@ -1,5 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -54,11 +56,12 @@ public class HomeSPX extends SPXBase {
 	 * @description: Este metodo permite seleccionar una UEN
 	 */
 
-	public void selectToUenFromHome() {
+	public Map<String, String> selectToUenFromHome() {
 		reporterLog("Access to Spot Buy Requisitions ...");
 		click(selectUEN);
 		waitForElementPresent(optUEN);
 		click(optUEN);
+		return returnSaveImage(optUEN);
 	}
 
 	/*
@@ -74,7 +77,7 @@ public class HomeSPX extends SPXBase {
 	 * 
 	 * @description: Este metodo permite acceder a la pagina indicada
 	 */
-	public void accesToSpotBuyRequisitions() {
+	public Map<String, String> accesToSpotBuyRequisitions() {
 		reporterLog("Access to Spot Buy Requisitions ...");
 		click(iconMenu);
 		waitForElementPresent(iconMenuRequisitions);
@@ -83,5 +86,6 @@ public class HomeSPX extends SPXBase {
 		click(iconMenuRequisitionsCreateRequisition);
 		waitForElementPresent(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
 		click(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
+		return returnSaveImage(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
 	}
 }

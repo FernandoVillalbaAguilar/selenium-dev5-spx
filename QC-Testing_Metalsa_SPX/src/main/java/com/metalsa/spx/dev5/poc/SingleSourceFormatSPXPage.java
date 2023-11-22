@@ -1,5 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
+import java.util.Map;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -26,12 +28,12 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	By txtCurrency = By.id("formFAD:j_idt548_filter");
 	By slctCurrency = By.xpath(GlobalVariablesSPX.SELECT_CURRENCY);
 	// Second section
-	By rdbtnSingleSourceFormatReasonQuality = By.xpath("(//span)[321]");
-	By rdbtnSingleSourceFormatReasonNegotiatedPrice = By.xpath("(//span)[322]");
-	By rdbtnSingleSourceFormatReasonSingleSource = By.xpath("(//span)[323]");
-	By rdbtnSingleSourceFormatReasonProuctionMaterial = By.xpath("(//span)[324]");
-	By rdbtnSingleSourceFormatReasonLackOfScheduleAvailability = By.xpath("(//span)[325]");
-	By rdbtnSingleSourceFormatReasonOtherReason = By.xpath("(//span)[326]");
+	By rdbtnSingleSourceFormatReasonQuality = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonNegotiatedPrice = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonSingleSource = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonProuctionMaterial = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[4]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonLackOfScheduleAvailability = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonOtherReason = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[6]/td[1]/div[1]/div[2]/span[1]");
 	By txtDetails = By.id("formFAD:fad_razon_otrox");
 	// Third section
 	By txtComments = By.id("formFAD:j_idt557");
@@ -71,7 +73,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * @description: Este metodo permite realizar la captura de datos dentro de la
 	 * pagina
 	 */
-	public void captureDataSingleSourceFormat(String description, String supplierName, String amount, String details,
+	public Map<String, String> captureDataSingleSourceFormat(String description, String supplierName, String amount, String details,
 			String comments, String pathFileSpot) throws InterruptedException {
 		type(txtDescription, description);
 		type(txtSupplierName, supplierName);
@@ -89,6 +91,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 		type(txtComments, comments);
 		uploadFile(pathFileSpot, btnChooseFiles);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(btnChooseFiles);
 	}
 
 	/*
@@ -104,10 +107,11 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite dar clic en el botón "Save"
 	 */
-	public void clickSave() throws InterruptedException {
+	public Map<String, String> clickSave() throws InterruptedException {
 		waitForElementPresent(btnSave);
 		click(btnSave);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(btnSave);
 	}
 
 	/*
@@ -123,9 +127,10 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite dar clic en el botón "Back"
 	 */
-	public void clickBack() throws InterruptedException {
+	public Map<String, String> clickBack() throws InterruptedException {
 		waitForElementPresent(btnBack);
 		click(btnBack);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		return returnSaveImage(btnBack);
 	}
 }
