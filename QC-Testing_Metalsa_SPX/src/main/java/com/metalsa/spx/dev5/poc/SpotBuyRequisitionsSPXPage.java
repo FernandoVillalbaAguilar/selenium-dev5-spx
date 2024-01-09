@@ -1,6 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,19 +27,19 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By slctGlobalSourcingRFQ = By.id("");
 
 	// Additional Header Parameters Objects
-	By chkProductServicereceivedwithoutrequisition = By.id("");
+	By chkProductServicereceivedwithoutrequisition = By.id("formSpot:servicioMaterialRealizado");
 	By chkIncludeSingleSourceFormat = By.xpath(
 			"//div[@id='formSpot:formatoAsignacionDirecta']//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
 	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
 
 	// Line Header Objects
-	By chkLine = By.xpath("");
-	By btnExpanColapse = By.xpath("");
-	By btnDeleteLine = By.xpath("");
+	By chkLine = By.id("formSpot:j_idt371");
+	By btnExpanColapse = By.id("formSpot:j_idt375");
+	By btnDeleteLine = By.id("formSpot:j_idt373");
 
 	// First Section Objects
 	By txtDescription = By.id("formSpot:desc_1");
-	By txtMaterial = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[1]//div[2]//input[1]");
+	By txtMaterial = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[1]//div[2]//input[1]"); //formSpot:j_idt386
 	By txtColor = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[2]//div[2]//input[1]");
 	By txtBrand = By.xpath("//div[@class='ui-grid-row']//div[1]//div[3]//div[2]//input[1]");
 	By txtMeasurements = By.xpath(
@@ -147,7 +148,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * @description: Este metodo permite capturar los datos de la segunda sección de
 	 * la pagina
 	 */
-	public Map<String, String> captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category, String family,
+	public TreeMap<String, String> captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category, String family,
 			String subFamily, String genericItem, String unitOfMeasure) throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Second Section");
 		// Category
@@ -247,7 +248,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * @description: Este metodo permite capturar los datos de la tercera sección de
 	 * la pagina
 	 */
-	public Map<String, String> captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot)
+	public TreeMap<String, String> captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot)
 			throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
 		type(txtCommentsToBuyer, commentsToBuyer);
@@ -268,7 +269,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar la(s) línea(s)
 	 */
-	public Map<String, String> addtoCart() throws InterruptedException {
+	public TreeMap<String, String> addtoCart() throws InterruptedException {
 		click(btnAddToCart);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		if (isDisplayed(textValidateSameLine)) {
@@ -300,7 +301,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public Map<String, String> addNewLine() throws InterruptedException {
+	public TreeMap<String, String> addNewLine() throws InterruptedException {
 		click(btnNewLine);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		System.out.println("New Line Add");
@@ -320,7 +321,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public Map<String, String> addFADToRequisition() throws InterruptedException {
+	public TreeMap<String, String> addFADToRequisition() throws InterruptedException {
 		waitForElementPresent(chkIncludeSingleSourceFormat);
 		click(chkIncludeSingleSourceFormat);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
@@ -340,7 +341,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar una nueva linea
 	 */
-	public Map<String, String> checkUrgent() throws InterruptedException {
+	public TreeMap<String, String> checkUrgent() throws InterruptedException {
 		click(chkUrgent);
 		waitForElementPresent(lblReasonUrgent);
 		click(lblReasonUrgent);

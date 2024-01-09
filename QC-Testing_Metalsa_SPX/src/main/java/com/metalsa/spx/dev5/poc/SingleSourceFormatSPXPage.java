@@ -1,10 +1,10 @@
 package com.metalsa.spx.dev5.poc;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -19,6 +19,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	By btnBack = By.id("formFAD:j_idt527");
 	By btnSave = By.id("formFAD:j_idt528");
 	By txtSingleScourseFormat = By.xpath("//div[@class='spx-card-header__title']");
+	By msgStatusFAD = By.id("formFAD:mensageStatus");
 	// First section
 	By txtDescription = By.id("formFAD:desc_1");
 	By txtSupplierName = By.id("formFAD:suppliers_input");
@@ -28,13 +29,19 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	By txtCurrency = By.id("formFAD:j_idt548_filter");
 	By slctCurrency = By.xpath(GlobalVariablesSPX.SELECT_CURRENCY);
 	// Second section
-	By rdbtnSingleSourceFormatReasonQuality = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonNegotiatedPrice = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonSingleSource = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonProuctionMaterial = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[4]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonLackOfScheduleAvailability = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonOtherReason = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[6]/td[1]/div[1]/div[2]/span[1]");
-	By txtDetails = By.id("formFAD:fad_razon_otrox");
+	By rdbtnSingleSourceFormatReasonQuality = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonNegotiatedPrice = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonSingleSource = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonProuctionMaterial = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[4]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonLackOfScheduleAvailability = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReasonOtherReason = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[6]/td[1]/div[1]/div[2]/span[1]");
+	By txtDetails = By.id("formFAD:fad_razon_otro");
 	// Third section
 	By txtComments = By.id("formFAD:j_idt557");
 	By btnChooseFiles = By.id("formFAD:fileUpload_input");
@@ -73,8 +80,8 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * @description: Este metodo permite realizar la captura de datos dentro de la
 	 * pagina
 	 */
-	public Map<String, String> captureDataSingleSourceFormat(String description, String supplierName, String amount, String details,
-			String comments, String pathFileSpot) throws InterruptedException {
+	public TreeMap<String, String> captureDataSingleSourceFormat(String description, String supplierName, String amount,
+			String details, String comments, String pathFileSpot) throws InterruptedException {
 		type(txtDescription, description);
 		type(txtSupplierName, supplierName);
 		waitForElementPresent(slctSupplierName);
@@ -85,12 +92,25 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 		waitForElementPresent(txtCurrency);
 		click(slctCurrency);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		//waitForElementPresent(rdbtnSingleSourceFormatReasonSingleSource);
-		click(rdbtnSingleSourceFormatReasonSingleSource);
+		click(rdbtnSingleSourceFormatReasonOtherReason);
 		type(txtDetails, details);
 		type(txtComments, comments);
 		uploadFile(pathFileSpot, btnChooseFiles);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+
+		// validate are fields mandatory
+		requiredFields(txtDescription);
+		requiredFields(txtSupplierName);
+		requiredFields(txtAmount);
+		requiredFields(lblCurrency);
+		requiredFields(txtComments);
+
+		// Validate if all radio buttons are not selected
+		if (isDisplayed(msgStatusFAD)) {
+			System.out.println(
+					"No radio button is selected, in this section it is mandatory to have a radio button selected...");
+			driverClose();
+		}
 		return returnSaveImage(btnChooseFiles);
 	}
 
@@ -107,7 +127,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite dar clic en el botón "Save"
 	 */
-	public Map<String, String> clickSave() throws InterruptedException {
+	public TreeMap<String, String> clickSave() throws InterruptedException {
 		waitForElementPresent(btnSave);
 		click(btnSave);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
@@ -127,7 +147,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite dar clic en el botón "Back"
 	 */
-	public Map<String, String> clickBack() throws InterruptedException {
+	public TreeMap<String, String> clickBack() throws InterruptedException {
 		waitForElementPresent(btnBack);
 		click(btnBack);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);

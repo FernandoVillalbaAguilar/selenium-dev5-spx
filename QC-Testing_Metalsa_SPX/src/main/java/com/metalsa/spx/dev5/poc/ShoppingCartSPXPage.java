@@ -1,6 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -60,7 +61,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite ingresar al carrito de compras y
 	 * seleccionar una requisición
 	 */
-	public Map<String, String> clickSetupPurchaseSpotRequisitionShoppingCart() throws InterruptedException {
+	public TreeMap<String, String> clickSetupPurchaseSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Select Requisition of Shopping Cart");
 		waitForElementPresent(btnSetupPurchase);
 		click(btnSetupPurchase);
@@ -81,7 +82,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite ingresar al carrito de compras y
 	 * seleccionar una requisición
 	 */
-	public Map<String, String> CheckSpotRequisitionShoppingCart() throws InterruptedException {
+	public TreeMap<String, String> CheckSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Check Requisition of Shopping Cart");
 		waitForElementPresent(checkRequisitionShoppingCart);
 		click(checkRequisitionShoppingCart);
@@ -103,7 +104,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @description: Este metodo permite ingresar al carrito de compras y
 	 * seleccionar una requisición
 	 */
-	public Map<String, String> DoubleCheckSpotRequisitionShoppingCart() throws InterruptedException {
+	public TreeMap<String, String> DoubleCheckSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Check Requisition of Shopping Cart");
 		waitForElementPresent(checkRequisitionShoppingCart);
 		click(checkRequisitionShoppingCart);

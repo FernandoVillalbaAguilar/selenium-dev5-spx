@@ -5,18 +5,15 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
-import java.lang.reflect.Method;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
-import java.util.Map;
+import java.util.TreeMap;
 import java.util.UUID;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import javax.imageio.ImageIO;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.collections4.map.HashedMap;
 import org.apache.poi.util.Units;
 import org.apache.poi.xwpf.usermodel.BreakType;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
@@ -35,14 +32,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.Reporter;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 
 public class SPXBase {
 	private WebDriver driver;
-	Map<String, String> listaScreenShots = new HashedMap<>();
+	//Map<String, String> listaScreenShots = new HashedMap<>();
+	private TreeMap<String, String> listaScreenShots = new TreeMap<>();
 
 	public SPXBase(WebDriver driver) {
 		this.driver = driver;
@@ -147,7 +144,7 @@ public class SPXBase {
 			reporterLog("Wait for Element Present...");
 			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-			takeScreenshot();
+			//takeScreenshot();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 			System.out.println(this.getClass().getName());
@@ -174,7 +171,7 @@ public class SPXBase {
 			reporterLog("Wait for Element Present...");
 			WebDriverWait wait = new WebDriverWait(driver, seconds);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-			takeScreenshot();
+			//takeScreenshot();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 			System.out.println(this.getClass().getName());
@@ -249,7 +246,7 @@ public class SPXBase {
 	 * hacia un word
 	 */
 
-	public Map<String, String> returnSaveImage(By locator) {
+	public TreeMap<String, String> returnSaveImage(By locator) {
 		try {
 			reporterLog("Return Click for Saved Image");
 			driver.findElement(locator).getTagName();
@@ -472,7 +469,7 @@ public class SPXBase {
 	 * @description: Este metodo permita guardar en un documento de word una captura
 	 * de pantalla
 	 */
-	public void saveWordDocument(Map<String, String> word) {
+	public void saveWordDocument(TreeMap<String, String> word) {
 		// Save screenshot in Word document
 		XWPFDocument document = new XWPFDocument();
 		XWPFParagraph paragraph = document.createParagraph();
@@ -528,11 +525,11 @@ public class SPXBase {
 	}
 
 	/*
-	 * @name: takeScreenshotAndSavedWord
+	 * @name: takeScreenshot
 	 * 
 	 * @date: 02/Nov/2023
 	 * 
-	 * @param: By locator, String requiredField
+	 * @param: N/A
 	 * 
 	 * @return: N/A
 	 * 
@@ -541,7 +538,7 @@ public class SPXBase {
 	 * @description: Este metodo permite tomar una captura de pantalla y guardar en
 	 * un documento de word
 	 */
-	public Map<String, String> takeScreenshot() {
+	 public TreeMap<String, String> takeScreenshot() {
 		try {
 			String testCaseName = getTestCaseName(Reporter.getCurrentTestResult());
 			String fileName = "QC_Testing-" + testCaseName + "-" + date();
@@ -677,5 +674,22 @@ public class SPXBase {
 	public String getTestCaseName(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
 		return methodName;
+	}
+
+	/*
+	 * @name: driverClose
+	 * 
+	 * @date: 22/Nov/2023
+	 * 
+	 * @param:N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Metodo que permite cerrar la ventana
+	 */
+	public void driverClose() {
+		driver.close();
 	}
 }

@@ -1,7 +1,6 @@
 package com.metalsa.spx.dev5;
 
-import java.util.Map;
-import org.apache.commons.collections4.map.HashedMap;
+import java.util.TreeMap;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -73,7 +72,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 
 	@Test
 	public void tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC() throws InterruptedException {
-		Map<String, String> listaScreenShots = new HashedMap<>();
+		TreeMap<String, String> listaScreenShots = new TreeMap<>();
 		// Step 1 - Launch Browser
 		spxBase.launchBrowser(url);
 
@@ -116,7 +115,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 
 	@Test
 	public void tc002_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC() throws InterruptedException {
-		Map<String, String> listaScreenShots = new HashedMap<>();
+		TreeMap<String, String> listaScreenShots = new TreeMap<>();
 		// Step 1 - Launch Browser
 		spxBase.launchBrowser(url);
 
@@ -168,7 +167,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 
 	@Test
 	public void tc003_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC() throws InterruptedException {
-		Map<String, String> listaScreenShots = new HashedMap<>();
+		TreeMap<String, String> listaScreenShots = new TreeMap<>();
 		// Step 1 - Launch Browser
 		spxBase.launchBrowser(url);
 
@@ -219,7 +218,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	@Test
 	public void tc004_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC_Urgent()
 			throws InterruptedException, InvalidFormatException {
-		Map<String, String> listaScreenShots = new HashedMap<>();
+		TreeMap<String, String> listaScreenShots = new TreeMap<>();
 		// Step 1 - Launch Browser
 		spxBase.launchBrowser(url);
 
@@ -264,7 +263,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 
 	@Test
 	public void tc005_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Project() throws InterruptedException {
-		Map<String, String> listaScreenShots = new HashedMap<>();
+		TreeMap<String, String> listaScreenShots = new TreeMap<>();
 		// Step 1 - Launch Browser
 		spxBase.launchBrowser(url);
 

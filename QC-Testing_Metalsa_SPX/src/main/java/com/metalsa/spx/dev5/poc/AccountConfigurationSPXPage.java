@@ -1,6 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -105,7 +106,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * @description: Este metodo permite seleccionar el tipo de cobro CC
 	 */
 
-	public Map<String, String> selectTypeAccountForRequisitionCC(String costCenter) throws InterruptedException {
+	public TreeMap<String, String> selectTypeAccountForRequisitionCC(String costCenter) throws InterruptedException {
 
 		reporterLog("Select Type Account For Requisition ...");
 
@@ -154,7 +155,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * @description: Este metodo permite seleccionar el tipo de cobro Proyecto
 	 */
 
-	public Map<String, String> selectTypeAccountForRequisitionProject(String project) throws InterruptedException {
+	public TreeMap<String, String> selectTypeAccountForRequisitionProject(String project) throws InterruptedException {
 
 		reporterLog("Select Type Account For Requisition ...");
 
@@ -210,7 +211,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public Map<String, String> clickBtnRequisition() throws InterruptedException {
+	public TreeMap<String, String> clickBtnRequisition() throws InterruptedException {
 		reporterLog("Click to Requisition ...");
 		click(btnRequisition);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);

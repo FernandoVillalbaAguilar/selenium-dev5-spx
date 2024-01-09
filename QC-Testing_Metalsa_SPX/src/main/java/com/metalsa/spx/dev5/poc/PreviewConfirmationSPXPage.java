@@ -1,10 +1,9 @@
 package com.metalsa.spx.dev5.poc;
 
-import java.util.Map;
 
+import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -56,7 +55,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public Map<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
+	public TreeMap<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
 		reporterLog("Accept to Requisition");
 		click(btnAccept);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);

@@ -371,16 +371,16 @@
       <![CDATA[Return Click for Saved Image]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-22T01:09:34Z" name="Default suite" finished-at="2023-11-22T01:11:26Z" duration-ms="111829">
+  <suite started-at="2024-01-08T23:27:10Z" name="Default suite" finished-at="2024-01-08T23:28:47Z" duration-ms="97114">
     <groups>
     </groups>
-    <test started-at="2023-11-22T01:09:34Z" name="Default test" finished-at="2023-11-22T01:11:26Z" duration-ms="111829">
+    <test started-at="2024-01-08T23:27:10Z" name="Default test" finished-at="2024-01-08T23:28:47Z" duration-ms="97114">
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@54504ecd]" started-at="2023-11-22T01:09:34Z" name="beforeTest" finished-at="2023-11-22T01:09:37Z" duration-ms="2555" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@38b27cdc]" started-at="2024-01-08T23:27:10Z" name="beforeTest" finished-at="2024-01-08T23:27:12Z" duration-ms="2480" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@54504ecd]" started-at="2023-11-22T01:09:37Z" name="tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC" finished-at="2023-11-22T01:11:26Z" duration-ms="108853" status="PASS">
+        <test-method signature="tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@38b27cdc]" started-at="2024-01-08T23:27:12Z" name="tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC" finished-at="2024-01-08T23:28:47Z" duration-ms="94359" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
@@ -753,7 +753,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@54504ecd]" started-at="2023-11-22T01:11:26Z" name="afterTest" finished-at="2023-11-22T01:11:26Z" duration-ms="341" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@38b27cdc]" started-at="2024-01-08T23:28:47Z" name="afterTest" finished-at="2024-01-08T23:28:47Z" duration-ms="250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

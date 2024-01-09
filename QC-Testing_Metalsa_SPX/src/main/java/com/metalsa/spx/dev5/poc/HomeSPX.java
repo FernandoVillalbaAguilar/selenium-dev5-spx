@@ -1,6 +1,7 @@
 package com.metalsa.spx.dev5.poc;
 
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -56,7 +57,7 @@ public class HomeSPX extends SPXBase {
 	 * @description: Este metodo permite seleccionar una UEN
 	 */
 
-	public Map<String, String> selectToUenFromHome() {
+	public TreeMap<String, String> selectToUenFromHome() {
 		reporterLog("Access to Spot Buy Requisitions ...");
 		click(selectUEN);
 		waitForElementPresent(optUEN);
@@ -77,7 +78,7 @@ public class HomeSPX extends SPXBase {
 	 * 
 	 * @description: Este metodo permite acceder a la pagina indicada
 	 */
-	public Map<String, String> accesToSpotBuyRequisitions() {
+	public TreeMap<String, String> accesToSpotBuyRequisitions() {
 		reporterLog("Access to Spot Buy Requisitions ...");
 		click(iconMenu);
 		waitForElementPresent(iconMenuRequisitions);
