@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.UUID;
 import org.openqa.selenium.WebDriver;
@@ -38,7 +39,6 @@ import ru.yandex.qatools.ashot.Screenshot;
 
 public class SPXBase {
 	private WebDriver driver;
-	//Map<String, String> listaScreenShots = new HashedMap<>();
 	private TreeMap<String, String> listaScreenShots = new TreeMap<>();
 
 	public SPXBase(WebDriver driver) {
@@ -144,7 +144,6 @@ public class SPXBase {
 			reporterLog("Wait for Element Present...");
 			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-			//takeScreenshot();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 			System.out.println(this.getClass().getName());
@@ -171,7 +170,6 @@ public class SPXBase {
 			reporterLog("Wait for Element Present...");
 			WebDriverWait wait = new WebDriverWait(driver, seconds);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-			//takeScreenshot();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
 			System.out.println(this.getClass().getName());
@@ -468,8 +466,8 @@ public class SPXBase {
 	 * 
 	 * @description: Este metodo permita guardar en un documento de word una captura
 	 * de pantalla
-	 */
-	public void saveWordDocument(TreeMap<String, String> word) {
+	 */	
+	public void saveWordDocument(TreeMap<String, String> word, List<String> steps, List<String> values) {
 		// Save screenshot in Word document
 		XWPFDocument document = new XWPFDocument();
 		XWPFParagraph paragraph = document.createParagraph();
@@ -484,6 +482,14 @@ public class SPXBase {
 			Iterator<String> itr = word.keySet().iterator();
 			// Count types images saved
 			// System.out.println("Map Types: " + word.size());
+
+			// Add steps and values
+			for (int i = 0; i < steps.size(); i++) {
+				paragraph = document.createParagraph();
+				run = paragraph.createRun();
+				run.setText(steps.get(i) + ": " + values.get(i));
+			
+
 			while (itr.hasNext()) {
 				String key = itr.next();
 				String value = word.get(key);
@@ -510,6 +516,7 @@ public class SPXBase {
 				paragraph = document.createParagraph();
 				run = paragraph.createRun();
 				run.addBreak(BreakType.PAGE);
+			}
 			}
 			FileOutputStream out = new FileOutputStream(GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + "Test Case-"
 					+ testCaseName + "-" + date() + ".docx");
@@ -538,7 +545,7 @@ public class SPXBase {
 	 * @description: Este metodo permite tomar una captura de pantalla y guardar en
 	 * un documento de word
 	 */
-	 public TreeMap<String, String> takeScreenshot() {
+	public TreeMap<String, String> takeScreenshot() {
 		try {
 			String testCaseName = getTestCaseName(Reporter.getCurrentTestResult());
 			String fileName = "QC_Testing-" + testCaseName + "-" + date();

@@ -6,7 +6,7 @@ public class GlobalVariablesSPX {
 	public static final String CURRENCY = "MXN";
 	public static final String SPX_DEV5_PATH_SCREENSHOTS = System.getProperty("user.dir") + "/test-output/screenshots/";
 	public static final String SPX_DEV5_PATH_FILES = "C:\\Users\\fernando.villalba\\Documents\\files\\DocumentoDePrueba.txt";
-	public static final int PICTURE_TYPE_PNG=6;
+	public static final int PICTURE_TYPE_PNG = 6;
 
 	// Data Logging
 	public static final String PATH_JSON_DATA = "./src/test/resources/testDataSPX/json/";
@@ -60,12 +60,11 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_COMMENTS_SHOPPING_CART = "COMENTARIOS EN EL CARRITO DE COMPRAS";
 
 	// Data Account Configuration
-	public static final String SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "100084 - TEST CAPEX UAT APO";
-	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "02 TEST";
-	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Computer Equipment";
-	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Elizondo Bernal Hortensia Lorena";
-	public static final String SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "A047 - HD - Labor & Compliance";
-	public static final String SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "002 - A047 - 620100000001 / Cuotas y Subscripciones - 0000";
+	public static final String SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "100087 - TEST LEASING";
+	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "01 Leasing";
+	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Leasing";
+	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Garza Gonzalez Erik Eduardo";
+	//Project
 	public static final String SPX_DEV5_SELECT_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_TASK_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
@@ -74,11 +73,27 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	//Second Line Project
+	public static final String SPX_DEV5_SELECT_PROJECT_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
+			+ SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	public static final String SPX_DEV5_SELECT_TASK_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
+			+ SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	public static final String SPX_DEV5_SELECT_RESOURSE_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
+			+ SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	public static final String SPX_DEV5_SELECT_BUYER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
+			+ SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	//CC
+	public static final String SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "A047 - HD - Labor & Compliance";
+	public static final String SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "002 - A047 - 620100000001 / Cuotas y Subscripciones - 0000";
+	
 	public static final String SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
+			+ SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	//Second Line CC
 	public static final String SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//div[@id='formCarroCompras:carroCompra0:1:j_idt248:0:cbmCC_panel']//li[contains(.,'"
 			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "')]";
-	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
+	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE + "')]";
 
 	// Data Single Source Format

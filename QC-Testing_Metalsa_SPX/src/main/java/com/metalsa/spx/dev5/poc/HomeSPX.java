@@ -1,11 +1,8 @@
 package com.metalsa.spx.dev5.poc;
 
-import java.util.Map;
 import java.util.TreeMap;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -16,9 +13,9 @@ public class HomeSPX extends SPXBase {
 	}
 
 	// Objects
-	By selectUEN = By.name("uens");
+	By selectUEN = By.xpath("//select[@name='uens']");
 	By optUEN = By.xpath(GlobalVariablesSPX.SPX_DEV5_UEN_HOME);
-	By iconMenu = By.xpath("//i[@class='fa fa-bars gn-icon-menu']");
+	By iconMenu = By.id("sidebarCollapse");
 	By iconMenuRequisitions = By.xpath("//a[@href='#_menu_191']");
 	By iconMenuRequisitionsCreateRequisition = By.xpath("//a[@href='#_menu_192']");
 	By iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions = By
@@ -57,8 +54,9 @@ public class HomeSPX extends SPXBase {
 	 * @description: Este metodo permite seleccionar una UEN
 	 */
 
-	public TreeMap<String, String> selectToUenFromHome() {
+	public TreeMap<String, String> selectToUenFromHome() throws InterruptedException {
 		reporterLog("Access to Spot Buy Requisitions ...");
+		waitForElementPresent(selectUEN);
 		click(selectUEN);
 		waitForElementPresent(optUEN);
 		click(optUEN);

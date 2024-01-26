@@ -1,6 +1,5 @@
 package com.metalsa.spx.dev5.poc;
 
-
 import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -61,7 +60,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(txtRequisitionGenerate);
 		System.out.print("Requisition generated with ID: ");
-		getText(txtRequisitionGenerate);
+		getText(txtRequisitionGenerate);	
 		System.out.println("Description:");
 		getText(txtDescription);
 		return returnSaveImage(txtDescription);

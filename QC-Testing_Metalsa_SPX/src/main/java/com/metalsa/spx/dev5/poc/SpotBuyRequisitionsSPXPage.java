@@ -1,11 +1,8 @@
 package com.metalsa.spx.dev5.poc;
 
-import java.util.Map;
 import java.util.TreeMap;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -39,7 +36,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 
 	// First Section Objects
 	By txtDescription = By.id("formSpot:desc_1");
-	By txtMaterial = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[1]//div[2]//input[1]"); //formSpot:j_idt386
+	By txtMaterial = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[1]//div[2]//input[1]"); // formSpot:j_idt386
 	By txtColor = By.xpath("//span//div[@class='ui-grid-row']//div[1]//div[2]//div[2]//input[1]");
 	By txtBrand = By.xpath("//div[@class='ui-grid-row']//div[1]//div[3]//div[2]//input[1]");
 	By txtMeasurements = By.xpath(
@@ -148,8 +145,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * @description: Este metodo permite capturar los datos de la segunda sección de
 	 * la pagina
 	 */
-	public TreeMap<String, String> captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category, String family,
-			String subFamily, String genericItem, String unitOfMeasure) throws InterruptedException {
+	public TreeMap<String, String> captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category,
+			String family, String subFamily, String genericItem, String unitOfMeasure) throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Second Section");
 		// Category
 		click(lblCategory);
@@ -248,13 +245,13 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * @description: Este metodo permite capturar los datos de la tercera sección de
 	 * la pagina
 	 */
-	public TreeMap<String, String> captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer, String pathFileSpot)
-			throws InterruptedException {
+	public TreeMap<String, String> captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer,
+			String pathFileSpot) throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
 		type(txtCommentsToBuyer, commentsToBuyer);
 		uploadFile(pathFileSpot, btnChooseFiles);
 		return returnSaveImage(btnChooseFiles);
-		}
+	}
 
 	/*
 	 * @name: addtoCart

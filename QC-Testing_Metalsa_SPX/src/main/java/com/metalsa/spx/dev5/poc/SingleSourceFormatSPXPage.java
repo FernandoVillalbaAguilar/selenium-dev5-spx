@@ -1,8 +1,6 @@
 package com.metalsa.spx.dev5.poc;
 
-import java.util.Map;
 import java.util.TreeMap;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
