@@ -16,14 +16,14 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	// Header Objects
 	By btnBack = By.id("formFAD:j_idt527");
 	By btnSave = By.id("formFAD:j_idt528");
-	By txtSingleScourseFormat = By.xpath("//div[@class='spx-card-header__title']");
+	By txtSingleScourseFormat = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[1]/div[1]/h3[1]");
 	By msgStatusFAD = By.id("formFAD:mensageStatus");
 	// First section
 	By txtDescription = By.id("formFAD:desc_1");
 	By txtSupplierName = By.id("formFAD:suppliers_input");
 	By slctSupplierName = By.id("formFAD:suppliers_panel");
 	By txtAmount = By.id("formFAD:j_idt546_input");
-	By lblCurrency = By.id("formFAD:j_idt548_label");
+	By lblCurrency = By.id("formFAD:j_idt548");
 	By txtCurrency = By.id("formFAD:j_idt548_filter");
 	By slctCurrency = By.xpath(GlobalVariablesSPX.SELECT_CURRENCY);
 	// Second section

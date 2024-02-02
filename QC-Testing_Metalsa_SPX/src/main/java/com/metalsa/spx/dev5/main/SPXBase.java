@@ -67,8 +67,8 @@ public class SPXBase {
 			return driver;
 		} catch (TimeoutException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("The connection was not made correctly...");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** The connection was not made correctly...");
 			return null;
 		}
 	}
@@ -94,8 +94,8 @@ public class SPXBase {
 			driver.manage().window().maximize();
 		} catch (TimeoutException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("Unable to access the url:");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** Unable to access the url: ");
 			System.out.println(url);
 		}
 	}
@@ -119,8 +119,8 @@ public class SPXBase {
 			Reporter.log(log);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("The report was not made correctly...");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** The report was not made correctly...");
 		}
 	}
 
@@ -145,9 +145,9 @@ public class SPXBase {
 			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		} catch (TimeoutException e) {
-			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("The element" + locator + "is not present...");
+			// e.printStackTrace();
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
 		}
 	}
 
@@ -171,9 +171,9 @@ public class SPXBase {
 			WebDriverWait wait = new WebDriverWait(driver, seconds);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		} catch (TimeoutException e) {
-			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("The element" + locator + "is not present...");
+			// e.printStackTrace();
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
 		}
 	}
 
@@ -197,8 +197,9 @@ public class SPXBase {
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("It was not possible to capture data in the element: " + locator);
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** It was not possible to capture data in the element: " + locator + " Because: "
+					+ e.getMessage());
 		}
 
 	}
@@ -222,9 +223,10 @@ public class SPXBase {
 			driver.findElement(locator).click();
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
-			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("It was not possible to click on the item: " + locator + " because " + e);
+			// e.printStackTrace();
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println(
+					"***** It was not possible to click on the item: " + locator + " because: " + e.getMessage());
 		}
 
 	}
@@ -251,9 +253,9 @@ public class SPXBase {
 			return takeScreenshot();
 
 		} catch (NoSuchElementException e) {
-			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("It was not possible to save image: " + locator + " because " + e);
+			// e.printStackTrace();
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** It was not possible to save image: " + locator + " because: " + e.getMessage());
 		}
 		return takeScreenshot();
 	}
@@ -277,8 +279,8 @@ public class SPXBase {
 			return dateTime;
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("It was not possible to generate the date...");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** It was not possible to generate the date...");
 			return null;
 		}
 	}
@@ -304,16 +306,16 @@ public class SPXBase {
 				takeScreenshot();
 				return driver.findElement(locator).isDisplayed();
 			} else {
-				System.out.println(this.getClass().getName());
-				System.out.println("Element " + locator + " was not found...");
+				System.out.println("-----  " + this.getClass().getName() + "  -----");
+				System.out.println("***** Element: " + locator + " was not found...");
 				takeScreenshot();
 				return driver.findElement(locator).isDisplayed();
 			}
 
 		} catch (NoSuchElementException e) {
-			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("Element " + locator + " was not found...");
+			// e.printStackTrace();
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** Element: " + locator + " was not found... " + "Because: " + e.getMessage());
 			return false;
 		}
 	}
@@ -338,8 +340,8 @@ public class SPXBase {
 			driver.findElement(locator).sendKeys(absolutePath);
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("It was not possible to upload the file...");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** It was not possible to upload the file...");
 		}
 	}
 
@@ -367,7 +369,7 @@ public class SPXBase {
 			String jsonValueString = (String) jsonObject.get(jsonKey);
 			return jsonValueString;
 		} catch (FileNotFoundException e) {
-			Assert.fail("JSON file is not found");
+			Assert.fail("***** JSON file is not found " + "Because: " + e.getMessage());
 			return null;
 		}
 	}
@@ -391,7 +393,7 @@ public class SPXBase {
 			return new String(decodedBytes);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
-			System.out.println("It was not possible to obtain the encryption...");
+			System.out.println("***** It was not possible to obtain the encryption...");
 			return null;
 		}
 	}
@@ -416,8 +418,8 @@ public class SPXBase {
 			System.out.println(nameProduct);
 		} catch (TimeoutException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("No text found to display...");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** No text found to display...");
 		}
 	}
 
@@ -441,15 +443,16 @@ public class SPXBase {
 			if (isElementNull(driver, locator)) {
 				reporterLog("The required field contains information... ");
 			} else {
-				System.out.println(this.getClass().getName());
+				System.out.println("-----  " + this.getClass().getName() + "  -----");
 				displayElementName(driver, locator);
-				System.out.println("The" + locator + " field is mandatory and cannot be empty...");
+				System.out.println("***** The: " + locator + " field is mandatory and cannot be empty...");
 				driver.close();
 			}
 		} catch (TimeoutException e) {
 			e.printStackTrace();
-			System.out.println(this.getClass().getName());
-			System.out.println("The" + locator + " field is mandatory and cannot be empty...");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** The: " + locator + " field is mandatory and cannot be empty... " + "Because: "
+					+ e.getMessage());
 		}
 	}
 
@@ -466,68 +469,83 @@ public class SPXBase {
 	 * 
 	 * @description: Este metodo permita guardar en un documento de word una captura
 	 * de pantalla
-	 */	
-	public void saveWordDocument(TreeMap<String, String> word, List<String> steps, List<String> values) {
+	 */
+	public void saveWordDocument(TreeMap<String, TreeMap<String, String>> word, List<String> steps,
+			List<String> values) {
 		// Save screenshot in Word document
 		XWPFDocument document = new XWPFDocument();
 		XWPFParagraph paragraph = document.createParagraph();
 		XWPFRun run = paragraph.createRun();
 		String testCaseName = getTestCaseName(Reporter.getCurrentTestResult());
+		run.setBold(true);
+		run.setFontSize(14);
 		run.setText("Test Case: " + testCaseName);
+		int count = 0;
 		FileInputStream in;
 		File image;
 
 		try {
 
 			Iterator<String> itr = word.keySet().iterator();
+
 			// Count types images saved
 			// System.out.println("Map Types: " + word.size());
 
-			// Add steps and values
-			for (int i = 0; i < steps.size(); i++) {
-				paragraph = document.createParagraph();
-				run = paragraph.createRun();
-				run.setText(steps.get(i) + ": " + values.get(i));
-			
-
 			while (itr.hasNext()) {
+				// Add steps and values
+				paragraph = document.createParagraph();
+				run = paragraph.createRun();
+				run.setBold(true);
+				run.setFontSize(12);
+				run.setText(steps.get(count) + ": " + values.get(count));
 				String key = itr.next();
-				String value = word.get(key);
-				// Print to name image and path image
-				// System.out.println(key + "=" + value);
-				image = new File(value);
-				in = new FileInputStream(image);
-				int imageType = XWPFDocument.PICTURE_TYPE_JPEG;
-				String imageFileName = key;
-				int width = 450;
-				int height = 400;
+				TreeMap<String, String> value = word.get(key);
 
-				// add picture
-				paragraph = document.createParagraph();
-				run = paragraph.createRun();
-				run.addPicture(in, imageType, imageFileName, Units.toEMU(width), Units.toEMU(height));
+				Iterator<String> itrAux = value.keySet().iterator();
 
-				// add text below the picture
-				run.setText("Image file-name: " + imageFileName);
-				paragraph = document.createParagraph();
-				run = paragraph.createRun();
+				while (itrAux.hasNext()) {
+					// Print to name image and path image
+					// System.out.println(key + "=" + value);
 
-				// add page break
-				paragraph = document.createParagraph();
-				run = paragraph.createRun();
-				run.addBreak(BreakType.PAGE);
+					String keyAux = itrAux.next();
+					String valueAux = value.get(keyAux);
+					image = new File(valueAux);
+					in = new FileInputStream(image);
+					int imageType = XWPFDocument.PICTURE_TYPE_JPEG;
+					String imageFileName = keyAux;
+					int width = 450;
+					int height = 400;
+
+					// add picture
+					paragraph = document.createParagraph();
+					run = paragraph.createRun();
+					run.addPicture(in, imageType, imageFileName, Units.toEMU(width), Units.toEMU(height));
+
+					// add text below the picture
+					run.setItalic(true);
+					run.setFontSize(8);
+					run.setText("Image file-name: " + imageFileName);
+					paragraph = document.createParagraph();
+					run = paragraph.createRun();
+
+					// add page break
+					paragraph = document.createParagraph();
+					run = paragraph.createRun();
+					run.addBreak(BreakType.PAGE);
+				}
+				count++;
 			}
-			}
+
 			FileOutputStream out = new FileOutputStream(GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + "Test Case-"
 					+ testCaseName + "-" + date() + ".docx");
+
 			document.write(out);
 			out.close();
 			document.close();
-		} catch (Exception e) {
 
-			System.out.println(this.getClass().getName());
-			System.out.println(e.getMessage());
-			System.out.println("I could not save Word Document..." + e.getMessage());
+		} catch (Exception e) {
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("I could not save Word Document... " + "Because: " + e.getMessage());
 		}
 	}
 
@@ -560,9 +578,8 @@ public class SPXBase {
 			listaScreenShots.put(fileName, pathFileName);
 
 		} catch (Exception e) {
-			System.out.println(this.getClass().getName());
-			System.out.println(e.getMessage());
-			System.out.println("I could not take the screenshot...");
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** I could not take the screenshot... " + "Because: " + e.getMessage());
 		}
 		return listaScreenShots;
 	}
@@ -585,7 +602,7 @@ public class SPXBase {
 			WebElement element = driver.findElement(locator);
 			return element != null;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			System.out.println("The" + locator + " is empty...");
+			System.out.println("***** The: " + locator + " is empty... " + "Because: " + e.getMessage());
 			return false;
 		}
 	}
@@ -611,10 +628,10 @@ public class SPXBase {
 			if (elementName != null && !elementName.isEmpty()) {
 				System.out.println("Element Name: " + elementName);
 			} else {
-				System.out.println("Element" + locator + " does not have a name attribute.");
+				System.out.println("***** Element: " + locator + " does not have a name attribute.");
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			System.out.println("Element" + locator + " not found.");
+			System.out.println("***** Element: " + locator + " not found. " + "Because: " + e.getMessage());
 		}
 	}
 
@@ -660,8 +677,8 @@ public class SPXBase {
 			WebElement flag = driver.findElement(locator);
 			js.executeScript("arguments[0].scrollIntoView();", flag);
 		} catch (Exception e) {
-			System.out.println(this.getClass().getName());
-			System.out.println("No realice Scroll. " + e.getMessage());
+			System.out.println("----- " + this.getClass().getName() + " -----");
+			System.out.println("***** No realice Scroll. " + "Because: " + e.getMessage());
 		}
 	}
 

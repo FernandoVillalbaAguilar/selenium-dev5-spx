@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="7" passed="0" failed="1" skipped="0">
+<testng-results ignored="7" total="8" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
@@ -22,166 +22,37 @@
     <line>
       <![CDATA[Return Click for Saved Image]]>
     </line>
-    <line>
-      <![CDATA[Access to SPX ...]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Validate if Element is Displayed]]>
-    </line>
-    <line>
-      <![CDATA[Access to Spot Buy Requisitions ...]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Return Click for Saved Image]]>
-    </line>
-    <line>
-      <![CDATA[Access to Spot Buy Requisitions ...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Return Click for Saved Image]]>
-    </line>
-    <line>
-      <![CDATA[Access to Spot Buy Requisitions Page ...]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Validate if Element is Displayed]]>
-    </line>
-    <line>
-      <![CDATA[Capture Information to Spot Buy Requisitions First Section]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Validate Required Fields...]]>
-    </line>
-    <line>
-      <![CDATA[The required field contains information... ]]>
-    </line>
-    <line>
-      <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Validate if Element is Displayed]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
   </reporter-output>
-  <suite started-at="2024-01-26T23:50:17Z" name="Default suite" finished-at="2024-01-26T23:50:55Z" duration-ms="38599">
+  <suite started-at="2024-02-02T00:04:55Z" name="Default suite" finished-at="2024-02-02T00:05:08Z" duration-ms="12858">
     <groups>
     </groups>
-    <test started-at="2024-01-26T23:50:17Z" name="Default test" finished-at="2024-01-26T23:50:55Z" duration-ms="38599">
+    <test started-at="2024-02-02T00:04:55Z" name="Default test" finished-at="2024-02-02T00:05:08Z" duration-ms="12858">
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@1fb669c3]" started-at="2024-01-26T23:50:17Z" name="beforeTest" finished-at="2024-01-26T23:50:19Z" duration-ms="2521" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@3e6104fc]" started-at="2024-02-02T00:04:55Z" name="beforeTest" finished-at="2024-02-02T00:04:58Z" duration-ms="2660" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc006_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@1fb669c3]" started-at="2024-01-26T23:50:19Z" name="tc006_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project" finished-at="2024-01-26T23:50:55Z" duration-ms="36045" status="FAIL">
+        <test-method signature="tc003_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@3e6104fc]" started-at="2024-02-02T00:04:58Z" name="tc003_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC" finished-at="2024-02-02T00:05:08Z" duration-ms="10155" status="FAIL">
           <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
               <![CDATA[stale element reference: stale element not found
-  (Session info: chrome=120.0.6099.225)
+  (Session info: chrome=121.0.6167.86)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'APLXFVILLALVAO', ip: '10.32.30.169', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+System info: host: 'APLXFVILLALVAO', ip: '10.32.31.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50531}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c71dd9755512421256e7ab13ca2af2f5]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59870}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f99cbfb1add5a05e005fb0cac30640e1]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=120.0.6099.225)
+  (Session info: chrome=121.0.6167.86)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'APLXFVILLALVAO', ip: '10.32.30.169', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+System info: host: 'APLXFVILLALVAO', ip: '10.32.31.174', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50531}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c71dd9755512421256e7ab13ca2af2f5
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59870}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f99cbfb1add5a05e005fb0cac30640e1
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -194,10 +65,10 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-at com.metalsa.spx.dev5.main.SPXBase.click(SPXBase.java:222)
-at com.metalsa.spx.dev5.poc.SpotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(SpotBuyRequisitionsSPXPage.java:176)
-at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases.tc006_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project(QC_Testing_SPX_DEV5_TestCases.java:498)
+at org.openqa.selenium.remote.RemoteWebElement.getTagName(RemoteWebElement.java:128)
+at com.metalsa.spx.dev5.main.SPXBase.returnSaveImage(SPXBase.java:252)
+at com.metalsa.spx.dev5.poc.LoginSPX.login(LoginSPX.java:41)
+at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases.tc003_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC(QC_Testing_SPX_DEV5_TestCases.java:262)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -248,138 +119,9 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
             <line>
               <![CDATA[Return Click for Saved Image]]>
             </line>
-            <line>
-              <![CDATA[Access to SPX ...]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Validate if Element is Displayed]]>
-            </line>
-            <line>
-              <![CDATA[Access to Spot Buy Requisitions ...]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Return Click for Saved Image]]>
-            </line>
-            <line>
-              <![CDATA[Access to Spot Buy Requisitions ...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Return Click for Saved Image]]>
-            </line>
-            <line>
-              <![CDATA[Access to Spot Buy Requisitions Page ...]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Validate if Element is Displayed]]>
-            </line>
-            <line>
-              <![CDATA[Capture Information to Spot Buy Requisitions First Section]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Validate Required Fields...]]>
-            </line>
-            <line>
-              <![CDATA[The required field contains information... ]]>
-            </line>
-            <line>
-              <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Validate if Element is Displayed]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- tc006_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@1fb669c3]" started-at="2024-01-26T23:50:55Z" name="afterTest" finished-at="2024-01-26T23:50:55Z" duration-ms="0" status="PASS">
+        </test-method> <!-- tc003_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases@3e6104fc]" started-at="2024-02-02T00:05:08Z" name="afterTest" finished-at="2024-02-02T00:05:08Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

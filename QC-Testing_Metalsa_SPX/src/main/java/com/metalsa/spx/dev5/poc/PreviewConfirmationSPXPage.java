@@ -36,7 +36,6 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 */
 	public boolean textPreviewConfirmationPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Preview & Confirmation Page ...");
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnAccept);
 		return isDisplayed(btnAccept);
 	}

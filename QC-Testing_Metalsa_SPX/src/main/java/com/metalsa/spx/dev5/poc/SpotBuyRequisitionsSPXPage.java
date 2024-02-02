@@ -25,8 +25,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 
 	// Additional Header Parameters Objects
 	By chkProductServicereceivedwithoutrequisition = By.id("formSpot:servicioMaterialRealizado");
-	By chkIncludeSingleSourceFormat = By.xpath(
-			"//div[@id='formSpot:formatoAsignacionDirecta']//span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
+	By chkIncludeSingleSourceFormat = By.id("formSpot:formatoAsignacionDirecta");
 	By textValidateSameLine = By.xpath("//div[@class='ui-growl-message']");
 
 	// Line Header Objects

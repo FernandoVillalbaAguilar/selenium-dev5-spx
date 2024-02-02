@@ -35,7 +35,7 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_GENERIC_ITEM_SPOT_PAGE = "GENERIC";
 	public static final String SPX_DEV5_QUANTITY_SPOT_PAGE = "10";
 	public static final String SPX_DEV5_SELECT_MONTH_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='10']";
-	public static final String SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='2023']";
+	public static final String SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='2024']";
 	public static final String SPX_DEV5_SELECT_DAY_NEED_BY_DATE_SPOT_PAGE = "//a[@class='ui-state-default'][@href='#'][text()='28']";
 	public static final String SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_CATEGORY_SPOT_PAGE + "')]";
