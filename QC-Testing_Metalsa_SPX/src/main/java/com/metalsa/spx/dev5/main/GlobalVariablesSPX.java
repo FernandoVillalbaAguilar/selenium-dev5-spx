@@ -64,7 +64,7 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "01 Leasing";
 	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Leasing";
 	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Garza Gonzalez Erik Eduardo";
-	//Project
+	// Project
 	public static final String SPX_DEV5_SELECT_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_TASK_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
@@ -73,7 +73,7 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "')]";
-	//Second Line Project
+	// Second Line Project
 	public static final String SPX_DEV5_SELECT_PROJECT_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_TASK_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
@@ -82,15 +82,15 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_BUYER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "')]";
-	//CC
+	// CC
 	public static final String SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "A047 - HD - Labor & Compliance";
 	public static final String SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "002 - A047 - 620100000001 / Cuotas y Subscripciones - 0000";
-	
+
 	public static final String SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE + "')]";
-	//Second Line CC
+	// Second Line CC
 	public static final String SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//div[@id='formCarroCompras:carroCompra0:1:j_idt248:0:cbmCC_panel']//li[contains(.,'"
 			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
@@ -104,4 +104,53 @@ public class GlobalVariablesSPX {
 	public static final String COMMENTS_FAD = "COMENTARIOS DE PRUEBA CON FAD";
 	public static final String SELECT_CURRENCY = "//div[@class='ui-selectonemenu-items-wrapper']//li[contains(.,'"
 			+ CURRENCY + "')]";
+
+	// Administration Roles Menu
+	public static final String SPX_DEV5_MENU_NAME_ADMINISTRATION_ROLES_MENU_PAGE = "Req. Rechazadas";
+	public static final String SPX_DEV5_URL_PATH_ADMINISTRATION_ROLES_MENU_PAGE = "pages/internas/motor.jsf";
+
+	// Administration Menu
+	public static final String SPX_DEV5_MENU_NAME_ADMINISTRATION_MENU_PAGE = "Req. Rechazadas";
+	public static final String SPX_DEV5_URL_PATH_ADMINISTRATION_MENU_PAGE = "pages/internas/motor.jsf";
+	// Edit Menus
+	public static final String SPX_DEV5_NAME_MENU_ADMINISTRATION_MENU_PAGE = "Prueba Menu";
+	public static final String SPX_DEV5_DESCRIPTION_ESA_ADMINISTRATION_MENU_PAGE = "Item Prueba ESA";
+	public static final String SPX_DEV5_DESCRIPTION_US_ADMINISTRATION_MENU_PAGE = "Item Prueba US";
+	public static final String SPX_DEV5_DESCRIPTION_PTB_ADMINISTRATION_MENU_PAGE = "Item Prueba PTB";
+	public static final String SPX_DEV5_ORDER_ADMINISTRATION_MENU_PAGE = "1";
+	public static final String SPX_DEV5_CSSCLASS_ADMINISTRATION_MENU_PAGE = "CssClass Test";
+	public static final String SPX_DEV5_FACES_ADMINISTRATION_MENU_PAGE = "pages/internas/motor.jsf";
+	public static final String SPX_DEV5_CATEGORY_ADMINISTRATION_MENU_PAGE = "Motor de busqueda";
+	public static final String SPX_DEV5_SELECT_CATEGORY_ADMINISTRATION_MENU_PAGE = "//div[@id='fList:j_idt81:0:j_idt113_panel']//li[contains(text(),'"
+			+ SPX_DEV5_CATEGORY_ADMINISTRATION_MENU_PAGE + "')]";
+	public static final String SPX_DEV5_PARENT_ADMINISTRATION_MENU_PAGE = "Vending Machine";
+	public static final String SPX_DEV5_SELECT_PARENT_ADMINISTRATION_MENU_PAGE = "//div[@id='fList:j_idt81:0:j_idt131_panel']//li[contains(.,'"
+			+ SPX_DEV5_PARENT_ADMINISTRATION_MENU_PAGE + "')]";
+	public static final String SPX_DEV5_ACTIVE_ADMINISTRATION_MENU_PAGE = "Active";
+	public static final String SPX_DEV5_SELECT_ACTIVE_ADMINISTRATION_MENU_PAGE = "(//li[@data-label='"
+			+ SPX_DEV5_ACTIVE_ADMINISTRATION_MENU_PAGE + "'][normalize-space()='"
+			+ SPX_DEV5_ACTIVE_ADMINISTRATION_MENU_PAGE + "'])[1]";
+	public static final String SPX_DEV5_INACTIVE_ADMINISTRATION_MENU_PAGE = "Inactive";
+	public static final String SPX_DEV5_SELECT_INACTIVE_ADMINISTRATION_MENU_PAGE = "(//li[@data-label='"
+			+ SPX_DEV5_INACTIVE_ADMINISTRATION_MENU_PAGE + "'][normalize-space()='"
+			+ SPX_DEV5_INACTIVE_ADMINISTRATION_MENU_PAGE + "'])[1]";
+	public static final String SPX_DEV5_MENU_ROOT_ADMINISTRATION_MENU_PAGE = "Menu Root";
+	public static final String SPX_DEV5_SELECT_MENU_ROOT_ADMINISTRATION_MENU_PAGE = "(//li[@data-label='"
+			+ SPX_DEV5_MENU_ROOT_ADMINISTRATION_MENU_PAGE + "'][normalize-space()='"
+			+ SPX_DEV5_MENU_ROOT_ADMINISTRATION_MENU_PAGE + "'])[1]";
+	public static final String SPX_DEV5_MENU_SIMPLE_ADMINISTRATION_MENU_PAGE = "Menu Simple";
+	public static final String SPX_DEV5_SELECT_MENU_SIMPLE_ADMINISTRATION_MENU_PAGE = "(//li[@data-label='"
+			+ SPX_DEV5_MENU_SIMPLE_ADMINISTRATION_MENU_PAGE + "'][normalize-space()='"
+			+ SPX_DEV5_MENU_SIMPLE_ADMINISTRATION_MENU_PAGE + "'])[1]";
+
+	// Articulos Controlados
+	public static final String SPX_DEV5_UEN_ARTICULOS_CONTROLADOS_PAGE = "Metalsa LV Apodaca";
+	public static final String SPX_DEV5_LOCALIZACION_ARTICULOS_CONTROLADOS_PAGE = "Vehículos Ligeros Apodaca - Apodaca";
+	public static final String SPX_DEV5_CODIGO_PRODUCTO_ARTICULOS_CONTROLADOS_PAGE = "101004";
+	public static final String SPX_DEV5_NOMBRE_FABRICANTE_ARTICULOS_CONTROLADOS_PAGE = "FABRICANTE DE PRUEBA";
+	public static final String SPX_DEV5_NUM_PARTE_FABRICANTE_ARTICULOS_CONTROLADOS_PAGE = "101004";
+	public static final String SPX_DEV5_NUM_PARTE_PROVEEDOR_ARTICULOS_CONTROLADOS_PAGE = "101004";
+	public static final String SPX_DEV5_DESCRIPCION_ARTICULOS_CONTROLADOS_PAGE = "Abrazadera";
+	public static final String SPX_DEV5_PICKLIST_SOURCE_ARTICULOS_CONTROLADOS_PAGE = "10105";
+	public static final String SPX_DEV5_PICKLIST_TARGET_ARTICULOS_CONTROLADOS_PAGE = "Stopper";
 }

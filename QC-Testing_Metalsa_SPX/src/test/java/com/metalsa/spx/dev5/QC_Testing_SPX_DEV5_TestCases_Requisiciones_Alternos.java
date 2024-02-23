@@ -19,7 +19,7 @@ import com.metalsa.spx.dev5.poc.ShoppingCartSPXPage;
 import com.metalsa.spx.dev5.poc.SingleSourceFormatSPXPage;
 import com.metalsa.spx.dev5.poc.SpotBuyRequisitionsSPXPage;
 
-public class QC_Testing_SPX_DEV5_TestCases {
+public class QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos {
 
 	WebDriver driver;
 	SPXBase spxBase;
@@ -79,98 +79,32 @@ public class QC_Testing_SPX_DEV5_TestCases {
 		int numberOfRuns = 2; // You can adjust this based on the number of times you want to run the test
 
 //		for (int i = 0; i < numberOfRuns; i++) {
-//			tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC();
+//			tc001_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC();
 //		}
 //		afterTest();
 //		beforeTest();
 		for (int i = 0; i < numberOfRuns; i++) {
-			tc002_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC();
+			tc002_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC();
 		}
 //		afterTest();
 //		beforeTest();
 //		for (int i = 0; i < numberOfRuns; i++) {
-//			tc003_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC();
+//			tc003_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC_Urgent();
 //		}
 //		afterTest();
 //		beforeTest();
 //		for (int i = 0; i < numberOfRuns; i++) {
-//			tc004_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC_Urgent();
+//			tc004_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project();
 //		}
 //		afterTest();
 //		beforeTest();
 //		for (int i = 0; i < numberOfRuns; i++) {
-//			tc005_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Project();
+//			tc005_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_Project();
 //		}
 	}
 
 	@Test
-	public void tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC() throws InterruptedException {
-		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
-		TreeMap<String, String> listaScreenShotsAux;
-		List<String> steps = new ArrayList<>();
-		List<String> values = new ArrayList<>();
-
-		// Launch Browser
-		spxBase.launchBrowser(url);
-
-		// Enter username and password and click to button "Enter"
-		listaScreenShots.put("Step1", loginSPXPage.login(usernameCC, password));
-		steps.add("Step 1 - Enter username and password and click to button Enter ");
-		values.add("Credentials Entered");
-
-		// Validate access to SPX
-		Assert.assertEquals(homeSPXPage.menuHeaderHomeIsDisplayed(), true);
-
-		// Select to UEN and Access to Spot Buy Requisitions
-		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
-		listaScreenShotsAux.putAll(homeSPXPage.accesToSpotBuyRequisitions());
-		Assert.assertEquals(spotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(), true);
-		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
-		steps.add("Step 2 - Select to UEN and Access to Spot Buy Requisitions ");
-		values.add("UEN Correctly selected and Correct access");
-
-		// Data Capture Spot Buy Requisition
-		listaScreenShotsAux = new TreeMap<>(); // List clear
-		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
-				measurements, modelPartNumber, genericName);
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(
-				quantity, category, family, subFamily, genericItem, unitOfMeasure));
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage
-				.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot));
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.addtoCart());
-		listaScreenShots.put("Step3", listaScreenShotsAux); // Add all list
-		steps.add("Step 3 - Data Capture Spot Buy Requisition ");
-		values.add("Data captured correctly");
-
-		// Select to Requisition
-		listaScreenShotsAux = new TreeMap<>(); // List clear
-		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
-		listaScreenShotsAux.putAll(shoppingCartSPXPage.CheckSpotRequisitionShoppingCart());
-		listaScreenShotsAux.putAll(shoppingCartSPXPage.clickSetupPurchaseSpotRequisitionShoppingCart());
-		listaScreenShots.put("Step4", listaScreenShotsAux); // Add all list
-		steps.add("Step 4 - Select to Requisition ");
-		values.add("Requisition Correctly selected");
-
-		// Select Type Account For Requisition
-		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
-		listaScreenShots.put("Step5",
-				accountConfigurationSPXPage.selectTypeAccountForRequisitionCC(costCenter, accountingAccount));
-		steps.add("Step 5 - Select Type Account For Requisition ");
-		values.add("Type Account Correctly selected");
-
-		// Accept to Requisition
-		Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
-		listaScreenShots.put("Step6", previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage());
-		steps.add("Step 6 - Accept to Requisition ");
-		values.add("Requisition Accepted");
-
-		// Pass steps and values to saveWordDocument
-		spxBase.saveWordDocument(listaScreenShots, steps, values);
-	}
-
-	@Test
-	public void tc002_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC() throws InterruptedException {
+	public void tc001_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC() throws InterruptedException {
 		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
 		TreeMap<String, String> listaScreenShotsAux;
 		List<String> steps = new ArrayList<>();
@@ -249,7 +183,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	}
 
 	@Test
-	public void tc003_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC() throws InterruptedException {
+	public void tc002_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC() throws InterruptedException {
 		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
 		TreeMap<String, String> listaScreenShotsAux;
 		List<String> steps = new ArrayList<>();
@@ -325,7 +259,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	}
 
 	@Test
-	public void tc004_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC_Urgent()
+	public void tc003_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC_Urgent()
 			throws InterruptedException, InvalidFormatException {
 		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
 		TreeMap<String, String> listaScreenShotsAux;
@@ -394,72 +328,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	}
 
 	@Test
-	public void tc005_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Project() throws InterruptedException {
-		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
-		TreeMap<String, String> listaScreenShotsAux;
-		List<String> steps = new ArrayList<>();
-		List<String> values = new ArrayList<>();
-
-		// Launch Browser
-		spxBase.launchBrowser(url);
-
-		// Enter user-name and password and click to button "Enter"
-		listaScreenShots.put("Step1", loginSPXPage.login(usernameP, password));
-		steps.add("Step 1 - Enter username and password and click to button Enter");
-		values.add("Credentials Entered");
-
-		// Validate access to SPX
-		Assert.assertEquals(homeSPXPage.menuHeaderHomeIsDisplayed(), true);
-
-		// Select to UEN and Access to Spot Buy Requisitions
-		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
-		listaScreenShotsAux.putAll(homeSPXPage.accesToSpotBuyRequisitions());
-		Assert.assertEquals(spotBuyRequisitionsSPXPage.textSpotBuyRequisitionsPageIsDisplayed(), true);
-		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
-		steps.add("Step 2 - Select to UEN and Access to Spot Buy Requisitions ");
-		values.add("UEN Correctly selected and Correct access");
-
-		// Data Capture Spot Buy Requisition
-		listaScreenShotsAux = new TreeMap<>(); // List clear
-		spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionFirstSection(description, material, color, brand,
-				measurements, modelPartNumber, genericName);
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.captureInformationSpotBuyRequisitionsSecondSection(
-				quantity, category, family, subFamily, genericItem, unitOfMeasure));
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage
-				.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot));
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.addtoCart());
-		listaScreenShots.put("Step3", listaScreenShotsAux); // Add all list
-		steps.add("Step 3 - Data Capture Spot Buy Requisition");
-		values.add("Data captured correctly");
-
-		// Select to Requisition
-		listaScreenShotsAux = new TreeMap<>(); // List clear
-		Assert.assertEquals(shoppingCartSPXPage.textShoppingCartPageIsDisplayed(), true);
-		listaScreenShotsAux.putAll(shoppingCartSPXPage.CheckSpotRequisitionShoppingCart());
-		listaScreenShotsAux.putAll(shoppingCartSPXPage.clickSetupPurchaseSpotRequisitionShoppingCart());
-		listaScreenShots.put("Step4", listaScreenShotsAux); // Add all list
-		steps.add("Step 4 - Select to Requisition");
-		values.add("Requisition Correctly selected");
-
-		// Select Type Account For Requisition
-		Assert.assertEquals(accountConfigurationSPXPage.textAccountConfigurationPageIsDisplayed(), true);
-		listaScreenShots.put("Step5", accountConfigurationSPXPage.selectTypeAccountForRequisitionProject(project));
-		steps.add("Step 5 - Select Type Account For Requisition");
-		values.add("Type Account Correctly selected");
-
-		// Accept to Requisition
-		Assert.assertEquals(previewConfirmationSPXPage.textPreviewConfirmationPageIsDisplayed(), true);
-		listaScreenShots.put("Step6", previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage());
-		steps.add("Step 6 - Accept to Requisition");
-		values.add("Requisition Accepted");
-
-		// Pass steps and values to saveWordDocument
-		spxBase.saveWordDocument(listaScreenShots, steps, values);
-	}
-
-	@Test
-	public void tc006_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project() throws InterruptedException {
+	public void tc004_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project() throws InterruptedException {
 		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
 		TreeMap<String, String> listaScreenShotsAux;
 		List<String> steps = new ArrayList<>();
@@ -538,7 +407,7 @@ public class QC_Testing_SPX_DEV5_TestCases {
 	}
 
 	@Test
-	public void tc007_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_Project() throws InterruptedException {
+	public void tc005_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_Project() throws InterruptedException {
 		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
 		TreeMap<String, String> listaScreenShotsAux;
 		List<String> steps = new ArrayList<>();

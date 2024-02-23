@@ -66,9 +66,9 @@ public class SPXBase {
 			driver = new ChromeDriver(chromeOpt);
 			return driver;
 		} catch (TimeoutException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** The connection was not made correctly...");
+			System.out.println("***** ERROR ***** The connection was not made correctly...");
+			e.printStackTrace();
 			return null;
 		}
 	}
@@ -93,10 +93,10 @@ public class SPXBase {
 			driver.get(getEncrypted(url));
 			driver.manage().window().maximize();
 		} catch (TimeoutException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** Unable to access the url: ");
+			System.out.println("***** ERROR ***** Unable to access the url: ");
 			System.out.println(url);
+			e.printStackTrace();
 		}
 	}
 
@@ -118,9 +118,9 @@ public class SPXBase {
 		try {
 			Reporter.log(log);
 		} catch (TimeoutException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** The report was not made correctly...");
+			System.out.println("***** ERROR ***** The report was not made correctly...");
+			e.printStackTrace();
 		}
 	}
 
@@ -145,9 +145,9 @@ public class SPXBase {
 			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		} catch (TimeoutException e) {
-			// e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
@@ -171,9 +171,9 @@ public class SPXBase {
 			WebDriverWait wait = new WebDriverWait(driver, seconds);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		} catch (TimeoutException e) {
-			// e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
@@ -196,10 +196,37 @@ public class SPXBase {
 			driver.findElement(locator).sendKeys(inputText);
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** It was not possible to capture data in the element: " + locator + " Because: "
+			System.out.println("***** ERROR ***** It was not possible to capture data in the element: " + locator + " Because: "
 					+ e.getMessage());
+			e.printStackTrace();
+		}
+
+	}
+	
+	/*
+	 * @name: typeClear
+	 * 
+	 * @date: 28/Oct/2023
+	 * 
+	 * @param: By locator, String inputText
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite borrar un dato en un campo de texto
+	 */
+	public void typeClear(By locator) {
+		try {
+			reporterLog("Input Text to Field");
+			driver.findElement(locator).clear();
+			takeScreenshot();
+		} catch (NoSuchElementException e) {
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** ERROR ***** It was not possible to clear data in the element: " + locator + " Because: "
+					+ e.getMessage());
+			e.printStackTrace();
 		}
 
 	}
@@ -223,10 +250,10 @@ public class SPXBase {
 			driver.findElement(locator).click();
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
-			// e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
 			System.out.println(
-					"***** It was not possible to click on the item: " + locator + " because: " + e.getMessage());
+					"***** ERROR ***** It was not possible to click on the item: " + locator + " because: " + e.getMessage());
+			e.printStackTrace();
 		}
 
 	}
@@ -253,9 +280,9 @@ public class SPXBase {
 			return takeScreenshot();
 
 		} catch (NoSuchElementException e) {
-			// e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** It was not possible to save image: " + locator + " because: " + e.getMessage());
+			System.out.println("***** ERROR ***** It was not possible to save image: " + locator + " because: " + e.getMessage());
+			e.printStackTrace();
 		}
 		return takeScreenshot();
 	}
@@ -278,9 +305,9 @@ public class SPXBase {
 			String dateTime = DateTimeFormatter.ofPattern("MMM dd yyyy, hh mm ss a").format(LocalDateTime.now());
 			return dateTime;
 		} catch (NoSuchElementException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** It was not possible to generate the date...");
+			System.out.println("***** ERROR ***** It was not possible to generate the date...");
+			e.printStackTrace();
 			return null;
 		}
 	}
@@ -307,7 +334,7 @@ public class SPXBase {
 				return driver.findElement(locator).isDisplayed();
 			} else {
 				System.out.println("-----  " + this.getClass().getName() + "  -----");
-				System.out.println("***** Element: " + locator + " was not found...");
+				System.out.println("***** ERROR ***** Element: " + locator + " was not found...");
 				takeScreenshot();
 				return driver.findElement(locator).isDisplayed();
 			}
@@ -315,7 +342,7 @@ public class SPXBase {
 		} catch (NoSuchElementException e) {
 			// e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** Element: " + locator + " was not found... " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** Element: " + locator + " was not found... " + "Because: " + e.getMessage());
 			return false;
 		}
 	}
@@ -339,9 +366,9 @@ public class SPXBase {
 			String absolutePath = file.getAbsolutePath();
 			driver.findElement(locator).sendKeys(absolutePath);
 		} catch (NoSuchElementException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** It was not possible to upload the file...");
+			System.out.println("***** ERROR ***** It was not possible to upload the file...");
+			e.printStackTrace();
 		}
 	}
 
@@ -369,7 +396,7 @@ public class SPXBase {
 			String jsonValueString = (String) jsonObject.get(jsonKey);
 			return jsonValueString;
 		} catch (FileNotFoundException e) {
-			Assert.fail("***** JSON file is not found " + "Because: " + e.getMessage());
+			Assert.fail("***** ERROR ***** JSON file is not found " + "Because: " + e.getMessage());
 			return null;
 		}
 	}
@@ -392,8 +419,8 @@ public class SPXBase {
 			byte[] decodedBytes = Base64.decodeBase64(encrypted);
 			return new String(decodedBytes);
 		} catch (TimeoutException e) {
+			System.out.println("***** ERROR ***** It was not possible to obtain the encryption...");
 			e.printStackTrace();
-			System.out.println("***** It was not possible to obtain the encryption...");
 			return null;
 		}
 	}
@@ -417,9 +444,9 @@ public class SPXBase {
 			nameProduct = driver.findElement(locator).getText();
 			System.out.println(nameProduct);
 		} catch (TimeoutException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** No text found to display...");
+			System.out.println("***** ERROR ***** No text found to display...");
+			e.printStackTrace();
 		}
 	}
 
@@ -445,14 +472,14 @@ public class SPXBase {
 			} else {
 				System.out.println("-----  " + this.getClass().getName() + "  -----");
 				displayElementName(driver, locator);
-				System.out.println("***** The: " + locator + " field is mandatory and cannot be empty...");
+				System.out.println("***** ERROR ***** The: " + locator + " field is mandatory and cannot be empty...");
 				driver.close();
 			}
 		} catch (TimeoutException e) {
-			e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** The: " + locator + " field is mandatory and cannot be empty... " + "Because: "
+			System.out.println("***** ERROR ***** The: " + locator + " field is mandatory and cannot be empty... " + "Because: "
 					+ e.getMessage());
+			e.printStackTrace();
 		}
 	}
 
@@ -545,7 +572,7 @@ public class SPXBase {
 
 		} catch (Exception e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("I could not save Word Document... " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** I could not save Word Document... " + "Because: " + e.getMessage());
 		}
 	}
 
@@ -579,7 +606,7 @@ public class SPXBase {
 
 		} catch (Exception e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** I could not take the screenshot... " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** I could not take the screenshot... " + "Because: " + e.getMessage());
 		}
 		return listaScreenShots;
 	}
@@ -602,7 +629,7 @@ public class SPXBase {
 			WebElement element = driver.findElement(locator);
 			return element != null;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			System.out.println("***** The: " + locator + " is empty... " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** The: " + locator + " is empty... " + "Because: " + e.getMessage());
 			return false;
 		}
 	}
@@ -628,10 +655,10 @@ public class SPXBase {
 			if (elementName != null && !elementName.isEmpty()) {
 				System.out.println("Element Name: " + elementName);
 			} else {
-				System.out.println("***** Element: " + locator + " does not have a name attribute.");
+				System.out.println("***** ERROR ***** Element: " + locator + " does not have a name attribute.");
 			}
 		} catch (org.openqa.selenium.NoSuchElementException e) {
-			System.out.println("***** Element: " + locator + " not found. " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** Element: " + locator + " not found. " + "Because: " + e.getMessage());
 		}
 	}
 
@@ -678,7 +705,7 @@ public class SPXBase {
 			js.executeScript("arguments[0].scrollIntoView();", flag);
 		} catch (Exception e) {
 			System.out.println("----- " + this.getClass().getName() + " -----");
-			System.out.println("***** No realice Scroll. " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** No realice Scroll. " + "Because: " + e.getMessage());
 		}
 	}
 

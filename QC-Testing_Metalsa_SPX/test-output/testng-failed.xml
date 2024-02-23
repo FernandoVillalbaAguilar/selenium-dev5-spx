@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases">
+      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema">
         <methods>
-          <include name="tc006_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project"/>
-          <include name="beforeTest"/>
+          <include name="tc010_SPX_Dev5_Validacion_Agregar_Remover_Articulos_Controlados"/>
           <include name="afterTest"/>
+          <include name="beforeTest"/>
         </methods>
-      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases -->
+      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
