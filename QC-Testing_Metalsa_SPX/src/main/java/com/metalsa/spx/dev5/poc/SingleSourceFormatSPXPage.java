@@ -14,34 +14,28 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 
 //Objects
 	// Header Objects
-	By btnBack = By.id("formFAD:j_idt527");
-	By btnSave = By.id("formFAD:j_idt528");
+	By btnBack = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[1]/span[2]");
+	By btnSave = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[2]/div[1]/div[1]/div[1]/div[1]/button[2]/span[2]");
 	By txtSingleScourseFormat = By.xpath("/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[1]/div[1]/h3[1]");
 	By msgStatusFAD = By.id("formFAD:mensageStatus");
 	// First section
 	By txtDescription = By.id("formFAD:desc_1");
 	By txtSupplierName = By.id("formFAD:suppliers_input");
 	By slctSupplierName = By.id("formFAD:suppliers_panel");
-	By txtAmount = By.id("formFAD:j_idt546_input");
-	By lblCurrency = By.id("formFAD:j_idt548");
-	By txtCurrency = By.id("formFAD:j_idt548_filter");
+	By txtAmount = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[2]/div[1]/span[1]/input[1]");
+	By lblCurrency = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[2]/div[2]/div[1]/label[1]");
+	By txtCurrency = By.xpath("/html[1]/body[1]/div[23]/div[1]/input[1]");
 	By slctCurrency = By.xpath(GlobalVariablesSPX.SELECT_CURRENCY);
 	// Second section
-	By rdbtnSingleSourceFormatReasonQuality = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonNegotiatedPrice = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonSingleSource = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonProuctionMaterial = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[4]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonLackOfScheduleAvailability = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]/div[2]/span[1]");
-	By rdbtnSingleSourceFormatReasonOtherReason = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[6]/td[1]/div[1]/div[2]/span[1]");
+	By rdbtnSingleSourceFormatReason = By.xpath(GlobalVariablesSPX.SINGLE_SOURCE_FORMAT_REASON);
 	By txtDetails = By.id("formFAD:fad_razon_otro");
 	// Third section
-	By txtComments = By.id("formFAD:j_idt557");
+	By txtComments = By.xpath(
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[2]/fieldset[1]/div[1]/div[1]/div[1]/div[2]/textarea[1]");
 	By btnChooseFiles = By.id("formFAD:fileUpload_input");
 
 	/*
@@ -82,6 +76,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 			String details, String comments, String pathFileSpot) throws InterruptedException {
 		type(txtDescription, description);
 		type(txtSupplierName, supplierName);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(slctSupplierName);
 		click(slctSupplierName);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
@@ -90,7 +85,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 		waitForElementPresent(txtCurrency);
 		click(slctCurrency);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		click(rdbtnSingleSourceFormatReasonOtherReason);
+		click(rdbtnSingleSourceFormatReason);
 		type(txtDetails, details);
 		type(txtComments, comments);
 		uploadFile(pathFileSpot, btnChooseFiles);

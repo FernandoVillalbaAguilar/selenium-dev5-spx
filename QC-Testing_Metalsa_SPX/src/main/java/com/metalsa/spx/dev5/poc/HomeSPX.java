@@ -20,14 +20,23 @@ public class HomeSPX extends SPXBase {
 	// Administración del sistema
 	By iconMenuAdministracionDelSistema = By.xpath("//a[@href='#_menu_182']");
 	By iconMenuAdministradorTI = By.xpath("//a[@href='#_menu_183']");
-	By iconMenuAdministradorRolesMenu = By.xpath("//a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/rolesMenu/index.xhtml']");
-	By iconMenuAdministradorMenu = By.xpath("//a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/menu/index.xhtml']");
-	By iconMenuArticulosControlados = By.xpath("//a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/itemsControlados.xhtml']");
+	By iconMenuAdministradorRolesMenu = By
+			.xpath("//a[@href='"+GlobalVariablesSPX.SPX_DEV5_URL+"pages/administracion/rolesMenu/index.xhtml']");
+	By iconMenuAdministradorMenu = By
+			.xpath("//a[@href='"+GlobalVariablesSPX.SPX_DEV5_URL+"pages/administracion/menu/index.xhtml']");
+	By iconMenuArticulosControlados = By
+			.xpath("//a[@href='"+GlobalVariablesSPX.SPX_DEV5_URL+"pages/administracion/itemsControlados.xhtml']");
+	// Proceso de Nuevo Articulo de Almacen
+	By iconMenuProcesoNuevoArticuloAlmacen = By.xpath("//a[@href='#_menu_445']");
+	By iconMenuArticulosPorProcesar = By.xpath(
+			"//a[@href='"+GlobalVariablesSPX.SPX_DEV5_URL+"pages/almacen/solicitud/cotizaciones/solicitudesPorCotizar.xhtml']");
+	By iconMenuCapturadeCotizaciones = By.xpath(
+			"//a[@href='"+GlobalVariablesSPX.SPX_DEV5_URL+"pages/almacen/solicitud/cotizaciones/capturaCotizacion.xhtml']");
 	// Requisiciones
 	By iconMenuRequisitions = By.xpath("//a[@href='#_menu_191']");
 	By iconMenuRequisitionsCreateRequisition = By.xpath("//a[@href='#_menu_192']");
 	By iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions = By
-			.xpath("//a[@href='http://gpmtest2-app6:9203/SPX//pages/spot/index.xhtml']");
+			.xpath("//a[@href='"+GlobalVariablesSPX.SPX_DEV5_URL+"/pages/spot/index.xhtml']");
 
 	/*
 	 * @name: menuHeaderHomeIsDisplayed
@@ -96,7 +105,7 @@ public class HomeSPX extends SPXBase {
 		click(iconMenuAdministradorRolesMenu);
 		return returnSaveImage(iconMenuAdministradorRolesMenu);
 	}
-	
+
 	/*
 	 * @name: accesToAdministradorMenu
 	 * 
@@ -121,7 +130,7 @@ public class HomeSPX extends SPXBase {
 		click(iconMenuAdministradorMenu);
 		return returnSaveImage(iconMenuAdministradorMenu);
 	}
-	
+
 	/*
 	 * @name: accesToArticulosControlados
 	 * 
@@ -146,7 +155,53 @@ public class HomeSPX extends SPXBase {
 		click(iconMenuArticulosControlados);
 		return returnSaveImage(iconMenuArticulosControlados);
 	}
-	
+
+	/*
+	 * @name: accesToArticulosPorProcesar
+	 * 
+	 * @date: 15/Feb/2024
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite acceder a la pagina indicada
+	 */
+	public TreeMap<String, String> accesToArticulosPorProcesar() {
+		reporterLog("Access to Articulos por Procesar ...");
+		click(iconMenu);
+		waitForElementPresent(iconMenuProcesoNuevoArticuloAlmacen);
+		click(iconMenuProcesoNuevoArticuloAlmacen);
+		waitForElementPresent(iconMenuArticulosPorProcesar);
+		click(iconMenuArticulosPorProcesar);
+		return returnSaveImage(iconMenuArticulosPorProcesar);
+	}
+
+	/*
+	 * @name: accesToCapturadeCotizaciones
+	 * 
+	 * @date: 15/Feb/2024
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite acceder a la pagina indicada
+	 */
+	public TreeMap<String, String> accesToCapturadeCotizaciones() {
+		reporterLog("Access to Caputa de cotizaciones ...");
+		click(iconMenu);
+		waitForElementPresent(iconMenuProcesoNuevoArticuloAlmacen);
+		click(iconMenuProcesoNuevoArticuloAlmacen);
+		waitForElementPresent(iconMenuCapturadeCotizaciones);
+		click(iconMenuCapturadeCotizaciones);
+		return returnSaveImage(iconMenuCapturadeCotizaciones);
+	}
+
 	/*
 	 * @name: accesToSpotBuyRequisitions
 	 * 
@@ -165,7 +220,7 @@ public class HomeSPX extends SPXBase {
 		click(iconMenu);
 		waitForElementPresent(iconMenuRequisitions);
 		click(iconMenuRequisitions);
-		waitForElementPresent(iconMenuAdministradorTI);
+		waitForElementPresent(iconMenuRequisitionsCreateRequisition);
 		click(iconMenuRequisitionsCreateRequisition);
 		waitForElementPresent(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);
 		click(iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions);

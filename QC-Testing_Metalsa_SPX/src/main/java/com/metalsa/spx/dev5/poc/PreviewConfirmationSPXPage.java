@@ -55,6 +55,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 */
 	public TreeMap<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
 		reporterLog("Accept to Requisition");
+		waitForElementPresent(btnAccept);
 		click(btnAccept);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(txtRequisitionGenerate);

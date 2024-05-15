@@ -5,8 +5,8 @@
     <classes>
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema">
         <methods>
-          <include name="tc010_SPX_Dev5_Validacion_Agregar_Remover_Articulos_Controlados"/>
           <include name="afterTest"/>
+          <include name="tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados"/>
           <include name="beforeTest"/>
         </methods>
       </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema -->

@@ -9,9 +9,11 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 import java.util.TreeMap;
 import java.util.UUID;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import javax.imageio.ImageIO;
 import org.apache.commons.codec.binary.Base64;
@@ -36,10 +38,51 @@ import org.testng.Reporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
+import org.openqa.selenium.interactions.Actions;
 
 public class SPXBase {
 	private WebDriver driver;
 	private TreeMap<String, String> listaScreenShots = new TreeMap<>();
+
+	// Random Variables
+	static String[] singleSourceFormatReason = {
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]",
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[3]/td[1]/div[1]/div[2]/span[1]",
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[4]/td[1]/div[1]/div[2]/span[1]",
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]/div[2]/span[1]",
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[6]/td[1]/div[1]/div[2]/span[1]",
+			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[2]/span[1]" };
+	static String[] unidadDeMedida = { "SET", "CASE", "TUB", "CASE", "ACRE", "HECTARE", "PINT", "PIE", "B10", "55D",
+			"KIT", "GAL" };
+	static String[] proveedores = { "MIGESA S.A DE C.V.", "ORBI LOGISTIC", "C.H. ROBINSON DE MEXICO S.A. DE C.V.",
+			"JEFFERSON METAL PRODUCTS INC", "NORDSON DE MEXICO S.A. DE C.V.", "CALVEK COMPONENTES BAJIO SA DE CV",
+			"IMPRESIONES INTELIGENTES A BAJO COSTO SA DE CV",
+			"PROVEEDORA DE TECNOLOGIAS INTELIGENTES DEL BAJIO SA DE CV", "LUBRICANTES DEL BAJIO SA DE CV" };
+	static String[] numRand = { "001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012",
+			"013", "014", "015", "016", "017", "018", "019", "020" };
+	static String[] quantity = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+			"17", "18", "19", "20", "21", "22", "23", "24", "25", "4654", "1245", "458721", "254", "7849", "9685",
+			"8457" };
+	static String[] material = { "ORO", "PLATA", "COBRE", "PLASTICO", "MADERA", "PORCELANA", "HULE", "HIERRO",
+			"CRISTAL", "PIEL", "MDF", "TELA", "PET", "ALUMINIO", "PALMA", "FOAMY", "ARCILLA", "CARTON", "PAPEL" };
+	static String[] color = { "BLANCO", "AMARILLO", "AZUL", "NEGRO", "ROSA", "VERDE", "MORADO", "NARANJA", "VIOLETA",
+			"TRANSPARENTE", "GRIS", "ROJO", "CAFE", "ESMERALDA", "MENTA", "FIUSHA", "SALMON", "MAGENTA",
+			"AZUL PASTEL" };
+	static String[] marca = { "HUAWEI", "HP", "APPLE", "OPPO", "SAMNSUNG", "DELL", "TOSHIBA", "ALCATEL", "LG", "MABE",
+			"ALIENWARE", "MEMBER'S MARK", "RUBIK", "PARISINA", "MOYU", "TURIN", "VISSION", "ADATA", "KINGSTONG" };
+	static String[] medidas = { "12 PULG", "10 CM", "8 CM", "10 PULG", "12 CM", "15 PIES", "18 PIES", "20 M", "55 CM",
+			"98 PULG", "145 CM", "54 PIES", "45 CM", "1 YARD", "2 YARD", "3 YARD", "1 CM", "2 PULG", "3 PIES" };
+	static String[] moneda = { "MXN", "USD", "EUR", "ADP", "YUD" };
+	static String[] razonUrgencia = { "Seguridad del Personal", "Paro de línea",
+			"Afectación de calidad directa al cliente" };
+	static String[] razonUrgenciaENG = { "Personal security", "Production line stops",
+			"Direct quality affectation to client" };
+
+	static Random rand = new Random();
+
+	public static String getRandomValue(String[] array) {
+		return array[rand.nextInt(array.length)];
+	}
 
 	public SPXBase(WebDriver driver) {
 		this.driver = driver;
@@ -87,6 +130,7 @@ public class SPXBase {
 	 * @description: Este metodo permite ingresar a la URL de la pagina y maximiza
 	 * la ventana
 	 */
+
 	public void launchBrowser(String url) {
 		try {
 			reporterLog("Launching ... " + url);
@@ -94,8 +138,11 @@ public class SPXBase {
 			driver.manage().window().maximize();
 		} catch (TimeoutException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** Unable to access the url: ");
-			System.out.println(url);
+			System.out.println("***** ERROR ***** Timeout while loading the URL: " + url);
+			e.printStackTrace();
+		} catch (WebDriverException e) {
+			System.out.println("-----  " + this.getClass().getName() + "  -----");
+			System.out.println("***** ERROR ***** WebDriver encountered an error while launching the browser:");
 			e.printStackTrace();
 		}
 	}
@@ -146,7 +193,8 @@ public class SPXBase {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		} catch (TimeoutException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
+			System.out.println(
+					"***** ERROR ***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -172,7 +220,8 @@ public class SPXBase {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		} catch (TimeoutException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
+			System.out.println(
+					"***** ERROR ***** The element: " + locator + " is not present... " + "Because: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -197,13 +246,13 @@ public class SPXBase {
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** It was not possible to capture data in the element: " + locator + " Because: "
-					+ e.getMessage());
+			System.out.println("***** ERROR ***** It was not possible to capture data in the element: " + locator
+					+ " Because: " + e.getMessage());
 			e.printStackTrace();
 		}
 
 	}
-	
+
 	/*
 	 * @name: typeClear
 	 * 
@@ -224,8 +273,8 @@ public class SPXBase {
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** It was not possible to clear data in the element: " + locator + " Because: "
-					+ e.getMessage());
+			System.out.println("***** ERROR ***** It was not possible to clear data in the element: " + locator
+					+ " Because: " + e.getMessage());
 			e.printStackTrace();
 		}
 
@@ -251,8 +300,8 @@ public class SPXBase {
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println(
-					"***** ERROR ***** It was not possible to click on the item: " + locator + " because: " + e.getMessage());
+			System.out.println("***** ERROR ***** It was not possible to click on the item: " + locator + " because: "
+					+ e.getMessage());
 			e.printStackTrace();
 		}
 
@@ -281,7 +330,8 @@ public class SPXBase {
 
 		} catch (NoSuchElementException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** It was not possible to save image: " + locator + " because: " + e.getMessage());
+			System.out.println(
+					"***** ERROR ***** It was not possible to save image: " + locator + " because: " + e.getMessage());
 			e.printStackTrace();
 		}
 		return takeScreenshot();
@@ -327,24 +377,24 @@ public class SPXBase {
 	 * disponible
 	 */
 	public boolean isDisplayed(By locator) {
+		boolean isElementDisplayed = false;
 		try {
-			if (driver.findElement(locator).isDisplayed()) {
+			isElementDisplayed = driver.findElement(locator).isDisplayed();
+			if (isElementDisplayed) {
 				reporterLog("Validate if Element is Displayed");
-				takeScreenshot();
-				return driver.findElement(locator).isDisplayed();
 			} else {
 				System.out.println("-----  " + this.getClass().getName() + "  -----");
-				System.out.println("***** ERROR ***** Element: " + locator + " was not found...");
-				takeScreenshot();
-				return driver.findElement(locator).isDisplayed();
+				System.out.println("***** ERROR ***** Element: " + locator + " was not found & not Displayed...");
 			}
-
 		} catch (NoSuchElementException e) {
-			// e.printStackTrace();
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** Element: " + locator + " was not found... " + "Because: " + e.getMessage());
+			System.out.println("***** ERROR ***** Element: " + locator + " was not found & not Displayed... "
+					+ "Because: " + e.getMessage());
 			return false;
+		} finally {
+			takeScreenshot();
 		}
+		return isElementDisplayed;
 	}
 
 	/*
@@ -418,7 +468,7 @@ public class SPXBase {
 		try {
 			byte[] decodedBytes = Base64.decodeBase64(encrypted);
 			return new String(decodedBytes);
-		} catch (TimeoutException e) {
+		} catch (IllegalArgumentException e) {
 			System.out.println("***** ERROR ***** It was not possible to obtain the encryption...");
 			e.printStackTrace();
 			return null;
@@ -451,7 +501,7 @@ public class SPXBase {
 	}
 
 	/*
-	 * @name: getText
+	 * @name: requiredFields
 	 * 
 	 * @date: 02/Nov/2023
 	 * 
@@ -461,7 +511,7 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite obtener el texto de un elemento
+	 * @description: Este metodo permite validar campos obligatorios
 	 */
 	public void requiredFields(By locator) {
 		try {
@@ -477,8 +527,8 @@ public class SPXBase {
 			}
 		} catch (TimeoutException e) {
 			System.out.println("-----  " + this.getClass().getName() + "  -----");
-			System.out.println("***** ERROR ***** The: " + locator + " field is mandatory and cannot be empty... " + "Because: "
-					+ e.getMessage());
+			System.out.println("***** ERROR ***** The: " + locator + " field is mandatory and cannot be empty... "
+					+ "Because: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -710,6 +760,30 @@ public class SPXBase {
 	}
 
 	/*
+	 * @name: scrollUp
+	 * 
+	 * @date: 07/Nov/2023
+	 * 
+	 * @param:int pixels
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Scroll down the webpage to a specified locator
+	 */
+	public void scrollUp(By locator) {
+		try {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			WebElement flag = driver.findElement(locator);
+			js.executeScript("arguments[0].scrollIntoView(true);", flag);
+		} catch (Exception e) {
+			System.out.println("----- " + this.getClass().getName() + " -----");
+			System.out.println("***** ERROR ***** No realice Scroll. " + "Because: " + e.getMessage());
+		}
+	}
+
+	/*
 	 * @name: getTestCaseName
 	 * 
 	 * @date: 21/Nov/2023
@@ -742,5 +816,91 @@ public class SPXBase {
 	 */
 	public void driverClose() {
 		driver.close();
+	}
+
+	/*
+	 * @name: isElementContainingText
+	 * 
+	 * @date: 14-05-2024
+	 * 
+	 * @param:By locator
+	 * 
+	 * @return: elementText != null && !elementText.trim().isEmpty()
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Metodo que permite validar si un elemento cuenta con
+	 * información o no.
+	 */
+	public boolean isElementContainingText(By locator) {
+		try {
+			// Encuentra el elemento
+			WebElement element = driver.findElement(locator);
+
+			// Obtiene el texto del elemento
+			String elementText = element.getText();
+
+			// Verifica si el texto no está vacío
+			return elementText != null && !elementText.trim().isEmpty();
+		} catch (Exception e) {
+			// Maneja excepciones, por ejemplo, si el elemento no se encuentra
+			System.out.println("El elemento no se encontró o ocurrió un error: " + e.getMessage());
+			return false;
+		}
+	}
+
+	/*
+	 * @name: isElementDisabled
+	 * 
+	 * @date: 13-05-2024
+	 * 
+	 * @param: By locator
+	 * 
+	 * @return: !isEnabled;
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Metodo que permite validar si un elemento está habilitano o
+	 * deshabilitado
+	 */
+
+	public boolean isElementDisabled(By locator) {
+		try {
+			WebElement element = driver.findElement(locator);
+			boolean isEnabled = element.isEnabled();
+			reporterLog("Validando si el elemento está habilitado: " + locator);
+			takeScreenshot(); // Tomar una captura de pantalla para referencia, independientemente de si el
+								// elemento está habilitado o no.
+			return !isEnabled; // Devuelve true si el elemento está deshabilitado, de lo contrario, false.
+		} catch (NoSuchElementException e) {
+			String errorMessage = String.format("Elemento no encontrado o no habilitado: %s. Error: %s", locator,
+					e.getMessage());
+			System.out.println(errorMessage);
+			reporterLog(errorMessage);
+			return false;
+		}
+	}
+
+	/*
+	 * @name: clickSupr
+	 * 
+	 * @date: 22/Nov/2023
+	 * 
+	 * @param:N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Metodo que permite cerrar la ventana
+	 */
+	public void clickSupr(By locator) {
+		try {
+			WebElement element = driver.findElement(locator);
+			Actions actions = new Actions(driver);
+			actions.moveToElement(element).sendKeys("\u007F").perform(); // \u007F es el código de la tecla Supr
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

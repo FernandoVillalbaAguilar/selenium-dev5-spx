@@ -38,9 +38,9 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 			measurements = GlobalVariablesSPX.SPX_DEV5_MEASUREMENTS_SPOT_PAGE,
 			modelPartNumber = GlobalVariablesSPX.SPX_DEV5_MODELPARTNUMBER_SPOT_PAGE,
 			genericName = GlobalVariablesSPX.SPX_DEV5_GENERICNAME_SPOT_PAGE,
-			category = GlobalVariablesSPX.SPX_DEV5_CATEGORY_SPOT_PAGE,
-			family = GlobalVariablesSPX.SPX_DEV5_FAMILY_SPOT_PAGE,
-			subFamily = GlobalVariablesSPX.SPX_DEV5_SUBFAMILY_SPOT_PAGE,
+			category = GlobalVariablesSPX.SPX_DEV5_CATEGORY_SPOT_PAGE_ESP,
+			family = GlobalVariablesSPX.SPX_DEV5_FAMILY_SPOT_PAGE_ESP,
+			subFamily = GlobalVariablesSPX.SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP,
 			quantity = GlobalVariablesSPX.SPX_DEV5_QUANTITY_SPOT_PAGE,
 			genericItem = GlobalVariablesSPX.SPX_DEV5_GENERIC_ITEM_SPOT_PAGE,
 			unitOfMeasure = GlobalVariablesSPX.SPX_DEV5_UNIT_OF_MEASURE_SPOT_PAGE,
@@ -76,10 +76,12 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 
 	@Test
 	public void runTestMultipleTimes() throws InterruptedException, InvalidFormatException {
-		int numberOfRuns = 2; // You can adjust this based on the number of times you want to run the test
+		int numberOfRuns = 6; // You can adjust this based on the number of times you want to run the test
 
 //		for (int i = 0; i < numberOfRuns; i++) {
+//			
 //			tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC();
+//			
 //		}
 //		afterTest();
 //		beforeTest();
@@ -123,7 +125,8 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 				quantity, category, family, subFamily, genericItem, unitOfMeasure));
 		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage
 				.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot));
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.addtoCart());
+		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.addtoCart(description, material, color, brand,
+				measurements, modelPartNumber, genericName, quantity, category, family, subFamily, unitOfMeasure));
 		listaScreenShots.put("Step3", listaScreenShotsAux); // Add all list
 		steps.add("Step 3 - Data Capture Spot Buy Requisition ");
 		values.add("Data captured correctly");
@@ -189,7 +192,8 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 				quantity, category, family, subFamily, genericItem, unitOfMeasure));
 		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage
 				.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot));
-		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.addtoCart());
+		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.addtoCart(description, material, color, brand,
+				measurements, modelPartNumber, genericName, quantity, category, family, subFamily, unitOfMeasure));
 		listaScreenShots.put("Step3", listaScreenShotsAux); // Add all list
 		steps.add("Step 3 - Data Capture Spot Buy Requisition");
 		values.add("Data captured correctly");
