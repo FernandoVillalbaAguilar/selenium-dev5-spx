@@ -17,47 +17,61 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 	// Articulos por procesar
 	By txtFielSetPage = By.id("field");
 	By lblUEN = By.id("formSearch:accorSearch:uenDefault_label");
-	By slstUEN = By.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_UEN_ARTICULOS_POR_PROCESAR_PAGE + "']");
+	By slstUEN = By.xpath("//div[@id='formSearch:accorSearch:uenDefault_panel']/div/ul/li[@data-label='"
+			+ GlobalVariablesSPX.SPX_DEV5_UEN_ARTICULOS_POR_PROCESAR_PAGE + "']");
 	By btnBuscar = By.id("formSearch:accorSearch:search1");
 	By txtRequisicion = By.id("formSearch:accorSearch:requisitions");
 	By lblRequisitor = By.id("formSearch:accorSearch:requisitors");
-	By txtRequisitor = By.xpath("//body[1]/div[27]/div[1]/div[2]/input[1]");
-	By slstRequisitor = By.xpath("(//label[contains(text(),'"
-			+ GlobalVariablesSPX.SPX_DEV5_REQUISITOR_ARTICULOS_POR_PROCESAR_PAGE + "')])[3]");
-	By btnCloseRequisitor = By.xpath("//body[1]/div[27]/div[1]/a[1]/span[1]");
+	By txtRequisitor = By.xpath(
+			"//div[@id='formSearch:accorSearch:requisitors_panel']/div/div[@class='ui-selectcheckboxmenu-filter-container']/input[@type='text']");
+	By slstRequisitor = By
+			.xpath("//div[@id='formSearch:accorSearch:requisitors_panel']/div/ul/li/label[contains(text(),'"
+					+ GlobalVariablesSPX.SPX_DEV5_REQUISITOR_ARTICULOS_POR_PROCESAR_PAGE + "')]");
+	By btnCloseRequisitor = By.xpath(
+			"//div[@id='formSearch:accorSearch:requisitors_panel']/div/a/span[@class='ui-icon ui-icon-circle-close']");
 	By lblComprador = By.id("formSearch:accorSearch:buyers");
-	By txtComprador = By.xpath("//body[1]/div[28]/div[1]/div[2]/input[1]");
-	By slstComprador = By.xpath("(//label[contains(text(),'"
-			+ GlobalVariablesSPX.SPX_DEV5_COMPRADOR_ARTICULOS_POR_PROCESAR_PAGE + "')])[2]");
-	By btnCloseComprador = By.xpath("//body[1]/div[28]/div[1]/a[1]/span[1]");
+	By txtComprador = By.xpath("//div[@id='formSearch:accorSearch:buyers_panel']/div/div/input[@type='text']");
+	By slstComprador = By.xpath("//div[@id='formSearch:accorSearch:buyers_panel']/div/ul/li/label[contains(text(),'"
+			+ GlobalVariablesSPX.SPX_DEV5_COMPRADOR_ARTICULOS_POR_PROCESAR_PAGE + "')]");
+	By btnCloseComprador = By.xpath(
+			"//div[@id='formSearch:accorSearch:buyers_panel']/div/a/span[@class='ui-icon ui-icon-circle-close']");
 	By lblEstatus = By.id("formSearch:accorSearch:status");
-	By txtEstatus = By.xpath("//body[1]/div[25]/div[1]/div[2]/input[1]");
-	By slstEstatus = By.xpath(
-			"(//label[contains(text(),'" + GlobalVariablesSPX.SPX_DEV5_ESTATUS_ARTICULOS_POR_PROCESAR_PAGE + "')])[2]");
-	By btnCloseEstatus = By.xpath("//body[1]/div[25]/div[1]/a[1]/span[1]");
+	By txtEstatus = By.xpath("//div[@id='formSearch:accorSearch:status_panel']/div/div/input[@type='text']");
+	By slstEstatus = By.xpath("//div[@id='formSearch:accorSearch:status_panel']/div/ul/li/label[contains(text(),'"
+			+ GlobalVariablesSPX.SPX_DEV5_ESTATUS_ARTICULOS_POR_PROCESAR_PAGE + "')]");
+	By btnCloseEstatus = By.xpath(
+			"//div[@id='formSearch:accorSearch:status_panel']/div/a/span[@class='ui-icon ui-icon-circle-close']");
 	By txtFechaInicio = By.id("formSearch:accorSearch:dates_input");
 	By txtFechaFin = By.id("formSearch:accorSearch:dates2_input");
 	// Búsqueda Avanzada
-	By btnBusquedaAvanzada = By.id("formSearch:accorSearch:j_idt141");
-	By btnBusquedaSimple = By.id("formSearch:accorSearch:j_idt142");
+	By btnBusquedaAvanzada = By
+			.xpath("//div[@id='formSearch:accorSearch']/div/div/div/div/a[@class='ui-commandlink ui-widget']");
+	By btnBusquedaSimple = By
+			.xpath("//div[@id='formSearch:accorSearch']/div/div/div/div/a[@class='ui-commandlink ui-widget']");
 	By lblProceso = By.id("formSearch:accorSearch:process_label");
-	By slstProceso = By.xpath("//li[@data-label='VL APO.- PURCHASING']");
+	By slstProceso = By.xpath("//div[@id='formSearch:accorSearch:process']/label[contains(text(),'"
+			+ GlobalVariablesSPX.SPX_DEV5_PROCESO_ARTICULOS_POR_PROCESAR_PAGE + "')]");
 	By lblCentroCostos = By.xpath("//label[normalize-space()='Centro de Costos']");
 	By txtCentroCostos = By.xpath("(//input[@role='textbox'])[9]");
-	By slstCentroCostos = By.xpath("(//label[contains(text(),'A001 - Metalsa Coordination')])[2]");
+	By slstCentroCostos = By.xpath("(//label[contains(text(),'"
+			+ GlobalVariablesSPX.SPX_DEV5_CENTRO_COSTOS_ARTICULOS_POR_PROCESAR_PAGE + "')])[2]");
 	By lblCategoria = By.id("formSearch:accorSearch:categories_label");
-	By slstCategoria = By.xpath("//li[@data-label='50 - Administrativo y Profesional']");
-	By lblFamilia = By.xpath(
-			"//body[1]/div[3]/div[1]/fieldset[1]/div[1]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[2]/div[2]/div[2]/div[1]/label[1]");
-	By slstFamilia = By.xpath("//li[@data-label='02 - Consultoría']");
+	By slstCategoria = By
+			.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_CATEGORIA_ARTICULOS_POR_PROCESAR_PAGE + "']");
+	By lblFamilia = By.id("formSearch:accorSearch:families_label");
+	By slstFamilia = By
+			.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_FAMILIA_ARTICULOS_POR_PROCESAR_PAGE + "']");
 	By lblSubFamilia = By.id("formSearch:accorSearch:subfamilies_label");
-	By slstSubFamilia = By.xpath("//li[@data-label='01 - Consultoría']");
+	By slstSubFamilia = By
+			.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_SUBFAMILIA_ARTICULOS_POR_PROCESAR_PAGE + "']");
 	By lblTipo = By.id("formSearch:accorSearch:selTipos_label");
-	By slstTipo = By.xpath("//li[@data-label='Refacción']");
+	By slstTipo = By.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_TIPO_ARTICULOS_POR_PROCESAR_PAGE + "']");
 	By lblPrioridad = By.id("formSearch:accorSearch:selPrioridad_label");
-	By slstPrioridad = By.xpath("//li[@data-label='Refacción Normal']");
+	By slstPrioridad = By
+			.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_PRIORIDAD_ARTICULOS_POR_PROCESAR_PAGE + "']");
 	By lblJustificacion = By.id("formSearch:accorSearch:selJustif_label");
-	By slstJustificacion = By.xpath("//li[@data-label='Calidad']");
+	By slstJustificacion = By
+			.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_JUSTIFICACION_ARTICULOS_POR_PROCESAR_PAGE + "']");
 	By txtBusquedaPorPalabra = By.id("formSearch:accorSearch:lines");
 	// Navegación
 	By btnNavigation = By.xpath("//div[@role='navigation']//span//span[contains(text(),'1')]");
@@ -104,21 +118,21 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		scrollDown(btnNavigation);
 		click(btnNavigation);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
-		scrollUp(btnBuscar);
+		scrollUp(txtFielSetPage);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
 		waitForElementPresent(txtRequisicion);
 		type(txtRequisicion, requisicion);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		scrollDown(btnNavigation);
 		click(btnNavigation);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
-		scrollUp(btnBuscar);
+		scrollUp(txtFielSetPage);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
 		typeClear(txtRequisicion);
 		waitForElementPresent(lblRequisitor);
@@ -129,15 +143,25 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 		click(slstRequisitor);
 		waitForElementPresent(btnCloseRequisitor);
 		click(btnCloseRequisitor);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		scrollDown(btnNavigation);
 		click(btnNavigation);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
-		scrollUp(btnBuscar);
+		scrollUp(txtFielSetPage);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		// Quitar Check del campo Requisitor
+		waitForElementPresent(lblRequisitor);
+		click(lblRequisitor);
+		waitForElementPresent(txtRequisitor);
+		type(txtRequisitor, requisitor);
+		waitForElementPresent(slstRequisitor);
+		click(slstRequisitor);
+		waitForElementPresent(btnCloseRequisitor);
+		click(btnCloseRequisitor);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblComprador);
 		click(lblComprador);
 		waitForElementPresent(txtComprador);
@@ -146,15 +170,25 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 		click(slstComprador);
 		waitForElementPresent(btnCloseComprador);
 		click(btnCloseComprador);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		scrollDown(btnNavigation);
 		click(btnNavigation);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
-		scrollUp(btnBuscar);
+		scrollUp(txtFielSetPage);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		// Quitar Check del campo Comprador
+		waitForElementPresent(lblComprador);
+		click(lblComprador);
+		waitForElementPresent(txtComprador);
+		type(txtComprador, comprador);
+		waitForElementPresent(slstComprador);
+		click(slstComprador);
+		waitForElementPresent(btnCloseComprador);
+		click(btnCloseComprador);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblEstatus);
 		click(lblEstatus);
 		waitForElementPresent(txtEstatus);
@@ -163,28 +197,40 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 		click(slstEstatus);
 		waitForElementPresent(btnCloseEstatus);
 		click(btnCloseEstatus);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		scrollDown(btnNavigation);
 		click(btnNavigation);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
-		scrollUp(btnBuscar);
+		scrollUp(txtFielSetPage);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		// Quitar Check del campo Estatus
+		waitForElementPresent(lblEstatus);
+		click(lblEstatus);
+		waitForElementPresent(txtEstatus);
+		type(txtEstatus, estatus);
+		waitForElementPresent(slstEstatus);
+		click(slstEstatus);
+		waitForElementPresent(btnCloseEstatus);
+		click(btnCloseEstatus);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(txtFechaInicio);
 		typeClear(txtFechaInicio);
 		type(txtFechaInicio, fechaInicio);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(txtFechaFin);
 		typeClear(txtFechaFin);
 		type(txtFechaFin, fechaFin);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
-		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		scrollDown(btnNavigation);
 		click(btnNavigation);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
-		scrollUp(btnBuscar);
+		scrollUp(txtFielSetPage);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
 		return returnSaveImage(btnBuscar);
 	}
@@ -207,47 +253,67 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 		reporterLog("Realizar validación de campos de búsqueda avanzada Articulos por Procesar ...");
 		waitForElementPresent(btnBusquedaAvanzada);
 		click(btnBusquedaAvanzada);
+		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
 		waitForElementPresent(lblProceso);
 		click(lblProceso);
-		waitForElementPresent(slstProceso);
-		click(slstProceso);
+		// Solo se mostrará información en este campo si hay catalogos de procesos
+		// cargados por parte de PDD.
+		if (isDisplayed(slstProceso)) {
+			click(slstProceso);
+		} else {
+			click(lblProceso);
+		}
 		waitForElementPresent(lblCentroCostos);
 		click(lblCentroCostos);
 		waitForElementPresent(txtCentroCostos);
 		type(txtCentroCostos, centroCostos);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(slstCentroCostos);
 		click(slstCentroCostos);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblCategoria);
 		click(lblCategoria);
 		waitForElementPresent(slstCategoria);
 		click(slstCategoria);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblFamilia);
 		click(lblFamilia);
 		waitForElementPresent(slstFamilia);
 		click(slstFamilia);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblSubFamilia);
 		click(lblSubFamilia);
 		waitForElementPresent(slstSubFamilia);
 		click(slstSubFamilia);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblTipo);
 		click(lblTipo);
 		waitForElementPresent(slstTipo);
 		click(slstTipo);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblPrioridad);
 		click(lblPrioridad);
 		waitForElementPresent(slstPrioridad);
 		click(slstPrioridad);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(lblJustificacion);
 		click(lblJustificacion);
 		waitForElementPresent(slstJustificacion);
 		click(slstJustificacion);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(txtBusquedaPorPalabra);
 		type(txtBusquedaPorPalabra, busquedaPorPalabra);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		scrollDown(btnNavigation);
+		click(btnNavigation);
+		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		scrollUp(txtFielSetPage);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
 		waitForElementPresent(btnBusquedaSimple);
 		click(btnBusquedaSimple);
-		return returnSaveImage(btnBuscar);
+		return returnSaveImage(btnBusquedaSimple);
 	}
 }

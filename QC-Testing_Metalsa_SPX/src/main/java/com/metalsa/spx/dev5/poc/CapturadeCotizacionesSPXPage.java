@@ -42,6 +42,7 @@ public class CapturadeCotizacionesSPXPage extends SPXBase {
 	By slstComprador=By.xpath("(//label[contains(text(),'Aguirre Elizondo Lemna Cecilia')])[2]");
 	By btnCloseComprador=By.xpath("//body[1]/div[20]/div[1]/a[1]/span[1]");
 	By btnBuscar = By.id("formSearch:accorSearch:btnSearch");
+	By txtSearchByWord=By.id("formSearch:accorSearch:desc");
 
 	/*
 	 * @name: textCapturadeCotizacionesPageIsDisplayed
@@ -193,6 +194,11 @@ public class CapturadeCotizacionesSPXPage extends SPXBase {
 		click(slstComprador);
 		waitForElementPresent(btnCloseComprador);
 		click(btnCloseComprador);
+		waitForElementPresent(btnBuscar);
+		click(btnBuscar);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForElementPresent(txtSearchByWord);
+		type(txtSearchByWord, busquedaPorPalabraCC);
 		waitForElementPresent(btnBuscar);
 		click(btnBuscar);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);

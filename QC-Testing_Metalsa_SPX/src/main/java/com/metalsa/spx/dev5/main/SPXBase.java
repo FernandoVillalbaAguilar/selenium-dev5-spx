@@ -501,6 +501,37 @@ public class SPXBase {
 	}
 
 	/*
+	 * @name: getText
+	 * 
+	 * @date: 02/Nov/2023
+	 * 
+	 * @param: By locator
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite obtener el texto de un elemento
+	 */
+	public static String assignUEN() {
+		String uenNumber = GlobalVariablesSPX.SPX_DEV5_NUM_UEN; // Obtener el número de UEN de UENData
+		String uenName = "Valor por defecto";
+
+		if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_SAN_ANTONIO)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_SAN_ANTONIO;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_SAC)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_SAC;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_SALTILLO)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_SALTILLO;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_GUANAJUATO)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_GUANAJUATO;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_APODACA)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_APODACA;
+		}
+		return uenName;
+	}
+
+	/*
 	 * @name: requiredFields
 	 * 
 	 * @date: 02/Nov/2023

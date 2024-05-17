@@ -13,12 +13,24 @@ public class GlobalVariablesSPX {
 	public static final String PATH_JSON_DATA = "./src/test/resources/testDataSPX/json/";
 
 	// Data Home
-	// number:300000871351191 - San Antonio
-	// number:300000871351178 - SAC
-	// number:300000871351087 - Saltillo
-	// number:300000871351074 - Guanajuato
-	// number:300000871351061 - Apodaca
-	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:300000871351074']";
+	public static final String SPX_DEV5_NUM_UEN_SAN_ANTONIO = "300000871351191";
+	public static final String SPX_DEV5_NOM_UEN_SAN_ANTONIO = "Metalsa San Antonio";
+
+	public static final String SPX_DEV5_NUM_UEN_SAC = "300000871351178";
+	public static final String SPX_DEV5_NOM_UEN_SAC = "Metalsa SAC";
+
+	public static final String SPX_DEV5_NUM_UEN_SALTILLO = "300000871351087";
+	public static final String SPX_DEV5_NOM_UEN_SALTILLO = "Metalsa LV Saltillo";
+
+	public static final String SPX_DEV5_NUM_UEN_GUANAJUATO = "300000871351074";
+	public static final String SPX_DEV5_NOM_UEN_GUANAJUATO = "Metalsa LV Guanajuato";
+
+	public static final String SPX_DEV5_NUM_UEN_APODACA = "300000871351061";
+	public static final String SPX_DEV5_NOM_UEN_APODACA = "Metalsa LV Apodaca";
+
+	public static final String SPX_DEV5_NUM_UEN = "300000871351074";
+	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:" + GlobalVariablesSPX.SPX_DEV5_NUM_UEN
+			+ "']";
 
 	// Data Spot Buy Requisitions
 	// Global Sourcing RFQ Header
@@ -182,12 +194,7 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_MENU_SIMPLE_ADMINISTRATION_MENU_PAGE + "'])[1]";
 
 	// Articulos Controlados
-	// Metalsa San Antonio
-	// Metalsa SAC
-	// Metalsa LV Saltillo
-	// Metalsa LV Guanajuato
-	// Metalsa LV Apodaca
-	public static final String SPX_DEV5_UEN_ARTICULOS_CONTROLADOS_PAGE = "Metalsa LV Guanajuato";
+	public static final String SPX_DEV5_UEN_ARTICULOS_CONTROLADOS_PAGE = SPXBase.assignUEN();
 	public static final String SPX_DEV5_LOCALIZACION_ARTICULOS_CONTROLADOS_PAGE = "Sterling Heights Plant - Sterling Heights";
 	public static final String SPX_DEV5_CODIGO_PRODUCTO_ARTICULOS_CONTROLADOS_PAGE = "101004";
 	public static final String SPX_DEV5_NOMBRE_FABRICANTE_ARTICULOS_CONTROLADOS_PAGE = "FABRICANTE DE PRUEBA - "
@@ -199,27 +206,36 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_PICKLIST_TARGET_ARTICULOS_CONTROLADOS_PAGE = "Stopper";
 
 	// Articulos por Procesar
-	public static final String SPX_DEV5_UEN_ARTICULOS_POR_PROCESAR_PAGE = "Metalsa LV Guanajuato";
-	public static final String SPX_DEV5_REQUISICION_ARTICULOS_POR_PROCESAR_PAGE = "32";
+	public static final String SPX_DEV5_UEN_ARTICULOS_POR_PROCESAR_PAGE = SPXBase.assignUEN();
+	public static final String SPX_DEV5_REQUISICION_ARTICULOS_POR_PROCESAR_PAGE = "5";
 	public static final String SPX_DEV5_REQUISITOR_ARTICULOS_POR_PROCESAR_PAGE = "Garza Cantu Edna Melissa";
-	public static final String SPX_DEV5_COMPRADOR_ARTICULOS_POR_PROCESAR_PAGE = "Galván Villarreal Thalia Adilene";
-	public static final String SPX_DEV5_ESTATUS_ARTICULOS_POR_PROCESAR_PAGE = "APROBADA";
+	public static final String SPX_DEV5_COMPRADOR_ARTICULOS_POR_PROCESAR_PAGE = "Garza Cantu Edna Melissa";
+	public static final String SPX_DEV5_ESTATUS_ARTICULOS_POR_PROCESAR_PAGE = "EN PROCESO";
 	public static final String SPX_DEV5_FECHA_INICIO_ARTICULOS_POR_PROCESAR_PAGE = "26/oct/2023";
 	public static final String SPX_DEV5_FECHA_FIN_ARTICULOS_POR_PROCESAR_PAGE = "23/dic/2025";
-	public static final String SPX_DEV5_CENTRO_COSTOS_ARTICULOS_POR_PROCESAR_PAGE = "A001 - Metalsa Coordination";
-	public static final String SPX_DEV5_BUSQUEDA_POR_PALABRA_ARTICULOS_POR_PROCESAR_PAGE = "Articulo";
+	// Busqueda Avanzada - Articulos por Procesar
+	public static final String SPX_DEV5_PROCESO_ARTICULOS_POR_PROCESAR_PAGE = "VL APO.- PAINTING 1";
+	public static final String SPX_DEV5_CENTRO_COSTOS_ARTICULOS_POR_PROCESAR_PAGE = "F002 - CV - Global Purchasing Process Development";
+	public static final String SPX_DEV5_CATEGORIA_ARTICULOS_POR_PROCESAR_PAGE = "50 - Administrativo y Profesional";
+	public static final String SPX_DEV5_FAMILIA_ARTICULOS_POR_PROCESAR_PAGE = "01 - Publicidad y Mercadotecnia";
+	public static final String SPX_DEV5_SUBFAMILIA_ARTICULOS_POR_PROCESAR_PAGE = "03 - Medios impresos y Artículos promocionales";
+	public static final String SPX_DEV5_TIPO_ARTICULOS_POR_PROCESAR_PAGE = "Refacción ";
+	public static final String SPX_DEV5_PRIORIDAD_ARTICULOS_POR_PROCESAR_PAGE = "Refacción Normal";
+	public static final String SPX_DEV5_JUSTIFICACION_ARTICULOS_POR_PROCESAR_PAGE = "Paro de línea";
+	public static final String SPX_DEV5_BUSQUEDA_POR_PALABRA_ARTICULOS_POR_PROCESAR_PAGE = "F3F4F43F";
+
 	// Captura de cotizaciones
-	public static final String SPX_DEV5_UEN_CAPTURA_DE_COTIZACIONES_PAGE = "Metalsa LV Guanajuato";
-	public static final String SPX_DEV5_RFQ_CAPTURA_DE_COTIZACIONES_PAGE = "38";
+	public static final String SPX_DEV5_UEN_CAPTURA_DE_COTIZACIONES_PAGE = SPXBase.assignUEN();
+	public static final String SPX_DEV5_RFQ_CAPTURA_DE_COTIZACIONES_PAGE = "4";
 	public static final String SPX_DEV5_PROCESO_CAPTURA_DE_COTIZACIONES_PAGE = "VL APO.- PAINTING 1";
-	public static final String SPX_DEV5_REQUISICION_CAPTURA_DE_COTIZACIONES_PAGE = "34";
+	public static final String SPX_DEV5_REQUISICION_CAPTURA_DE_COTIZACIONES_PAGE = "2";
 	public static final String SPX_DEV5_PROVEEDOR_CAPTURA_DE_COTIZACIONES_PAGE = SPXBase
 			.getRandomValue(SPXBase.proveedores);
-	public static final String SPX_DEV5_COTIZACION_CAPTURA_DE_COTIZACIONES_PAGE = "256";
-	public static final String SPX_DEV5_CENTRO_COSTOS_CAPTURA_DE_COTIZACIONES_PAGE = "A047 - HD - Labor & Compliance";
+	public static final String SPX_DEV5_COTIZACION_CAPTURA_DE_COTIZACIONES_PAGE = "2";
+	public static final String SPX_DEV5_CENTRO_COSTOS_CAPTURA_DE_COTIZACIONES_PAGE = "F002 - CV - Global Purchasing Process Development";
 	public static final String SPX_DEV5_FECHA_INICIO_CAPTURA_DE_COTIZACIONES_PAGE = "26/feb/2024";
-	public static final String SPX_DEV5_FECHA_FIN_CAPTURA_DE_COTIZACIONES_PAGE = "05/mar/2024";
-	public static final String SPX_DEV5_REQUISITOR_CAPTURA_DE_COTIZACIONES_PAGE = "Garza Cantu Edna Melissa";
-	public static final String SPX_DEV5_COMPRADOR_CAPTURA_DE_COTIZACIONES_PAGE = "Garza Cantu Edna Melissa";
-	public static final String SPX_DEV5_BUSQUEDA_POR_PALABRA_CAPTURA_DE_COTIZACIONES_PAGE = "CEPILLO";
+	public static final String SPX_DEV5_FECHA_FIN_CAPTURA_DE_COTIZACIONES_PAGE = "05/may/2024";
+	public static final String SPX_DEV5_REQUISITOR_CAPTURA_DE_COTIZACIONES_PAGE = "Buyatti Carlos Javier";
+	public static final String SPX_DEV5_COMPRADOR_CAPTURA_DE_COTIZACIONES_PAGE = "SPX Cloud Dev";
+	public static final String SPX_DEV5_BUSQUEDA_POR_PALABRA_CAPTURA_DE_COTIZACIONES_PAGE = "ART - 4549 EKJERE E";
 }

@@ -27,7 +27,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 	CapturadeCotizacionesSPXPage capturadeCotizacionesSPXPage;
 
 	// TestDataCalling
-	String url, usernameCC, usernameP, password,
+	String url, usernameCC, usernameP,usernamePNAA, password,
 			requisicion = GlobalVariablesSPX.SPX_DEV5_REQUISICION_ARTICULOS_POR_PROCESAR_PAGE,
 			estatus = GlobalVariablesSPX.SPX_DEV5_ESTATUS_ARTICULOS_POR_PROCESAR_PAGE,
 			requisitor = GlobalVariablesSPX.SPX_DEV5_REQUISITOR_ARTICULOS_POR_PROCESAR_PAGE,
@@ -59,6 +59,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 		// Test Data
 		this.usernameCC = spxBase.getJSONValue("TestDataLoginSPX", "usernameCC");
 		this.usernameP = spxBase.getJSONValue("TestDataLoginSPX", "usernameP");
+		this.usernamePNAA = spxBase.getJSONValue("TestDataLoginSPX", "usernamePNAA");
 		this.password = spxBase.getJSONValue("TestDataLoginSPX", "password");
 		this.url = spxBase.getJSONValue("TestDataLoginSPX", "url");
 	}
@@ -89,7 +90,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 		spxBase.launchBrowser(url);
 
 		// Enter user-name and password and click to button "Enter"
-		listaScreenShots.put("Step1", loginSPXPage.login(usernameCC, password));
+		listaScreenShots.put("Step1", loginSPXPage.login(usernamePNAA, password));
 		steps.add("Step 1 - Enter username and password and click to button Enter ");
 		values.add("Credentials Entered");
 
@@ -131,7 +132,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 		spxBase.launchBrowser(url);
 
 		// Enter user-name and password and click to button "Enter"
-		listaScreenShots.put("Step1", loginSPXPage.login(usernameCC, password));
+		listaScreenShots.put("Step1", loginSPXPage.login(usernamePNAA, password));
 		steps.add("Step 1 - Enter username and password and click to button Enter ");
 		values.add("Credentials Entered");
 
