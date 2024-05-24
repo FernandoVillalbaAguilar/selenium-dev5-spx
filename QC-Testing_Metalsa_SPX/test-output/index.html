@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-645762115\testng-customsuite.xml</span>
+                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1145965248\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Default_suite">
+                    <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema" class="method navigator-link" hash-for-method="tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados">tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen" class="method navigator-link" hash-for-method="tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen">tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,60 +117,25 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
+          <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema</span>
+              <img src="passed.png"/>
+              <span class="class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados">
-                  </a> <!-- tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados -->
-                  <span class="method-name">tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:96)
-	at org.testng.Assert.failNotEquals(Assert.java:776)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:137)
-	at org.testng.Assert.assertEquals(Assert.java:118)
-	at org.testng.Assert.assertEquals(Assert.java:568)
-	at org.testng.Assert.assertEquals(Assert.java:578)
-	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema.tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados(QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema.java:472)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-
-</div> <!-- stack-trace -->
+                  <a name="tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen">
+                  </a> <!-- tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen -->
+                  <span class="method-name">tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-645762115\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1145965248\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -179,11 +144,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema&quot;&gt;
+      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados&quot;/&gt;
+          &lt;include name=&quot;tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema --&gt;
+      &lt;/class&gt; &lt;!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -225,14 +190,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados')
-data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema')
-data.setCell(0, 3, 49407);
+data.setCell(0, 1, 'tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen')
+data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen')
+data.setCell(0, 3, 130264);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -244,7 +209,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados</span>
+              <span class="reporter-method-name">tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen</span>
               <div class="reporter-method-output-div">
                 <span class="reporter-method-output">Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTEwMy9TUFgv</span>
                 <span class="reporter-method-output">Logging to SPX ...</span>
@@ -262,19 +227,79 @@ return data;
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Access to Administrador Menu ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Access to Articulos por Procesar ...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Access to Articulos Controlados Page ...</span>
+                <span class="reporter-method-output">Access to Articulos por Procesar Page ...</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Realizar validación de campos de búsqueda Articulos Controlados ...</span>
+                <span class="reporter-method-output">Realizar validación de campos de búsqueda Articulos por Procesar ...</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
@@ -285,48 +310,73 @@ return data;
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Realizar validación de campos de búsqueda avanzada Articulos por Procesar ...</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Check Result Search ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">10 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema</span>
+              <span class="ignored-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">tc002_SPX_Dev5_Validar_Filtro_Campo_URLPath_Administrador_Roles_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc010_SPX_Dev5_Validacion_Agregar_Remover_Articulos_Controlados</span>
-                <br/>
-                <span class="ignored-method-name">tc006_SPX_Dev5_Validacion_Boton_AddNewMenu_Administrador_Menu</span>
-                <br/>
                 <span class="ignored-method-name">runTestMultipleTimes</span>
                 <br/>
-                <span class="ignored-method-name">tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc003_SPX_Dev5_Validar_Funcionalidad_Botones_Add_Remove_Administrador_Roles_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc005_SPX_Dev5_Validacion_Filtro_Campo_URLPath_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc004_SPX_Dev5_Validacion_Filtro_Campo_MenuName_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc008_SPX_Dev5_Validacion_Boton_Remove_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc001_SPX_Dev5_Validar_Filtro_Campo_MenuName_Administrador_Roles_Menu</span>
+                <span class="ignored-method-name">tc002_SPX_Dev5_Validar_Campos_Captura_Cotizaciones</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -338,20 +388,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados</span>
-                <span class="method-start">2465 ms</span>
+                <span class="method-name">tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen</span>
+                <span class="method-start">2735 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">51886 ms</span>
+                <span class="method-start">133002 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

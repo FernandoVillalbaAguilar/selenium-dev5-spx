@@ -75,6 +75,25 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 	By txtBusquedaPorPalabra = By.id("formSearch:accorSearch:lines");
 	// Navegación
 	By btnNavigation = By.xpath("//div[@role='navigation']//span//span[contains(text(),'1')]");
+	// Botones de Acción
+	By btnExpandMain = By.id("formTable:requisitionsTable:expandbtn");
+	By btnExpandFields = By.xpath(
+			"//tbody[@id='formTable:requisitionsTable_data']/tr[@class='ui-widget-content ui-datatable-even']/td/div[@class='ui-row-toggler ui-icon ui-icon-circle-triangle-e']");
+	By btnReclasificarLineas = By.id("formTable:btnReclasificar");
+	By btnReclasificarLineas2 = By.id("formTable:btnReclasificar2");
+	By btnSeleccionDeProveedores = By.id("formTable:btnRfq");
+	By btnSeleccionDeProveedores2 = By.id("formTable:btnRfq2");
+	By btnCancelarRequisicion = By.id("formTable:btnCancelRequi");
+	By btnCancelarRequisicion2 = By.id("formTable:btnCancelRequi2");
+	By iconExcelReport = By.xpath(
+			"//div[@id='formTable:requisitionsTable']/div/table/thead/tr/th/span[@class='ui-column-title']/a[@class='ui-commandlink ui-widget']");
+	By iconVerAdjuntos = By.xpath(
+			"//tbody[@id='formTable:requisitionsTable_data']/tr/td/button[@id='formTable:requisitionsTable:0:btnAttach']");
+	By iconVerDetalle = By.xpath(
+			"//tbody[@id='formTable:requisitionsTable_data']/tr/td/button[@id='formTable:requisitionsTable:0:btnExpand']");
+	By chkMainRequisicion = By.xpath(
+			"//th[@id='formTable:requisitionsTable:0:detalleRequi:j_idt184']/div/div/span[@class='ui-chkbox-icon ui-icon ui-icon-blank ui-c']");
+	By chkLineRequisicion = By.xpath("//td[@class='ui-selection-column']/div/div/span[@xpath='1']");
 
 	/*
 	 * @name: textArticulosControladosPageIsDisplayed
@@ -315,5 +334,64 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 		waitForElementPresent(btnBusquedaSimple);
 		click(btnBusquedaSimple);
 		return returnSaveImage(btnBusquedaSimple);
+	}
+
+	/*
+	 * @name: validacionBotonesDeAccionArticulosPorProcesar
+	 * 
+	 * @date: 17-05-2024
+	 * 
+	 * @param: String menuName
+	 * 
+	 * @return: returnSaveImage(btnBuscar)
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite la validación de campos
+	 */
+	public TreeMap<String, String> validacionBotonesDeAccionArticulosPorProcesar(String requisicion)
+			throws InterruptedException {
+		reporterLog("Realizar validación de los botones de acción -  Articulos por Procesar ...");
+		waitForElementPresent(txtRequisicion);
+		type(txtRequisicion, requisicion);
+		waitForElementPresent(btnBuscar);
+		click(btnBuscar);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		click(btnExpandMain);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		scrollDown(btnNavigation);
+		click(btnNavigation);
+		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		scrollUp(txtFielSetPage);
+		click(btnExpandMain);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		scrollDown(btnNavigation);
+		click(btnNavigation);
+		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		scrollUp(txtFielSetPage);
+		click(btnExpandFields);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		scrollDown(btnNavigation);
+		click(btnNavigation);
+		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		scrollUp(txtFielSetPage);
+		click(btnExpandFields);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		scrollDown(btnNavigation);
+		click(btnNavigation);
+		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		scrollUp(txtFielSetPage);
+		click(btnReclasificarLineas);
+		click(btnSeleccionDeProveedores);
+		click(btnCancelarRequisicion);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		scrollDown(btnNavigation);
+		click(btnNavigation);
+		click(btnReclasificarLineas2);
+		click(btnSeleccionDeProveedores2);
+		click(btnCancelarRequisicion2);
+		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
+		scrollUp(txtFielSetPage);
+		return returnSaveImage(txtFielSetPage);
 	}
 }
