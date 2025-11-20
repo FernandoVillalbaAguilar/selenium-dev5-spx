@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
+<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTEwMy9TUFgv]]>
@@ -50,7 +50,13 @@
       <![CDATA[Return Click for Saved Image]]>
     </line>
     <line>
-      <![CDATA[Access to Articulos por Procesar ...]]>
+      <![CDATA[Access to Administrador Menu ...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
     </line>
     <line>
       <![CDATA[Click to Field or Button]]>
@@ -71,7 +77,7 @@
       <![CDATA[Return Click for Saved Image]]>
     </line>
     <line>
-      <![CDATA[Access to Articulos por Procesar Page ...]]>
+      <![CDATA[Access to Administrador Menu Page ...]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present...]]>
@@ -80,241 +86,10 @@
       <![CDATA[Validate if Element is Displayed]]>
     </line>
     <line>
-      <![CDATA[Realizar validación de campos de búsqueda Articulos por Procesar ...]]>
+      <![CDATA[Agregar Nuevo Menu ...]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
     </line>
     <line>
       <![CDATA[Click to Field or Button]]>
@@ -323,7 +98,46 @@
       <![CDATA[Return Click for Saved Image]]>
     </line>
     <line>
-      <![CDATA[Realizar validación de campos de búsqueda avanzada Articulos por Procesar ...]]>
+      <![CDATA[Validate Result Search Is Displayed ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Validate if Element is Displayed]]>
+    </line>
+    <line>
+      <![CDATA[Agregar Nuevo Menu ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Click to Field or Button]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present...]]>
@@ -338,7 +152,22 @@
       <![CDATA[Click to Field or Button]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present...]]>
@@ -378,69 +207,6 @@
     </line>
     <line>
       <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Input Text to Field]]>
-    </line>
-    <line>
-      <![CDATA[Wait for Element Present...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
     </line>
     <line>
       <![CDATA[Click to Field or Button]]>
@@ -453,18 +219,27 @@
     </line>
     <line>
       <![CDATA[Return Click for Saved Image]]>
+    </line>
+    <line>
+      <![CDATA[Validate Message Is Displayed ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present...]]>
+    </line>
+    <line>
+      <![CDATA[Validate if Element is Displayed]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-05-17T20:26:12Z" name="Default suite" finished-at="2024-05-17T20:28:25Z" duration-ms="133400">
+  <suite started-at="2025-11-20T21:43:04Z" name="Default suite" finished-at="2025-11-20T21:43:41Z" duration-ms="36745">
     <groups>
     </groups>
-    <test started-at="2024-05-17T20:26:12Z" name="Default test" finished-at="2024-05-17T20:28:25Z" duration-ms="133400">
-      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen@2421cc4]" started-at="2024-05-17T20:26:12Z" name="beforeTest" finished-at="2024-05-17T20:26:14Z" duration-ms="2694" status="PASS">
+    <test started-at="2025-11-20T21:43:04Z" name="Default test" finished-at="2025-11-20T21:43:41Z" duration-ms="36745">
+      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema@5be46f9d]" started-at="2025-11-20T21:43:04Z" name="beforeTest" finished-at="2025-11-20T21:43:06Z" duration-ms="1586" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen@2421cc4]" started-at="2024-05-17T20:26:14Z" name="tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen" finished-at="2024-05-17T20:28:25Z" duration-ms="130264" status="PASS">
+        <test-method signature="tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema@5be46f9d]" started-at="2025-11-20T21:43:06Z" name="tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu" finished-at="2025-11-20T21:43:41Z" duration-ms="34914" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTEwMy9TUFgv]]>
@@ -515,7 +290,13 @@
               <![CDATA[Return Click for Saved Image]]>
             </line>
             <line>
-              <![CDATA[Access to Articulos por Procesar ...]]>
+              <![CDATA[Access to Administrador Menu ...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
             </line>
             <line>
               <![CDATA[Click to Field or Button]]>
@@ -536,7 +317,7 @@
               <![CDATA[Return Click for Saved Image]]>
             </line>
             <line>
-              <![CDATA[Access to Articulos por Procesar Page ...]]>
+              <![CDATA[Access to Administrador Menu Page ...]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present...]]>
@@ -545,241 +326,10 @@
               <![CDATA[Validate if Element is Displayed]]>
             </line>
             <line>
-              <![CDATA[Realizar validación de campos de búsqueda Articulos por Procesar ...]]>
+              <![CDATA[Agregar Nuevo Menu ...]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
             </line>
             <line>
               <![CDATA[Click to Field or Button]]>
@@ -788,7 +338,46 @@
               <![CDATA[Return Click for Saved Image]]>
             </line>
             <line>
-              <![CDATA[Realizar validación de campos de búsqueda avanzada Articulos por Procesar ...]]>
+              <![CDATA[Validate Result Search Is Displayed ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Validate if Element is Displayed]]>
+            </line>
+            <line>
+              <![CDATA[Agregar Nuevo Menu ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Click to Field or Button]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present...]]>
@@ -803,7 +392,22 @@
               <![CDATA[Click to Field or Button]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present...]]>
@@ -843,69 +447,6 @@
             </line>
             <line>
               <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Input Text to Field]]>
-            </line>
-            <line>
-              <![CDATA[Wait for Element Present...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
             </line>
             <line>
               <![CDATA[Click to Field or Button]]>
@@ -918,14 +459,23 @@
             </line>
             <line>
               <![CDATA[Return Click for Saved Image]]>
+            </line>
+            <line>
+              <![CDATA[Validate Message Is Displayed ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present...]]>
+            </line>
+            <line>
+              <![CDATA[Validate if Element is Displayed]]>
             </line>
           </reporter-output>
-        </test-method> <!-- tc001_SPX_Dev5_Validar_Campos_Proceso_Nuevo_Articulos_Almacen -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen@2421cc4]" started-at="2024-05-17T20:28:25Z" name="afterTest" finished-at="2024-05-17T20:28:25Z" duration-ms="393" status="PASS">
+        </test-method> <!-- tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema@5be46f9d]" started-at="2025-11-20T21:43:41Z" name="afterTest" finished-at="2025-11-20T21:43:41Z" duration-ms="230" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen -->
+      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -27,8 +27,14 @@ public class GlobalVariablesSPX {
 
 	public static final String SPX_DEV5_NUM_UEN_APODACA = "300000871351061";
 	public static final String SPX_DEV5_NOM_UEN_APODACA = "Metalsa LV Apodaca";
+	
+	public static final String SPX_DEV5_NUM_UEN_OWENSBORO = "300000871351139";
+	public static final String SPX_DEV5_NOM_UEN_OWENSBORO = "Metalsa Owensboro";
+	
+	public static final String SPX_DEV5_NUM_UEN_ELIZABETHTOWN = "300000871351009";
+	public static final String SPX_DEV5_NOM_UEN_ELIZABETHTOWN = "Metalsa Elizabethtown";
 
-	public static final String SPX_DEV5_NUM_UEN = "300000871351074";
+	public static final String SPX_DEV5_NUM_UEN = "300000871351009";
 	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:" + GlobalVariablesSPX.SPX_DEV5_NUM_UEN
 			+ "']";
 
