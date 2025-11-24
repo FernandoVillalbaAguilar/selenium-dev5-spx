@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1232303989\testng-customsuite.xml</span>
+                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse--29108125\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content failed suite-Default_suite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema" class="method navigator-link" hash-for-method="tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu">tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones" class="method navigator-link" hash-for-method="runTestMultipleTimes">runTestMultipleTimes</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,25 +117,89 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu">
-                  </a> <!-- tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu -->
-                  <span class="method-name">tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu</span>
+                  <a name="runTestMultipleTimes">
+                  </a> <!-- runTestMultipleTimes -->
+                  <span class="method-name">runTestMultipleTimes</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: formCarroCompras:crearRequiButton (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at com.metalsa.spx.dev5.main.SPXBase.click(SPXBase.java:401)
+	at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.clickBtnRequisition(AccountConfigurationSPXPage.java:267)
+	at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.selectTypeAccountForRequisitionCC(AccountConfigurationSPXPage.java:163)
+	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones.tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC(QC_Testing_SPX_DEV5_TestCases_Requisiciones.java:146)
+	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones.runTestMultipleTimes(QC_Testing_SPX_DEV5_TestCases_Requisiciones.java:83)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#formCarroCompras\:crearRequiButton&quot;}
+  (Session info: chrome=142.0.7444.176)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LXAPO1501&apos;, ip: &apos;192.168.100.37&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50237}, goog:processID: 23092, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e78efa640944faca1e0ac93a08e6ab90
+*** Element info: {Using=id, value=formCarroCompras:crearRequiButton}
+	at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
+	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
+	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	... 30 more
+
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-failed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-1232303989\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse--29108125\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -144,11 +208,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema&quot;&gt;
+      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu&quot;/&gt;
+          &lt;include name=&quot;runTestMultipleTimes&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema --&gt;
+      &lt;/class&gt; &lt;!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -190,14 +254,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu')
-data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema')
-data.setCell(0, 3, 34914);
+data.setCell(0, 1, 'runTestMultipleTimes')
+data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones')
+data.setCell(0, 3, 79279);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 34 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -209,115 +273,150 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="reporter-method-div">
-              <span class="reporter-method-name">tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu</span>
+              <span class="reporter-method-name">runTestMultipleTimes</span>
               <div class="reporter-method-output-div">
-                <span class="reporter-method-output">Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTEwMy9TUFgv</span>
+                <span class="reporter-method-output">Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv</span>
                 <span class="reporter-method-output">Logging to SPX ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Return Click for Saved Image</span>
                 <span class="reporter-method-output">Access to SPX ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Element displayed: By.id: sidebarCollapse</span>
                 <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Access to Administrador Menu ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Access to Administrador Menu Page ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Agregar Nuevo Menu ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Validate Result Search Is Displayed ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
-                <span class="reporter-method-output">Agregar Nuevo Menu ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Access to Spot Buy Requisitions Page ...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Element displayed: By.xpath: //span[@class='spx-card-header__title']</span>
+                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions First Section</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Second Section</span>
+                <span class="reporter-method-output">Element displayed: By.xpath: //label[ contains(normalize-space(.), 'Classification, Quantity & Date') or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]</span>
+                <span class="reporter-method-output">Select Primefaces Option...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]</span>
+                <span class="reporter-method-output">Select Primefaces Option...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]</span>
+                <span class="reporter-method-output">Select Primefaces Option...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Third Section</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">The Name Line is New and Correct Fields'</span>
+                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Access to Shopping Page ...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Element displayed: By.xpath: //div[@class='carro-compras-steps--name']</span>
+                <span class="reporter-method-output">Check Requisition of Shopping Cart</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Click to Field or Button</span>
                 <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Validate Message Is Displayed ...</span>
-                <span class="reporter-method-output">Wait for Element Present...</span>
-                <span class="reporter-method-output">Validate if Element is Displayed</span>
+                <span class="reporter-method-output">Select Requisition of Shopping Cart</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Access to Account Configuration Page ...</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Element displayed: By.xpath: /html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]</span>
+                <span class="reporter-method-output">Select Type Account For Requisition ...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton</span>
+                <span class="reporter-method-output">Click to Requisition ...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Click to Requisition ...</span>
+                <span class="reporter-method-output">Click to Field or Button</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">10 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema</span>
+              <span class="ignored-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">tc002_SPX_Dev5_Validar_Filtro_Campo_URLPath_Administrador_Roles_Menu</span>
+                <span class="ignored-method-name">tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC</span>
                 <br/>
-                <span class="ignored-method-name">tc010_SPX_Dev5_Validacion_Agregar_Remover_Articulos_Controlados</span>
-                <br/>
-                <span class="ignored-method-name">tc006_SPX_Dev5_Validacion_Boton_AddNewMenu_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">runTestMultipleTimes</span>
-                <br/>
-                <span class="ignored-method-name">tc003_SPX_Dev5_Validar_Funcionalidad_Botones_Add_Remove_Administrador_Roles_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc005_SPX_Dev5_Validacion_Filtro_Campo_URLPath_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc009_SPX_Dev5_Validacion_Campos_Busqueda_Articulos_Controlados</span>
-                <br/>
-                <span class="ignored-method-name">tc004_SPX_Dev5_Validacion_Filtro_Campo_MenuName_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc008_SPX_Dev5_Validacion_Boton_Remove_Administrador_Menu</span>
-                <br/>
-                <span class="ignored-method-name">tc001_SPX_Dev5_Validar_Filtro_Campo_MenuName_Administrador_Roles_Menu</span>
+                <span class="ignored-method-name">tc002_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Project</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -329,18 +428,20 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">tc007_SPX_Dev5_Validacion_Boton_Edit_Administrador_Menu</span>
-                <span class="method-start">1596 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">runTestMultipleTimes</span>
+                <span class="method-start">1593 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">36514 ms</span>
+                <span class="method-start">80880 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

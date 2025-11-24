@@ -17,7 +17,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	By btnBack = By.id("formCarroCompras:goBack1");
 	By iconTypeRequisition = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/i[1]");
-	By btnAccept = By.xpath("/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[4]/button[1]/span[1]");
+	By btnAccept = By.xpath("//button[contains(@class,'spx--btn__success')]");
 	By txtRequisitionGenerate = By.id("formCarroCompras:j_idt413:0:j_idt418");
 	By txtDescription = By.id("formCarroCompras:j_idt413:0:j_idt448:0:panel_no_warning_content");
 

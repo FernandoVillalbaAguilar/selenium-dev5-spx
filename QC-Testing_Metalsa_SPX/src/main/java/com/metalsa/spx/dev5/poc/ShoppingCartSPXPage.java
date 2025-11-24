@@ -15,7 +15,10 @@ public class ShoppingCartSPXPage extends SPXBase {
 	// Objects
 	By textShoppingCart = By.xpath("//div[@class='carro-compras-steps--name']");
 	By btnShoppingCart = By.id("spxBusquedaMenu:btn-ir-carro-compra");
-	By checkRequisitionShoppingCart = By.id("formCarroCompras:carroCompra0:0:simpleCheck0");
+	By checkRequisitionShoppingCart = By.xpath(
+		    "//label[contains(., '" + GlobalVariablesSPX.SPX_DEV5_DESCRIPTION_SPOT_PAGE + "')]" +
+		    "/ancestor::tr//input[contains(@id, 'simpleCheck0')]"
+		);
 	By checkRequisitionShoppingCartNewLine = By.id("formCarroCompras:carroCompra0:1:simpleCheck0");
 	By txtCommentsShoppingCart = By.id("formCarroCompras:carroCompra0:0:txtObservaciones");
 	By btnSetupPurchase = By.xpath(

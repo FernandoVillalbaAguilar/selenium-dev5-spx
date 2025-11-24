@@ -50,7 +50,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 			costCenter = GlobalVariablesSPX.SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE,
 			accountingAccount = GlobalVariablesSPX.SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE,
 			descriptionFAD = GlobalVariablesSPX.DESCRIPTION_FAD, supplierNameFAD = GlobalVariablesSPX.SUPPLIER_NAME_FAD,
-			amountFAD = GlobalVariablesSPX.AMOUNT_FAD, detailsFAD = GlobalVariablesSPX.AMOUNT_FAD,
+			amountFAD = GlobalVariablesSPX.AMOUNT_FAD, detailsFAD = GlobalVariablesSPX.DETAILS_FAD,
 			commentsFAD = GlobalVariablesSPX.COMMENTS_FAD,
 			project = GlobalVariablesSPX.SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE;
 
@@ -78,16 +78,16 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 	public void runTestMultipleTimes() throws InterruptedException, InvalidFormatException {
 		int numberOfRuns = 6; // You can adjust this based on the number of times you want to run the test
 
-//		for (int i = 0; i < numberOfRuns; i++) {
-//			
-//			tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC();
-//			
-//		}
+		for (int i = 0; i < numberOfRuns; i++) {
+
+			tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC();
+
+		}
 //		afterTest();
 //		beforeTest();
-		for (int i = 0; i < numberOfRuns; i++) {
-			tc002_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Project();
-		}
+//		for (int i = 0; i < numberOfRuns; i++) {
+//			tc002_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Project();
+//		}
 	}
 
 	@Test

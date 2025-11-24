@@ -27,7 +27,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	// Additional Header Parameters Objects
 	By chkProductServicereceivedwithoutrequisition = By.id("formSpot:servicioMaterialRealizado");
 	By chkIncludeSingleSourceFormat = By.id("formSpot:formatoAsignacionDirecta");
-	By textValidateSameLine = By.id("val-message_fad");
+	By textValidateSameLine = By.xpath(
+			"//div[@id='mesageError']//p[contains(text(),'No se pueden tener líneas con la misma información')]");
 	By textValidateFields = By.id("mesageError");
 	// Line Header Objects
 	By chkLine = By.id("formSpot:j_idt371");
@@ -47,21 +48,21 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/fieldset[1]/div[1]/div[2]/div[2]/div[3]/div[2]/input[1]");
 
 	// Second Section Objects
-	By lblSubTittle = By.xpath("//label[contains(text(),'Classification, Quantity & Date')]");
+	By lblSubTittle = By.xpath("//label[ contains(normalize-space(.), 'Classification, Quantity & Date') "
+			+ "or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]");
 	By lblCategory = By.id("formSpot:nwcboCategorias0_label");
 	By txtSearchCategory = By.id("formSpot:nwcboCategorias0_filter");
-	By selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE_ESP);
+	By selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
 	By lblFamily = By.id("formSpot:nwcboFamilias0_label");
 	By txtSearchFamily = By.id("formSpot:nwcboFamilias0_filter");
 	By txtSearchFamilyNewLine = By.id("formSpot:nwcboFamilias1_filter");
-	By selectOptionFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE_ESP);
-	By selectOptionFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE_ESP);
+	By selectOptionFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE);
+	By selectOptionFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE);
 	By lblSubFamily = By.id("formSpot:nwcboSubFamilias0_label");
 	By txtSearchSubFamily = By.id("formSpot:nwcboSubFamilias0_filter");
 	By txtSearchSubFamilyNewLine = By.id("formSpot:nwcboSubFamilias1_filter");
-	By selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE_ESP);
-	By selectOptionSubFamilyNewLine = By
-			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE_ESP);
+	By selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE);
+	By selectOptionSubFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE);
 	By txtGenericItem = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[1]/fieldset[1]/div[1]/div[4]/div[1]/div[2]/input[1]");
 	By txtQuantity = By.id("formSpot:cantidadReq_input");
@@ -119,15 +120,14 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * la pagina
 	 */
 	public void captureInformationSpotBuyRequisitionFirstSection(String description, String material, String color,
-			String Brand, String measurements, String modelPartNumber, String genericName) {
+			String brand, String measurements, String modelPartNumber, String genericName) {
 		reporterLog("Capture Information to Spot Buy Requisitions First Section");
-		String randomId = generateRandomId();
-		type(txtDescription, description + " WITH ID: " + randomId);
+		type(txtDescription, description);
 		type(txtMaterial, material);
 		type(txtColor, color);
-		type(txtBrand, Brand);
+		type(txtBrand, brand);
 		type(txtMeasurements, measurements);
-		type(txtModelPartNumber, modelPartNumber);
+		type(txtModelPartNumber,modelPartNumber);
 		type(txtGenericName, genericName);
 		requiredFields(txtDescription);
 	}
@@ -151,56 +151,24 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			String family, String subFamily, String genericItem, String unitOfMeasure) throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Second Section");
 		if (isDisplayed(lblSubTittle)) {
-			selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE_ENG);
-			selectOptionFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE_ENG);
-			selectOptionFamilyNewLine = By
-					.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE_ENG);
-			selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE_ENG);
+			selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
+			selectOptionFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE);
+			selectOptionFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE);
+			selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE);
 			selectOptionSubFamilyNewLine = By
-					.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE_ENG);
+					.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE);
 			slctReasonUrgent = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE_ENG);
 		}
-		// Category
-		click(lblCategory);
-		waitForElementPresent(txtSearchCategory);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		waitForElementPresent(selectOptionCategory);
-		click(selectOptionCategory);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
-		// Family
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		waitForElementPresent(lblFamily);
-		click(lblFamily);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		if (isDisplayed(selectOptionFamily)) {
-			waitForElementPresent(selectOptionFamily);
-			click(selectOptionFamily);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		} else {
-			waitForElementPresent(selectOptionFamilyNewLine);
-			click(selectOptionFamilyNewLine);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		}
+		selectPrimefacesOption(lblCategory, txtSearchCategory, selectOptionCategory);
 
-		// SubFamily
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		waitForElementPresent(lblSubFamily);
-		click(lblSubFamily);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		if (isDisplayed(selectOptionSubFamily)) {
-			waitForElementPresent(selectOptionSubFamily);
-			click(selectOptionSubFamily);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		} else {
-			waitForElementPresent(selectOptionSubFamilyNewLine);
-			click(selectOptionSubFamilyNewLine);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		}
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		selectPrimefacesOption(lblFamily, txtSearchFamily, selectOptionFamily, selectOptionFamilyNewLine);
+
+		selectPrimefacesOption(lblSubFamily, txtSearchSubFamily, selectOptionSubFamily, selectOptionSubFamilyNewLine);
+
 		// Rest Fields
 		type(txtGenericItem, genericItem);
-		type(txtQuantity, quantity);
+		type(txtQuantity,quantity);
 		click(lblUnitOfMeasure);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		click(lblUnitOfMeasure);
@@ -224,7 +192,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		click(selectDayNeedByDate);
 
 		// Required Fields Validate
-		if (isDisplayed(selectOptionSubFamilyNewLine)) {
+		if (isElementPresent(selectOptionSubFamilyNewLine)) {
 			requiredFields(txtSearchCategory);
 			requiredFields(txtSearchFamily);
 			requiredFields(txtSearchFamilyNewLine);
@@ -261,7 +229,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	public TreeMap<String, String> captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer,
 			String pathFileSpot) throws InterruptedException {
 		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
-		type(txtCommentsToBuyer, commentsToBuyer);
+		type(txtCommentsToBuyer, GlobalVariablesSPX.SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE);
 		uploadFile(pathFileSpot, btnChooseFiles);
 		return returnSaveImage(btnChooseFiles);
 	}
@@ -279,7 +247,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar la(s) línea(s)
 	 */
-	public TreeMap<String, String> addtoCart(String description, String material, String color, String Brand,
+	public TreeMap<String, String> addtoCart(String description, String material, String color, String brand,
 			String measurements, String modelPartNumber, String genericName, String quantity, String category,
 			String family, String subFamily, String unitOfMeasure) throws InterruptedException {
 		click(btnAddToCart);
@@ -287,7 +255,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		if (isDisplayed(textValidateSameLine)) {
 			System.out.print("The error message is: ");
 			getText(textValidateSameLine);
-			String randomId = generateRandomId();
+			String randomId = generateRandomId(8);
 			type(txtDescription, " WITH ID: " + randomId);
 			System.out.print("Create the requisition with the name: ");
 			getText(txtDescription);
@@ -298,7 +266,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			System.out.print("The error message is: ");
 			getText(textValidateFields);
 			if (isElementContainingText(txtDescription) == false) {
-				String randomId = generateRandomId();
+				String randomId = generateRandomId(8);
 				type(txtDescription, description + " WITH ID: " + randomId);
 			}
 			if (isElementContainingText(txtMaterial) == false) {
@@ -308,7 +276,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 				type(txtColor, color);
 			}
 			if (isElementContainingText(txtBrand) == false) {
-				type(txtBrand, Brand);
+				type(txtBrand, brand);
 			}
 			if (isElementContainingText(txtMeasurements) == false) {
 				type(txtMeasurements, measurements);
@@ -317,9 +285,9 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 				type(txtModelPartNumber, modelPartNumber);
 			}
 			if (isElementContainingText(txtGenericName) == false) {
-				type(txtGenericName, genericName);
+				type(txtGenericName,genericName);
 			}
-			if (isDisplayed(selectOptionSubFamilyNewLine)) {
+			if (isElementPresent(selectOptionSubFamilyNewLine)) {
 				if (isElementContainingText(txtSearchCategory) == false) {
 					click(lblCategory);
 					waitForElementPresent(txtSearchCategory);

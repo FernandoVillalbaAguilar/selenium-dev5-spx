@@ -12,6 +12,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.TreeMap;
 import java.util.UUID;
+import java.util.concurrent.ThreadLocalRandom;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -52,31 +54,6 @@ public class SPXBase {
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[5]/td[1]/div[1]/div[2]/span[1]",
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[6]/td[1]/div[1]/div[2]/span[1]",
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[3]/div[2]/div[1]/div[1]/fieldset[1]/table[1]/tbody[1]/tr[2]/td[1]/div[1]/div[2]/span[1]" };
-	static String[] unidadDeMedida = { "SET", "CASE", "TUB", "CASE", "ACRE", "HECTARE", "PINT", "PIE", "B10", "55D",
-			"KIT", "GAL" };
-	static String[] proveedores = { "MIGESA S.A DE C.V.", "ORBI LOGISTIC", "C.H. ROBINSON DE MEXICO S.A. DE C.V.",
-			"JEFFERSON METAL PRODUCTS INC", "NORDSON DE MEXICO S.A. DE C.V.", "CALVEK COMPONENTES BAJIO SA DE CV",
-			"IMPRESIONES INTELIGENTES A BAJO COSTO SA DE CV",
-			"PROVEEDORA DE TECNOLOGIAS INTELIGENTES DEL BAJIO SA DE CV", "LUBRICANTES DEL BAJIO SA DE CV" };
-	static String[] numRand = { "001", "002", "003", "004", "005", "006", "007", "008", "009", "010", "011", "012",
-			"013", "014", "015", "016", "017", "018", "019", "020" };
-	static String[] quantity = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
-			"17", "18", "19", "20", "21", "22", "23", "24", "25", "4654", "1245", "458721", "254", "7849", "9685",
-			"8457" };
-	static String[] material = { "ORO", "PLATA", "COBRE", "PLASTICO", "MADERA", "PORCELANA", "HULE", "HIERRO",
-			"CRISTAL", "PIEL", "MDF", "TELA", "PET", "ALUMINIO", "PALMA", "FOAMY", "ARCILLA", "CARTON", "PAPEL" };
-	static String[] color = { "BLANCO", "AMARILLO", "AZUL", "NEGRO", "ROSA", "VERDE", "MORADO", "NARANJA", "VIOLETA",
-			"TRANSPARENTE", "GRIS", "ROJO", "CAFE", "ESMERALDA", "MENTA", "FIUSHA", "SALMON", "MAGENTA",
-			"AZUL PASTEL" };
-	static String[] marca = { "HUAWEI", "HP", "APPLE", "OPPO", "SAMNSUNG", "DELL", "TOSHIBA", "ALCATEL", "LG", "MABE",
-			"ALIENWARE", "MEMBER'S MARK", "RUBIK", "PARISINA", "MOYU", "TURIN", "VISSION", "ADATA", "KINGSTONG" };
-	static String[] medidas = { "12 PULG", "10 CM", "8 CM", "10 PULG", "12 CM", "15 PIES", "18 PIES", "20 M", "55 CM",
-			"98 PULG", "145 CM", "54 PIES", "45 CM", "1 YARD", "2 YARD", "3 YARD", "1 CM", "2 PULG", "3 PIES" };
-	static String[] moneda = { "MXN", "USD", "EUR", "ADP", "YUD" };
-	static String[] razonUrgencia = { "Seguridad del Personal", "Paro de línea",
-			"Afectación de calidad directa al cliente" };
-	static String[] razonUrgenciaENG = { "Personal security", "Production line stops",
-			"Direct quality affectation to client" };
 
 	static Random rand = new Random();
 
@@ -86,6 +63,81 @@ public class SPXBase {
 
 	public SPXBase(WebDriver driver) {
 		this.driver = driver;
+	}
+
+	public static String[] generateNumbers() {
+		String[] numbers = new String[1000];
+		for (int i = 0; i < 1000; i++) {
+			numbers[i] = String.valueOf(i + 1);
+		}
+		return numbers;
+	}
+
+	// --------------------
+	// Helper: obtener valor aleatorio de cualquier arreglo
+	// Uso: randomFrom(GlobalVariablesSPX.MATERIAL)
+	// --------------------
+	public static String randomFrom(String[] arr) {
+		if (arr == null || arr.length == 0)
+			return "";
+		int idx = ThreadLocalRandom.current().nextInt(arr.length);
+		return arr[idx];
+	}
+
+	// Métodos auxiliares específicos (opcionales)
+	public static String randomMaterial() {
+		return randomFrom(GlobalVariablesSPX.MATERIAL);
+	}
+
+	public static String randomColor() {
+		return randomFrom(GlobalVariablesSPX.COLOR);
+	}
+
+	public static String randomMarca() {
+		return randomFrom(GlobalVariablesSPX.MARCA);
+	}
+
+	public static String randomMedida() {
+		return randomFrom(GlobalVariablesSPX.MEDIDAS);
+	}
+
+	public static String randomProveedor() {
+		return randomFrom(GlobalVariablesSPX.PROVEEDORES);
+	}
+
+	public static String randomUnidadDeMedida() {
+		return randomFrom(GlobalVariablesSPX.UNIDAD_DE_MEDIDA);
+	}
+
+	public static String randomNumRand() {
+		return randomFrom(GlobalVariablesSPX.NUM_RAND);
+	}
+
+	public static String randomQuantity() {
+		return randomFrom(GlobalVariablesSPX.QUANTITY);
+	}
+
+	public static String randomMoneda() {
+		return randomFrom(GlobalVariablesSPX.MONEDA);
+	}
+
+	public static String randomRazonUrgencia() {
+		return randomFrom(GlobalVariablesSPX.RAZON_URGENCIA);
+	}
+
+	public static String randomRazonUrgenciaENG() {
+		return randomFrom(GlobalVariablesSPX.RAZON_URGENCIA_ENG);
+	}
+
+	public static String randomGenericName() {
+		return randomFrom(GlobalVariablesSPX.GENERIC_NAME);
+	}
+
+	public static String randomGenericItem() {
+		return randomFrom(GlobalVariablesSPX.GENERIC_ITEM);
+	}
+	public static String randomComentarios() {
+		return randomFrom(GlobalVariablesSPX.COMENTARIOS);
 	}
 
 	/*
@@ -178,6 +230,46 @@ public class SPXBase {
 	/*
 	 * @name: waitForElementPresent
 	 * 
+	 * @date: 22/Nov/2025
+	 * 
+	 * @param: By locator
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Método que permite generar un Explicit Wait hasta que el
+	 * elemento exista dentro del DOM. A diferencia de visibilityOfElementLocated,
+	 * este método utiliza presenceOfElementLocated para mejorar la estabilidad en
+	 * componentes dinámicos como listas, paneles o dropdowns (PrimeFaces).
+	 */
+	public void waitForElementPresent(By locator) {
+		try {
+			reporterLog("Wait for Element Present (DOM Presence)...");
+			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
+
+			// Se espera a que el elemento esté presente en el DOM
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+
+		} catch (TimeoutException e) {
+			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
+			System.out.println("***** ERROR *****");
+			System.out.println("> The element: " + locator + " is NOT present in DOM...");
+			System.out.println("> Because: " + e.getMessage());
+			e.printStackTrace();
+
+		} catch (Exception e) {
+			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
+			System.out.println("***** ERROR (Unexpected) *****");
+			System.out.println("> Unexpected error while waiting for element: " + locator);
+			System.out.println("> Because: " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
+	/*
+	 * @name: waitForElementVisible
+	 * 
 	 * @date: 28/Oct/2023
 	 * 
 	 * @param: By locator
@@ -190,9 +282,9 @@ public class SPXBase {
 	 * hasta que se muestre el elemento requerido con un valor de segundos por
 	 * default
 	 */
-	public void waitForElementPresent(By locator) {
+	public void waitForElementVisible(By locator) {
 		try {
-			reporterLog("Wait for Element Present...");
+			reporterLog("Wait for Element Visible...");
 			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		} catch (TimeoutException e) {
@@ -304,6 +396,9 @@ public class SPXBase {
 	public void click(By locator) {
 		try {
 			reporterLog("Click to Field or Button");
+			// Espera adicional para que el elemento sea clickable
+			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
+			wait.until(ExpectedConditions.elementToBeClickable(locator));
 			driver.findElement(locator).click();
 			takeScreenshot();
 		} catch (NoSuchElementException e) {
@@ -387,26 +482,39 @@ public class SPXBase {
 	 * disponible
 	 */
 	public boolean isDisplayed(By locator) {
-		boolean isElementDisplayed = false;
 		try {
-			isElementDisplayed = driver.findElement(locator).isDisplayed();
-			if (isElementDisplayed) {
-				reporterLog("Validate if Element is Displayed");
+			// Buscar el elemento en la página usando el locator proporcionado
+			WebElement element = driver.findElement(locator);
+
+			// Verificar si el elemento está visible en la pantalla
+			boolean visible = element.isDisplayed();
+
+			// Si el elemento es visible
+			if (visible) {
+				// Registrar en el reporte que el elemento está visible
+				reporterLog("Element displayed: " + locator);
 			} else {
-				System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-				System.out.println("***** ERROR *****");
-				System.out.println("> Element: " + locator + " was not found & not Displayed...");
+				// Aviso en consola si el elemento existe pero no es visible
+				System.out.println("[WARNING] Element found but NOT visible: " + locator);
 			}
+
+			// Devolver el estado de visibilidad (true si es visible, false si no)
+			return visible;
+
 		} catch (NoSuchElementException e) {
-			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-			System.out.println("***** ERROR *****");
-			System.out.println("> Element: " + locator + " was not found & not Displayed...");
-			System.out.println("> Because: " + e.getMessage());
+			// Captura cuando el elemento NO está presente en el DOM
+			System.out.println("[INFO] Element NOT present in DOM: " + locator);
 			return false;
+
+		} catch (Exception e) {
+			// Captura cualquier otro error inesperado al verificar la visibilidad
+			System.out.println("[ERROR] Unexpected error checking visibility of: " + locator);
+			return false;
+
 		} finally {
+			// Tomar una captura de pantalla siempre, independientemente del resultado
 			takeScreenshot();
 		}
-		return isElementDisplayed;
 	}
 
 	/*
@@ -544,6 +652,16 @@ public class SPXBase {
 			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_GUANAJUATO;
 		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_APODACA)) {
 			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_APODACA;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_ARGENTINA)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_ARGENTINA;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_OWENSBORO)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_OWENSBORO;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_NOVI)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_NOVI;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_ROANOKE)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_ROANOKE;
+		} else if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_ELIZABETHTOWN)) {
+			uenName = GlobalVariablesSPX.SPX_DEV5_NOM_UEN_ELIZABETHTOWN;
 		}
 		return uenName;
 	}
@@ -565,19 +683,29 @@ public class SPXBase {
 		try {
 			reporterLog("Validate Required Fields...");
 
+			// 1. Verificar si el elemento existe en el DOM
+			if (!isElementPresent(locator)) {
+				// Campo no existe > NO debe validarse como requerido
+				System.out.println("### INFO ### El elemento no existe en la pantalla: " + locator);
+				return;
+			}
+
+			// 2. Si existe, validar si está vacío o nulo
 			if (isElementNull(driver, locator)) {
-				reporterLog("The required field contains information... ");
+				reporterLog("The required field contains information...");
 			} else {
 				System.out.println("###-----  " + this.getClass().getName() + "  -----###");
 				displayElementName(driver, locator);
 				System.out.println("***** ERROR *****");
 				System.out.println("> The: " + locator + " field is mandatory and cannot be empty...");
-				driver.close();
+				// NO CERRAR EL DRIVER AQUÍ
+				throw new RuntimeException("Required field is empty: " + locator);
 			}
+
 		} catch (TimeoutException e) {
 			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
 			System.out.println("***** ERROR *****");
-			System.out.println("> The: " + locator + " field is mandatory and cannot be empty... ");
+			System.out.println("> Timeout validating required field: " + locator);
 			System.out.println("> Because: " + e.getMessage());
 			e.printStackTrace();
 		}
@@ -784,14 +912,17 @@ public class SPXBase {
 	 * 
 	 * @description: Este metodo permite generar un ID Random
 	 */
-	public static String generateRandomId() {
-		UUID uuid = UUID.randomUUID();
-		String randomId = uuid.toString();
+	public static String generateRandomId(int length) {
+		// Genera un UUID y remueve guiones
+		String randomId = UUID.randomUUID().toString().replace("-", "");
 
-		// Remove any hyphens to get a valid HTML ID
-		randomId = randomId.replace("-", "");
+		// Si la longitud solicitada es mayor a 32, generamos UUID extra hasta completar
+		while (randomId.length() < length) {
+			randomId += UUID.randomUUID().toString().replace("-", "");
+		}
 
-		return randomId;
+		// Recorta exactamente a la longitud pedida
+		return randomId.substring(0, length);
 	}
 
 	/*
@@ -936,11 +1067,98 @@ public class SPXBase {
 								// elemento está habilitado o no.
 			return !isEnabled; // Devuelve true si el elemento está deshabilitado, de lo contrario, false.
 		} catch (NoSuchElementException e) {
-			String errorMessage = String
-					.format("> Elemento no encontrado o no habilitado: %s. Error: %s", locator,
+			String errorMessage = String.format("> Elemento no encontrado o no habilitado: %s. Error: %s", locator,
 					e.getMessage());
 			System.out.println(errorMessage);
 			reporterLog(errorMessage);
+			return false;
+		}
+	}
+
+	/*
+	 * @name: selectPrimefacesOption
+	 * 
+	 * @date: 21/Nov/2025
+	 * 
+	 * @param: By lblDropdown -> Elemento que abre el listado de opciones
+	 * 
+	 * @param: By panel -> Panel flotante del Primefaces SelectOneMenu
+	 * 
+	 * @param: By... options -> Opciones posibles que se intentarán seleccionar (en
+	 * orden)
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando
+	 * 
+	 * @description: Este método abre un dropdown de PrimeFaces y selecciona la
+	 * primera opción disponible entre las enviadas, validando visibilidad,
+	 * presencia y manejando errores controlados.
+	 */
+	public void selectPrimefacesOption(By lblDropdown, By panel, By... options) {
+		try {
+			reporterLog("Select Primefaces Option...");
+
+			// 1. Click en el label para abrir el dropdown
+			click(lblDropdown);
+
+			// 2. Esperar el panel visible
+			waitForElementVisible(panel);
+
+			// 3. Buscar la primera opción disponible
+			for (By option : options) {
+
+				if (isElementPresent(option)) {
+
+					waitForElementVisible(option);
+					click(option);
+
+					reporterLog("Opción seleccionada: " + option.toString());
+					return; // Selección exitosa
+				}
+			}
+
+			// Si llegó aquí, no encontró ninguna opción
+			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
+			System.out.println("***** ERROR *****");
+			System.out.println("> Ninguna de las opciones enviadas existe en el dropdown.");
+			System.out.println("> Revisar localizadores o contenido dinámico del menú.");
+
+		} catch (TimeoutException te) {
+			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
+			System.out.println("***** TIMEOUT *****");
+			System.out.println("> No fue posible encontrar el panel o las opciones del dropdown.");
+			System.out.println("> Because: " + te.getMessage());
+			te.printStackTrace();
+
+		} catch (Exception e) {
+			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
+			System.out.println("***** ERROR GENERAL *****");
+			System.out.println("> Ocurrió un error inesperado en selectPrimefacesOption.");
+			System.out.println("> Because: " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+
+	/*
+	 * @name: isElementPresent
+	 * 
+	 * @date: 21/Nov/2025
+	 * 
+	 * @param: locator > Localizador del elemento que se desea validar.
+	 * 
+	 * @return: boolean > true si el elemento existe en el DOM, false si no existe.
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Método que permite verificar si un elemento está presente en el
+	 * DOM sin lanzar excepción. Se utiliza principalmente para validar opciones
+	 * dinámicas o elementos que pueden o no existir.
+	 */
+	public boolean isElementPresent(By locator) {
+		try {
+			return driver.findElements(locator).size() > 0;
+		} catch (Exception e) {
 			return false;
 		}
 	}

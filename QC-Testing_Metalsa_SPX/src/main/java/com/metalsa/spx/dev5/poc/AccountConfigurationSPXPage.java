@@ -40,8 +40,8 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	// CC
 	By btnCC = By.xpath(
 			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
-	By lblCostCenter = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCC_label");
-	By txtCostCenter = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCC_filter");
+	By lblCostCenter = By.xpath("//label[text()='Selecciona centro de costo']/parent::div");
+	By txtCostCenter = By.id("//label[text()='Selecciona centro de costo']/parent::div");
 	By slctCostCenter = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE);
 	By txtSelectAccount = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label");
 	By slctSelectAccount = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE);
