@@ -46,8 +46,8 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_NUM_UEN = "300000871350983";
 	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:" + GlobalVariablesSPX.SPX_DEV5_NUM_UEN
 			+ "']";
-	
-	//Data General Requisitions
+
+	// Data General Requisitions
 	public static final String[] MATERIAL = { "Oro", "Plata", "Cobre", "Mercurio", "Platino", "Cobalto", "Aluminio",
 			"Hierro", "Zinc", "Níquel", "Tungsteno", "Cromo", "Magnesio", "Titanio", "Manganeso", "Cadmio", "Boro",
 			"Silicio", "Rubidio", "Litio", "Vanadio" };
@@ -84,33 +84,34 @@ public class GlobalVariablesSPX {
 			"Cobertor protector", "Soporte articulado", "Pasador de anclaje", "Tuerca de seguridad",
 			"Bloque de fijacion", "Manija industrial", "Placa de cierre", "Modulo portante", "Pasador tensor",
 			"Guia de deslizado", "Refuerzo lateral", "Conjunto bisagra" };
-	public static final String[] COMENTARIOS = { "Implementacion detallada de un sistema de requisiciones automaticas que optimiza el flujo de trabajo empresarial mediante la integracion de Selenium WebDriver.",
-		    "Automatizacion avanzada en la creacion de requisiciones, utilizando Selenium WebDriver para mejorar significativamente la eficiencia operativa en la empresa.",
-		    "Desarrollo de una plataforma robusta para la gestion automatizada de requisiciones, integrando funcionalidades de Selenium WebDriver para asegurar precision y rapidez.",
-		    "Configuracion personalizada de Selenium WebDriver para la automatizacion integral de requisiciones, mejorando la capacidad de respuesta del sistema ante cambios operativos.",
-		    "Optimizacion del proceso completo de gestion de requisiciones a traves de la automatizacion con Selenium WebDriver, asegurando una reduccion en los tiempos de procesamiento y errores humanos.",
-		    "Integracion eficiente de Selenium WebDriver dentro del ecosistema de gestion empresarial para automatizar y agilizar la creacion y aprobacion de requisiciones.",
-		    "Mejora continua en la generacion automatica de requisiciones mediante el uso avanzado de las capacidades de Selenium WebDriver, optimizando recursos y reduciendo costos.",
-		    "Sistema de requisiciones automaticas completamente optimizado con Selenium WebDriver, diseñado para maximizar la eficiencia y la precision en el entorno empresarial.",
-		    "Implementacion efectiva y detallada de Selenium WebDriver en la automatizacion de requisiciones, enfocada en aumentar la productividad y reducir la carga manual del personal.",
-		    "Soluciones tecnicas avanzadas para la gestion automatica de requisiciones, aprovechando al maximo las herramientas proporcionadas por Selenium WebDriver.",
-		    "Configuracion avanzada y personalizada de Selenium WebDriver para optimizar la creacion y aprobacion de requisiciones en un entorno empresarial dinamico.",
-		    "Automatizacion completa del proceso de requisiciones utilizando Selenium WebDriver para maximizar la eficiencia y minimizar los tiempos de espera en la cadena de suministro.",
-		    "Mejoras significativas en el proceso de requisiciones automaticas, empleando Selenium WebDriver para asegurar una gestion mas efectiva y menos propensa a errores.",
-		    "Selenium WebDriver como herramienta clave en la gestion automatica de requisiciones, proporcionando soluciones escalables y eficientes para la empresa moderna.",
-		    "Desarrollo de procesos automatizados de requisiciones mediante la implementacion avanzada de Selenium WebDriver, enfocada en la adaptabilidad y la eficiencia.",
-		    "Optimizacion de la gestion de requisiciones automaticas con Selenium WebDriver, asegurando un flujo de trabajo continuo y sin interrupciones dentro de la organizacion.",
-		    "Implementacion de Selenium WebDriver para mejorar el proceso completo de gestion de requisiciones automaticas, con un enfoque en la mejora continua y la eficiencia operativa.",
-		    "Soluciones de automatizacion empresarial centradas en el uso de Selenium WebDriver para gestionar de manera efectiva y automatica las requisiciones, reduciendo tiempos y costos.",
-		    "Mejoras estrategicas en la gestion de requisiciones automaticas utilizando las capacidades de Selenium WebDriver, garantizando una mayor precision y rapidez en los procesos.",
-		    "Implementacion de soluciones de automatizacion para la gestion de requisiciones, optimizando recursos y procesos mediante el uso avanzado de Selenium WebDriver."
- };
+	public static final String[] COMENTARIOS = {
+			"Implementacion detallada de un sistema de requisiciones automaticas que optimiza el flujo de trabajo empresarial mediante la integracion de Selenium WebDriver.",
+			"Automatizacion avanzada en la creacion de requisiciones, utilizando Selenium WebDriver para mejorar significativamente la eficiencia operativa en la empresa.",
+			"Desarrollo de una plataforma robusta para la gestion automatizada de requisiciones, integrando funcionalidades de Selenium WebDriver para asegurar precision y rapidez.",
+			"Configuracion personalizada de Selenium WebDriver para la automatizacion integral de requisiciones, mejorando la capacidad de respuesta del sistema ante cambios operativos.",
+			"Optimizacion del proceso completo de gestion de requisiciones a traves de la automatizacion con Selenium WebDriver, asegurando una reduccion en los tiempos de procesamiento y errores humanos.",
+			"Integracion eficiente de Selenium WebDriver dentro del ecosistema de gestion empresarial para automatizar y agilizar la creacion y aprobacion de requisiciones.",
+			"Mejora continua en la generacion automatica de requisiciones mediante el uso avanzado de las capacidades de Selenium WebDriver, optimizando recursos y reduciendo costos.",
+			"Sistema de requisiciones automaticas completamente optimizado con Selenium WebDriver, diseñado para maximizar la eficiencia y la precision en el entorno empresarial.",
+			"Implementacion efectiva y detallada de Selenium WebDriver en la automatizacion de requisiciones, enfocada en aumentar la productividad y reducir la carga manual del personal.",
+			"Soluciones tecnicas avanzadas para la gestion automatica de requisiciones, aprovechando al maximo las herramientas proporcionadas por Selenium WebDriver.",
+			"Configuracion avanzada y personalizada de Selenium WebDriver para optimizar la creacion y aprobacion de requisiciones en un entorno empresarial dinamico.",
+			"Automatizacion completa del proceso de requisiciones utilizando Selenium WebDriver para maximizar la eficiencia y minimizar los tiempos de espera en la cadena de suministro.",
+			"Mejoras significativas en el proceso de requisiciones automaticas, empleando Selenium WebDriver para asegurar una gestion mas efectiva y menos propensa a errores.",
+			"Selenium WebDriver como herramienta clave en la gestion automatica de requisiciones, proporcionando soluciones escalables y eficientes para la empresa moderna.",
+			"Desarrollo de procesos automatizados de requisiciones mediante la implementacion avanzada de Selenium WebDriver, enfocada en la adaptabilidad y la eficiencia.",
+			"Optimizacion de la gestion de requisiciones automaticas con Selenium WebDriver, asegurando un flujo de trabajo continuo y sin interrupciones dentro de la organizacion.",
+			"Implementacion de Selenium WebDriver para mejorar el proceso completo de gestion de requisiciones automaticas, con un enfoque en la mejora continua y la eficiencia operativa.",
+			"Soluciones de automatizacion empresarial centradas en el uso de Selenium WebDriver para gestionar de manera efectiva y automatica las requisiciones, reduciendo tiempos y costos.",
+			"Mejoras estrategicas en la gestion de requisiciones automaticas utilizando las capacidades de Selenium WebDriver, garantizando una mayor precision y rapidez en los procesos.",
+			"Implementacion de soluciones de automatizacion para la gestion de requisiciones, optimizando recursos y procesos mediante el uso avanzado de Selenium WebDriver." };
 
 	// Data Spot Buy Requisitions
 	// Global Sourcing RFQ Header
 	public static final String SPX_DEV5_GLOBAL_SOURCING_RFQ_SPOT_PAGE = "868 - Tooling";
 	public static final String SPX_DEV5_SELECT_GLOBAL_SOURCING_RFQ_SPOT_PAGE = "//li[contains(.,'"
 			+ GlobalVariablesSPX.SPX_DEV5_GLOBAL_SOURCING_RFQ_SPOT_PAGE + "')]";
+
 	// First Section
 	public static final String SPX_DEV5_DESCRIPTION_SPOT_PAGE = "REQUI-TEST-AUTO-" + SPXBase.generateRandomId(8);
 	public static final String SPX_DEV5_MATERIAL_SPOT_PAGE = SPXBase.randomMaterial();
@@ -298,5 +299,4 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_COMPRADOR_CAPTURA_DE_COTIZACIONES_PAGE = "SPX Cloud Dev";
 	public static final String SPX_DEV5_BUSQUEDA_POR_PALABRA_CAPTURA_DE_COTIZACIONES_PAGE = "ART - 4549 EKJERE E";
 
-	
 }

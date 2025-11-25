@@ -94,7 +94,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	public boolean textAccountConfigurationPageIsDisplayed() {
 		reporterLog("Access to Account Configuration Page ...");
 		waitForElementPresent(txtAccountConfiguration);
-		return isDisplayed(txtAccountConfiguration);
+		return isElementPresent(txtAccountConfiguration);
 	}
 
 	/*
@@ -136,7 +136,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		}
 
-		if (isDisplayed(btnCCNewLine)) {
+		if (isElementPresent(btnCCNewLine)) {
 			// Second Line
 			scrollDown(btnCCNewLine);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
@@ -262,10 +262,21 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
-	public TreeMap<String, String> clickBtnRequisition() throws InterruptedException {
-		reporterLog("Click to Requisition ...");
-		click(btnRequisition);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		return returnSaveImage(btnRequisition);
+	public TreeMap<String, String> clickBtnRequisition() {
+
+	    reporterLog("Click to Requisition ...");
+
+	    // Validamos si el botón existe realmente
+	    if (!elementExistsAndVisible(btnRequisition)) {
+	        reporterLog("[ERROR] The button 'Crear Requisición' is NOT available.");
+	        return returnSaveImage(btnRequisition);
+	    }
+
+	    waitForElementClickable(btnRequisition);
+
+	    click(btnRequisition);
+
+	    return returnSaveImage(btnRequisition);
 	}
+
 }

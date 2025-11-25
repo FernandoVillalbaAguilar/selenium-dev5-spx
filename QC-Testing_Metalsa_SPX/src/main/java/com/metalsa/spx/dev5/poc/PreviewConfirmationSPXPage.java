@@ -18,8 +18,8 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	By iconTypeRequisition = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/span[1]/div[1]/div[1]/div[2]/div[1]/i[1]");
 	By btnAccept = By.xpath("//button[contains(@class,'spx--btn__success')]");
-	By txtRequisitionGenerate = By.id("formCarroCompras:j_idt413:0:j_idt418");
-	By txtDescription = By.id("formCarroCompras:j_idt413:0:j_idt448:0:panel_no_warning_content");
+	By txtRequisitionGenerate = By.xpath("//label[@style='color: #028EEF;']");
+	By txtDescription = By.xpath("//td[contains(@class,'CellWithComment')]//span");
 
 	/*
 	 * @name: textPreviewConfirmationPageIsDisplayed
@@ -54,15 +54,27 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * @description: Este metodo permite verificar que el elemento está disponible
 	 */
 	public TreeMap<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
-		reporterLog("Accept to Requisition");
-		waitForElementPresent(btnAccept);
-		click(btnAccept);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		waitForElementPresent(txtRequisitionGenerate);
-		System.out.print("Requisition generated with ID: ");
-		getText(txtRequisitionGenerate);	
-		System.out.println("Description:");
-		getText(txtDescription);
-		return returnSaveImage(txtDescription);
+	    reporterLog("Accept to Requisition");
+
+	    // Espera y clic en el botón Aceptar
+	    waitForElementPresent(btnAccept);
+	    click(btnAccept);
+
+	    Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+
+	    // Espera a que aparezca el ID de requisición generado
+	    waitForElementPresent(txtRequisitionGenerate);
+	    String requisitionID = getText(txtRequisitionGenerate);
+	    
+	    // Espera a que aparezca la descripción del ítem y extrae solo el primer "token" (ID)
+	    waitForElementPresent(txtDescription);
+	    String fullDescription = getText(txtDescription);
+	    String itemRequisitionID = fullDescription.split(" ")[0]; // REQUI-TEST-AUTO-xxxx
+	    
+	    System.out.println("Requisition generated with ID: " + requisitionID);
+	    System.out.println("Description: " + itemRequisitionID);
+
+	    // Guarda evidencia
+	    return returnSaveImage(txtDescription);
 	}
 }

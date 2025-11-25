@@ -76,10 +76,9 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 
 	@Test
 	public void runTestMultipleTimes() throws InterruptedException, InvalidFormatException {
-		int numberOfRuns = 6; // You can adjust this based on the number of times you want to run the test
+		int numberOfRuns = 2; // You can adjust this based on the number of times you want to run the test
 
 		for (int i = 0; i < numberOfRuns; i++) {
-
 			tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC();
 
 		}

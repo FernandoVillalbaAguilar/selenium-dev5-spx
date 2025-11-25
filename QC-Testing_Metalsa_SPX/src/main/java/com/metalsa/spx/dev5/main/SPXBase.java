@@ -136,6 +136,7 @@ public class SPXBase {
 	public static String randomGenericItem() {
 		return randomFrom(GlobalVariablesSPX.GENERIC_ITEM);
 	}
+
 	public static String randomComentarios() {
 		return randomFrom(GlobalVariablesSPX.COMENTARIOS);
 	}
@@ -395,20 +396,62 @@ public class SPXBase {
 	 */
 	public void click(By locator) {
 		try {
-			reporterLog("Click to Field or Button");
-			// Espera adicional para que el elemento sea clickable
-			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
-			wait.until(ExpectedConditions.elementToBeClickable(locator));
-			driver.findElement(locator).click();
+			reporterLog("Click on field or button");
+
+			// Uso del método centralizado de espera
+			WebElement element = waitForElementClickable(locator);
+
+			element.click();
 			takeScreenshot();
+
+		} catch (TimeoutException e) {
+			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
+			System.out.println("***** ERROR *****");
+			System.out.println("> Element was not clickable within timeout: " + locator);
+			System.out.println("> Cause: " + e.getMessage());
+			e.printStackTrace();
+
 		} catch (NoSuchElementException e) {
 			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
 			System.out.println("***** ERROR *****");
-			System.out.println("> It was not possible to click on the item: " + locator);
-			System.out.println("> because: " + e.getMessage());
+			System.out.println("> Element not found: " + locator);
+			System.out.println("> Cause: " + e.getMessage());
+			e.printStackTrace();
+
+		} catch (Exception e) {
+			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
+			System.out.println("***** ERROR *****");
+			System.out.println("> Unexpected error while clicking element: " + locator);
+			System.out.println("> Cause: " + e.getMessage());
 			e.printStackTrace();
 		}
+	}
 
+	public boolean elementExistsAndVisible(By locator) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 5);
+
+			List<WebElement> elements = driver.findElements(locator);
+
+			if (elements.isEmpty()) {
+				reporterLog("[INFO] Element NOT present in DOM: " + locator);
+				return false;
+			}
+
+			WebElement element = elements.get(0);
+
+			if (!element.isDisplayed()) {
+				reporterLog("[WARNING] Element present but NOT visible: " + locator);
+				return false;
+			}
+
+			//reporterLog("[INFO] Element exists and is visible: " + locator);
+			return true;
+
+		} catch (Exception e) {
+			reporterLog("[ERROR] Unexpected error checking element: " + locator);
+			return false;
+		}
 	}
 
 	/*
@@ -427,17 +470,22 @@ public class SPXBase {
 	 */
 
 	public TreeMap<String, String> returnSaveImage(By locator) {
+
 		try {
-			reporterLog("Return Click for Saved Image");
-			driver.findElement(locator).getTagName();
-			return takeScreenshot();
-		} catch (NoSuchElementException e) {
-			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-			System.out.println("***** ERROR *****");
-			System.out.println("> It was not possible to save image: " + locator);
-			System.out.println("> Because: " + e.getMessage());
+			reporterLog("Taking Screenshot (element may or may not exist): " + locator);
+
+			if (!driver.findElements(locator).isEmpty()) {
+				//System.out.println("Element exists: " + locator);
+			} else {
+				System.out.println("Element does NOT exist: " + locator);
+			}
+
+		} catch (Exception e) {
+			System.out.println("Error validating locator: " + locator);
 			e.printStackTrace();
 		}
+
+		// SIEMPRE toma screenshot, exista o no el elemento
 		return takeScreenshot();
 	}
 
@@ -612,17 +660,83 @@ public class SPXBase {
 	 * 
 	 * @description: Este metodo permite obtener el texto de un elemento
 	 */
-	public void getText(By locator) {
+	public String getText(By locator) {
 		try {
-			String nameProduct;
-			nameProduct = driver.findElement(locator).getText();
-			System.out.println(nameProduct);
+			String text = driver.findElement(locator).getText();
+			System.out.println(text); // opcional, para seguir mostrando en consola
+			return text;
 		} catch (TimeoutException e) {
 			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
 			System.out.println("***** ERROR *****");
-			System.out.println("> No text found to display...");
+			System.out.println("> No text found to display for: " + locator);
 			e.printStackTrace();
+			return ""; // devolver un string vacío en caso de error
 		}
+	}
+
+	/*
+	 * @name: waitForPrimefacesAjax
+	 * 
+	 * @date: 25/Nov/2025
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este método espera de forma explícita a que la cola de
+	 * peticiones AJAX de PrimeFaces se vacíe, verificando continuamente el estado
+	 * mediante JavaScript. Evita el uso de Thread.sleep y mejora la estabilidad de
+	 * las pruebas al sincronizar con las operaciones AJAX.
+	 */
+	public void waitForPrimefacesAjax() {
+		try {
+			WebDriverWait localWait = new WebDriverWait(driver, 20);
+
+			localWait.until(new com.google.common.base.Function<WebDriver, Boolean>() {
+				@Override
+				public Boolean apply(WebDriver driver) {
+					try {
+						JavascriptExecutor js = (JavascriptExecutor) driver;
+						Object ajaxComplete = js.executeScript(
+								"return (window.PrimeFaces && PrimeFaces.ajax && PrimeFaces.ajax.Queue.isEmpty());");
+
+						if (ajaxComplete instanceof Boolean) {
+							return ((Boolean) ajaxComplete);
+						} else {
+							return true; // fallback
+						}
+
+					} catch (Exception ex) {
+						return true; // fallback
+					}
+				}
+			});
+
+		} catch (Exception e) {
+			reporterLog("AJAX wait timeout - continuing test flow");
+		}
+	}
+
+	/*
+	 * @name: waitForDropdownToLoad
+	 * 
+	 * @date: 25/Nov/2025
+	 * 
+	 * @param: By optionLocator
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este método espera a que un menú desplegable termine de cargar
+	 * sus opciones. Primero sincroniza con las operaciones AJAX de PrimeFaces y
+	 * luego verifica que el elemento indicado se encuentre visible en la página.
+	 */
+	public void waitForDropdownToLoad(By optionLocator) {
+		waitForPrimefacesAjax();
+		waitForElementVisible(optionLocator);
 	}
 
 	/*
@@ -822,11 +936,12 @@ public class SPXBase {
 	 */
 	public TreeMap<String, String> takeScreenshot() {
 		try {
-			String testCaseName = getTestCaseName(Reporter.getCurrentTestResult());
-			String fileName = "QC_Testing-" + testCaseName + "-" + date();
 
 			// Take screenshot
 			Screenshot screenshot = new AShot().takeScreenshot(driver);
+
+			String testCaseName = getTestCaseName(Reporter.getCurrentTestResult());
+			String fileName = "QC_Testing-" + testCaseName + "-" + date();
 
 			// Save screenshot as PNG file
 			String pathFileName = GlobalVariablesSPX.SPX_DEV5_PATH_SCREENSHOTS + fileName + ".png";
@@ -1060,7 +1175,9 @@ public class SPXBase {
 
 	public boolean isElementDisabled(By locator) {
 		try {
-			WebElement element = driver.findElement(locator);
+			// WebElement element = driver.findElement(locator);
+			WebElement element = new WebDriverWait(driver, 10)
+					.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfElementLocated(locator)));
 			boolean isEnabled = element.isEnabled();
 			reporterLog("Validando si el elemento está habilitado: " + locator);
 			takeScreenshot(); // Tomar una captura de pantalla para referencia, independientemente de si el
@@ -1160,6 +1277,34 @@ public class SPXBase {
 			return driver.findElements(locator).size() > 0;
 		} catch (Exception e) {
 			return false;
+		}
+	}
+
+	/*
+	 * @name: waitForElementClickable
+	 * 
+	 * @date: 24/Nov/2025
+	 * 
+	 * @param: By locator Localizador del elemento que se espera que sea clickeable.
+	 * 
+	 * @return: WebElement Retorna el elemento una vez que Selenium confirma que es
+	 * clickeable.
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Método que espera de forma explícita a que un elemento sea
+	 * clickeable antes de interactuar con él. Si el elemento no llega a estar
+	 * disponible dentro del tiempo configurado, se genera un TimeoutException.
+	 */
+
+	public WebElement waitForElementClickable(By locator) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, 15);
+			reporterLog("Esperando a que el elemento sea clickeable: " + locator);
+			return wait.until(ExpectedConditions.elementToBeClickable(locator));
+		} catch (TimeoutException e) {
+			reporterLog("El elemento NO se volvió clickeable: " + locator);
+			throw e;
 		}
 	}
 

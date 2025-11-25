@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse--29108125\testng-customsuite.xml</span>
+                    <span>C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-627552337\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones" class="method navigator-link" hash-for-method="runTestMultipleTimes">runTestMultipleTimes</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos" class="method navigator-link" hash-for-method="runTestMultipleTimes">runTestMultipleTimes</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -120,7 +120,7 @@
           <div class="suite-Default_suite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones</span>
+              <span class="class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -128,14 +128,19 @@
                   <a name="runTestMultipleTimes">
                   </a> <!-- runTestMultipleTimes -->
                   <span class="method-name">runTestMultipleTimes</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: formCarroCompras:crearRequiButton (tried for 10 second(s) with 500 milliseconds interval)
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: formCarroCompras:crearRequiButton (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;LXAPO1501&apos;, ip: &apos;192.168.100.37&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54359}, goog:processID: 17192, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f2c9933b4964dc0ffbb7507a52a171fb
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.metalsa.spx.dev5.main.SPXBase.click(SPXBase.java:401)
-	at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.clickBtnRequisition(AccountConfigurationSPXPage.java:267)
+	at com.metalsa.spx.dev5.main.SPXBase.waitForElementClickable(SPXBase.java:1304)
+	at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.clickBtnRequisition(AccountConfigurationSPXPage.java:275)
 	at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.selectTypeAccountForRequisitionCC(AccountConfigurationSPXPage.java:163)
-	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones.tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC(QC_Testing_SPX_DEV5_TestCases_Requisiciones.java:146)
-	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones.runTestMultipleTimes(QC_Testing_SPX_DEV5_TestCases_Requisiciones.java:83)
+	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.tc001_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC(QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.java:172)
+	at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.runTestMultipleTimes(QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.java:82)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -161,35 +166,6 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#formCarroCompras\:crearRequiButton&quot;}
-  (Session info: chrome=142.0.7444.176)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;LXAPO1501&apos;, ip: &apos;192.168.100.37&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50237}, goog:processID: 23092, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e78efa640944faca1e0ac93a08e6ab90
-*** Element info: {Using=id, value=formCarroCompras:crearRequiButton}
-	at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-	at org.openqa.selenium.By$ById.findElement(By.java:188)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-	at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-	at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-	... 30 more
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -199,7 +175,7 @@ Session ID: e78efa640944faca1e0ac93a08e6ab90
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse--29108125\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\fernando.villalba\AppData\Local\Temp\testng-eclipse-627552337\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -208,11 +184,11 @@ Session ID: e78efa640944faca1e0ac93a08e6ab90
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones&quot;&gt;
+      &lt;class name=&quot;com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos&quot;&gt;
         &lt;methods&gt;
           &lt;include name=&quot;runTestMultipleTimes&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones --&gt;
+      &lt;/class&gt; &lt;!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -255,13 +231,13 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runTestMultipleTimes')
-data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones')
-data.setCell(0, 3, 79279);
+data.setCell(0, 2, 'com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos')
+data.setCell(0, 3, 179821);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -280,26 +256,33 @@ return data;
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formLogin:btnForm</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.id: formLogin:btnForm</span>
                 <span class="reporter-method-output">Access to SPX ...</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Element displayed: By.id: sidebarCollapse</span>
                 <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@name='uens']</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //option[@value='number:300000871350983']</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.xpath: //option[@value='number:300000871350983']</span>
                 <span class="reporter-method-output">Access to Spot Buy Requisitions ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: sidebarCollapse</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //a[@href='#_menu_191']</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //a[@href='#_menu_192']</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX//pages/spot/index.xhtml']</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX//pages/spot/index.xhtml']</span>
                 <span class="reporter-method-output">Access to Spot Buy Requisitions Page ...</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Element displayed: By.xpath: //span[@class='spx-card-header__title']</span>
@@ -316,42 +299,59 @@ return data;
                 <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Second Section</span>
                 <span class="reporter-method-output">Element displayed: By.xpath: //label[ contains(normalize-space(.), 'Classification, Quantity & Date') or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]</span>
                 <span class="reporter-method-output">Select Primefaces Option...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboCategorias0_label</span>
                 <span class="reporter-method-output">Wait for Element Visible...</span>
                 <span class="reporter-method-output">Wait for Element Visible...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]</span>
                 <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]</span>
                 <span class="reporter-method-output">Select Primefaces Option...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboFamilias0_label</span>
                 <span class="reporter-method-output">Wait for Element Visible...</span>
                 <span class="reporter-method-output">Wait for Element Visible...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]</span>
                 <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]</span>
                 <span class="reporter-method-output">Select Primefaces Option...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboSubFamilias0_label</span>
                 <span class="reporter-method-output">Wait for Element Visible...</span>
                 <span class="reporter-method-output">Wait for Element Visible...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]</span>
                 <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]</span>
                 <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formSpot:comboUDM_panel']//li[contains(.,'HECTARE')]</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']</span>
                 <span class="reporter-method-output">Validate Required Fields...</span>
                 <span class="reporter-method-output">The required field contains information...</span>
                 <span class="reporter-method-output">Validate Required Fields...</span>
@@ -366,57 +366,167 @@ return data;
                 <span class="reporter-method-output">The required field contains information...</span>
                 <span class="reporter-method-output">Validate Required Fields...</span>
                 <span class="reporter-method-output">The required field contains information...</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']</span>
                 <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Third Section</span>
                 <span class="reporter-method-output">Input Text to Field</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">The Name Line is New and Correct Fields'</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.id: formSpot:fileUpload_input</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:newLineButton</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.id: formSpot:newLineButton</span>
+                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions First Section</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Second Section</span>
+                <span class="reporter-method-output">Element displayed: By.xpath: //label[ contains(normalize-space(.), 'Classification, Quantity & Date') or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]</span>
+                <span class="reporter-method-output">Select Primefaces Option...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboCategorias0_label</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]</span>
+                <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]</span>
+                <span class="reporter-method-output">Select Primefaces Option...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboFamilias0_label</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]</span>
+                <span class="reporter-method-output">El elemento NO se volvió clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]</span>
+                <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]</span>
+                <span class="reporter-method-output">Select Primefaces Option...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboSubFamilias0_label</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]</span>
+                <span class="reporter-method-output">El elemento NO se volvió clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]</span>
+                <span class="reporter-method-output">Opción seleccionada: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Wait for Element Visible...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formSpot:comboUDM_panel']//li[contains(.,'HECTARE')]</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Validate Required Fields...</span>
+                <span class="reporter-method-output">The required field contains information...</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']</span>
+                <span class="reporter-method-output">Capture Information to Spot Buy Requisitions Third Section</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.id: formSpot:fileUpload_input</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:add-cart-btn</span>
+                <span class="reporter-method-output">Element displayed: By.xpath: //div[@id='mesageError']//p[contains(text(),'No se pueden tener líneas con la misma información')]</span>
+                <span class="reporter-method-output">Input Text to Field</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formSpot:add-cart-btn</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.id: formSpot:add-cart-btn</span>
                 <span class="reporter-method-output">Access to Shopping Page ...</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: spxBusquedaMenu:btn-ir-carro-compra</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
                 <span class="reporter-method-output">Element displayed: By.xpath: //div[@class='carro-compras-steps--name']</span>
                 <span class="reporter-method-output">Check Requisition of Shopping Cart</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]</span>
+                <span class="reporter-method-output">El elemento NO se volvió clickeable: By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]</span>
+                <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formCarroCompras:carroCompra0:1:simpleCheck0</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]</span>
                 <span class="reporter-method-output">Select Requisition of Shopping Cart</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']</span>
+                <span class="reporter-method-output">Taking Screenshot (element may or may not exist): By.xpath: //div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']</span>
                 <span class="reporter-method-output">Access to Account Configuration Page ...</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Element displayed: By.xpath: /html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]</span>
                 <span class="reporter-method-output">Select Type Account For Requisition ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]</span>
                 <span class="reporter-method-output">Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //label[text()='Selecciona centro de costo']/parent::div</span>
                 <span class="reporter-method-output">Wait for Element Present (DOM Presence)...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'A010 - CD & Fin. - Finance Co.')]</span>
                 <span class="reporter-method-output">Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton</span>
+                <span class="reporter-method-output">Click on field or button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label</span>
+                <span class="reporter-method-output">El elemento NO se volvió clickeable: By.id: formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label</span>
+                <span class="reporter-method-output">Input Text to Field</span>
                 <span class="reporter-method-output">Click to Requisition ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
-                <span class="reporter-method-output">Return Click for Saved Image</span>
-                <span class="reporter-method-output">Click to Requisition ...</span>
-                <span class="reporter-method-output">Click to Field or Button</span>
+                <span class="reporter-method-output">Esperando a que el elemento sea clickeable: By.id: formCarroCompras:crearRequiButton</span>
+                <span class="reporter-method-output">El elemento NO se volvió clickeable: By.id: formCarroCompras:crearRequiButton</span>
               </div> <!-- reporter-method-output-div -->
             </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">2 ignored methods</span>
+            <span class="header-content">6 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones</span>
+              <span class="ignored-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC</span>
+                <span class="ignored-method-name">tc003_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC_Urgent</span>
                 <br/>
-                <span class="ignored-method-name">tc002_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Project</span>
+                <span class="ignored-method-name">tc001_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC</span>
+                <br/>
+                <span class="ignored-method-name">tc002_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC</span>
+                <br/>
+                <span class="ignored-method-name">tc006_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_Proyect_Urgent</span>
+                <br/>
+                <span class="ignored-method-name">tc005_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_Project</span>
+                <br/>
+                <span class="ignored-method-name">tc004_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_Project</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -428,7 +538,7 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
@@ -437,11 +547,11 @@ return data;
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runTestMultipleTimes</span>
-                <span class="method-start">1593 ms</span>
+                <span class="method-start">1569 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">80880 ms</span>
+                <span class="method-start">181397 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

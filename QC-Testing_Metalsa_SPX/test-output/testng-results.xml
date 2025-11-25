@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="3" passed="0" failed="1" skipped="0">
+<testng-results ignored="6" total="7" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
@@ -17,10 +17,13 @@
       <![CDATA[Input Text to Field]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formLogin:btnForm]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.id: formLogin:btnForm]]>
     </line>
     <line>
       <![CDATA[Access to SPX ...]]>
@@ -38,43 +41,61 @@
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@name='uens']]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //option[@value='number:300000871350983']]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //option[@value='number:300000871350983']]]>
     </line>
     <line>
       <![CDATA[Access to Spot Buy Requisitions ...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: sidebarCollapse]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='#_menu_191']]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='#_menu_192']]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX//pages/spot/index.xhtml']]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX//pages/spot/index.xhtml']]]>
     </line>
     <line>
       <![CDATA[Access to Spot Buy Requisitions Page ...]]>
@@ -125,7 +146,10 @@
       <![CDATA[Select Primefaces Option...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboCategorias0_label]]>
     </line>
     <line>
       <![CDATA[Wait for Element Visible...]]>
@@ -134,7 +158,10 @@
       <![CDATA[Wait for Element Visible...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
     </line>
     <line>
       <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
@@ -143,7 +170,10 @@
       <![CDATA[Select Primefaces Option...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboFamilias0_label]]>
     </line>
     <line>
       <![CDATA[Wait for Element Visible...]]>
@@ -152,7 +182,10 @@
       <![CDATA[Wait for Element Visible...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
     </line>
     <line>
       <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
@@ -161,7 +194,10 @@
       <![CDATA[Select Primefaces Option...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboSubFamilias0_label]]>
     </line>
     <line>
       <![CDATA[Wait for Element Visible...]]>
@@ -170,7 +206,10 @@
       <![CDATA[Wait for Element Visible...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
     </line>
     <line>
       <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
@@ -182,55 +221,112 @@
       <![CDATA[Input Text to Field]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
     </line>
     <line>
       <![CDATA[Input Text to Field]]>
     </line>
     <line>
-      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+      <![CDATA[Wait for Element Visible...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formSpot:comboUDM_panel']//li[contains(.,'HECTARE')]]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
     </line>
     <line>
-      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
     </line>
     <line>
-      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
     </line>
     <line>
-      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
     </line>
     <line>
       <![CDATA[Validate Required Fields...]]>
@@ -248,34 +344,10 @@
       <![CDATA[Validate Required Fields...]]>
     </line>
     <line>
-      <![CDATA[Validate Required Fields...]]>
-    </line>
-    <line>
       <![CDATA[The required field contains information...]]>
     </line>
     <line>
-      <![CDATA[Validate Required Fields...]]>
-    </line>
-    <line>
-      <![CDATA[Validate Required Fields...]]>
-    </line>
-    <line>
-      <![CDATA[The required field contains information...]]>
-    </line>
-    <line>
-      <![CDATA[Validate Required Fields...]]>
-    </line>
-    <line>
-      <![CDATA[The required field contains information...]]>
-    </line>
-    <line>
-      <![CDATA[Validate Required Fields...]]>
-    </line>
-    <line>
-      <![CDATA[The required field contains information...]]>
-    </line>
-    <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
     </line>
     <line>
       <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
@@ -284,16 +356,289 @@
       <![CDATA[Input Text to Field]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:fileUpload_input]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[The Name Line is New and Correct Fields']]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:newLineButton]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:newLineButton]]>
+    </line>
+    <line>
+      <![CDATA[Capture Information to Spot Buy Requisitions First Section]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
+    </line>
+    <line>
+      <![CDATA[Element displayed: By.xpath: //label[ contains(normalize-space(.), 'Classification, Quantity & Date') or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]]]>
+    </line>
+    <line>
+      <![CDATA[Select Primefaces Option...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboCategorias0_label]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
+    </line>
+    <line>
+      <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
+    </line>
+    <line>
+      <![CDATA[Select Primefaces Option...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboFamilias0_label]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
+    </line>
+    <line>
+      <![CDATA[El elemento NO se volvió clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
+    </line>
+    <line>
+      <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
+    </line>
+    <line>
+      <![CDATA[Select Primefaces Option...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboSubFamilias0_label]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
+    </line>
+    <line>
+      <![CDATA[El elemento NO se volvió clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
+    </line>
+    <line>
+      <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Visible...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formSpot:comboUDM_panel']//li[contains(.,'HECTARE')]]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Validate Required Fields...]]>
+    </line>
+    <line>
+      <![CDATA[The required field contains information...]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+    </line>
+    <line>
+      <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:fileUpload_input]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:add-cart-btn]]>
+    </line>
+    <line>
+      <![CDATA[Element displayed: By.xpath: //div[@id='mesageError']//p[contains(text(),'No se pueden tener líneas con la misma información')]]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:add-cart-btn]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:add-cart-btn]]>
     </line>
     <line>
       <![CDATA[Access to Shopping Page ...]]>
@@ -302,7 +647,10 @@
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: spxBusquedaMenu:btn-ir-carro-compra]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
@@ -317,10 +665,25 @@
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]]]>
+    </line>
+    <line>
+      <![CDATA[El elemento NO se volvió clickeable: By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formCarroCompras:carroCompra0:1:simpleCheck0]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]]]>
     </line>
     <line>
       <![CDATA[Select Requisition of Shopping Cart]]>
@@ -329,10 +692,13 @@
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']]]>
     </line>
     <line>
       <![CDATA[Access to Account Configuration Page ...]]>
@@ -341,13 +707,13 @@
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Element displayed: By.xpath: /html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]]]>
-    </line>
-    <line>
       <![CDATA[Select Type Account For Requisition ...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]]]>
     </line>
     <line>
       <![CDATA[Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton]]>
@@ -356,56 +722,78 @@
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[text()='Selecciona centro de costo']/parent::div]]>
     </line>
     <line>
       <![CDATA[Wait for Element Present (DOM Presence)...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'A010 - CD & Fin. - Finance Co.')]]]>
     </line>
     <line>
       <![CDATA[Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton]]>
     </line>
     <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label]]>
+    </line>
+    <line>
+      <![CDATA[El elemento NO se volvió clickeable: By.id: formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
       <![CDATA[Click to Requisition ...]]>
     </line>
     <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formCarroCompras:crearRequiButton]]>
     </line>
     <line>
-      <![CDATA[Return Click for Saved Image]]>
-    </line>
-    <line>
-      <![CDATA[Click to Requisition ...]]>
-    </line>
-    <line>
-      <![CDATA[Click to Field or Button]]>
+      <![CDATA[El elemento NO se volvió clickeable: By.id: formCarroCompras:crearRequiButton]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-11-24T22:31:21Z" name="Default suite" finished-at="2025-11-24T22:32:42Z" duration-ms="80882">
+  <suite started-at="2025-11-25T22:26:54Z" name="Default suite" finished-at="2025-11-25T22:29:55Z" duration-ms="181398">
     <groups>
     </groups>
-    <test started-at="2025-11-24T22:31:21Z" name="Default test" finished-at="2025-11-24T22:32:42Z" duration-ms="80882">
-      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones@1339e7aa]" started-at="2025-11-24T22:31:21Z" name="beforeTest" finished-at="2025-11-24T22:31:22Z" duration-ms="1582" status="PASS">
+    <test started-at="2025-11-25T22:26:54Z" name="Default test" finished-at="2025-11-25T22:29:55Z" duration-ms="181398">
+      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos@3e6104fc]" started-at="2025-11-25T22:26:54Z" name="beforeTest" finished-at="2025-11-25T22:26:55Z" duration-ms="1555" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="runTestMultipleTimes()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones@1339e7aa]" started-at="2025-11-24T22:31:22Z" name="runTestMultipleTimes" finished-at="2025-11-24T22:32:42Z" duration-ms="79279" status="FAIL">
+        <test-method signature="runTestMultipleTimes()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos@3e6104fc]" started-at="2025-11-25T22:26:55Z" name="runTestMultipleTimes" finished-at="2025-11-25T22:29:55Z" duration-ms="179821" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.id: formCarroCompras:crearRequiButton (tried for 10 second(s) with 500 milliseconds interval)]]>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.id: formCarroCompras:crearRequiButton (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LXAPO1501', ip: '192.168.100.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54359}, goog:processID: 17192, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f2c9933b4964dc0ffbb7507a52a171fb]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: formCarroCompras:crearRequiButton (tried for 10 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: formCarroCompras:crearRequiButton (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'LXAPO1501', ip: '192.168.100.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54359}, goog:processID: 17192, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f2c9933b4964dc0ffbb7507a52a171fb
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at com.metalsa.spx.dev5.main.SPXBase.click(SPXBase.java:401)
-at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.clickBtnRequisition(AccountConfigurationSPXPage.java:267)
+at com.metalsa.spx.dev5.main.SPXBase.waitForElementClickable(SPXBase.java:1304)
+at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.clickBtnRequisition(AccountConfigurationSPXPage.java:275)
 at com.metalsa.spx.dev5.poc.AccountConfigurationSPXPage.selectTypeAccountForRequisitionCC(AccountConfigurationSPXPage.java:163)
-at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones.tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC(QC_Testing_SPX_DEV5_TestCases_Requisiciones.java:146)
-at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones.runTestMultipleTimes(QC_Testing_SPX_DEV5_TestCases_Requisiciones.java:83)
+at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.tc001_SPX_Dev5_Crear_Nueva_Linea_Requisicion_Spot_Tipo_Cobro_CC(QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.java:172)
+at com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.runTestMultipleTimes(QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos.java:82)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -431,35 +819,6 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#formCarroCompras\:crearRequiButton"}
-  (Session info: chrome=142.0.7444.176)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LXAPO1501', ip: '192.168.100.37', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 142.0.7444.176, chrome: {chromedriverVersion: 142.0.7444.175 (302067f14a4..., userDataDir: C:\Users\FERNAN~1.VIL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50237}, goog:processID: 23092, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e78efa640944faca1e0ac93a08e6ab90
-*** Element info: {Using=id, value=formCarroCompras:crearRequiButton}
-at jdk.internal.reflect.GeneratedConstructorAccessor12.newInstance(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
-at org.openqa.selenium.By$ById.findElement(By.java:188)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:205)
-at org.openqa.selenium.support.ui.ExpectedConditions$7.apply(ExpectedConditions.java:201)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:641)
-at org.openqa.selenium.support.ui.ExpectedConditions$22.apply(ExpectedConditions.java:638)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
-... 30 more
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.TimeoutException -->
@@ -480,10 +839,13 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Input Text to Field]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formLogin:btnForm]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.id: formLogin:btnForm]]>
             </line>
             <line>
               <![CDATA[Access to SPX ...]]>
@@ -501,43 +863,61 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@name='uens']]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //option[@value='number:300000871350983']]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //option[@value='number:300000871350983']]]>
             </line>
             <line>
               <![CDATA[Access to Spot Buy Requisitions ...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: sidebarCollapse]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='#_menu_191']]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='#_menu_192']]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX//pages/spot/index.xhtml']]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX//pages/spot/index.xhtml']]]>
             </line>
             <line>
               <![CDATA[Access to Spot Buy Requisitions Page ...]]>
@@ -588,7 +968,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Select Primefaces Option...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboCategorias0_label]]>
             </line>
             <line>
               <![CDATA[Wait for Element Visible...]]>
@@ -597,7 +980,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Visible...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
             </line>
             <line>
               <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
@@ -606,7 +992,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Select Primefaces Option...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboFamilias0_label]]>
             </line>
             <line>
               <![CDATA[Wait for Element Visible...]]>
@@ -615,7 +1004,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Visible...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
             </line>
             <line>
               <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
@@ -624,7 +1016,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Select Primefaces Option...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboSubFamilias0_label]]>
             </line>
             <line>
               <![CDATA[Wait for Element Visible...]]>
@@ -633,7 +1028,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Visible...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
             </line>
             <line>
               <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
@@ -645,55 +1043,112 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Input Text to Field]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
             </line>
             <line>
               <![CDATA[Input Text to Field]]>
             </line>
             <line>
-              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+              <![CDATA[Wait for Element Visible...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formSpot:comboUDM_panel']//li[contains(.,'HECTARE')]]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
             </line>
             <line>
-              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
             </line>
             <line>
-              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
             </line>
             <line>
-              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
             </line>
             <line>
               <![CDATA[Validate Required Fields...]]>
@@ -711,34 +1166,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Validate Required Fields...]]>
             </line>
             <line>
-              <![CDATA[Validate Required Fields...]]>
-            </line>
-            <line>
               <![CDATA[The required field contains information...]]>
             </line>
             <line>
-              <![CDATA[Validate Required Fields...]]>
-            </line>
-            <line>
-              <![CDATA[Validate Required Fields...]]>
-            </line>
-            <line>
-              <![CDATA[The required field contains information...]]>
-            </line>
-            <line>
-              <![CDATA[Validate Required Fields...]]>
-            </line>
-            <line>
-              <![CDATA[The required field contains information...]]>
-            </line>
-            <line>
-              <![CDATA[Validate Required Fields...]]>
-            </line>
-            <line>
-              <![CDATA[The required field contains information...]]>
-            </line>
-            <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
             </line>
             <line>
               <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
@@ -747,16 +1178,289 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Input Text to Field]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:fileUpload_input]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[The Name Line is New and Correct Fields']]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:newLineButton]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:newLineButton]]>
+            </line>
+            <line>
+              <![CDATA[Capture Information to Spot Buy Requisitions First Section]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Capture Information to Spot Buy Requisitions Second Section]]>
+            </line>
+            <line>
+              <![CDATA[Element displayed: By.xpath: //label[ contains(normalize-space(.), 'Classification, Quantity & Date') or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]]]>
+            </line>
+            <line>
+              <![CDATA[Select Primefaces Option...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboCategorias0_label]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
+            </line>
+            <line>
+              <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Administrativo y Profesional') or contains(.,'Administrative & Professional')]]]>
+            </line>
+            <line>
+              <![CDATA[Select Primefaces Option...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboFamilias0_label]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
+            </line>
+            <line>
+              <![CDATA[El elemento NO se volvió clickeable: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
+            </line>
+            <line>
+              <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Publicidad y Mercadotecnia') or contains(.,'Advertising & Marketing')]]]>
+            </line>
+            <line>
+              <![CDATA[Select Primefaces Option...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:nwcboSubFamilias0_label]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
+            </line>
+            <line>
+              <![CDATA[El elemento NO se volvió clickeable: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
+            </line>
+            <line>
+              <![CDATA[Opción seleccionada: By.xpath: //li[contains(.,'Medios impresos y Artículos promocionales') or contains(.,'Printed Media & Promotional Items')]]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:comboUDM]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Visible...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formSpot:comboUDM_panel']//li[contains(.,'HECTARE')]]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:fechaNecesidad_input]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-month']]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='10']]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@class='ui-datepicker-year']]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select/option[@value='2029']]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Validate Required Fields...]]>
+            </line>
+            <line>
+              <![CDATA[The required field contains information...]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@class='ui-state-default'][@href='#'][text()='28']]]>
+            </line>
+            <line>
+              <![CDATA[Capture Information to Spot Buy Requisitions Third Section]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:fileUpload_input]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:add-cart-btn]]>
+            </line>
+            <line>
+              <![CDATA[Element displayed: By.xpath: //div[@id='mesageError']//p[contains(text(),'No se pueden tener líneas con la misma información')]]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formSpot:add-cart-btn]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.id: formSpot:add-cart-btn]]>
             </line>
             <line>
               <![CDATA[Access to Shopping Page ...]]>
@@ -765,7 +1469,10 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: spxBusquedaMenu:btn-ir-carro-compra]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
@@ -780,10 +1487,25 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]]]>
+            </line>
+            <line>
+              <![CDATA[El elemento NO se volvió clickeable: By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formCarroCompras:carroCompra0:1:simpleCheck0]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //label[contains(., 'REQUI-TEST-AUTO-6e5f024e')]/ancestor::tr//input[contains(@id, 'simpleCheck0')]]]>
             </line>
             <line>
               <![CDATA[Select Requisition of Shopping Cart]]>
@@ -792,10 +1514,13 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //div[@class='col-md-12 crear-req-rail']//button[@type='submit'][@role='button'][@aria-disabled='false']]]>
             </line>
             <line>
               <![CDATA[Access to Account Configuration Page ...]]>
@@ -804,13 +1529,13 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Element displayed: By.xpath: /html[1]/body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]]]>
-            </line>
-            <line>
               <![CDATA[Select Type Account For Requisition ...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]]]>
             </line>
             <line>
               <![CDATA[Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton]]>
@@ -819,39 +1544,51 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[text()='Selecciona centro de costo']/parent::div]]>
             </line>
             <line>
               <![CDATA[Wait for Element Present (DOM Presence)...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[contains(.,'A010 - CD & Fin. - Finance Co.')]]]>
             </line>
             <line>
               <![CDATA[Validando si el elemento está habilitado: By.id: formCarroCompras:crearRequiButton]]>
             </line>
             <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label]]>
+            </line>
+            <line>
+              <![CDATA[El elemento NO se volvió clickeable: By.id: formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
               <![CDATA[Click to Requisition ...]]>
             </line>
             <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formCarroCompras:crearRequiButton]]>
             </line>
             <line>
-              <![CDATA[Return Click for Saved Image]]>
-            </line>
-            <line>
-              <![CDATA[Click to Requisition ...]]>
-            </line>
-            <line>
-              <![CDATA[Click to Field or Button]]>
+              <![CDATA[El elemento NO se volvió clickeable: By.id: formCarroCompras:crearRequiButton]]>
             </line>
           </reporter-output>
         </test-method> <!-- runTestMultipleTimes -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones@1339e7aa]" started-at="2025-11-24T22:32:42Z" name="afterTest" finished-at="2025-11-24T22:32:42Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos@3e6104fc]" started-at="2025-11-25T22:29:55Z" name="afterTest" finished-at="2025-11-25T22:29:55Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones -->
+      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -127,7 +127,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		type(txtColor, color);
 		type(txtBrand, brand);
 		type(txtMeasurements, measurements);
-		type(txtModelPartNumber,modelPartNumber);
+		type(txtModelPartNumber, modelPartNumber);
 		type(txtGenericName, genericName);
 		requiredFields(txtDescription);
 	}
@@ -149,7 +149,9 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 */
 	public TreeMap<String, String> captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category,
 			String family, String subFamily, String genericItem, String unitOfMeasure) throws InterruptedException {
+
 		reporterLog("Capture Information to Spot Buy Requisitions Second Section");
+
 		if (isDisplayed(lblSubTittle)) {
 			selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
 			selectOptionFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE);
@@ -160,38 +162,56 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			slctReasonUrgent = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE_ENG);
 		}
 
+		// CATEGORY
 		selectPrimefacesOption(lblCategory, txtSearchCategory, selectOptionCategory);
+		waitForPrimefacesAjax();
 
+		// FAMILY
 		selectPrimefacesOption(lblFamily, txtSearchFamily, selectOptionFamily, selectOptionFamilyNewLine);
+		waitForPrimefacesAjax();
 
+		// SUB FAMILY
 		selectPrimefacesOption(lblSubFamily, txtSearchSubFamily, selectOptionSubFamily, selectOptionSubFamilyNewLine);
+		waitForPrimefacesAjax();
 
-		// Rest Fields
+		// GENERIC ITEM
 		type(txtGenericItem, genericItem);
-		type(txtQuantity,quantity);
+
+		// QUANTITY
+		type(txtQuantity, quantity);
+
+		// UNIT OF MEASURE
+		waitForElementClickable(lblUnitOfMeasure);
 		click(lblUnitOfMeasure);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		click(lblUnitOfMeasure);
-		waitForElementPresent(txtSearchUnitOfMeasure);
+		waitForElementVisible(txtSearchUnitOfMeasure);
 		type(txtSearchUnitOfMeasure, unitOfMeasure);
-		waitForElementPresent(selectOptionUnitOfMeasure);
+
+		waitForDropdownToLoad(selectOptionUnitOfMeasure);
 		click(selectOptionUnitOfMeasure);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForPrimefacesAjax();
 
-		// Need By Date
-		waitForElementPresent(fieldNeedByDate);
+		// NEED BY DATE
+		waitForElementClickable(fieldNeedByDate);
 		click(fieldNeedByDate);
-		waitForElementPresent(clssMonthNeedByDate);
-		click(clssMonthNeedByDate);
-		waitForElementPresent(selectMonthNeedByDate);
-		click(selectMonthNeedByDate);
-		waitForElementPresent(clssYearNeedByDate);
-		click(clssYearNeedByDate);
-		waitForElementPresent(selectYearNeedByDate);
-		click(selectYearNeedByDate);
-		click(selectDayNeedByDate);
 
-		// Required Fields Validate
+		waitForElementClickable(clssMonthNeedByDate);
+		click(clssMonthNeedByDate);
+
+		waitForElementClickable(selectMonthNeedByDate);
+		click(selectMonthNeedByDate);
+
+		waitForElementClickable(clssYearNeedByDate);
+		click(clssYearNeedByDate);
+
+		waitForElementClickable(selectYearNeedByDate);
+		click(selectYearNeedByDate);
+
+		waitForElementClickable(selectDayNeedByDate);
+		click(selectDayNeedByDate);
+		waitForPrimefacesAjax();
+
+		// REQUIRED FIELDS
 		if (isElementPresent(selectOptionSubFamilyNewLine)) {
 			requiredFields(txtSearchCategory);
 			requiredFields(txtSearchFamily);
@@ -209,6 +229,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			requiredFields(txtQuantity);
 			requiredFields(txtSearchUnitOfMeasure);
 		}
+
 		return returnSaveImage(selectDayNeedByDate);
 	}
 
@@ -247,172 +268,152 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @description: Este metodo permite agregar la(s) línea(s)
 	 */
+
 	public TreeMap<String, String> addtoCart(String description, String material, String color, String brand,
 			String measurements, String modelPartNumber, String genericName, String quantity, String category,
 			String family, String subFamily, String unitOfMeasure) throws InterruptedException {
+
 		click(btnAddToCart);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForPrimefacesAjax();
+
+		// ---- VALIDACIÓN: MISMA LÍNEA ----
 		if (isDisplayed(textValidateSameLine)) {
+
 			System.out.print("The error message is: ");
 			getText(textValidateSameLine);
+
 			String randomId = generateRandomId(8);
 			type(txtDescription, " WITH ID: " + randomId);
+
 			System.out.print("Create the requisition with the name: ");
 			getText(txtDescription);
 			System.out.println(randomId);
+
 			click(btnAddToCart);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		} else if (isDisplayed(textValidateFields)) {
+			waitForPrimefacesAjax();
+		}
+
+		// ---- VALIDACIÓN: CAMPOS VACÍOS ----
+		else if (isDisplayed(textValidateFields)) {
+
 			System.out.print("The error message is: ");
 			getText(textValidateFields);
-			if (isElementContainingText(txtDescription) == false) {
-				String randomId = generateRandomId(8);
-				type(txtDescription, description + " WITH ID: " + randomId);
+
+			// Llenado de datos básicos
+			if (!isElementContainingText(txtDescription)) {
+				type(txtDescription, description + " WITH ID: " + generateRandomId(8));
 			}
-			if (isElementContainingText(txtMaterial) == false) {
+			if (!isElementContainingText(txtMaterial)) {
 				type(txtMaterial, material);
 			}
-			if (isElementContainingText(txtColor) == false) {
+			if (!isElementContainingText(txtColor)) {
 				type(txtColor, color);
 			}
-			if (isElementContainingText(txtBrand) == false) {
+			if (!isElementContainingText(txtBrand)) {
 				type(txtBrand, brand);
 			}
-			if (isElementContainingText(txtMeasurements) == false) {
+			if (!isElementContainingText(txtMeasurements)) {
 				type(txtMeasurements, measurements);
 			}
-			if (isElementContainingText(txtModelPartNumber) == false) {
+			if (!isElementContainingText(txtModelPartNumber)) {
 				type(txtModelPartNumber, modelPartNumber);
 			}
-			if (isElementContainingText(txtGenericName) == false) {
-				type(txtGenericName,genericName);
+			if (!isElementContainingText(txtGenericName)) {
+				type(txtGenericName, genericName);
 			}
-			if (isElementPresent(selectOptionSubFamilyNewLine)) {
-				if (isElementContainingText(txtSearchCategory) == false) {
-					click(lblCategory);
-					waitForElementPresent(txtSearchCategory);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionCategory);
-					click(selectOptionCategory);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchFamily) == false) {
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(lblFamily);
-					click(lblFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionFamily);
-					click(selectOptionFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchFamilyNewLine) == false) {
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(lblFamily);
-					click(lblFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionFamilyNewLine);
-					click(selectOptionFamilyNewLine);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchSubFamily) == false) {
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(lblSubFamily);
-					click(lblSubFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionSubFamily);
-					click(selectOptionSubFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchSubFamilyNewLine) == false) {
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(lblSubFamily);
-					click(lblSubFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionSubFamilyNewLine);
-					click(selectOptionSubFamilyNewLine);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(fieldNeedByDate) == false) {
-					waitForElementPresent(fieldNeedByDate);
-					click(fieldNeedByDate);
-					waitForElementPresent(clssMonthNeedByDate);
-					click(clssMonthNeedByDate);
-					waitForElementPresent(selectMonthNeedByDate);
-					click(selectMonthNeedByDate);
-					waitForElementPresent(clssYearNeedByDate);
-					click(clssYearNeedByDate);
-					waitForElementPresent(selectYearNeedByDate);
-					click(selectYearNeedByDate);
-					click(selectDayNeedByDate);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtQuantity) == false) {
-					type(txtQuantity, quantity);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchUnitOfMeasure) == false) {
-					waitForElementPresent(txtSearchUnitOfMeasure);
-					type(txtSearchUnitOfMeasure, unitOfMeasure);
-					waitForElementPresent(selectOptionUnitOfMeasure);
-					click(selectOptionUnitOfMeasure);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-			} else {
-				if (isElementContainingText(txtSearchCategory) == false) {
-					click(lblCategory);
-					waitForElementPresent(txtSearchCategory);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionCategory);
-					click(selectOptionCategory);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchFamily) == false) {
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(lblFamily);
-					click(lblFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionFamily);
-					click(selectOptionFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchSubFamily) == false) {
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(lblSubFamily);
-					click(lblSubFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					waitForElementPresent(selectOptionSubFamily);
-					click(selectOptionSubFamily);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(fieldNeedByDate) == false) {
-					waitForElementPresent(fieldNeedByDate);
-					click(fieldNeedByDate);
-					waitForElementPresent(clssMonthNeedByDate);
-					click(clssMonthNeedByDate);
-					waitForElementPresent(selectMonthNeedByDate);
-					click(selectMonthNeedByDate);
-					waitForElementPresent(clssYearNeedByDate);
-					click(clssYearNeedByDate);
-					waitForElementPresent(selectYearNeedByDate);
-					click(selectYearNeedByDate);
-					click(selectDayNeedByDate);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtQuantity) == false) {
-					type(txtQuantity, quantity);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
-				if (isElementContainingText(txtSearchUnitOfMeasure) == false) {
-					waitForElementPresent(txtSearchUnitOfMeasure);
-					type(txtSearchUnitOfMeasure, unitOfMeasure);
-					waitForElementPresent(selectOptionUnitOfMeasure);
-					click(selectOptionUnitOfMeasure);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				}
+
+			// -------------------------------
+			// Dropdowns: con o sin salto de línea
+			// -------------------------------
+			boolean hasSubFamilyNewLine = isElementPresent(selectOptionSubFamilyNewLine);
+
+			// --- Categoría ---
+			if (!isElementContainingText(txtSearchCategory)) {
+				click(lblCategory);
+				waitForElementPresent(txtSearchCategory);
+				waitForElementPresent(selectOptionCategory);
+				click(selectOptionCategory);
+				waitForPrimefacesAjax();
 			}
-		} else {
+
+			// --- Familia (normal) ---
+			if (!isElementContainingText(txtSearchFamily)) {
+				waitForElementPresent(lblFamily);
+				click(lblFamily);
+				waitForElementPresent(selectOptionFamily);
+				click(selectOptionFamily);
+				waitForPrimefacesAjax();
+			}
+
+			// --- Familia (newline) ---
+			if (hasSubFamilyNewLine && !isElementContainingText(txtSearchFamilyNewLine)) {
+				waitForElementPresent(lblFamily);
+				click(lblFamily);
+				waitForElementPresent(selectOptionFamilyNewLine);
+				click(selectOptionFamilyNewLine);
+				waitForPrimefacesAjax();
+			}
+
+			// --- Subfamilia normal ---
+			if (!isElementContainingText(txtSearchSubFamily)) {
+				waitForElementPresent(lblSubFamily);
+				click(lblSubFamily);
+				waitForElementPresent(selectOptionSubFamily);
+				click(selectOptionSubFamily);
+				waitForPrimefacesAjax();
+			}
+
+			// --- Subfamilia newline ---
+			if (hasSubFamilyNewLine && !isElementContainingText(txtSearchSubFamilyNewLine)) {
+				waitForElementPresent(lblSubFamily);
+				click(lblSubFamily);
+				waitForElementPresent(selectOptionSubFamilyNewLine);
+				click(selectOptionSubFamilyNewLine);
+				waitForPrimefacesAjax();
+			}
+
+			// --- Fecha Need By Date ---
+			if (!isElementContainingText(fieldNeedByDate)) {
+				waitForElementPresent(fieldNeedByDate);
+				click(fieldNeedByDate);
+
+				waitForElementPresent(clssMonthNeedByDate);
+				click(clssMonthNeedByDate);
+
+				waitForElementPresent(selectMonthNeedByDate);
+				click(selectMonthNeedByDate);
+
+				waitForElementPresent(clssYearNeedByDate);
+				click(clssYearNeedByDate);
+
+				waitForElementPresent(selectYearNeedByDate);
+				click(selectYearNeedByDate);
+
+				click(selectDayNeedByDate);
+				waitForPrimefacesAjax();
+			}
+
+			// --- Cantidad ---
+			if (!isElementContainingText(txtQuantity)) {
+				type(txtQuantity, quantity);
+				waitForPrimefacesAjax();
+			}
+
+			// --- Unidad de medida ---
+			if (!isElementContainingText(txtSearchUnitOfMeasure)) {
+				waitForElementPresent(txtSearchUnitOfMeasure);
+				type(txtSearchUnitOfMeasure, unitOfMeasure);
+				waitForElementPresent(selectOptionUnitOfMeasure);
+				click(selectOptionUnitOfMeasure);
+				waitForPrimefacesAjax();
+			}
+		}
+
+		// ---- CAMPOS COMPLETOS ----
+		else {
 			reporterLog("The Name Line is New and Correct Fields'");
 		}
+
 		return returnSaveImage(btnAddToCart);
 	}
 
