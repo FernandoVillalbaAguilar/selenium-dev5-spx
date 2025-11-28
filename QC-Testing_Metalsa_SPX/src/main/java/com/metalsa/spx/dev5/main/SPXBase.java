@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
@@ -28,6 +29,7 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -434,6 +436,7 @@ public class SPXBase {
 			List<WebElement> elements = driver.findElements(locator);
 
 			if (elements.isEmpty()) {
+				System.out.println("###----- " + this.getClass().getName() + " -----###");
 				reporterLog("[INFO] Element NOT present in DOM: " + locator);
 				return false;
 			}
@@ -441,11 +444,12 @@ public class SPXBase {
 			WebElement element = elements.get(0);
 
 			if (!element.isDisplayed()) {
+				System.out.println("###----- " + this.getClass().getName() + " -----###");
 				reporterLog("[WARNING] Element present but NOT visible: " + locator);
 				return false;
 			}
 
-			//reporterLog("[INFO] Element exists and is visible: " + locator);
+			// reporterLog("[INFO] Element exists and is visible: " + locator);
 			return true;
 
 		} catch (Exception e) {
@@ -475,12 +479,14 @@ public class SPXBase {
 			reporterLog("Taking Screenshot (element may or may not exist): " + locator);
 
 			if (!driver.findElements(locator).isEmpty()) {
-				//System.out.println("Element exists: " + locator);
+				// System.out.println("Element exists: " + locator);
 			} else {
+				System.out.println("###----- " + this.getClass().getName() + " -----###");
 				System.out.println("Element does NOT exist: " + locator);
 			}
 
 		} catch (Exception e) {
+			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			System.out.println("Error validating locator: " + locator);
 			e.printStackTrace();
 		}
@@ -543,6 +549,7 @@ public class SPXBase {
 				reporterLog("Element displayed: " + locator);
 			} else {
 				// Aviso en consola si el elemento existe pero no es visible
+				System.out.println("###----- " + this.getClass().getName() + " -----###");
 				System.out.println("[WARNING] Element found but NOT visible: " + locator);
 			}
 
@@ -551,11 +558,13 @@ public class SPXBase {
 
 		} catch (NoSuchElementException e) {
 			// Captura cuando el elemento NO está presente en el DOM
+			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			System.out.println("[INFO] Element NOT present in DOM: " + locator);
 			return false;
 
 		} catch (Exception e) {
 			// Captura cualquier otro error inesperado al verificar la visibilidad
+			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			System.out.println("[ERROR] Unexpected error checking visibility of: " + locator);
 			return false;
 
@@ -800,6 +809,7 @@ public class SPXBase {
 			// 1. Verificar si el elemento existe en el DOM
 			if (!isElementPresent(locator)) {
 				// Campo no existe > NO debe validarse como requerido
+				System.out.println("###----- " + this.getClass().getName() + " -----###");
 				System.out.println("### INFO ### El elemento no existe en la pantalla: " + locator);
 				return;
 			}
@@ -1153,6 +1163,7 @@ public class SPXBase {
 			return elementText != null && !elementText.trim().isEmpty();
 		} catch (Exception e) {
 			// Maneja excepciones, por ejemplo, si el elemento no se encuentra
+			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			System.out.println("> El elemento no se encontró o ocurrió un error: " + e.getMessage());
 			return false;
 		}
@@ -1184,6 +1195,7 @@ public class SPXBase {
 								// elemento está habilitado o no.
 			return !isEnabled; // Devuelve true si el elemento está deshabilitado, de lo contrario, false.
 		} catch (NoSuchElementException e) {
+			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			String errorMessage = String.format("> Elemento no encontrado o no habilitado: %s. Error: %s", locator,
 					e.getMessage());
 			System.out.println(errorMessage);
@@ -1256,6 +1268,8 @@ public class SPXBase {
 			e.printStackTrace();
 		}
 	}
+	
+
 
 	/*
 	 * @name: isElementPresent
@@ -1303,6 +1317,7 @@ public class SPXBase {
 			reporterLog("Esperando a que el elemento sea clickeable: " + locator);
 			return wait.until(ExpectedConditions.elementToBeClickable(locator));
 		} catch (TimeoutException e) {
+			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			reporterLog("El elemento NO se volvió clickeable: " + locator);
 			throw e;
 		}

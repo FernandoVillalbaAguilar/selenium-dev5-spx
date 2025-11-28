@@ -141,11 +141,11 @@ public class GlobalVariablesSPX {
 	// Selection Category, family, sub-family
 	public static final String SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_CATEGORY_SPOT_PAGE_ESP + "') " + "or contains(.,'" + SPX_DEV5_CATEGORY_SPOT_PAGE_ENG + "')]";
-	public static final String SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE = "//li[contains(.,'"
+	public static final String SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE = "//div[contains(@id,'nwcboFamilias0') and contains(@class,'ui-selectonemenu-panel')]//li[contains(.,'"
 			+ SPX_DEV5_FAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ENG + "')]";
-	public static final String SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE = "//div[@id='formSpot:nwcboFamilias0_panel']//li[contains(.,'"
-			+ SPX_DEV5_FAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ENG + "')]";
-	public static final String SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE = "//li[contains(.,'"
+	public static final String SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE = "//div[contains(@id,'nwcboFamilias') and contains(@class,'ui-selectonemenu-panel')]//li[contains(.,'"
+			+ SPX_DEV5_FAMILY_SPOT_PAGE_ESP + "') or contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ENG + "')]";
+	public static final String SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE = "//div[contains(@id,'nwcboSubFamilias0') and contains(@class,'ui-selectonemenu-panel')]//li[contains(.,'"
 			+ SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "')]";
 	public static final String SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE = "//div[@id='formSpot:nwcboSubFamilias0_panel']//li[contains(.,'"
 			+ SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "')]";

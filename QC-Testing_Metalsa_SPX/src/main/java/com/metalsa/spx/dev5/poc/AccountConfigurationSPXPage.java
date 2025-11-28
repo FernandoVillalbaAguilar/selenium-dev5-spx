@@ -43,7 +43,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	By lblCostCenter = By.xpath("//label[text()='Selecciona centro de costo']/parent::div");
 	By txtCostCenter = By.id("//label[text()='Selecciona centro de costo']/parent::div");
 	By slctCostCenter = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE);
-	By txtSelectAccount = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:cbmCuenta_label");
+	By txtSelectAccount = By.xpath("//label[contains(@id,'cbmCuenta_label')]");
 	By slctSelectAccount = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE);
 
 	By btnAddCC = By.id("formCarroCompras:carroCompra0:0:j_idt237");
@@ -55,9 +55,9 @@ public class AccountConfigurationSPXPage extends SPXBase {
 
 	// Second Line CC
 	By btnCCNewLine = By.xpath(
-			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
+			"//div[contains(@id,'formCarroCompras:carroCompra0')]//table[@id='formCarroCompras:carroCompra0:1:radioTipoCuentas']//label[text()='CC']");
 	By lblCostCenterNewLine = By.xpath(
-			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[1]/div[1]/div[1]/div[3]");
+			"(//div[contains(@id,'cbmCC')]//span[contains(@class,'ui-icon-triangle-1-s')])[2]");
 	By txtCostCenterNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:cbmCC_filter");
 	By slctCostCenterNewLine = By
 			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
@@ -66,7 +66,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_ACCOUNT_CC_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
 	// Second Line Project
 	By btnProjectNewLine = By.xpath(
-			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[2]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]");
+			"//input[@id='formCarroCompras:carroCompra0:1:radioTipoCuentas:0']/ancestor::div[contains(@class,'ui-radiobutton')][1]//span[contains(@class,'ui-radiobutton-icon')]");
 	By lblSelectProjectNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:j_idt252_label");
 	By slctSelectProjectNewLine = By
 			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_PROJECT_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
@@ -132,7 +132,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			clickBtnRequisition();
 		} else {
 			click(txtSelectAccount);
-			type(slctSelectAccount, accountingAccount);
+			click(slctSelectAccount);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		}
 
@@ -209,7 +209,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			}
 		}
 
-		if (isDisplayed(btnProjectNewLine)) {
+		if (isElementPresent(btnProjectNewLine)) {
 			// Second Line
 			scrollDown(btnProjectNewLine);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);

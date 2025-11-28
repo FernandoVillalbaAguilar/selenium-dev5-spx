@@ -55,12 +55,13 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
 	By lblFamily = By.id("formSpot:nwcboFamilias0_label");
 	By txtSearchFamily = By.id("formSpot:nwcboFamilias0_filter");
-	By txtSearchFamilyNewLine = By.id("formSpot:nwcboFamilias1_filter");
+	By txtSearchFamilyNewLine = By.id("formSpot:nwcboFamilias0_filter");
 	By selectOptionFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE);
 	By selectOptionFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_FAMILY_OPTION__NEW_LINE_SPOT_PAGE);
 	By lblSubFamily = By.id("formSpot:nwcboSubFamilias0_label");
 	By txtSearchSubFamily = By.id("formSpot:nwcboSubFamilias0_filter");
-	By txtSearchSubFamilyNewLine = By.id("formSpot:nwcboSubFamilias1_filter");
+	By txtSearchSubFamilyNewLine = By
+			.xpath("//div[@id='formSpot:nwcboFamilias0_panel']//input[contains(@class,'ui-selectonemenu-filter')]");
 	By selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE);
 	By selectOptionSubFamilyNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE);
 	By txtGenericItem = By.xpath(
@@ -166,13 +167,24 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		selectPrimefacesOption(lblCategory, txtSearchCategory, selectOptionCategory);
 		waitForPrimefacesAjax();
 
-		// FAMILY
-		selectPrimefacesOption(lblFamily, txtSearchFamily, selectOptionFamily, selectOptionFamilyNewLine);
-		waitForPrimefacesAjax();
+		if (isElementPresent(selectOptionSubFamilyNewLine)) {
+			// FAMILY
+			selectPrimefacesOption(lblFamily, txtSearchFamilyNewLine, selectOptionFamilyNewLine);
+			waitForPrimefacesAjax();
+			// SUB FAMILY
+			selectPrimefacesOption(lblSubFamily, txtSearchSubFamilyNewLine, selectOptionSubFamilyNewLine);
+			waitForPrimefacesAjax();
+		} else {
+			// FAMILY
+			selectPrimefacesOption(lblFamily, txtSearchFamily, selectOptionFamily);
+			waitForPrimefacesAjax();
 
-		// SUB FAMILY
-		selectPrimefacesOption(lblSubFamily, txtSearchSubFamily, selectOptionSubFamily, selectOptionSubFamilyNewLine);
-		waitForPrimefacesAjax();
+			// SUB FAMILY
+			selectPrimefacesOption(lblSubFamily, txtSearchSubFamily, selectOptionSubFamily,
+					selectOptionSubFamilyNewLine);
+			waitForPrimefacesAjax();
+
+		}
 
 		// GENERIC ITEM
 		type(txtGenericItem, genericItem);
