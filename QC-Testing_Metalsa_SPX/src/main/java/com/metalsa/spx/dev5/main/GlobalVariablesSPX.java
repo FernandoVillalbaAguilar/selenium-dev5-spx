@@ -4,7 +4,6 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_URL = "http://gpmtest2-app6:9203/SPX/";
 	public static final int DEFAULT_TIMEOUT = 10;
 	public static final int SHORT_TIMEOUT = 3000;
-	public static final String CURRENCY = SPXBase.randomMoneda();
 	public static final String SPX_DEV5_PATH_SCREENSHOTS = System.getProperty("user.dir") + "/test-output/screenshots/";
 	public static final String SPX_DEV5_PATH_FILES = "C:\\Users\\fernando.villalba\\Documents\\files\\DocumentoDePrueba.txt";
 	public static final int PICTURE_TYPE_PNG = 6;
@@ -61,16 +60,14 @@ public class GlobalVariablesSPX {
 	public static final String[] MEDIDAS = { "12 Pulgadas", "10 Centímetros", "8 Centímetros", "10 Pulgadas",
 			"12 Centímetros", "15 Pies", "18 Pies", "20 Metros", "55 Centímetros", "98 Pulgadas", "145 Centímetros",
 			"54 Pies", "45 Centímetros", "1 Yarda", "2 Yardas", "3 Yardas", "1 Centímetro", "2 Pulgadas", "3 Pies" };
-	public static final String[] PROVEEDORES = { "MIGESA S.A DE C.V.", "ORBI LOGISTIC",
-			"C.H. ROBINSON DE MEXICO S.A. DE C.V.", "JEFFERSON METAL PRODUCTS INC", "NORDSON DE MEXICO S.A. DE C.V.",
-			"CALVEK COMPONENTES BAJIO SA DE CV", "IMPRESIONES INTELIGENTES A BAJO COSTO SA DE CV",
-			"PROVEEDORA DE TECNOLOGIAS INTELIGENTES DEL BAJIO SA DE CV", "LUBRICANTES DEL BAJIO SA DE CV" };
+	public static final String[] PROVEEDORES = { "AVALOS, FRANCISCO", "DIZ CARLOS ALBERTO Y LIBORIO ALBERTO DARIO SOC. DE HECHO",
+			"CORBALAN MARTINEZ, CHRISTIAN", "GEMÜ IND. DE PRODUTOS PLASTICOS E MET. LTDA" };
 	public static final String[] UNIDAD_DE_MEDIDA = { "SET", "CASE", "TUB", "CASE", "ACRE", "HECTARE", "PINT", "PIE",
 			"B10", "55D", "KIT", "GAL" };
 	public static final String[] NUM_RAND = { "001", "002", "003", "004", "005", "006", "007", "008", "009", "010",
 			"011", "012", "013", "014", "015", "016", "017", "018", "019", "020" };
 	public static final String[] QUANTITY = SPXBase.generateNumbers();
-	public static final String[] MONEDA = { "MXN", "USD", "EUR", "ADP", "YUD" };
+	public static final String[] MONEDA = { "MXN", "USD", "EUR" };
 	public static final String[] RAZON_URGENCIA = { "Seguridad del Personal", "Paro de línea",
 			"Afectación de calidad directa al cliente" };
 	public static final String[] RAZON_URGENCIA_ENG = { "Personal security", "Production line stops",
@@ -106,6 +103,8 @@ public class GlobalVariablesSPX {
 			"Mejoras estrategicas en la gestion de requisiciones automaticas utilizando las capacidades de Selenium WebDriver, garantizando una mayor precision y rapidez en los procesos.",
 			"Implementacion de soluciones de automatizacion para la gestion de requisiciones, optimizando recursos y procesos mediante el uso avanzado de Selenium WebDriver." };
 
+	public static final String CURRENCY = SPXBase.randomMoneda();
+	
 	// Data Spot Buy Requisitions
 	// Global Sourcing RFQ Header
 	public static final String SPX_DEV5_GLOBAL_SOURCING_RFQ_SPOT_PAGE = "868 - Tooling";
@@ -135,8 +134,8 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_GENERIC_ITEM_SPOT_PAGE = SPXBase.randomGenericItem() + "-"
 			+ SPXBase.randomNumRand();
 	public static final String SPX_DEV5_QUANTITY_SPOT_PAGE = SPXBase.randomQuantity();
-	public static final String SPX_DEV5_SELECT_MONTH_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='10']";
-	public static final String SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='2029']";
+	public static final String SPX_DEV5_SELECT_MONTH_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='11']";
+	public static final String SPX_DEV5_SELECT_YEAR_NEED_BY_DATE_SPOT_PAGE = "//select/option[@value='2034']";
 	public static final String SPX_DEV5_SELECT_DAY_NEED_BY_DATE_SPOT_PAGE = "//a[@class='ui-state-default'][@href='#'][text()='28']";
 	// Selection Category, family, sub-family
 	public static final String SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE = "//li[contains(.,'"
@@ -154,11 +153,11 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_UNIT_OF_MEASURE_SPOT_PAGE + "')]";
 	// CheckUgent
 	public static final String SPX_DEV5_REASON_UGENT_SPOT_PAGE = SPXBase.randomRazonUrgencia();
-	public static final String SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG = SPXBase.randomRazonUrgenciaENG();
+	//public static final String SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG = SPXBase.randomRazonUrgenciaENG();
 	public static final String SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE = "//div[@id='formSpot:razonUrg_panel']//li[contains(.,'"
-			+ SPX_DEV5_REASON_UGENT_SPOT_PAGE + "')]";
-	public static final String SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE_ENG = "//div[@id='formSpot:razonUrg_panel']//li[contains(.,'"
-			+ SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG + "')]";
+			+ SPX_DEV5_REASON_UGENT_SPOT_PAGE + "') " + "or contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "')]";
+	//public static final String SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE_ENG = "//div[@id='formSpot:razonUrg_panel']//li[contains(.,'"
+	//		+ SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG + "')]";
 	// Third Section
 	public static final String SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE = SPXBase.randomComentarios();
 
@@ -201,8 +200,8 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	// Second Line CC
-	public static final String SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//div[@id='formCarroCompras:carroCompra0:1:j_idt248:0:cbmCC_panel']//li[contains(.,'"
-			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	public static final String SPX_DEV5_SELECT_COST_CENTER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//div[contains(@class,'ui-selectonemenu-panel') and contains(@style,'display: block')]//li[@data-label='"
+			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "' and not(contains(@style,'none'))]";
 	public static final String SPX_DEV5_SELECT_ACCOUNT_CC_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE + "')]";
 
@@ -215,7 +214,6 @@ public class GlobalVariablesSPX {
 	public static final String SINGLE_SOURCE_FORMAT_REASON = SPXBase.getRandomValue(SPXBase.singleSourceFormatReason);
 	public static final String SELECT_CURRENCY = "//div[@class='ui-selectonemenu-items-wrapper']//li[contains(.,'"
 			+ CURRENCY + "')]";
-
 	// Administration Roles Menu
 	public static final String SPX_DEV5_MENU_NAME_ADMINISTRATION_ROLES_MENU_PAGE = "Req. Rechazadas";
 	public static final String SPX_DEV5_URL_PATH_ADMINISTRATION_ROLES_MENU_PAGE = "pages/internas/motor.jsf";

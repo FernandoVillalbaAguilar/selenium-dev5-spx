@@ -124,13 +124,12 @@ public class SPXBase {
 	}
 
 	public static String randomRazonUrgencia() {
-		return randomFrom(GlobalVariablesSPX.RAZON_URGENCIA);
-	}
+	    String[] origen = (GlobalVariablesSPX.RAZON_URGENCIA != null && GlobalVariablesSPX.RAZON_URGENCIA.length > 0)
+	            ? GlobalVariablesSPX.RAZON_URGENCIA
+	            : GlobalVariablesSPX.RAZON_URGENCIA_ENG;
 
-	public static String randomRazonUrgenciaENG() {
-		return randomFrom(GlobalVariablesSPX.RAZON_URGENCIA_ENG);
+	    return randomFrom(origen);
 	}
-
 	public static String randomGenericName() {
 		return randomFrom(GlobalVariablesSPX.GENERIC_NAME);
 	}

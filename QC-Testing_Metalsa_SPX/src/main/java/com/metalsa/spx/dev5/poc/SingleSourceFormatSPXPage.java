@@ -86,7 +86,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 		click(slctCurrency);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		click(rdbtnSingleSourceFormatReason);
-		type(txtDetails, details);
+		type(txtDetails, details);	
 		type(txtComments, comments);
 		uploadFile(pathFileSpot, btnChooseFiles);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);

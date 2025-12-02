@@ -229,6 +229,8 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos {
 				quantity, category, family, subFamily, genericItem, unitOfMeasure));
 		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage
 				.captureInformationSpotBuyRequisitionsThirdSection(commentsToBuyer, pathFileSpot));
+		listaScreenShotsAux.putAll(spotBuyRequisitionsSPXPage.addtoCart(description, material, color, brand,
+				measurements, modelPartNumber, genericName, quantity, category, family, subFamily, unitOfMeasure));
 		listaScreenShots.put("Step4", listaScreenShotsAux); // Add all list
 		steps.add("Step 4 - Data Capture Spot Buy Requisition");
 		values.add("Data captured correctly");

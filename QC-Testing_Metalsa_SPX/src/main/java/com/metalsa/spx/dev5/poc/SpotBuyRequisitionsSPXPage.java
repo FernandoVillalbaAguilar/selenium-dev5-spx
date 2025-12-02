@@ -160,7 +160,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			selectOptionSubFamily = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE);
 			selectOptionSubFamilyNewLine = By
 					.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE);
-			slctReasonUrgent = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE_ENG);
+			slctReasonUrgent = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE);
 		}
 
 		// CATEGORY
