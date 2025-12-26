@@ -200,16 +200,16 @@
       <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]]]>
     </line>
   </reporter-output>
-  <suite started-at="2025-12-26T15:29:32 CST" name="Default suite" finished-at="2025-12-26T15:30:23 CST" duration-ms="50816">
+  <suite started-at="2025-12-26T15:41:02 CST" name="Default suite" finished-at="2025-12-26T15:41:52 CST" duration-ms="50228">
     <groups>
     </groups>
-    <test started-at="2025-12-26T15:29:32 CST" name="Default test" finished-at="2025-12-26T15:30:23 CST" duration-ms="50816">
+    <test started-at="2025-12-26T15:41:02 CST" name="Default test" finished-at="2025-12-26T15:41:52 CST" duration-ms="50228">
       <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:29:32 CST" name="beforeTest" finished-at="2025-12-26T15:29:34 CST" duration-ms="1540" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:41:02 CST" name="beforeTest" finished-at="2025-12-26T15:41:03 CST" duration-ms="1528" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="tc001_SPX_Dev5_Consulta_Administracion_Accesos()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:29:34 CST" name="tc001_SPX_Dev5_Consulta_Administracion_Accesos" finished-at="2025-12-26T15:30:23 CST" duration-ms="49226" status="PASS">
+        <test-method signature="tc001_SPX_Dev5_Consulta_Administracion_Accesos()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:41:03 CST" name="tc001_SPX_Dev5_Consulta_Administracion_Accesos" finished-at="2025-12-26T15:41:52 CST" duration-ms="48651" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
@@ -411,7 +411,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- tc001_SPX_Dev5_Consulta_Administracion_Accesos -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:30:23 CST" name="afterTest" finished-at="2025-12-26T15:30:23 CST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:41:52 CST" name="afterTest" finished-at="2025-12-26T15:41:52 CST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
