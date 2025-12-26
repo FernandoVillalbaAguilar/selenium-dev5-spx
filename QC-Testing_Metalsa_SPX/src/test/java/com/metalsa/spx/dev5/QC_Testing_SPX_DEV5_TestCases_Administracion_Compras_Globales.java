@@ -128,7 +128,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales {
 		steps.add("Step 2 - Select to UEN and Access to Administraci�n de Accesos");
 		values.add("UEN Correctly selected and Correct access");
 
-		// Consulta de informaci�n por Aprobacioón de Catalogos
+		// Consulta de información por Aprobacioón de Catalogos
 		listaScreenShots.put("Step3", administracionAccesosSPXPage.consultaInformacionGeneral());
 		steps.add("Step 3 - Review information on Aprobaci�n Catalogos");
 		values.add("Correct Data");

@@ -30,7 +30,9 @@ public class ArticulosControladosSPXPage extends SPXBase {
 	By txtDescripcion = By.id("formTable:descripcion");
 	By btnBuscar = By.id("formTable:btnBuscar");
 	By chkResult = By.xpath(
+
 			"//td[normalize-space()='" + GlobalVariablesSPX.SPX_DEV5_DESCRIPCION_ARTICULOS_CONTROLADOS_PAGE + "']");
+
 	By slstArticulo = By.xpath(
 			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[4]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[1]/span[1]");
 	By btnAdd = By.xpath("//button[@title='Add']");
@@ -53,7 +55,7 @@ public class ArticulosControladosSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textArticulosControladosPageIsDisplayed() {
 		reporterLog("Access to Articulos Controlados Page ...");
@@ -72,12 +74,12 @@ public class ArticulosControladosSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite la validación de campos
+	 * @description: Este metodo permite la validaciï¿½n de campos
 	 */
 	public TreeMap<String, String> validacionCamposArticulosControlados(String uenAC, String localizacionAC,
 			String codProductoAC, String nombreFabricanteAC, String numPartFabricanteAC, String numPartProveedorAC,
 			String descripcionAC) throws InterruptedException {
-		reporterLog("Realizar validación de campos de búsqueda Articulos Controlados ...");
+		reporterLog("Realizar validaciï¿½n de campos de bï¿½squeda Articulos Controlados ...");
 		waitForElementPresent(lblUEN);
 		click(lblUEN);
 		waitForElementPresent(txtUEN);
@@ -126,7 +128,7 @@ public class ArticulosControladosSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean chkResultPageIsDisplayed() {
 		reporterLog("Check Result Search ...");
@@ -149,7 +151,7 @@ public class ArticulosControladosSPXPage extends SPXBase {
 	 */
 	public TreeMap<String, String> validarAgregarRemoverArticulosControlados(String uenAC, String descripcionAC,
 			String pickListSource, String pickListTarget) throws InterruptedException {
-		reporterLog("Realizar validación de campos de búsqueda Articulos Controlados ...");
+		reporterLog("Realizar validaciï¿½n de campos de bï¿½squeda Articulos Controlados ...");
 		waitForElementPresent(lblUEN);
 		click(lblUEN);
 		waitForElementPresent(txtUEN);

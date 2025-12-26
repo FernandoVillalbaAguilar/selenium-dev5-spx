@@ -27,7 +27,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 	CapturadeCotizacionesSPXPage capturadeCotizacionesSPXPage;
 
 	// TestDataCalling
-	String url, usernameCC, usernameP,usernamePNAA, password,
+	String url, usernameCC, usernameP, usernamePNAA, password,
 			requisicion = GlobalVariablesSPX.SPX_DEV5_REQUISICION_ARTICULOS_POR_PROCESAR_PAGE,
 			estatus = GlobalVariablesSPX.SPX_DEV5_ESTATUS_ARTICULOS_POR_PROCESAR_PAGE,
 			requisitor = GlobalVariablesSPX.SPX_DEV5_REQUISITOR_ARTICULOS_POR_PROCESAR_PAGE,
@@ -48,7 +48,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 
 	@BeforeTest
 	public void beforeTest() {
-		// Instanciar valores de conexión con Chrome
+		// Instanciar valores de conexiï¿½n con Chrome
 		spxBase = new SPXBase(driver);
 		driver = spxBase.chromeDriverConection();
 		loginSPXPage = new LoginSPX(driver);
@@ -74,7 +74,9 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 		afterTest();
 		beforeTest();
 		for (int i = 0; i < numberOfRuns; i++) {
+
 			tc002_SPX_Dev5_Validar_Campos_Captura_Cotizaciones();
+
 		}
 	}
 

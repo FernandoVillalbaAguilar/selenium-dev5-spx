@@ -17,7 +17,7 @@ public class HomeSPX extends SPXBase {
 	By optUEN = By.xpath(GlobalVariablesSPX.SPX_DEV5_UEN_HOME);
 	// Menu's
 	By iconMenu = By.id("sidebarCollapse");
-	// Administración del sistema
+	// Administraciï¿½n del sistema
 	By iconMenuAdministracionDelSistema = By.xpath("//a[@href='#_menu_182']");
 	By iconMenuAdministradorTI = By.xpath("//a[@href='#_menu_183']");
 	By iconMenuAdministradorRolesMenu = By
@@ -56,7 +56,7 @@ public class HomeSPX extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean menuHeaderHomeIsDisplayed() {
 		reporterLog("Access to SPX ...");
@@ -273,12 +273,13 @@ public class HomeSPX extends SPXBase {
 	 * @description: Este metodo permite acceder a la pagina indicada
 	 */
 	public TreeMap<String, String> accesToAdministracionAccesos() {
-		reporterLog("Access to Administración de Accesos ...");
+		reporterLog("Access to Administraciï¿½n de Accesos ...");
 		click(iconMenu);
 		waitForElementPresent(iconMenuAdministradorComprasGlobales);
 		click(iconMenuAdministradorComprasGlobales);
 		waitForElementPresent(iconMenuAdministracionAccesos);
 		click(iconMenuAdministracionAccesos);
 		return returnSaveImage(iconMenuAdministracionAccesos);
+			
 	}
 }

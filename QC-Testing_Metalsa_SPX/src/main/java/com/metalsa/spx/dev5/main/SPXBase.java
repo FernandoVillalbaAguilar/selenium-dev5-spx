@@ -85,7 +85,7 @@ public class SPXBase {
 		return arr[idx];
 	}
 
-	// Métodos auxiliares específicos (opcionales)
+	// Mï¿½todos auxiliares especï¿½ficos (opcionales)
 	public static String randomMaterial() {
 		return randomFrom(GlobalVariablesSPX.MATERIAL);
 	}
@@ -152,7 +152,7 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite realizar la conexión con el navegador de
+	 * @description: Este metodo permite realizar la conexiï¿½n con el navegador de
 	 * Chrome y WebDriver
 	 */
 	public WebDriver chromeDriverConection() {
@@ -239,17 +239,17 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Método que permite generar un Explicit Wait hasta que el
+	 * @description: Mï¿½todo que permite generar un Explicit Wait hasta que el
 	 * elemento exista dentro del DOM. A diferencia de visibilityOfElementLocated,
-	 * este método utiliza presenceOfElementLocated para mejorar la estabilidad en
-	 * componentes dinámicos como listas, paneles o dropdowns (PrimeFaces).
+	 * este mï¿½todo utiliza presenceOfElementLocated para mejorar la estabilidad en
+	 * componentes dinï¿½micos como listas, paneles o dropdowns (PrimeFaces).
 	 */
 	public void waitForElementPresent(By locator) {
 		try {
 			reporterLog("Wait for Element Present (DOM Presence)...");
 			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 			
-			// Se espera a que el elemento esté presente en el DOM
+			// Se espera a que el elemento estï¿½ presente en el DOM
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 
 		} catch (TimeoutException e) {
@@ -398,7 +398,7 @@ public class SPXBase {
 		try {
 			reporterLog("Click on field or button");
 
-			// Uso del método centralizado de espera
+			// Uso del mï¿½todo centralizado de espera
 			WebElement element = waitForElementClickable(locator);
 
 			element.click();
@@ -535,15 +535,15 @@ public class SPXBase {
 	 */
 	public boolean isDisplayed(By locator) {
 		try {
-			// Buscar el elemento en la página usando el locator proporcionado
+			// Buscar el elemento en la pï¿½gina usando el locator proporcionado
 			WebElement element = driver.findElement(locator);
 
-			// Verificar si el elemento está visible en la pantalla
+			// Verificar si el elemento estï¿½ visible en la pantalla
 			boolean visible = element.isDisplayed();
 
 			// Si el elemento es visible
 			if (visible) {
-				// Registrar en el reporte que el elemento está visible
+				// Registrar en el reporte que el elemento estï¿½ visible
 				reporterLog("Element displayed: " + locator);
 			} else {
 				// Aviso en consola si el elemento existe pero no es visible
@@ -555,7 +555,7 @@ public class SPXBase {
 			return visible;
 
 		} catch (NoSuchElementException e) {
-			// Captura cuando el elemento NO está presente en el DOM
+			// Captura cuando el elemento NO estï¿½ presente en el DOM
 			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			System.out.println("[INFO] Element NOT present in DOM: " + locator);
 			return false;
@@ -609,7 +609,7 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite leer la información de un archivo JSON
+	 * @description: Este metodo permite leer la informaciï¿½n de un archivo JSON
 	 */
 	public String getJSONValue(String jsonFileObj, String jsonKey) {
 		try {
@@ -677,7 +677,7 @@ public class SPXBase {
 			System.out.println("***** ERROR *****");
 			System.out.println("> No text found to display for: " + locator);
 			e.printStackTrace();
-			return ""; // devolver un string vacío en caso de error
+			return ""; // devolver un string vacï¿½o en caso de error
 		}
 	}
 
@@ -692,8 +692,8 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este método espera de forma explícita a que la cola de
-	 * peticiones AJAX de PrimeFaces se vacíe, verificando continuamente el estado
+	 * @description: Este mï¿½todo espera de forma explï¿½cita a que la cola de
+	 * peticiones AJAX de PrimeFaces se vacï¿½e, verificando continuamente el estado
 	 * mediante JavaScript. Evita el uso de Thread.sleep y mejora la estabilidad de
 	 * las pruebas al sincronizar con las operaciones AJAX.
 	 */
@@ -737,9 +737,9 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este método espera a que un menú desplegable termine de cargar
+	 * @description: Este mï¿½todo espera a que un menï¿½ desplegable termine de cargar
 	 * sus opciones. Primero sincroniza con las operaciones AJAX de PrimeFaces y
-	 * luego verifica que el elemento indicado se encuentre visible en la página.
+	 * luego verifica que el elemento indicado se encuentre visible en la pï¿½gina.
 	 */
 	public void waitForDropdownToLoad(By optionLocator) {
 		waitForPrimefacesAjax();
@@ -760,7 +760,7 @@ public class SPXBase {
 	 * @description: Este metodo permite obtener el texto de un elemento
 	 */
 	public static String assignUEN() {
-		String uenNumber = GlobalVariablesSPX.SPX_DEV5_NUM_UEN; // Obtener el número de UEN de UENData
+		String uenNumber = GlobalVariablesSPX.SPX_DEV5_NUM_UEN; // Obtener el nï¿½mero de UEN de UENData
 		String uenName = "Valor por defecto";
 
 		if (uenNumber.equals(GlobalVariablesSPX.SPX_DEV5_NUM_UEN_SAN_ANTONIO)) {
@@ -812,7 +812,7 @@ public class SPXBase {
 				return;
 			}
 
-			// 2. Si existe, validar si está vacío o nulo
+			// 2. Si existe, validar si estï¿½ vacï¿½o o nulo
 			if (isElementNull(driver, locator)) {
 				reporterLog("The required field contains information...");
 			} else {
@@ -820,7 +820,7 @@ public class SPXBase {
 				displayElementName(driver, locator);
 				System.out.println("***** ERROR *****");
 				System.out.println("> The: " + locator + " field is mandatory and cannot be empty...");
-				// NO CERRAR EL DRIVER AQUÍ
+				// NO CERRAR EL DRIVER AQUï¿½
 				throw new RuntimeException("Required field is empty: " + locator);
 			}
 
@@ -1147,7 +1147,7 @@ public class SPXBase {
 	 * @author: Fernando Villalba Aguilar
 	 * 
 	 * @description: Metodo que permite validar si un elemento cuenta con
-	 * información o no.
+	 * informaciï¿½n o no.
 	 */
 	public boolean isElementContainingText(By locator) {
 		try {
@@ -1157,12 +1157,12 @@ public class SPXBase {
 			// Obtiene el texto del elemento
 			String elementText = element.getText();
 
-			// Verifica si el texto no está vacío
+			// Verifica si el texto no estï¿½ vacï¿½o
 			return elementText != null && !elementText.trim().isEmpty();
 		} catch (Exception e) {
 			// Maneja excepciones, por ejemplo, si el elemento no se encuentra
 			System.out.println("###----- " + this.getClass().getName() + " -----###");
-			System.out.println("> El elemento no se encontró o ocurrió un error: " + e.getMessage());
+			System.out.println("> El elemento no se encontrï¿½ o ocurriï¿½ un error: " + e.getMessage());
 			return false;
 		}
 	}
@@ -1178,7 +1178,7 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Metodo que permite validar si un elemento está habilitano o
+	 * @description: Metodo que permite validar si un elemento estï¿½ habilitano o
 	 * deshabilitado
 	 */
 
@@ -1188,10 +1188,10 @@ public class SPXBase {
 			WebElement element = new WebDriverWait(driver, 10)
 					.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfElementLocated(locator)));
 			boolean isEnabled = element.isEnabled();
-			reporterLog("Validando si el elemento está habilitado: " + locator);
+			reporterLog("Validando si el elemento estï¿½ habilitado: " + locator);
 			takeScreenshot(); // Tomar una captura de pantalla para referencia, independientemente de si el
-								// elemento está habilitado o no.
-			return !isEnabled; // Devuelve true si el elemento está deshabilitado, de lo contrario, false.
+								// elemento estï¿½ habilitado o no.
+			return !isEnabled; // Devuelve true si el elemento estï¿½ deshabilitado, de lo contrario, false.
 		} catch (NoSuchElementException e) {
 			System.out.println("###----- " + this.getClass().getName() + " -----###");
 			String errorMessage = String.format("> Elemento no encontrado o no habilitado: %s. Error: %s", locator,
@@ -1211,15 +1211,15 @@ public class SPXBase {
 	 * 
 	 * @param: By panel -> Panel flotante del Primefaces SelectOneMenu
 	 * 
-	 * @param: By... options -> Opciones posibles que se intentarán seleccionar (en
+	 * @param: By... options -> Opciones posibles que se intentarï¿½n seleccionar (en
 	 * orden)
 	 * 
 	 * @return: N/A
 	 * 
 	 * @author: Fernando
 	 * 
-	 * @description: Este método abre un dropdown de PrimeFaces y selecciona la
-	 * primera opción disponible entre las enviadas, validando visibilidad,
+	 * @description: Este mï¿½todo abre un dropdown de PrimeFaces y selecciona la
+	 * primera opciï¿½n disponible entre las enviadas, validando visibilidad,
 	 * presencia y manejando errores controlados.
 	 */
 	public void selectPrimefacesOption(By lblDropdown, By panel, By... options) {
@@ -1232,7 +1232,7 @@ public class SPXBase {
 			// 2. Esperar el panel visible
 			waitForElementVisible(panel);
 
-			// 3. Buscar la primera opción disponible
+			// 3. Buscar la primera opciï¿½n disponible
 			for (By option : options) {
 
 				if (isElementPresent(option)) {
@@ -1240,16 +1240,16 @@ public class SPXBase {
 					waitForElementVisible(option);
 					click(option);
 
-					reporterLog("Opción seleccionada: " + option.toString());
-					return; // Selección exitosa
+					reporterLog("Opciï¿½n seleccionada: " + option.toString());
+					return; // Selecciï¿½n exitosa
 				}
 			}
 
-			// Si llegó aquí, no encontró ninguna opción
+			// Si llegï¿½ aquï¿½, no encontrï¿½ ninguna opciï¿½n
 			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
 			System.out.println("***** ERROR *****");
 			System.out.println("> Ninguna de las opciones enviadas existe en el dropdown.");
-			System.out.println("> Revisar localizadores o contenido dinámico del menú.");
+			System.out.println("> Revisar localizadores o contenido dinï¿½mico del menï¿½.");
 
 		} catch (TimeoutException te) {
 			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
@@ -1261,7 +1261,7 @@ public class SPXBase {
 		} catch (Exception e) {
 			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
 			System.out.println("***** ERROR GENERAL *****");
-			System.out.println("> Ocurrió un error inesperado en selectPrimefacesOption.");
+			System.out.println("> Ocurriï¿½ un error inesperado en selectPrimefacesOption.");
 			System.out.println("> Because: " + e.getMessage());
 			e.printStackTrace();
 		}
@@ -1280,9 +1280,9 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Método que permite verificar si un elemento está presente en el
-	 * DOM sin lanzar excepción. Se utiliza principalmente para validar opciones
-	 * dinámicas o elementos que pueden o no existir.
+	 * @description: Mï¿½todo que permite verificar si un elemento estï¿½ presente en el
+	 * DOM sin lanzar excepciï¿½n. Se utiliza principalmente para validar opciones
+	 * dinï¿½micas o elementos que pueden o no existir.
 	 */
 	public boolean isElementPresent(By locator) {
 		try {
@@ -1304,8 +1304,8 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Método que espera de forma explícita a que un elemento sea
-	 * clickeable antes de interactuar con él. Si el elemento no llega a estar
+	 * @description: Mï¿½todo que espera de forma explï¿½cita a que un elemento sea
+	 * clickeable antes de interactuar con ï¿½l. Si el elemento no llega a estar
 	 * disponible dentro del tiempo configurado, se genera un TimeoutException.
 	 */
 
@@ -1316,7 +1316,7 @@ public class SPXBase {
 			return wait.until(ExpectedConditions.elementToBeClickable(locator));
 		} catch (TimeoutException e) {
 			System.out.println("###----- " + this.getClass().getName() + " -----###");
-			reporterLog("El elemento NO se volvió clickeable: " + locator);
+			reporterLog("El elemento NO se volviï¿½ clickeable: " + locator);
 			throw e;
 		}
 	}
@@ -1338,7 +1338,7 @@ public class SPXBase {
 		try {
 			WebElement element = driver.findElement(locator);
 			Actions actions = new Actions(driver);
-			actions.moveToElement(element).sendKeys("\u007F").perform(); // \u007F es el código de la tecla Supr
+			actions.moveToElement(element).sendKeys("\u007F").perform(); // \u007F es el cï¿½digo de la tecla Supr
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

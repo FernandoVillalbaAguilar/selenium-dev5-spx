@@ -48,28 +48,29 @@ public class GlobalVariablesSPX {
 
 	// Data General Requisitions
 	public static final String[] MATERIAL = { "Oro", "Plata", "Cobre", "Mercurio", "Platino", "Cobalto", "Aluminio",
-			"Hierro", "Zinc", "Níquel", "Tungsteno", "Cromo", "Magnesio", "Titanio", "Manganeso", "Cadmio", "Boro",
+			"Hierro", "Zinc", "Nï¿½quel", "Tungsteno", "Cromo", "Magnesio", "Titanio", "Manganeso", "Cadmio", "Boro",
 			"Silicio", "Rubidio", "Litio", "Vanadio" };
 	public static final String[] COLOR = { "Rojo", "Azul", "Verde", "Amarillo", "Naranja", "Rosa", "Morado", "Cian",
-			"Gris", "Marrón", "Negro", "Blanco", "Beige", "Violeta", "Turquesa", "Aqua", "Coral", "Oro", "Plateado",
+			"Gris", "Marrï¿½n", "Negro", "Blanco", "Beige", "Violeta", "Turquesa", "Aqua", "Coral", "Oro", "Plateado",
 			"Lila" };
 	public static final String[] MARCA = { "Bose", "Sony", "JBL", "Harman Kardon", "Beats", "Harman", "Kenwood",
 			"Pioneer", "Alpine", "Clarion", "Focal", "JL Audio", "Rockford Fosgate", "Infinity", "Kicker", "Polk Audio",
 			"Cerwin-Vega", "MB Quart", "Audison", "Soundstream", "Bang & Olufsen", "Sennheiser", "Marshall", "AKG",
 			"Bowers & Wilkins" };
-	public static final String[] MEDIDAS = { "12 Pulgadas", "10 Centímetros", "8 Centímetros", "10 Pulgadas",
-			"12 Centímetros", "15 Pies", "18 Pies", "20 Metros", "55 Centímetros", "98 Pulgadas", "145 Centímetros",
-			"54 Pies", "45 Centímetros", "1 Yarda", "2 Yardas", "3 Yardas", "1 Centímetro", "2 Pulgadas", "3 Pies" };
-	public static final String[] PROVEEDORES = { "AVALOS, FRANCISCO", "DIZ CARLOS ALBERTO Y LIBORIO ALBERTO DARIO SOC. DE HECHO",
-			"CORBALAN MARTINEZ, CHRISTIAN", "GEMÜ IND. DE PRODUTOS PLASTICOS E MET. LTDA" };
+	public static final String[] MEDIDAS = { "12 Pulgadas", "10 Centï¿½metros", "8 Centï¿½metros", "10 Pulgadas",
+			"12 Centï¿½metros", "15 Pies", "18 Pies", "20 Metros", "55 Centï¿½metros", "98 Pulgadas", "145 Centï¿½metros",
+			"54 Pies", "45 Centï¿½metros", "1 Yarda", "2 Yardas", "3 Yardas", "1 Centï¿½metro", "2 Pulgadas", "3 Pies" };
+	public static final String[] PROVEEDORES = { "AVALOS, FRANCISCO",
+			"DIZ CARLOS ALBERTO Y LIBORIO ALBERTO DARIO SOC. DE HECHO", "CORBALAN MARTINEZ, CHRISTIAN",
+			"GEMï¿½ IND. DE PRODUTOS PLASTICOS E MET. LTDA" };
 	public static final String[] UNIDAD_DE_MEDIDA = { "SET", "CASE", "TUB", "CASE", "ACRE", "HECTARE", "PINT", "PIE",
 			"B10", "55D", "KIT", "GAL" };
 	public static final String[] NUM_RAND = { "001", "002", "003", "004", "005", "006", "007", "008", "009", "010",
 			"011", "012", "013", "014", "015", "016", "017", "018", "019", "020" };
 	public static final String[] QUANTITY = SPXBase.generateNumbers();
 	public static final String[] MONEDA = { "MXN", "USD", "EUR" };
-	public static final String[] RAZON_URGENCIA = { "Seguridad del Personal", "Paro de línea",
-			"Afectación de calidad directa al cliente" };
+	public static final String[] RAZON_URGENCIA = { "Seguridad del Personal", "Paro de lï¿½nea",
+			"Afectaciï¿½n de calidad directa al cliente" };
 	public static final String[] RAZON_URGENCIA_ENG = { "Personal security", "Production line stops",
 			"Direct quality affectation to client" };
 	public static final String[] GENERIC_NAME = { "Chasis atlas", "Soporte titan", "Placa fortaleza", "Viga orion",
@@ -89,7 +90,7 @@ public class GlobalVariablesSPX {
 			"Optimizacion del proceso completo de gestion de requisiciones a traves de la automatizacion con Selenium WebDriver, asegurando una reduccion en los tiempos de procesamiento y errores humanos.",
 			"Integracion eficiente de Selenium WebDriver dentro del ecosistema de gestion empresarial para automatizar y agilizar la creacion y aprobacion de requisiciones.",
 			"Mejora continua en la generacion automatica de requisiciones mediante el uso avanzado de las capacidades de Selenium WebDriver, optimizando recursos y reduciendo costos.",
-			"Sistema de requisiciones automaticas completamente optimizado con Selenium WebDriver, diseñado para maximizar la eficiencia y la precision en el entorno empresarial.",
+			"Sistema de requisiciones automaticas completamente optimizado con Selenium WebDriver, diseï¿½ado para maximizar la eficiencia y la precision en el entorno empresarial.",
 			"Implementacion efectiva y detallada de Selenium WebDriver en la automatizacion de requisiciones, enfocada en aumentar la productividad y reducir la carga manual del personal.",
 			"Soluciones tecnicas avanzadas para la gestion automatica de requisiciones, aprovechando al maximo las herramientas proporcionadas por Selenium WebDriver.",
 			"Configuracion avanzada y personalizada de Selenium WebDriver para optimizar la creacion y aprobacion de requisiciones en un entorno empresarial dinamico.",
@@ -104,7 +105,7 @@ public class GlobalVariablesSPX {
 			"Implementacion de soluciones de automatizacion para la gestion de requisiciones, optimizando recursos y procesos mediante el uso avanzado de Selenium WebDriver." };
 
 	public static final String CURRENCY = SPXBase.randomMoneda();
-	
+
 	// Data Spot Buy Requisitions
 	// Global Sourcing RFQ Header
 	public static final String SPX_DEV5_GLOBAL_SOURCING_RFQ_SPOT_PAGE = "868 - Tooling";
@@ -121,10 +122,10 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_GENERICNAME_SPOT_PAGE = SPXBase.randomGenericName() + "-"
 			+ SPXBase.randomNumRand();
 	// Second Section
-	// Español
+	// Espaï¿½ol
 	public static final String SPX_DEV5_CATEGORY_SPOT_PAGE_ESP = "Administrativo y Profesional";
 	public static final String SPX_DEV5_FAMILY_SPOT_PAGE_ESP = "Publicidad y Mercadotecnia";
-	public static final String SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP = "Medios impresos y Artículos promocionales";
+	public static final String SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP = "Medios impresos y ArtÃ­culos promocionales";
 	// Ingles
 	public static final String SPX_DEV5_CATEGORY_SPOT_PAGE_ENG = "Administrative & Professional";
 	public static final String SPX_DEV5_FAMILY_SPOT_PAGE_ENG = "Advertising & Marketing";
@@ -153,11 +154,13 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_UNIT_OF_MEASURE_SPOT_PAGE + "')]";
 	// CheckUgent
 	public static final String SPX_DEV5_REASON_UGENT_SPOT_PAGE = SPXBase.randomRazonUrgencia();
-	//public static final String SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG = SPXBase.randomRazonUrgenciaENG();
+	// public static final String SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG =
+	// SPXBase.randomRazonUrgenciaENG();
 	public static final String SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE = "//div[@id='formSpot:razonUrg_panel']//li[contains(.,'"
 			+ SPX_DEV5_REASON_UGENT_SPOT_PAGE + "') " + "or contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "')]";
-	//public static final String SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE_ENG = "//div[@id='formSpot:razonUrg_panel']//li[contains(.,'"
-	//		+ SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG + "')]";
+	// public static final String SPX_DEV5_SELECT_REASON_URGENT_SPOT_PAGE_ENG =
+	// "//div[@id='formSpot:razonUrg_panel']//li[contains(.,'"
+	// + SPX_DEV5_REASON_UGENT_SPOT_PAGE_ENG + "')]";
 	// Third Section
 	public static final String SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE = SPXBase.randomComentarios();
 
@@ -168,7 +171,7 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "100075 - UAT GTO OPEX";
 	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "Travel expenses";
 	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Travel Expenses";
-	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Revillas Contreras Ana María";
+	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Revillas Contreras Ana Marï¿½a";
 	// Project
 	public static final String SPX_DEV5_SELECT_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE + "')]";
@@ -260,7 +263,7 @@ public class GlobalVariablesSPX {
 			+ SPXBase.randomNumRand();
 	public static final String SPX_DEV5_NUM_PARTE_FABRICANTE_ARTICULOS_CONTROLADOS_PAGE = "101004";
 	public static final String SPX_DEV5_NUM_PARTE_PROVEEDOR_ARTICULOS_CONTROLADOS_PAGE = "101004";
-	public static final String SPX_DEV5_DESCRIPCION_ARTICULOS_CONTROLADOS_PAGE = "00400196 - Bulonería-2-13-2 |Abrazadera ajustable sin fin de 14 a 20mm";
+	public static final String SPX_DEV5_DESCRIPCION_ARTICULOS_CONTROLADOS_PAGE = "00400196 - BulonerÃ­a-2-13-2 |Abrazadera ajustable sin fin de 14 a 20mm";
 	public static final String SPX_DEV5_PICKLIST_SOURCE_ARTICULOS_CONTROLADOS_PAGE = "10105";
 	public static final String SPX_DEV5_PICKLIST_TARGET_ARTICULOS_CONTROLADOS_PAGE = "Stopper";
 
@@ -277,10 +280,10 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_CENTRO_COSTOS_ARTICULOS_POR_PROCESAR_PAGE = "F002 - CV - Global Purchasing Process Development";
 	public static final String SPX_DEV5_CATEGORIA_ARTICULOS_POR_PROCESAR_PAGE = "50 - Administrativo y Profesional";
 	public static final String SPX_DEV5_FAMILIA_ARTICULOS_POR_PROCESAR_PAGE = "01 - Publicidad y Mercadotecnia";
-	public static final String SPX_DEV5_SUBFAMILIA_ARTICULOS_POR_PROCESAR_PAGE = "03 - Medios impresos y Artículos promocionales";
-	public static final String SPX_DEV5_TIPO_ARTICULOS_POR_PROCESAR_PAGE = "Refacción ";
-	public static final String SPX_DEV5_PRIORIDAD_ARTICULOS_POR_PROCESAR_PAGE = "Refacción Normal";
-	public static final String SPX_DEV5_JUSTIFICACION_ARTICULOS_POR_PROCESAR_PAGE = "Paro de línea";
+	public static final String SPX_DEV5_SUBFAMILIA_ARTICULOS_POR_PROCESAR_PAGE = "03 - Medios impresos y ArtÃ­culos promocionales";
+	public static final String SPX_DEV5_TIPO_ARTICULOS_POR_PROCESAR_PAGE = "Refacciï¿½n ";
+	public static final String SPX_DEV5_PRIORIDAD_ARTICULOS_POR_PROCESAR_PAGE = "RefacciÃ³n Normal";
+	public static final String SPX_DEV5_JUSTIFICACION_ARTICULOS_POR_PROCESAR_PAGE = "Paro de lÃ­nea";
 	public static final String SPX_DEV5_BUSQUEDA_POR_PALABRA_ARTICULOS_POR_PROCESAR_PAGE = "F3F4F43F";
 
 	// Captura de cotizaciones
@@ -296,8 +299,8 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_REQUISITOR_CAPTURA_DE_COTIZACIONES_PAGE = "Buyatti Carlos Javier";
 	public static final String SPX_DEV5_COMPRADOR_CAPTURA_DE_COTIZACIONES_PAGE = "SPX Cloud Dev";
 	public static final String SPX_DEV5_BUSQUEDA_POR_PALABRA_CAPTURA_DE_COTIZACIONES_PAGE = "ART - 4549 EKJERE E";
-	
-	//Administración de Accesos
+
+	// AdministraciÃ³n de Accesos
 	public static final String SPX_DEV5_DELEGADO = "SPX Cloud Dev";
 
 }

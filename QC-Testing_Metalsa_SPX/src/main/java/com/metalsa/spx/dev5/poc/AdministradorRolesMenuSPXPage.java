@@ -47,7 +47,7 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textAdministradorRolesMenuPageIsDisplayed() {
 		reporterLog("Access to Administrador Role Menu Page ...");
@@ -66,10 +66,10 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> filterMenuName(String menuName) {
-		reporterLog("Realizar Búsqueda con el Filtro Menu Name ...");
+		reporterLog("Realizar Bï¿½squeda con el Filtro Menu Name ...");
 		waitForElementPresent(btnViewMenusSPX_ReporteInterUEN);
 		click(btnViewMenusSPX_ReporteInterUEN);
 		waitForElementPresent(btnShowAll);
@@ -92,12 +92,13 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationResultSearchNameResultIsDisplayed() {
 		reporterLog("Validate Result Search Is Displayed ...");
 		waitForElementPresent(nameResult);
 		return isElementPresent(nameResult);
+
 	}
 
 	/*
@@ -111,10 +112,10 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> filterURLPath(String urlPath) {
-		reporterLog("Realizar Búsqueda con el Filtro URL Path ...");
+		reporterLog("Realizar Bï¿½squeda con el Filtro URL Path ...");
 		waitForElementPresent(btnViewMenusSPX_ReporteInterUEN);
 		click(btnViewMenusSPX_ReporteInterUEN);
 		waitForElementPresent(btnShowAll);
@@ -137,7 +138,7 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationResultSearchURLPathResultIsDisplayed() {
 		reporterLog("Validate Result Search Is Displayed ...");
@@ -156,10 +157,10 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> btnAdd() throws InterruptedException {
-		reporterLog("Realizar Búsqueda con el Filtro Menu Name ...");
+		reporterLog("Realizar Bï¿½squeda con el Filtro Menu Name ...");
 		waitForElementPresent(btnAdd);
 		click(btnAdd);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
@@ -177,7 +178,7 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationAddIsDisplayed() {
 		reporterLog("Validar el agregar registro de manera correcta ...");
@@ -196,10 +197,10 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> btnRemove() {
-		reporterLog("Realizar Búsqueda con el Filtro Menu Name ...");
+		reporterLog("Realizar Bï¿½squeda con el Filtro Menu Name ...");
 		waitForElementPresent(btnRemove);
 		click(btnRemove);
 		return returnSaveImage(btnRemove);
@@ -216,7 +217,7 @@ public class AdministradorRolesMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationRemoveIsDisplayed() {
 		reporterLog("Validar el remover registro de manera correcta ...");
