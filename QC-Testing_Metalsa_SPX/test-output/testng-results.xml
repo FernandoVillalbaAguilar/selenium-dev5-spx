@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
+    </line>
+    <line>
+      <![CDATA[Logging to SPX ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Input Text to Field]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: formLogin:btnForm]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.id: formLogin:btnForm]]>
+    </line>
+    <line>
+      <![CDATA[Access to SPX ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Element displayed: By.id: sidebarCollapse]]>
+    </line>
+    <line>
+      <![CDATA[Access to Spot Buy Requisitions ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@name='uens']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //option[@value='number:300000871350983']]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //option[@value='number:300000871350983']]]>
+    </line>
+    <line>
+      <![CDATA[Access to Administraci�n de Accesos ...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.id: sidebarCollapse]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[.//a[@href='#_menu_222']]]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/adminAccesos.xhtml']]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/adminAccesos.xhtml']]]>
+    </line>
+    <line>
+      <![CDATA[Access to Admon acces...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Element displayed: By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]]]>
+    </line>
+    <line>
+      <![CDATA[Consulta información de una UEN para el proceso Aprobación de Catalogos ...]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:uen_label']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:uen_panel']//li[@data-label='Metalsa Argentina']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Aprobación de catálogos']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Administración de compradores']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Contralor']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+    </line>
+    <line>
+      <![CDATA[Wait for Element Present (DOM Presence)...]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Administrador de transferencias']]]>
+    </line>
+    <line>
+      <![CDATA[Click on field or button]]>
+    </line>
+    <line>
+      <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]]]>
+    </line>
+    <line>
+      <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2025-12-26T15:29:32 CST" name="Default suite" finished-at="2025-12-26T15:30:23 CST" duration-ms="50816">
+    <groups>
+    </groups>
+    <test started-at="2025-12-26T15:29:32 CST" name="Default test" finished-at="2025-12-26T15:30:23 CST" duration-ms="50816">
+      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:29:32 CST" name="beforeTest" finished-at="2025-12-26T15:29:34 CST" duration-ms="1540" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="tc001_SPX_Dev5_Consulta_Administracion_Accesos()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:29:34 CST" name="tc001_SPX_Dev5_Consulta_Administracion_Accesos" finished-at="2025-12-26T15:30:23 CST" duration-ms="49226" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv]]>
+            </line>
+            <line>
+              <![CDATA[Logging to SPX ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Input Text to Field]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: formLogin:btnForm]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.id: formLogin:btnForm]]>
+            </line>
+            <line>
+              <![CDATA[Access to SPX ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Element displayed: By.id: sidebarCollapse]]>
+            </line>
+            <line>
+              <![CDATA[Access to Spot Buy Requisitions ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //select[@name='uens']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //option[@value='number:300000871350983']]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //option[@value='number:300000871350983']]]>
+            </line>
+            <line>
+              <![CDATA[Access to Administraci�n de Accesos ...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.id: sidebarCollapse]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //li[.//a[@href='#_menu_222']]]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/adminAccesos.xhtml']]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/adminAccesos.xhtml']]]>
+            </line>
+            <line>
+              <![CDATA[Access to Admon acces...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Element displayed: By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]]]>
+            </line>
+            <line>
+              <![CDATA[Consulta información de una UEN para el proceso Aprobación de Catalogos ...]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:uen_label']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:uen_panel']//li[@data-label='Metalsa Argentina']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Aprobación de catálogos']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Administración de compradores']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Contralor']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']]]>
+            </line>
+            <line>
+              <![CDATA[Wait for Element Present (DOM Presence)...]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Administrador de transferencias']]]>
+            </line>
+            <line>
+              <![CDATA[Click on field or button]]>
+            </line>
+            <line>
+              <![CDATA[Esperando a que el elemento sea clickeable: By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]]]>
+            </line>
+            <line>
+              <![CDATA[Taking Screenshot (element may or may not exist): By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tc001_SPX_Dev5_Consulta_Administracion_Accesos -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17]" started-at="2025-12-26T15:30:23 CST" name="afterTest" finished-at="2025-12-26T15:30:23 CST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

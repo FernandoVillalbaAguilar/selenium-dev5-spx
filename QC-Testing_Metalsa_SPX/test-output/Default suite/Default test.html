@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Dec 26 15:29:32 CST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>50 seconds (50816 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales.tc001_SPX_Dev5_Consulta_Administracion_Accesos()'><b>tc001_SPX_Dev5_Consulta_Administracion_Accesos</b><br>Test class: com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales<br/>
+<a href="#Output-686717934" onClick='toggleBox("Output-686717934", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-686717934" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-686717934">
+Launching ... aHR0cDovL2dwbXRlc3QyLWFwcDY6OTIwMy9TUFgv<br/>
+Logging to SPX ...<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Input Text to Field<br/>
+Input Text to Field<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.id: formLogin:btnForm<br/>
+Taking Screenshot (element may or may not exist): By.id: formLogin:btnForm<br/>
+Access to SPX ...<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Element displayed: By.id: sidebarCollapse<br/>
+Access to Spot Buy Requisitions ...<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //select[@name='uens']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //option[@value='number:300000871350983']<br/>
+Taking Screenshot (element may or may not exist): By.xpath: //option[@value='number:300000871350983']<br/>
+Access to Administraci?n de Accesos ...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.id: sidebarCollapse<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //li[.//a[@href='#_menu_222']]<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/adminAccesos.xhtml']<br/>
+Taking Screenshot (element may or may not exist): By.xpath: //a[@href='http://gpmtest2-app6:9203/SPX/pages/administracion/adminAccesos.xhtml']<br/>
+Access to Admon acces...<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Element displayed: By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]<br/>
+Consulta información de una UEN para el proceso Aprobación de Catalogos ...<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:uen_label']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:uen_panel']//li[@data-label='Metalsa Argentina']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Aprobación de catálogos']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Administración de compradores']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Contralor']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //label[@id='formTable:tipoProceso_label']<br/>
+Wait for Element Present (DOM Presence)...<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //div[@id='formTable:tipoProceso_panel']//li[@data-label='Administrador de transferencias']<br/>
+Click on field or button<br/>
+Esperando a que el elemento sea clickeable: By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]<br/>
+Taking Screenshot (element may or may not exist): By.xpath: //form[@id='formTable']//div[contains(@class,'spx-card-header__title')]<br/>
+</div>
+</td>
+<td></td>
+<td>49</td>
+<td>com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales@27406a17</td></tr>
+</table><p>
+</body>
+</html>
