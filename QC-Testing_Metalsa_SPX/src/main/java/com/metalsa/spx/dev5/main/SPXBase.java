@@ -241,15 +241,15 @@ public class SPXBase {
 	 * 
 	 * @description: M�todo que permite generar un Explicit Wait hasta que el
 	 * elemento exista dentro del DOM. A diferencia de visibilityOfElementLocated,
-	 * este m�todo utiliza presenceOfElementLocated para mejorar la estabilidad en
-	 * componentes din�micos como listas, paneles o dropdowns (PrimeFaces).
+	 * este método utiliza presenceOfElementLocated para mejorar la estabilidad en
+	 * componentes dinámicos como listas, paneles o dropdowns (PrimeFaces).
 	 */
 	public void waitForElementPresent(By locator) {
 		try {
 			reporterLog("Wait for Element Present (DOM Presence)...");
 			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
 			
-			// Se espera a que el elemento est� presente en el DOM
+			// Se espera a que el elemento está presente en el DOM
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 
 		} catch (TimeoutException e) {
