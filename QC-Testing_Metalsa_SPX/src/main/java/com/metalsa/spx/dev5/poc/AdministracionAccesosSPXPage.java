@@ -57,7 +57,7 @@ public class AdministracionAccesosSPXPage extends SPXBase {
 	}
 
 	/*
-	 * @name: consultaInformaci�nAprobacionCatalogos
+	 * @name: consultaInformacionGeneral
 	 * 
 	 * @date: 19/Dec/2025
 	 * 
@@ -67,7 +67,7 @@ public class AdministracionAccesosSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite consultar informaci�n de la pantalla
+	 * @description: Este metodo permite consultar información de la pantalla
 	 */
 	public TreeMap<String, String> consultaInformacionGeneral() throws InterruptedException {
 
