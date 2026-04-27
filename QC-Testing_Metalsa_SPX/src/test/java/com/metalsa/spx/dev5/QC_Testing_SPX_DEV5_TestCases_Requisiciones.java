@@ -56,7 +56,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 
 	@BeforeTest
 	public void beforeTest() {
-		// Instanciar valores de conexión con Chrome
+		// Instanciar valores de conexiï¿½n con Chrome
 		spxBase = new SPXBase(driver);
 		driver = spxBase.chromeDriverConection();
 		loginSPXPage = new LoginSPX(driver);

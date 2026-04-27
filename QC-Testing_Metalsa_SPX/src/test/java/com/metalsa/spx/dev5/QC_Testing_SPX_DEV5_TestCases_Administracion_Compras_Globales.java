@@ -47,6 +47,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales {
 	}
 
 	@Test
+
 	public void runTestMultipleTimes() throws InterruptedException, InvalidFormatException {
 		int numberOfRuns = 1; // You can adjust this based on the number of times you want to run the test
 

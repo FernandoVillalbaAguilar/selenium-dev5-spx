@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -29,7 +30,7 @@ public class AdministracionPorUenElearningSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textAdministracionPorUenElearningPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Account Configuration Page ...");
@@ -62,13 +63,13 @@ public class AdministracionPorUenElearningSPXPage extends SPXBase {
 		        clicked = true;
 		        reporterLog("Se hizo clic en btnActivar (visible).");
 		    } else if (isElementPresent(btnActivar)) {
-		        // Está en DOM pero no visible -> scroll y reintentar
+		        // Estï¿½ en DOM pero no visible -> scroll y reintentar
 		        scrollDown(btnActivar);
 		        Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		        if (isDisplayed(btnActivar)) {
 		            click(btnActivar);
 		            clicked = true;
-		            reporterLog("Se hizo clic en btnActivar (después de scroll).");
+		            reporterLog("Se hizo clic en btnActivar (despuï¿½s de scroll).");
 		        } else {
 		            reporterLog("btnActivar presente en DOM pero sigue sin ser visible tras scroll.");
 		        }
@@ -88,7 +89,7 @@ public class AdministracionPorUenElearningSPXPage extends SPXBase {
 		            if (isDisplayed(btnInactivar)) {
 		                click(btnInactivar);
 		                clicked = true;
-		                reporterLog("Se hizo clic en btnInactivar (después de scroll).");
+		                reporterLog("Se hizo clic en btnInactivar (despuï¿½s de scroll).");
 		            } else {
 		                reporterLog("btnInactivar presente en DOM pero sigue sin ser visible tras scroll.");
 		            }
@@ -98,15 +99,15 @@ public class AdministracionPorUenElearningSPXPage extends SPXBase {
 		    }
 
 		    if (clicked) {
-		        // espera breve para que aparezca el texto de confirmación y lo lea
+		        // espera breve para que aparezca el texto de confirmaciï¿½n y lo lea
 		        Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		        getText(txtActivateOrDesactivate);
-		        reporterLog("Cambio de estatus solicitado (se leyó txtActivateOrDesactivate).");
+		        reporterLog("Cambio de estatus solicitado (se leyï¿½ txtActivateOrDesactivate).");
 		    } else {
-		        reporterLog("No se encontró ni btnActivar ni btnInactivar (no se realizó ninguna acción).");
+		        reporterLog("No se encontrï¿½ ni btnActivar ni btnInactivar (no se realizï¿½ ninguna acciï¿½n).");
 		    }
 
-		    // Volver al título y guardar imagen como antes
+		    // Volver al tï¿½tulo y guardar imagen como antes
 		    click(txtTittlePage);
 		    return returnSaveImage(txtTittlePage);
 		}
@@ -122,7 +123,7 @@ public class AdministracionPorUenElearningSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textActivateOrDesactivateIsDisplayed() {
 		reporterLog("The UEN Elearning Activated or Desactivated ...");

@@ -4,6 +4,7 @@ import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -55,7 +56,7 @@ public class CapturadeCotizacionesSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textCapturadeCotizacionesPageIsDisplayed() {
 		reporterLog("Access to Captura de Cotizaciones Page ...");
@@ -74,12 +75,12 @@ public class CapturadeCotizacionesSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite la validación de campos
+	 * @description: Este metodo permite la validaciï¿½n de campos
 	 */
 	public TreeMap<String, String> validacionCamposCapturadeCotizaciones(String rfqCC, String requisicionCC,
 			String proveedorCC, String cotizacionCC, String fechaInicioCC, String fechaFinCC, String requisitorCC,
 			String compradorCC, String busquedaPorPalabraCC) throws InterruptedException {
-		reporterLog("Realizar validación de campos de búsqueda Articulos por Procesar ...");
+		reporterLog("Realizar validaciï¿½n de campos de bï¿½squeda Articulos por Procesar ...");
 		waitForElementPresent(lblUEN);
 		click(lblUEN);
 		waitForElementPresent(slstUEN);

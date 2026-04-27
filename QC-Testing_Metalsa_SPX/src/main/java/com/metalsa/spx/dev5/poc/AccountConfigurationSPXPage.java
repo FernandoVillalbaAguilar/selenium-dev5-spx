@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -91,7 +92,7 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textAccountConfigurationPageIsDisplayed() {
 		reporterLog("Access to Account Configuration Page ...");
@@ -262,15 +263,15 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> clickBtnRequisition() {
 
 	    reporterLog("Click to Requisition ...");
 
-	    // Validamos si el botón existe realmente
+	    // Validamos si el botï¿½n existe realmente
 	    if (!elementExistsAndVisible(btnRequisition)) {
-	        reporterLog("[ERROR] The button 'Crear Requisición' is NOT available.");
+	        reporterLog("[ERROR] The button 'Crear Requisiciï¿½n' is NOT available.");
 	        return returnSaveImage(btnRequisition);
 	    }
 

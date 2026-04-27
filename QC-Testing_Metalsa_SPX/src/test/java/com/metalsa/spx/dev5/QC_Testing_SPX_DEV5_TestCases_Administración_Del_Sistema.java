@@ -17,7 +17,7 @@ import com.metalsa.spx.dev5.poc.ArticulosControladosSPXPage;
 import com.metalsa.spx.dev5.poc.HomeSPX;
 import com.metalsa.spx.dev5.poc.LoginSPX;
 
-public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
+public class QC_Testing_SPX_DEV5_TestCases_AdministraciÃ³n_Del_Sistema {
 
 	WebDriver driver;
 	SPXBase spxBase;
@@ -53,7 +53,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 	@BeforeTest
 	public void beforeTest() {
-		// Instanciar valores de conexión con Chrome
+		// Instanciar valores de conexiï¿½n con Chrome
 		spxBase = new SPXBase(driver);
 		driver = spxBase.chromeDriverConection();
 		loginSPXPage = new LoginSPX(driver);

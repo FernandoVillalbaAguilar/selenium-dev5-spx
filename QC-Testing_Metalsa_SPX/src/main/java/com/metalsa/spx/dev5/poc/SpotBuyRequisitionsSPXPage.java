@@ -4,6 +4,7 @@ import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -28,7 +29,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By chkProductServicereceivedwithoutrequisition = By.id("formSpot:servicioMaterialRealizado");
 	By chkIncludeSingleSourceFormat = By.id("formSpot:formatoAsignacionDirecta");
 	By textValidateSameLine = By.xpath(
-			"//div[@id='mesageError']//p[contains(text(),'No se pueden tener líneas con la misma información')]");
+			"//div[@id='mesageError']//p[contains(text(),'No se pueden tener lï¿½neas con la misma informaciï¿½n')]");
 	By textValidateFields = By.id("mesageError");
 	// Line Header Objects
 	By chkLine = By.id("formSpot:j_idt371");
@@ -49,7 +50,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 
 	// Second Section Objects
 	By lblSubTittle = By.xpath("//label[ contains(normalize-space(.), 'Classification, Quantity & Date') "
-			+ "or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]");
+			+ "or contains(normalize-space(.), 'Clasificaciï¿½n, Cantidad & Fecha') ]");
 	By lblCategory = By.id("formSpot:nwcboCategorias0_label");
 	By txtSearchCategory = By.id("formSpot:nwcboCategorias0_filter");
 	By selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
@@ -97,7 +98,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textSpotBuyRequisitionsPageIsDisplayed() {
 		reporterLog("Access to Spot Buy Requisitions Page ...");
@@ -117,7 +118,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite capturar los datos de la primera sección de
+	 * @description: Este metodo permite capturar los datos de la primera secciï¿½n de
 	 * la pagina
 	 */
 	public void captureInformationSpotBuyRequisitionFirstSection(String description, String material, String color,
@@ -145,7 +146,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite capturar los datos de la segunda sección de
+	 * @description: Este metodo permite capturar los datos de la segunda secciï¿½n de
 	 * la pagina
 	 */
 	public TreeMap<String, String> captureInformationSpotBuyRequisitionsSecondSection(String quantity, String category,
@@ -256,7 +257,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite capturar los datos de la tercera sección de
+	 * @description: Este metodo permite capturar los datos de la tercera secciï¿½n de
 	 * la pagina
 	 */
 	public TreeMap<String, String> captureInformationSpotBuyRequisitionsThirdSection(String commentsToBuyer,
@@ -278,7 +279,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite agregar la(s) línea(s)
+	 * @description: Este metodo permite agregar la(s) lï¿½nea(s)
 	 */
 
 	public TreeMap<String, String> addtoCart(String description, String material, String color, String brand,
@@ -288,7 +289,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		click(btnAddToCart);
 		waitForPrimefacesAjax();
 
-		// ---- VALIDACIÓN: MISMA LÍNEA ----
+		// ---- VALIDACIï¿½N: MISMA Lï¿½NEA ----
 		if (isDisplayed(textValidateSameLine)) {
 
 			System.out.print("The error message is: ");
@@ -305,13 +306,13 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			waitForPrimefacesAjax();
 		}
 
-		// ---- VALIDACIÓN: CAMPOS VACÍOS ----
+		// ---- VALIDACIï¿½N: CAMPOS VACï¿½OS ----
 		else if (isDisplayed(textValidateFields)) {
 
 			System.out.print("The error message is: ");
 			getText(textValidateFields);
 
-			// Llenado de datos básicos
+			// Llenado de datos bï¿½sicos
 			if (!isElementContainingText(txtDescription)) {
 				type(txtDescription, description + " WITH ID: " + generateRandomId(8));
 			}
@@ -335,11 +336,11 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			}
 
 			// -------------------------------
-			// Dropdowns: con o sin salto de línea
+			// Dropdowns: con o sin salto de lï¿½nea
 			// -------------------------------
 			boolean hasSubFamilyNewLine = isElementPresent(selectOptionSubFamilyNewLine);
 
-			// --- Categoría ---
+			// --- Categorï¿½a ---
 			if (!isElementContainingText(txtSearchCategory)) {
 				click(lblCategory);
 				waitForElementPresent(txtSearchCategory);

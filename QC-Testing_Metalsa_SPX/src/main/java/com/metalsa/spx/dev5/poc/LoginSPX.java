@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -28,8 +29,8 @@ public class LoginSPX extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite capturar usuario y contraseña, así como dar
-	 * click en el botón login
+	 * @description: Este metodo permite capturar usuario y contraseï¿½a, asï¿½ como dar
+	 * click en el botï¿½n login
 	 */
 	public TreeMap<String, String> login(String username, String password) throws InterruptedException {
 		reporterLog("Logging to SPX ...");

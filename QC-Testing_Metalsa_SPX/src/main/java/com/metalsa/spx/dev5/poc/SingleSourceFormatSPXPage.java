@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -49,7 +50,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textSingleSourceFormatPageIsDisplayed() {
 		reporterLog("Access to Single Source Format Page ...");
@@ -118,7 +119,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite dar clic en el botón "Save"
+	 * @description: Este metodo permite dar clic en el botï¿½n "Save"
 	 */
 	public TreeMap<String, String> clickSave() throws InterruptedException {
 		waitForElementPresent(btnSave);
@@ -138,7 +139,7 @@ public class SingleSourceFormatSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite dar clic en el botón "Back"
+	 * @description: Este metodo permite dar clic en el botï¿½n "Back"
 	 */
 	public TreeMap<String, String> clickBack() throws InterruptedException {
 		waitForElementPresent(btnBack);

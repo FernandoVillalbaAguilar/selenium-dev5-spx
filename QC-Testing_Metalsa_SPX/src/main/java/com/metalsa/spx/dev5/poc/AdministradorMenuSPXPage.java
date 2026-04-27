@@ -5,6 +5,7 @@ import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.By.ById;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -60,7 +61,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textAdministradorMenuPageIsDisplayed() {
 		reporterLog("Access to Administrador Menu Page ...");
@@ -79,10 +80,10 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> filterMenuName(String menuName) {
-		reporterLog("Realizar Búsqueda con el Filtro Menu Name ...");
+		reporterLog("Realizar Bï¿½squeda con el Filtro Menu Name ...");
 		waitForElementPresent(inputMenuName);
 		type(inputMenuName, menuName);
 		waitForElementPresent(btnSearch);
@@ -101,7 +102,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationResultSearchNameResultIsDisplayed() {
 		reporterLog("Validate Result Search Is Displayed ...");
@@ -120,10 +121,10 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> filterURLPath(String urlPath) {
-		reporterLog("Realizar Búsqueda con el Filtro URL Path ...");
+		reporterLog("Realizar Bï¿½squeda con el Filtro URL Path ...");
 		waitForElementPresent(inputMenuName);
 		type(inputURLPath, urlPath);
 		waitForElementPresent(btnSearch);
@@ -142,7 +143,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationResultSearchURLPathIsDisplayed() {
 		reporterLog("Validate Result Search Is Displayed ...");
@@ -161,7 +162,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> clickbtnAddNewMenu() throws InterruptedException {
 		reporterLog("Agregar Nuevo Menu ...");
@@ -182,7 +183,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationResultSearchAddNewMneuIsDisplayed() {
 		reporterLog("Validate Result Search Is Displayed ...");
@@ -201,7 +202,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> editMenus(String nameMenuText, String descriptionESA, String descriptionUS,
 			String descriptionPTB, String order, String cssClass, String faces, String parent)
@@ -258,7 +259,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean validationMessagesIsDisplayed() {
 		reporterLog("Validate Message Is Displayed ...");
@@ -277,7 +278,7 @@ public class AdministradorMenuSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> clickRemoveMenu() {
 		reporterLog("Agregar Nuevo Menu ...");

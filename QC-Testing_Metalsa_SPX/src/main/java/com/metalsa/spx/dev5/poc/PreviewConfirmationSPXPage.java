@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -32,7 +33,7 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textPreviewConfirmationPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Preview & Confirmation Page ...");
@@ -51,22 +52,22 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public TreeMap<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
 	    reporterLog("Accept to Requisition");
 
-	    // Espera y clic en el botón Aceptar
+	    // Espera y clic en el botï¿½n Aceptar
 	    waitForElementPresent(btnAccept);
 	    click(btnAccept);
 
 	    Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
-	    // Espera a que aparezca el ID de requisición generado
+	    // Espera a que aparezca el ID de requisiciï¿½n generado
 	    waitForElementPresent(txtRequisitionGenerate);
 	    String requisitionID = getText(txtRequisitionGenerate);
 	    
-	    // Espera a que aparezca la descripción del ítem y extrae solo el primer "token" (ID)
+	    // Espera a que aparezca la descripciï¿½n del ï¿½tem y extrae solo el primer "token" (ID)
 	    waitForElementPresent(txtDescription);
 	    String fullDescription = getText(txtDescription);
 	    String itemRequisitionID = fullDescription.split(" ")[0]; // REQUI-TEST-AUTO-xxxx

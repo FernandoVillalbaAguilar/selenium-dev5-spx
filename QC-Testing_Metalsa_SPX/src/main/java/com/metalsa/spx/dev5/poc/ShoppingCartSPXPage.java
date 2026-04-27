@@ -3,6 +3,7 @@ package com.metalsa.spx.dev5.poc;
 import java.util.TreeMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -36,7 +37,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textShoppingCartPageIsDisplayed() throws InterruptedException {
 		reporterLog("Access to Shopping Page ...");
@@ -59,7 +60,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @author: Fernando Villalba Aguilar
 	 * 
 	 * @description: Este metodo permite ingresar al carrito de compras y
-	 * seleccionar una requisición
+	 * seleccionar una requisiciï¿½n
 	 */
 	public TreeMap<String, String> clickSetupPurchaseSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Select Requisition of Shopping Cart");
@@ -80,7 +81,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @author: Fernando Villalba Aguilar
 	 * 
 	 * @description: Este metodo permite ingresar al carrito de compras y
-	 * seleccionar una requisición
+	 * seleccionar una requisiciï¿½n
 	 */
 	public TreeMap<String, String> CheckSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Check Requisition of Shopping Cart");
@@ -102,7 +103,7 @@ public class ShoppingCartSPXPage extends SPXBase {
 	 * @author: Fernando Villalba Aguilar
 	 * 
 	 * @description: Este metodo permite ingresar al carrito de compras y
-	 * seleccionar una requisición
+	 * seleccionar una requisiciï¿½n
 	 */
 	public TreeMap<String, String> DoubleCheckSpotRequisitionShoppingCart() throws InterruptedException {
 		reporterLog("Check Requisition of Shopping Cart");

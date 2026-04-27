@@ -4,6 +4,7 @@ import java.util.TreeMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
 
@@ -43,7 +44,7 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 			"//div[@id='formSearch:accorSearch:status_panel']/div/a/span[@class='ui-icon ui-icon-circle-close']");
 	By txtFechaInicio = By.id("formSearch:accorSearch:dates_input");
 	By txtFechaFin = By.id("formSearch:accorSearch:dates2_input");
-	// Búsqueda Avanzada
+	// Bï¿½squeda Avanzada
 	By btnBusquedaAvanzada = By
 			.xpath("//div[@id='formSearch:accorSearch']/div/div/div/div/a[@class='ui-commandlink ui-widget']");
 	By btnBusquedaSimple = By
@@ -73,9 +74,9 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 	By slstJustificacion = By
 			.xpath("//li[@data-label='" + GlobalVariablesSPX.SPX_DEV5_JUSTIFICACION_ARTICULOS_POR_PROCESAR_PAGE + "']");
 	By txtBusquedaPorPalabra = By.id("formSearch:accorSearch:lines");
-	// Navegación
+	// Navegaciï¿½n
 	By btnNavigation = By.xpath("//div[@role='navigation']//span//span[contains(text(),'1')]");
-	// Botones de Acción
+	// Botones de Acciï¿½n
 	By btnExpandMain = By.id("formTable:requisitionsTable:expandbtn");
 	By btnExpandFields = By.xpath(
 			"//tbody[@id='formTable:requisitionsTable_data']/tr[@class='ui-widget-content ui-datatable-even']/td/div[@class='ui-row-toggler ui-icon ui-icon-circle-triangle-e']");
@@ -106,7 +107,7 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento está disponible
+	 * @description: Este metodo permite verificar que el elemento estï¿½ disponible
 	 */
 	public boolean textArticulosPorProcesarPageIsDisplayed() {
 		reporterLog("Access to Articulos por Procesar Page ...");
@@ -125,11 +126,11 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite la validación de campos
+	 * @description: Este metodo permite la validaciï¿½n de campos
 	 */
 	public TreeMap<String, String> validacionCamposArticulosPorProcesar(String requisicion, String estatus,
 			String requisitor, String comprador, String fechaInicio, String fechaFin) throws InterruptedException {
-		reporterLog("Realizar validación de campos de búsqueda Articulos por Procesar ...");
+		reporterLog("Realizar validaciï¿½n de campos de bï¿½squeda Articulos por Procesar ...");
 		waitForElementPresent(lblUEN);
 		click(lblUEN);
 		waitForElementPresent(slstUEN);
@@ -265,17 +266,17 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite la validación de campos
+	 * @description: Este metodo permite la validaciï¿½n de campos
 	 */
 	public TreeMap<String, String> validacionCamposBusquedaAvanzadaArticulosPorProcesar(String centroCostos,
 			String busquedaPorPalabra) throws InterruptedException {
-		reporterLog("Realizar validación de campos de búsqueda avanzada Articulos por Procesar ...");
+		reporterLog("Realizar validaciï¿½n de campos de bï¿½squeda avanzada Articulos por Procesar ...");
 		waitForElementPresent(btnBusquedaAvanzada);
 		click(btnBusquedaAvanzada);
 		Thread.sleep(GlobalVariablesSPX.DEFAULT_TIMEOUT);
 		waitForElementPresent(lblProceso);
 		click(lblProceso);
-		// Solo se mostrará información en este campo si hay catalogos de procesos
+		// Solo se mostrarï¿½ informaciï¿½n en este campo si hay catalogos de procesos
 		// cargados por parte de PDD.
 		if (isDisplayed(slstProceso)) {
 			click(slstProceso);
@@ -347,11 +348,11 @@ public class ArticulosPorProcesarSPXPage extends SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite la validación de campos
+	 * @description: Este metodo permite la validaciï¿½n de campos
 	 */
 	public TreeMap<String, String> validacionBotonesDeAccionArticulosPorProcesar(String requisicion)
 			throws InterruptedException {
-		reporterLog("Realizar validación de los botones de acción -  Articulos por Procesar ...");
+		reporterLog("Realizar validaciï¿½n de los botones de acciï¿½n -  Articulos por Procesar ...");
 		waitForElementPresent(txtRequisicion);
 		type(txtRequisicion, requisicion);
 		waitForElementPresent(btnBuscar);
