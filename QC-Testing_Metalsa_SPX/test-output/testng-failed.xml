@@ -1,29 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales">
+      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema">
         <methods>
-          <include name="beforeTest"/>
-          <include name="afterTest"/>
-          <include name="tc001_SPX_Dev5_Consulta_Administracion_Accesos"/>
-        </methods>
-      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales -->
-=======
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Default test(failed)">
-    <classes>
-      <class name="com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos">
-        <methods>
+          <include name="tc001_SPX_Dev5_Validar_Filtro_Campo_MenuName_Administrador_Roles_Menu"/>
           <include name="afterTest"/>
           <include name="beforeTest"/>
-          <include name="tc002_SPX_Dev5_Crear_Requisicion_Spot_Con_FAD_Tipo_Cobro_CC"/>
         </methods>
-      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Requisiciones_Alternos -->
->>>>>>> branch 'master' of https://github.com/FernandoVillalbaAguilar/selenium-dev5-spx
+      </class> <!-- com.metalsa.spx.dev5.QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
