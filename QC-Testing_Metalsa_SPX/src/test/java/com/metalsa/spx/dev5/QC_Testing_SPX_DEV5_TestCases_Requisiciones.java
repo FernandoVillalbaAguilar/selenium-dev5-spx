@@ -152,6 +152,13 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 		steps.add("Step 6 - Accept to Requisition ");
 		values.add("Requisition Accepted");
 
+		// Return to Main Page SPX
+		listaScreenShots.put("Step7", homeSPXPage.accesMainPageSPX());
+		Assert.assertEquals(homeSPXPage.menuHeaderHomeIsDisplayed(), true);
+		driver.close();
+		steps.add("Step 7 - Return to Main Page SPX ");
+		values.add("Return to Main Page SPX");
+
 		// Pass steps and values to saveWordDocument
 		spxBase.saveWordDocument(listaScreenShots, steps, values);
 	}
@@ -217,6 +224,13 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 		listaScreenShots.put("Step6", previewConfirmationSPXPage.acceptToRequisitionPreviewConfirmationPage());
 		steps.add("Step 6 - Accept to Requisition");
 		values.add("Requisition Accepted");
+
+		// Return to Main Page SPX
+		listaScreenShots.put("Step7", homeSPXPage.accesMainPageSPX());
+		Assert.assertEquals(homeSPXPage.menuHeaderHomeIsDisplayed(), true);
+		driver.close();
+		steps.add("Step 7 - Return to Main Page SPX ");
+		values.add("Return to Main Page SPX");
 
 		// Pass steps and values to saveWordDocument
 		spxBase.saveWordDocument(listaScreenShots, steps, values);

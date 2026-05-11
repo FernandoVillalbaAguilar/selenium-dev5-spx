@@ -57,17 +57,17 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	public TreeMap<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
 	    reporterLog("Accept to Requisition");
 
-	    // Espera y clic en el bot�n Aceptar
+	    // Espera y clic en el botón Aceptar
 	    waitForElementPresent(btnAccept);
 	    click(btnAccept);
 
 	    Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
-	    // Espera a que aparezca el ID de requisici�n generado
+	    // Espera a que aparezca el ID de requisición generado
 	    waitForElementPresent(txtRequisitionGenerate);
 	    String requisitionID = getText(txtRequisitionGenerate);
 	    
-	    // Espera a que aparezca la descripci�n del �tem y extrae solo el primer "token" (ID)
+	    // Espera a que aparezca la descripción del ítem y extrae solo el primer "token" (ID)
 	    waitForElementPresent(txtDescription);
 	    String fullDescription = getText(txtDescription);
 	    String itemRequisitionID = fullDescription.split(" ")[0]; // REQUI-TEST-AUTO-xxxx

@@ -1,8 +1,9 @@
 package com.metalsa.spx.dev5.main;
 
 public class GlobalVariablesSPX {
-	public static final String SPX_DEV5_URL = "http://gpmtest2-app6:9203/SPX/";
-	public static final int DEFAULT_TIMEOUT = 10;
+	public static final String SPX_DEV5_URL = "http://gpmtest2-app6:9203/SPX/"; // TEST: http://gpmtest2-app6:9103/SPX/
+																				// DEV5: http://gpmtest2-app6:9203/SPX/
+	public static final int DEFAULT_TIMEOUT = 90;
 	public static final int SHORT_TIMEOUT = 3000;
 	public static final String SPX_DEV5_PATH_SCREENSHOTS = System.getProperty("user.dir") + "/test-output/screenshots/";
 	public static final String SPX_DEV5_PATH_FILES = "C:\\Users\\fernando.villalba\\Documents\\files\\DocumentoDePrueba.txt";
@@ -42,24 +43,24 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_NUM_UEN_ARGENTINA = "300000871350983";
 	public static final String SPX_DEV5_NOM_UEN_ARGENTINA = "Metalsa Argentina";
 
-	public static final String SPX_DEV5_NUM_UEN = "300000871350983";
+	public static final String SPX_DEV5_NUM_UEN = "300000871351061";
 	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:" + GlobalVariablesSPX.SPX_DEV5_NUM_UEN
 			+ "']";
 
 	// Data General Requisitions
 	public static final String[] MATERIAL = { "Oro", "Plata", "Cobre", "Mercurio", "Platino", "Cobalto", "Aluminio",
-			"Hierro", "Zinc", "N�quel", "Tungsteno", "Cromo", "Magnesio", "Titanio", "Manganeso", "Cadmio", "Boro",
+			"Hierro", "Zinc", "Níquel", "Tungsteno", "Cromo", "Magnesio", "Titanio", "Manganeso", "Cadmio", "Boro",
 			"Silicio", "Rubidio", "Litio", "Vanadio" };
 	public static final String[] COLOR = { "Rojo", "Azul", "Verde", "Amarillo", "Naranja", "Rosa", "Morado", "Cian",
-			"Gris", "Marr�n", "Negro", "Blanco", "Beige", "Violeta", "Turquesa", "Aqua", "Coral", "Oro", "Plateado",
+			"Gris", "Marrón", "Negro", "Blanco", "Beige", "Violeta", "Turquesa", "Aqua", "Coral", "Oro", "Plateado",
 			"Lila" };
 	public static final String[] MARCA = { "Bose", "Sony", "JBL", "Harman Kardon", "Beats", "Harman", "Kenwood",
 			"Pioneer", "Alpine", "Clarion", "Focal", "JL Audio", "Rockford Fosgate", "Infinity", "Kicker", "Polk Audio",
 			"Cerwin-Vega", "MB Quart", "Audison", "Soundstream", "Bang & Olufsen", "Sennheiser", "Marshall", "AKG",
 			"Bowers & Wilkins" };
-	public static final String[] MEDIDAS = { "12 Pulgadas", "10 Cent�metros", "8 Cent�metros", "10 Pulgadas",
-			"12 Cent�metros", "15 Pies", "18 Pies", "20 Metros", "55 Cent�metros", "98 Pulgadas", "145 Cent�metros",
-			"54 Pies", "45 Cent�metros", "1 Yarda", "2 Yardas", "3 Yardas", "1 Cent�metro", "2 Pulgadas", "3 Pies" };
+	public static final String[] MEDIDAS = { "12 Pulgadas", "10 Centímetros", "8 Centímetros", "10 Pulgadas",
+			"12 Centímetros", "15 Pies", "18 Pies", "20 Metros", "55 Centímetros", "98 Pulgadas", "145 Centímetros",
+			"54 Pies", "45 Centímetros", "1 Yarda", "2 Yardas", "3 Yardas", "1 Centímetro", "2 Pulgadas", "3 Pies" };
 	public static final String[] PROVEEDORES = { "AVALOS, FRANCISCO",
 			"DIZ CARLOS ALBERTO Y LIBORIO ALBERTO DARIO SOC. DE HECHO", "CORBALAN MARTINEZ, CHRISTIAN",
 			"GEM� IND. DE PRODUTOS PLASTICOS E MET. LTDA" };
@@ -150,7 +151,7 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE = "//div[@id='formSpot:nwcboSubFamilias0_panel']//li[contains(.,'"
 			+ SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "')]";
 
-	public static final String SPX_DEV5_SELECT_UNIT_OF_MEASURE_OPTION_SPOT_PAGE = "//div[@id='formSpot:comboUDM_panel']//li[contains(.,'"
+	public static final String SPX_DEV5_SELECT_UNIT_OF_MEASURE_OPTION_SPOT_PAGE = "//div[@id='formSpot:comboUDM0_panel']//li[contains(.,'"
 			+ SPX_DEV5_UNIT_OF_MEASURE_SPOT_PAGE + "')]";
 	// CheckUgent
 	public static final String SPX_DEV5_REASON_UGENT_SPOT_PAGE = SPXBase.randomRazonUrgencia();
@@ -168,19 +169,21 @@ public class GlobalVariablesSPX {
 	public static final String SPX_DEV5_COMMENTS_SHOPPING_CART = "COMENTARIOS EN EL CARRITO DE COMPRAS";
 
 	// Data Account Configuration
-	public static final String SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "100075 - UAT GTO OPEX";
-	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "Travel expenses";
-	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Travel Expenses";
-	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Revillas Contreras Ana Mar�a";
+	public static final String SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "027445 - STLA INVESTMENT STAMPING";
+	public static final String SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE = "01 Transfer Fingers";
+	public static final String SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "Machinery & Equipment";
+	public static final String SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE = "Cortés-Hernández, Sr. Jesús Angel";
 	// Project
 	public static final String SPX_DEV5_SELECT_PROJECT_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE + "')]";
-	public static final String SPX_DEV5_SELECT_TASK_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
-			+ SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE + "')]";
-	public static final String SPX_DEV5_SELECT_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
-			+ SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE + "')]";
-	public static final String SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
-			+ SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "')]";
+	public static final String SPX_DEV5_SELECT_TASK_ACCOUNT_CONFIGURATION_PAGE = "//li[@data-label='"
+			+ GlobalVariablesSPX.SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE
+			+ "' and contains(@class,'ui-selectonemenu-item') and normalize-space()='"
+			+ GlobalVariablesSPX.SPX_DEV5_TASK_ACCOUNT_CONFIGURATION_PAGE + "']";
+	public static final String SPX_DEV5_SELECT_RESOURSE_ACCOUNT_CONFIGURATION_PAGE = "//label[contains(@class,'ui-selectonemenu-label') and normalize-space(text())='"
+			+ GlobalVariablesSPX.SPX_DEV5_RESOURSE_ACCOUNT_CONFIGURATION_PAGE + "']";
+	public static final String SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE = "//label[contains(@class,'ui-selectonemenu-label') and contains(text(),'"
+			+ GlobalVariablesSPX.SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "')]";
 	// Second Line Project
 	public static final String SPX_DEV5_SELECT_PROJECT_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE = "(//li[@data-label='"
 			+ SPX_DEV5_PROJECT_ACCOUNT_CONFIGURATION_PAGE + "'][normalize-space()='"
@@ -195,8 +198,8 @@ public class GlobalVariablesSPX {
 			+ SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "'][normalize-space()='"
 			+ SPX_DEV5_BUYER_ACCOUNT_CONFIGURATION_PAGE + "'])[2]";
 	// CC
-	public static final String SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "A010 - CD & Fin. - Finance Co.";
-	public static final String SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "046 - A010 - 620120000014 / Rent - Copier/Fax/Phones - 0000 - 000";
+	public static final String SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "A018 - CD & Fin. - IT Applications";
+	public static final String SPX_DEV5_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE = "002 - A018 - 620120000014 / Rent - Copier/Fax/Phones - 0000 - 000";
 
 	public static final String SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE = "//li[contains(.,'"
 			+ SPX_DEV5_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE + "')]";

@@ -30,21 +30,23 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	By btnProject = By.xpath(
 			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[1]/div[1]/div[2]/span[1]");
 	By lblSelectProject = By.xpath(
-			"//tbody/tr[@role='row']/td[@role='gridcell']/div/div/div/div/div/div/div/div/div/div/div/div[1]/label[1]");
+			"//label[contains(@class,'ui-selectonemenu-label') and normalize-space(text())='Selecciona proyecto']");
 	By slctSelectProject = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_PROJECT_ACCOUNT_CONFIGURATION_PAGE);
-	By lblSelectTask = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:j_idt255_label");
+	By lblSelectTask = By
+			.xpath("//label[contains(@class,'ui-selectonemenu-label') and normalize-space(text())='Selecciona tarea']");
 	By slctSelectTask = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_TASK_ACCOUNT_CONFIGURATION_PAGE);
-	By lblSelectResourse = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:j_idt258_label");
-	By slctSelectResourse = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_RESOURSE_ACCOUNT_CONFIGURATION_PAGE);
-	By lblSelectBuyer = By.id("formCarroCompras:carroCompra0:0:j_idt248:0:j_idt264_label");
+	By lblSelectResource = By.xpath(
+			"//label[contains(@class,'ui-selectonemenu-label') and normalize-space(text())='Selecciona recurso']");
+	By slctSelectResource = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_RESOURSE_ACCOUNT_CONFIGURATION_PAGE);
+	By lblSelectBuyer = By.xpath(
+			"//label[contains(@class,'ui-selectonemenu-label') and normalize-space(text())='Selecciona comprador']");
 	By slctSelectBuyer = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_BUYER_ACCOUNT_CONFIGURATION_PAGE);
 	// CC
-	By btnCC = By.xpath(
-			"//body[1]/div[3]/div[1]/div[4]/form[1]/div[1]/div[1]/div[3]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/table[1]/tbody[1]/tr[1]/td[3]/div[1]/div[2]/span[1]");
-	By lblCostCenter = By.xpath("//label[text()='Selecciona centro de costo']/parent::div");
-	By txtCostCenter = By.id("//label[text()='Selecciona centro de costo']/parent::div");
+	By btnCC = By.xpath("//table//tr[1]/td[3]//span[contains(@class,'ui-radiobutton-icon')]");
+	By lblCostCenter = By.xpath("//*[contains(@id,'cbmCC_label')]");
+	By txtCostCenter = By.xpath("//*[contains(@id,'cbmCC_label')]");
 	By slctCostCenter = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_COST_CENTER_ACCOUNT_CONFIGURATION_PAGE);
-	By txtSelectAccount = By.xpath("//label[contains(@id,'cbmCuenta_label')]");
+	By txtSelectAccount = By.xpath("//*[contains(@id,'cbmCuenta')]//div[contains(@class,'ui-selectonemenu-trigger')]");
 	By slctSelectAccount = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_ACCOUNT_CC_ACCOUNT_CONFIGURATION_PAGE);
 
 	By btnAddCC = By.id("formCarroCompras:carroCompra0:0:j_idt237");
@@ -55,10 +57,10 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			"//div[@class='cart-line__cuenta']//label[@class='ui-selectonemenu-label ui-inputfield ui-corner-all']");
 
 	// Second Line CC
-	By btnCCNewLine = By.xpath(
-			"//*[@id=\"formCarroCompras:carroCompra0:1:radioTipoCuentas\"]/tbody/tr/td[3]/div/div[2]/span");
-	By lblCostCenterNewLine = By.xpath(
-			"(//div[contains(@id,'cbmCC')]//span[contains(@class,'ui-icon-triangle-1-s')])[2]");
+	By btnCCNewLine = By
+			.xpath("//*[@id=\"formCarroCompras:carroCompra0:1:radioTipoCuentas\"]/tbody/tr/td[3]/div/div[2]/span");
+	By lblCostCenterNewLine = By
+			.xpath("(//div[contains(@id,'cbmCC')]//span[contains(@class,'ui-icon-triangle-1-s')])[2]");
 	By txtCostCenterNewLine = By.xpath("//div[contains(@id,'cbmCC_panel') and contains(@style,'display')]\r\n"
 			+ "     //input[contains(@id,'cbmCC_filter')]");
 	By slctCostCenterNewLine = By
@@ -74,12 +76,12 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_PROJECT_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
 	By lblSelectTaskNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:j_idt255_label");
 	By slctSelectTaskNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_TASK_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
-	By lblSelectResourseNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:j_idt258_label");
-	By slctSelectResourseNewLine = By
+	By lblSelectResourceNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:j_idt258_label");
+	By slctSelectResourceNewLine = By
 			.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_RESOURSE_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
 	By lblSelectBuyerNewLine = By.id("formCarroCompras:carroCompra0:1:j_idt248:0:j_idt264_label");
 	By slctSelectBuyerNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_BUYER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
-	By lblCantidad   = By.id("formCarroCompras:carroCompra0:0:iNCantidad_input");
+	By lblCantidad = By.id("formCarroCompras:carroCompra0:0:iNCantidad_input");
 
 	/*
 	 * @name: textAccountConfigurationPageIsDisplayed
@@ -118,25 +120,31 @@ public class AccountConfigurationSPXPage extends SPXBase {
 			throws InterruptedException {
 
 		reporterLog("Select Type Account For Requisition ...");
-
+		waitForBlockUIToDisappear();
+		waitForElementClickable(btnCC);
 		click(btnCC);
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		if (isElementDisabled(btnRequisition) == false) {
+
+		if (!isElementDisabled(btnRequisition)) {
 			clickBtnRequisition();
 		} else {
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			waitForElementPresent(lblCostCenter);
+			waitForBlockUIToDisappear();
+			waitForElementClickable(lblCostCenter);
 			click(lblCostCenter);
-			waitForElementPresent(slctCostCenter);
+			waitForBlockUIToDisappear();
+			waitForElementClickable(slctCostCenter);
 			click(slctCostCenter);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		}
-		if (isElementDisabled(btnRequisition) == false) {
-			clickBtnRequisition();
-		} else {
+		waitForBlockUIToDisappear();
+		if (isElementDisabled(btnRequisition)) {
+			reporterLog("Botón deshabilitado, seleccionando cuenta...");
+			waitForBlockUIToDisappear();
 			click(txtSelectAccount);
 			click(slctSelectAccount);
 			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+
+		} else {
+			reporterLog("Botón habilitado, no se requiere acción.");
 		}
 
 		if (isElementPresent(btnCCNewLine)) {
@@ -167,88 +175,146 @@ public class AccountConfigurationSPXPage extends SPXBase {
 		}
 		return returnSaveImage(btnCC);
 	}
+
 	/*
-	 * @name: selectTypeAccountForRequisitionProject
+	 * @name: selectAndCheckRequisition
 	 * 
-	 * @date: 30/Oct/2023
+	 * @date: 11/May/2026
 	 * 
-	 * @param: String costCenter
+	 * @param: By label By option
 	 * 
-	 * @return: N/A
+	 * @return: boolean
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite seleccionar el tipo de cobro Proyecto
+	 * @description: Este método selecciona un valor dentro de un campo desplegable
+	 * y posteriormente valida si el botón Requisition queda habilitado.
+	 * 
+	 * Si el botón está habilitado:
+	 * 
+	 * - Ejecuta clic sobre Requisition - Retorna true
+	 * 
+	 * Si el botón continúa deshabilitado:
+	 * 
+	 * - No ejecuta ninguna acción adicional - Retorna false
+	 */
+	private boolean selectAndCheckRequisition(By label, By option) {
+
+		waitForBlockUIToDisappear();
+
+		waitForElementClickable(label);
+		click(label);
+
+		waitForElementClickable(option);
+		click(option);
+
+		waitForBlockUIToDisappear();
+
+		if (!isElementDisabled(btnRequisition)) {
+			clickBtnRequisition();
+			return true;
+		}
+
+		return false;
+	}
+
+	/*
+	 * @name: processRequisitionLine
+	 * 
+	 * @date: 11/May/2026
+	 * 
+	 * @param: By btnLine By lblProject By slctProject By lblTask By slctTask By
+	 * lblResource By slctResource By lblBuyer By slctBuyer
+	 * 
+	 * @return: boolean
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este método procesa una línea de requisición.
+	 * 
+	 * Realiza la selección secuencial de:
+	 * 
+	 * - Proyecto - Task - Resource - Buyer
+	 * 
+	 * Después de cada selección valida si el botón Requisition queda habilitado.
+	 * 
+	 * Si el botón se habilita, ejecuta el clic sobre Requisition y retorna true.
+	 * 
+	 * Si después de completar todos los campos el botón continúa deshabilitado,
+	 * retorna false.
+	 */
+	private boolean processRequisitionLine(By btnLine, By lblProject, By slctProject, By lblTask, By slctTask,
+			By lblResource, By slctResource, By lblBuyer, By slctBuyer) throws InterruptedException {
+
+		click(btnLine);
+		waitForBlockUIToDisappear();
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+
+		if (selectAndCheckRequisition(lblProject, slctProject))
+			return true;
+		if (selectAndCheckRequisition(lblTask, slctTask))
+			return true;
+		if (selectAndCheckRequisition(lblResource, slctResource))
+			return true;
+		if (selectAndCheckRequisition(lblBuyer, slctBuyer))
+			return true;
+
+		return false;
+	}
+
+	/*
+	 * @name: selectTypeAccountForRequisitionProject
+	 * 
+	 * @date: 11/May/2026
+	 * 
+	 * @param: String project
+	 * 
+	 * @return: TreeMap<String, String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este método permite seleccionar el tipo de cuenta Proyecto para
+	 * una requisición.
+	 * 
+	 * El flujo valida progresivamente si el botón de Requisition queda habilitado
+	 * después de seleccionar:
+	 * 
+	 * 1. Proyecto 2. Task 3. Resource 4. Buyer
+	 * 
+	 * Si el botón no se habilita en la primera línea, intenta realizar el mismo
+	 * proceso en una segunda línea.
+	 * 
+	 * Si después de ambas líneas el botón continúa deshabilitado, el método detiene
+	 * la ejecución marcando error.
 	 */
 
 	public TreeMap<String, String> selectTypeAccountForRequisitionProject(String project) throws InterruptedException {
-
 		reporterLog("Select Type Account For Requisition ...");
 
-		click(btnProject);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		click(lblSelectProject);
-		click(slctSelectProject);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		boolean requisitionClicked = processRequisitionLine(btnProject, lblSelectProject, slctSelectProject,
+				lblSelectTask, slctSelectTask, lblSelectResource, slctSelectResource, lblSelectBuyer, slctSelectBuyer);
 
-		if (isElementDisabled(btnRequisition) == false) {
-			clickBtnRequisition();
-		} else {
-			click(lblSelectTask);
-			click(slctSelectTask);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			if (isElementDisabled(btnRequisition) == false) {
-				clickBtnRequisition();
-			} else {
-				click(lblSelectResourse);
-				click(slctSelectResourse);
+		if (!requisitionClicked) {
+			if (isElementPresent(btnProjectNewLine)) {
+				scrollDown(btnProjectNewLine);
 				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			}
-			if (isElementDisabled(btnRequisition) == false) {
-				clickBtnRequisition();
+
+				requisitionClicked = processRequisitionLine(btnProjectNewLine, lblSelectProjectNewLine,
+						slctSelectProjectNewLine, lblSelectTaskNewLine, slctSelectTaskNewLine, lblSelectResourceNewLine,
+						slctSelectResourceNewLine, lblSelectBuyerNewLine, slctSelectBuyerNewLine);
 			} else {
-				click(lblSelectBuyer);
-				click(slctSelectBuyer);
+				String errorMessage = "No se habilitó Requisition y no existe segunda línea para intentar nuevamente.";
+				reporterLog(errorMessage);
+				throw new AssertionError(errorMessage);
 			}
 		}
 
-		if (isElementPresent(btnProjectNewLine)) {
-			// Second Line
-			scrollDown(btnProjectNewLine);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			click(btnProjectNewLine);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			click(lblSelectProjectNewLine);
-			click(slctSelectProjectNewLine);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			if (isElementDisabled(btnRequisition) == false) {
-				clickBtnRequisition();
-			} else {
-				click(lblSelectTaskNewLine);
-				click(slctSelectTaskNewLine);
-				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-				if (isElementDisabled(btnRequisition) == false) {
-					clickBtnRequisition();
-				} else {
-					click(lblSelectResourseNewLine);
-					click(slctSelectResourseNewLine);
-					Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					if (isElementDisabled(btnRequisition) == false) {
-						clickBtnRequisition();
-					} else {
-						click(lblSelectBuyerNewLine);
-						click(slctSelectBuyerNewLine);
-						Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-					}
-				}
-
-			}
-			clickBtnRequisition();
-		} else {
-			System.out.println("I could not find the Proyect button on the second line...");
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			clickBtnRequisition();
+		if (!requisitionClicked) {
+			String errorMessage = "No se habilitó Requisition ni con la primera ni con la segunda línea.";
+			reporterLog(errorMessage);
+			throw new AssertionError(errorMessage);
 		}
+
 		return returnSaveImage(btnProject);
 	}
 
@@ -267,19 +333,19 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 */
 	public TreeMap<String, String> clickBtnRequisition() {
 
-	    reporterLog("Click to Requisition ...");
+		reporterLog("Click to Requisition ...");
 
-	    // Validamos si el bot�n existe realmente
-	    if (!elementExistsAndVisible(btnRequisition)) {
-	        reporterLog("[ERROR] The button 'Crear Requisici�n' is NOT available.");
-	        return returnSaveImage(btnRequisition);
-	    }
+		// Validamos si el bot�n existe realmente
+		if (!elementExistsAndVisible(btnRequisition)) {
+			reporterLog("[ERROR] The button 'Crear Requisición' is NOT available.");
+			return returnSaveImage(btnRequisition);
+		}
 
-	    waitForElementClickable(btnRequisition);
+		waitForElementClickable(btnRequisition);
 
-	    click(btnRequisition);
+		click(btnRequisition);
 
-	    return returnSaveImage(btnRequisition);
+		return returnSaveImage(btnRequisition);
 	}
 
 }

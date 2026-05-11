@@ -29,7 +29,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By chkProductServicereceivedwithoutrequisition = By.id("formSpot:servicioMaterialRealizado");
 	By chkIncludeSingleSourceFormat = By.id("formSpot:formatoAsignacionDirecta");
 	By textValidateSameLine = By.xpath(
-			"//div[@id='mesageError']//p[contains(text(),'No se pueden tener l�neas con la misma informaci�n')]");
+			"//div[@id='mesageError']//p[contains(text(),'No se pueden tener líneas con la misma información')]");
 	By textValidateFields = By.id("mesageError");
 	// Line Header Objects
 	By chkLine = By.id("formSpot:j_idt371");
@@ -50,7 +50,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 
 	// Second Section Objects
 	By lblSubTittle = By.xpath("//label[ contains(normalize-space(.), 'Classification, Quantity & Date') "
-			+ "or contains(normalize-space(.), 'Clasificaci�n, Cantidad & Fecha') ]");
+			+ "or contains(normalize-space(.), 'Clasificación, Cantidad & Fecha') ]");
 	By lblCategory = By.id("formSpot:nwcboCategorias0_label");
 	By txtSearchCategory = By.id("formSpot:nwcboCategorias0_filter");
 	By selectOptionCategory = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE);
@@ -68,8 +68,9 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By txtGenericItem = By.xpath(
 			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[1]/fieldset[1]/div[1]/div[4]/div[1]/div[2]/input[1]");
 	By txtQuantity = By.id("formSpot:cantidadReq_input");
-	By lblUnitOfMeasure = By.id("formSpot:comboUDM");
-	By txtSearchUnitOfMeasure = By.id("formSpot:comboUDM_filter");
+	By lblUnitOfMeasure = By.id("formSpot:comboUDM0_label");
+	By panelUDM = By.id("formSpot:comboUDM0_panel");
+	By txtSearchUnitOfMeasure = By.id("formSpot:comboUDM0_filter");
 	By selectOptionUnitOfMeasure = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_UNIT_OF_MEASURE_OPTION_SPOT_PAGE);
 	By fieldNeedByDate = By.id("formSpot:fechaNecesidad_input");
 	By clssMonthNeedByDate = By.xpath("//select[@class='ui-datepicker-month']");
@@ -197,6 +198,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		waitForElementClickable(lblUnitOfMeasure);
 		click(lblUnitOfMeasure);
 		click(lblUnitOfMeasure);
+		waitForElementVisible(panelUDM);
 		waitForElementVisible(txtSearchUnitOfMeasure);
 		type(txtSearchUnitOfMeasure, unitOfMeasure);
 

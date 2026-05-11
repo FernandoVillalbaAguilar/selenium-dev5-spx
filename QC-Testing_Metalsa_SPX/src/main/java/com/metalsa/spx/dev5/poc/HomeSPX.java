@@ -45,6 +45,7 @@ public class HomeSPX extends SPXBase {
 			.xpath("//a[@href='" + GlobalVariablesSPX.SPX_DEV5_URL + "pages/administracion/AdminMantElearning.xhtml']");
 	By iconMenuAdministracionAccesos = By
 			.xpath("//a[@href='" + GlobalVariablesSPX.SPX_DEV5_URL + "pages/administracion/adminAccesos.xhtml']");
+	By iconMainPageSPX = By.xpath("//img[@title='HOME' and contains(@src,'spx-logo')]");
 
 	/*
 	 * @name: menuHeaderHomeIsDisplayed
@@ -81,6 +82,7 @@ public class HomeSPX extends SPXBase {
 
 	public TreeMap<String, String> selectToUenFromHome() throws InterruptedException {
 		reporterLog("Access to Spot Buy Requisitions ...");
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForElementPresent(selectUEN);
 		click(selectUEN);
 		waitForElementPresent(optUEN);
@@ -104,6 +106,7 @@ public class HomeSPX extends SPXBase {
 	 */
 	public TreeMap<String, String> accesToAdministradorRolesMenu() {
 		reporterLog("Access to Administrador Roles Menu ...");
+		waitForElementPresent(iconMenu);
 		click(iconMenu);
 		waitForElementPresent(iconMenuAdministracionDelSistema);
 		click(iconMenuAdministracionDelSistema);
@@ -282,5 +285,28 @@ public class HomeSPX extends SPXBase {
 		click(iconMenuAdministracionAccesos);
 		return returnSaveImage(iconMenuAdministracionAccesos);
 			
+	}
+	
+	/*
+	 * @name: accesMainPageSPX
+	 * 
+	 * @date: 27/April/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este metodo permite regresar a la pantalla principal de SPX
+	 */
+
+	public TreeMap<String, String> accesMainPageSPX() throws InterruptedException {
+		reporterLog("Access to Main Page SPX ...");
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		waitForBlockUIToDisappear();
+		waitForElementPresent(iconMainPageSPX);
+		click(iconMainPageSPX);
+		return returnSaveImage(iconMainPageSPX);
 	}
 }

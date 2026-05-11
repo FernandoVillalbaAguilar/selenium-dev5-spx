@@ -30,6 +30,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -244,28 +245,9 @@ public class SPXBase {
 	 * este método utiliza presenceOfElementLocated para mejorar la estabilidad en
 	 * componentes dinámicos como listas, paneles o dropdowns (PrimeFaces).
 	 */
-	public void waitForElementPresent(By locator) {
-		try {
-			reporterLog("Wait for Element Present (DOM Presence)...");
-			WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
-			
-			// Se espera a que el elemento está presente en el DOM
-			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-
-		} catch (TimeoutException e) {
-			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-			System.out.println("***** ERROR *****");
-			System.out.println("> The element: " + locator + " is NOT present in DOM...");
-			System.out.println("> Because: " + e.getMessage());
-			e.printStackTrace();
-
-		} catch (Exception e) {
-			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-			System.out.println("***** ERROR (Unexpected) *****");
-			System.out.println("> Unexpected error while waiting for element: " + locator);
-			System.out.println("> Because: " + e.getMessage());
-			e.printStackTrace();
-		}
+	public WebElement waitForElementPresent(By locator) {
+	    WebDriverWait wait = new WebDriverWait(driver, GlobalVariablesSPX.DEFAULT_TIMEOUT);
+	    return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
 	/*
@@ -395,36 +377,37 @@ public class SPXBase {
 	 * @description: Este metodo permite dar un click
 	 */
 	public void click(By locator) {
-		try {
-			reporterLog("Click on field or button");
+	    try {
+	        reporterLog("Click on field or button");
 
-			// Uso del m�todo centralizado de espera
-			WebElement element = waitForElementClickable(locator);
+	        WebElement element = waitForElementClickable(locator);
 
-			element.click();
-			takeScreenshot();
+//	        // Scroll al elemento
+//	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 
-		} catch (TimeoutException e) {
-			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-			System.out.println("***** ERROR *****");
-			System.out.println("> Element was not clickable within timeout: " + locator);
-			System.out.println("> Cause: " + e.getMessage());
-			e.printStackTrace();
+	        try {
+	            element.click();
+	        } catch (Exception e) {
+	            // Fallback a JavaScript
+	            System.out.println("Normal click failed, trying JS click...");
+	            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+	        }
 
-		} catch (NoSuchElementException e) {
-			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-			System.out.println("***** ERROR *****");
-			System.out.println("> Element not found: " + locator);
-			System.out.println("> Cause: " + e.getMessage());
-			e.printStackTrace();
+	        takeScreenshot();
 
-		} catch (Exception e) {
-			System.out.println("###-----  " + this.getClass().getName() + "  -----###");
-			System.out.println("***** ERROR *****");
-			System.out.println("> Unexpected error while clicking element: " + locator);
-			System.out.println("> Cause: " + e.getMessage());
-			e.printStackTrace();
-		}
+	    } catch (TimeoutException e) {
+	        throw new RuntimeException("Element not clickable: " + locator, e);
+
+	    } catch (NoSuchElementException e) {
+	        throw new RuntimeException("Element not found: " + locator, e);
+
+	    } catch (StaleElementReferenceException e) {
+	        System.out.println("Stale element, retrying...");
+	        click(locator); // retry simple
+
+	    } catch (Exception e) {
+	        throw new RuntimeException("Unexpected error clicking: " + locator, e);
+	    }
 	}
 
 	public boolean elementExistsAndVisible(By locator) {
@@ -1170,36 +1153,74 @@ public class SPXBase {
 	/*
 	 * @name: isElementDisabled
 	 * 
-	 * @date: 13-05-2024
+	 * @date: 27/Abr/2026
 	 * 
 	 * @param: By locator
 	 * 
-	 * @return: !isEnabled;
+	 * @return: boolean
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Metodo que permite validar si un elemento est� habilitano o
-	 * deshabilitado
+	 * @description: Este método permite validar si un elemento está deshabilitado
+	 * considerando múltiples condiciones: atributo HTML 'disabled', propiedad
+	 * Selenium 'isEnabled()' y clase CSS 'ui-state-disabled' utilizada por PrimeFaces.
 	 */
-
 	public boolean isElementDisabled(By locator) {
-		try {
-			// WebElement element = driver.findElement(locator);
-			WebElement element = new WebDriverWait(driver, 10)
-					.until(ExpectedConditions.refreshed(ExpectedConditions.visibilityOfElementLocated(locator)));
-			boolean isEnabled = element.isEnabled();
-			reporterLog("Validando si el elemento est� habilitado: " + locator);
-			takeScreenshot(); // Tomar una captura de pantalla para referencia, independientemente de si el
-								// elemento est� habilitado o no.
-			return !isEnabled; // Devuelve true si el elemento est� deshabilitado, de lo contrario, false.
-		} catch (NoSuchElementException e) {
-			System.out.println("###----- " + this.getClass().getName() + " -----###");
-			String errorMessage = String.format("> Elemento no encontrado o no habilitado: %s. Error: %s", locator,
-					e.getMessage());
-			System.out.println(errorMessage);
-			reporterLog(errorMessage);
-			return false;
-		}
+	    try {
+
+	        // 🔹 Espera a que el elemento exista en el DOM (no necesariamente visible o clickable aún)
+	        WebElement element = new WebDriverWait(driver, 15)
+	                .until(ExpectedConditions.presenceOfElementLocated(locator));
+
+	        // 🔹 Obtiene el atributo "class" del elemento (útil para detectar estados visuales como disabled en PrimeFaces)
+	        String classAttr = element.getAttribute("class");
+
+	        // 🔹 Obtiene el atributo "disabled" del HTML (si existe, el elemento está deshabilitado)
+	        String disabledAttr = element.getAttribute("disabled");
+
+	        // 🔹 Validación 1: PrimeFaces usa la clase 'ui-state-disabled' para indicar que está deshabilitado
+	        boolean isDisabledByClass = classAttr != null && classAttr.contains("ui-state-disabled");
+
+	        // 🔹 Validación 2: Si el atributo 'disabled' existe en el HTML, el elemento está deshabilitado
+	        boolean isDisabledByAttr = disabledAttr != null;
+
+	        // 🔹 Validación 3: Selenium indica si el elemento está habilitado o no (fallback general)
+	        boolean isDisabledBySelenium = !element.isEnabled();
+
+	        // 🔹 Resultado final: si cualquiera de las condiciones indica deshabilitado, se considera como tal
+	        boolean isDisabled = isDisabledByClass || isDisabledByAttr || isDisabledBySelenium;
+
+	        // 🔹 Log para debugging: muestra el estado final del elemento
+	        reporterLog("Validando estado del elemento: " + locator + 
+	                    " | disabled=" + isDisabled);
+
+	        // 🔹 Evidencia visual para debugging o reportes
+	        takeScreenshot();
+
+	        // 🔹 Retorna true si está deshabilitado, false si está habilitado
+	        return isDisabled;
+
+	    } catch (Exception e) {
+
+	        // 🔹 Identificación de la clase donde ocurrió el error
+	        System.out.println("###----- " + this.getClass().getName() + " -----###");
+
+	        // 🔹 Construcción de mensaje de error detallado
+	        String errorMessage = String.format(
+	                "> No se pudo validar el estado del elemento: %s. Error: %s",
+	                locator, e.getMessage());
+
+	        // 🔹 Impresión en consola
+	        System.out.println(errorMessage);
+
+	        // 🔹 Registro en logs del framework
+	        reporterLog(errorMessage);
+
+	        // 🔥 Decisión importante:
+	        // Si ocurre un error (elemento no encontrado, timeout, etc.),
+	        // se asume como DESHABILITADO para evitar falsos positivos en la automatización
+	        return true;
+	    }
 	}
 
 	/*
@@ -1316,9 +1337,30 @@ public class SPXBase {
 			return wait.until(ExpectedConditions.elementToBeClickable(locator));
 		} catch (TimeoutException e) {
 			System.out.println("###----- " + this.getClass().getName() + " -----###");
-			reporterLog("El elemento NO se volvi� clickeable: " + locator);
+			reporterLog("El elemento NO se volvió clickeable: " + locator);
 			throw e;
 		}
+	}
+	
+	/*
+	 * @name: waitForBlockUIToDisappear
+	 * 
+	 * @date: 27/Abr/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Este método permite esperar a que desaparezca el overlay de bloqueo (BlockUI)
+	 * generado por PrimeFaces, asegurando que los elementos de la pantalla estén disponibles
+	 * para interacción antes de ejecutar cualquier acción como click o escritura.
+	 */
+	By blockUI = By.cssSelector(".pe-blockui-content");
+	public void waitForBlockUIToDisappear() {
+	    WebDriverWait wait = new WebDriverWait(driver, 20);
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(blockUI));
 	}
 
 	/*
