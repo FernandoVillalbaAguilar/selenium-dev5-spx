@@ -16,10 +16,9 @@ public class ShoppingCartSPXPage extends SPXBase {
 	// Objects
 	By textShoppingCart = By.xpath("//div[@class='carro-compras-steps--name']");
 	By btnShoppingCart = By.id("spxBusquedaMenu:btn-ir-carro-compra");
-	By checkRequisitionShoppingCart = By.xpath(
-		    "//label[contains(., '" + GlobalVariablesSPX.SPX_DEV5_DESCRIPTION_SPOT_PAGE + "')]" +
-		    "/ancestor::tr//input[contains(@id, 'simpleCheck0')]"
-		);
+	By checkRequisitionShoppingCart = By
+			.xpath("//label[contains(., '" + GlobalVariablesSPX.SPX_DEV5_DESCRIPTION_SPOT_PAGE + "')]"
+					+ "/ancestor::tr//input[contains(@id, 'simpleCheck0')]");
 	By checkRequisitionShoppingCartNewLine = By.id("formCarroCompras:carroCompra0:1:simpleCheck0");
 	By txtCommentsShoppingCart = By.id("formCarroCompras:carroCompra0:0:txtObservaciones");
 	By btnSetupPurchase = By.xpath(
@@ -27,91 +26,129 @@ public class ShoppingCartSPXPage extends SPXBase {
 	By txtDescription = By.id("formSpot:desc_1");
 
 	/*
-	 * @name: textSpotBuyRequisitionsPageIsDisplayed
-	 * 
+	 * @name: textShoppingCartPageIsDisplayed
+	 *
 	 * @date: 30/Oct/2023
-	 * 
+	 *
 	 * @param: N/A
-	 * 
-	 * @return: isDisplayed(txtSpotBuyRequisitionsPage);
-	 * 
+	 *
+	 * @return: boolean
+	 *
 	 * @author: Fernando Villalba Aguilar
-	 * 
-	 * @description: Este metodo permite verificar que el elemento est� disponible
+	 *
+	 * @description:
+	 *
+	 * Navega al carrito de compras y valida que la pantalla principal del carrito
+	 * se encuentre visible.
+	 *
+	 * El método mantiene compatibilidad con los TestCases existentes retornando
+	 * TRUE/FALSE.
+	 *
+	 * La evidencia se genera internamente para documentar el acceso y la validación
+	 * visual del encabezado.
 	 */
 	public boolean textShoppingCartPageIsDisplayed() throws InterruptedException {
-		reporterLog("Access to Shopping Page ...");
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+
+		reporterLog("[ACTION] Open Shopping Cart");
+
 		waitForElementPresent(btnShoppingCart);
+
+		safeEvidence(btnShoppingCart, "Shopping Cart - Before Access");
+
 		click(btnShoppingCart);
+
+		waitForPrimefacesAjax();
+
 		waitForElementPresent(textShoppingCart);
-		return isDisplayed(textShoppingCart);
+
+		safeEvidence(textShoppingCart, "Shopping Cart - Page Loaded");
+
+		boolean displayed = isDisplayed(textShoppingCart);
+
+		if (displayed) {
+
+			reporterLog("[SUCCESS] Shopping Cart page displayed.");
+
+		} else {
+
+			logFrameworkErrorSimple("[ERROR] Shopping Cart page NOT displayed.");
+		}
+
+		return displayed;
 	}
 
 	/*
 	 * @name: clickSetupPurchaseSpotRequisitionShoppingCart
-	 * 
+	 *
 	 * @date: 28/Oct/2023
-	 * 
+	 *
 	 * @param: N/A
-	 * 
-	 * @return: N/A
-	 * 
+	 *
+	 * @return: TreeMap<String,String> evidence
+	 *
 	 * @author: Fernando Villalba Aguilar
-	 * 
-	 * @description: Este metodo permite ingresar al carrito de compras y
-	 * seleccionar una requisici�n
+	 *
+	 * @description:
+	 *
+	 * Selecciona la opción Setup Purchase asociada a una requisición del carrito.
+	 *
+	 * Se genera evidencia completa antes y después de la interacción.
 	 */
 	public TreeMap<String, String> clickSetupPurchaseSpotRequisitionShoppingCart() throws InterruptedException {
-		reporterLog("Select Requisition of Shopping Cart");
-		waitForElementPresent(btnSetupPurchase);
-		click(btnSetupPurchase);
-		return returnSaveImage(btnSetupPurchase);
+
+		return clickWithEvidence(btnSetupPurchase, "Select Setup Purchase");
 	}
 
 	/*
 	 * @name: CheckSpotRequisitionShoppingCart
-	 * 
+	 *
 	 * @date: 28/Oct/2023
-	 * 
+	 *
 	 * @param: N/A
-	 * 
-	 * @return: N/A
-	 * 
+	 *
+	 * @return: TreeMap<String,String> evidence
+	 *
 	 * @author: Fernando Villalba Aguilar
-	 * 
-	 * @description: Este metodo permite ingresar al carrito de compras y
-	 * seleccionar una requisici�n
+	 *
+	 * @description:
+	 *
+	 * Selecciona una requisición disponible dentro del carrito de compras.
+	 *
+	 * Se documenta evidencia previa y posterior para garantizar trazabilidad QA.
 	 */
 	public TreeMap<String, String> CheckSpotRequisitionShoppingCart() throws InterruptedException {
-		reporterLog("Check Requisition of Shopping Cart");
-		waitForElementPresent(checkRequisitionShoppingCart);
-		click(checkRequisitionShoppingCart);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		return returnSaveImage(checkRequisitionShoppingCart);
+
+		return clickWithEvidence(checkRequisitionShoppingCart, "Select Shopping Cart Requisition");
 	}
 
 	/*
-	 * @name: CheckSpotRequisitionShoppingCart
-	 * 
+	 * @name: DoubleCheckSpotRequisitionShoppingCart
+	 *
 	 * @date: 28/Oct/2023
-	 * 
+	 *
 	 * @param: N/A
-	 * 
-	 * @return: N/A
-	 * 
+	 *
+	 * @return: TreeMap<String,String> evidence
+	 *
 	 * @author: Fernando Villalba Aguilar
-	 * 
-	 * @description: Este metodo permite ingresar al carrito de compras y
-	 * seleccionar una requisici�n
+	 *
+	 * @description:
+	 *
+	 * Ejecuta la doble selección requerida por el flujo funcional de requisiciones.
+	 *
+	 * Algunas configuraciones PrimeFaces generan una segunda fila dinámica que debe
+	 * seleccionarse para completar la acción.
+	 *
+	 * El método conserva evidencia completa de ambas interacciones.
 	 */
 	public TreeMap<String, String> DoubleCheckSpotRequisitionShoppingCart() throws InterruptedException {
-		reporterLog("Check Requisition of Shopping Cart");
-		waitForElementPresent(checkRequisitionShoppingCart);
-		click(checkRequisitionShoppingCart);
-		waitForElementPresent(checkRequisitionShoppingCartNewLine);
-		click(checkRequisitionShoppingCartNewLine);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		return returnSaveImage(checkRequisitionShoppingCart);
+
+		TreeMap<String, String> evidence = new TreeMap<>();
+
+		evidence.putAll(clickWithEvidence(checkRequisitionShoppingCart, "First Requisition Selection"));
+
+		evidence.putAll(clickWithEvidence(checkRequisitionShoppingCartNewLine, "Second Requisition Selection"));
+
+		return evidence;
 	}
 }

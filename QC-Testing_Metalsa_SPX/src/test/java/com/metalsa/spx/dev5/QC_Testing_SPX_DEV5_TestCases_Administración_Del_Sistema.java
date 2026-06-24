@@ -55,7 +55,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 	public void beforeTest() {
 		// Instanciar valores de conexi�n con Chrome
 		spxBase = new SPXBase(driver);
-		driver = spxBase.chromeDriverConection();
+		driver = spxBase.chromeDriverConnection();
 		loginSPXPage = new LoginSPX(driver);
 		homeSPXPage = new HomeSPX(driver);
 		administradorRolesMenuSPXPage = new AdministradorRolesMenuSPXPage(driver);
@@ -66,7 +66,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 		this.usernameCC = spxBase.getJSONValue("TestDataLoginSPX", "usernameCC");
 		this.usernameP = spxBase.getJSONValue("TestDataLoginSPX", "usernameP");
 		this.password = spxBase.getJSONValue("TestDataLoginSPX", "password");
-		this.url = spxBase.getJSONValue("TestDataLoginSPX", "url");
+		this.url = spxBase.getJSONValue("TestDataLoginSPX", "urlTest");
 	}
 
 	@Test

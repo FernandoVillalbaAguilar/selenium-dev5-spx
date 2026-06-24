@@ -55,27 +55,30 @@ public class PreviewConfirmationSPXPage extends SPXBase {
 	 * @description: Este metodo permite verificar que el elemento est� disponible
 	 */
 	public TreeMap<String, String> acceptToRequisitionPreviewConfirmationPage() throws InterruptedException {
-	    reporterLog("Accept to Requisition");
+		reporterLog("Accept to Requisition");
 
-	    // Espera y clic en el botón Aceptar
-	    waitForElementPresent(btnAccept);
-	    click(btnAccept);
+		// Espera y clic en el botón Aceptar
+		waitForElementPresent(btnAccept);
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+		clickWithEvidence(btnAccept, "Click to create requisition");
 
-	    Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
-	    // Espera a que aparezca el ID de requisición generado
-	    waitForElementPresent(txtRequisitionGenerate);
-	    String requisitionID = getText(txtRequisitionGenerate);
-	    
-	    // Espera a que aparezca la descripción del ítem y extrae solo el primer "token" (ID)
-	    waitForElementPresent(txtDescription);
-	    String fullDescription = getText(txtDescription);
-	    String itemRequisitionID = fullDescription.split(" ")[0]; // REQUI-TEST-AUTO-xxxx
-	    
-	    System.out.println("Requisition generated with ID: " + requisitionID);
-	    System.out.println("Description: " + itemRequisitionID);
+		// Espera a que aparezca el ID de requisición generado
+		waitForElementPresent(txtRequisitionGenerate);
+		String requisitionID = getText(txtRequisitionGenerate);
 
-	    // Guarda evidencia
-	    return returnSaveImage(txtDescription);
+		// Espera a que aparezca la descripción del ítem y extrae solo el primer "token"
+		// (ID)
+		waitForElementPresent(txtDescription);
+		String fullDescription = getText(txtDescription);
+		String itemRequisitionID = fullDescription.split(" ")[0]; // REQUI-TEST-AUTO-xxxx
+
+		reporterLog("Requisition generated with ID: " + requisitionID);
+		reporterLog("Description: " + itemRequisitionID);
+
+		// Guarda evidencia
+		return returnSaveImage(txtDescription);
 	}
 }

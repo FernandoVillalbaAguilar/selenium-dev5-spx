@@ -50,7 +50,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 	public void beforeTest() {
 		// Instanciar valores de conexi�n con Chrome
 		spxBase = new SPXBase(driver);
-		driver = spxBase.chromeDriverConection();
+		driver = spxBase.chromeDriverConnection();
 		loginSPXPage = new LoginSPX(driver);
 		homeSPXPage = new HomeSPX(driver);
 		articulosPorProcesarSPXPage = new ArticulosPorProcesarSPXPage(driver);

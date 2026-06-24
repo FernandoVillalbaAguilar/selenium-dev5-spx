@@ -33,7 +33,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales {
 	public void beforeTest() {
 		// Instanciar valores de conexi�n con Chrome
 		spxBase = new SPXBase(driver);
-		driver = spxBase.chromeDriverConection();
+		driver = spxBase.chromeDriverConnection();
 		loginSPXPage = new LoginSPX(driver);
 		homeSPXPage = new HomeSPX(driver);
 		administracionPorUenElearningSPXPage = new AdministracionPorUenElearningSPXPage(driver);

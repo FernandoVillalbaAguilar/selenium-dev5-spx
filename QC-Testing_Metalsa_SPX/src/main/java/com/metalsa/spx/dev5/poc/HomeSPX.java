@@ -45,7 +45,7 @@ public class HomeSPX extends SPXBase {
 			.xpath("//a[@href='" + GlobalVariablesSPX.SPX_DEV5_URL + "pages/administracion/AdminMantElearning.xhtml']");
 	By iconMenuAdministracionAccesos = By
 			.xpath("//a[@href='" + GlobalVariablesSPX.SPX_DEV5_URL + "pages/administracion/adminAccesos.xhtml']");
-	By iconMainPageSPX = By.xpath("//img[@title='HOME' and contains(@src,'spx-logo')]");
+	By iconMainPageSPX = By.xpath("//img[@title='HOME']");
 
 	/*
 	 * @name: menuHeaderHomeIsDisplayed
@@ -284,9 +284,9 @@ public class HomeSPX extends SPXBase {
 		waitForElementPresent(iconMenuAdministracionAccesos);
 		click(iconMenuAdministracionAccesos);
 		return returnSaveImage(iconMenuAdministracionAccesos);
-			
+
 	}
-	
+
 	/*
 	 * @name: accesMainPageSPX
 	 * 
@@ -305,8 +305,9 @@ public class HomeSPX extends SPXBase {
 		reporterLog("Access to Main Page SPX ...");
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 		waitForBlockUIToDisappear();
-		waitForElementPresent(iconMainPageSPX);
+		isDisplayed(iconMainPageSPX);
+		TreeMap<String, String> evidence = returnSaveImage(iconMainPageSPX);
 		click(iconMainPageSPX);
-		return returnSaveImage(iconMainPageSPX);
+		return evidence;
 	}
 }

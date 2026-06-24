@@ -1,8 +1,18 @@
 package com.metalsa.spx.dev5.poc;
 
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.metalsa.spx.dev5.main.GlobalVariablesSPX;
 import com.metalsa.spx.dev5.main.SPXBase;
@@ -83,6 +93,26 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	By slctSelectBuyerNewLine = By.xpath(GlobalVariablesSPX.SPX_DEV5_SELECT_BUYER_NEW_LINE_ACCOUNT_CONFIGURATION_PAGE);
 	By lblCantidad = By.id("formCarroCompras:carroCompra0:0:iNCantidad_input");
 
+	// =========================================================
+	// CONSTANTES PRIVADAS — Placeholders multilenguaje
+	// =========================================================
+	private static final Set<String> CC_PLACEHOLDERS = Set.of("selecciona centro de costo", "select cost center",
+			"selecionar centro de custo");
+
+	private static final Set<String> ACCOUNT_PLACEHOLDERS = Set.of("selecciona combinación contable",
+			"select account combination", "selecionar conta");
+
+	private static final Set<String> PROJECT_PLACEHOLDERS = Set.of("selecciona proyecto", "select project",
+			"selecionar projeto");
+
+	private static final Set<String> TASK_PLACEHOLDERS = Set.of("selecciona tarea", "select task", "selecionar tarefa");
+
+	private static final Set<String> RESOURCE_PLACEHOLDERS = Set.of("selecciona recurso", "select resource",
+			"selecionar recurso");
+
+	private static final Set<String> BUYER_PLACEHOLDERS = Set.of("selecciona comprador", "select buyer",
+			"selecionar comprador");
+
 	/*
 	 * @name: textAccountConfigurationPageIsDisplayed
 	 * 
@@ -104,76 +134,112 @@ public class AccountConfigurationSPXPage extends SPXBase {
 
 	/*
 	 * @name: selectTypeAccountForRequisitionCC
-	 * 
-	 * @date: 30/Oct/2023
-	 * 
-	 * @param: String costCenter
-	 * 
-	 * @return: N/A
-	 * 
+	 *
+	 * @date: 12/Jun/2026
+	 *
+	 * @param: N/A
+	 *
+	 * @return: TreeMap<String, String>
+	 *
 	 * @author: Fernando Villalba Aguilar
-	 * 
-	 * @description: Este metodo permite seleccionar el tipo de cobro CC
+	 *
+	 * @description: Selecciona CC y Cuenta Contable para todas las líneas
+	 * detectadas dinámicamente hasta habilitar el botón Crear Requisición.
+	 *
+	 * Flujo: 1. Detecta líneas disponibles. 2. Por cada línea: activa CC,
+	 * selecciona CC y Cuenta válidos. 3. Valida btnRequisition tras completar todas
+	 * las líneas. 4. Si no se habilita, intenta combinaciones alternativas. 5. Si
+	 * se agotan combinaciones → AssertionError con mensaje claro.
 	 */
+	public TreeMap<String, String> selectTypeAccountForRequisitionCC() throws InterruptedException {
 
-	public TreeMap<String, String> selectTypeAccountForRequisitionCC(String costCenter, String accountingAccount)
+		reporterLog("Iniciando configuración de Centros de Costos (automático)...");
+		waitForBlockUIToDisappear();
+
+		List<Integer> lines = getAvailableLines();
+
+		if (lines.isEmpty()) {
+			throw new AssertionError("No se detectaron líneas para procesar. "
+					+ "Verifique que el carrito tenga líneas con radio button CC disponible.");
+		}
+
+		reporterLog("Total de líneas detectadas: " + lines.size());
+
+		boolean requisitionEnabled = processAllLines(lines);
+
+		if (!requisitionEnabled) {
+			throw new AssertionError("Se agotaron todas las combinaciones de Centro de Costos y "
+					+ "Cuenta Contable disponibles. No fue posible habilitar "
+					+ "el botón Crear Requisición para esta requisición.");
+		}
+
+		reporterLog("[SUCCESS] Crear Requisición habilitado correctamente.");
+		TreeMap<String, String> evidence = returnSaveImage(btnRequisition);
+		clickBtnRequisition();
+		return evidence;
+	}
+
+	/*
+	 * @name: selectTypeAccountForRequisitionCCWithData
+	 *
+	 * @date: 12/Jun/2026
+	 *
+	 * @param: lineData — Lista de pares {costCenter, accountingAccount} por línea.
+	 * Índice 0 = línea 0, índice 1 = línea 1... Si accountingAccount es null o
+	 * vacío → busca automáticamente. Si CC o cuenta no se encuentran → cae al
+	 * automático.
+	 *
+	 * @return: TreeMap<String, String>
+	 *
+	 * @author: Fernando Villalba Aguilar
+	 */
+	public TreeMap<String, String> selectTypeAccountForRequisitionCCWithData(List<String[]> lineData)
 			throws InterruptedException {
 
-		reporterLog("Select Type Account For Requisition ...");
+		reporterLog("Iniciando configuración de Centros de Costos (datos definidos)...");
 		waitForBlockUIToDisappear();
-		waitForElementClickable(btnCC);
-		click(btnCC);
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
 
-		if (!isElementDisabled(btnRequisition)) {
-			clickBtnRequisition();
-		} else {
-			waitForBlockUIToDisappear();
-			waitForElementClickable(lblCostCenter);
-			click(lblCostCenter);
-			waitForBlockUIToDisappear();
-			waitForElementClickable(slctCostCenter);
-			click(slctCostCenter);
-		}
-		waitForBlockUIToDisappear();
-		if (isElementDisabled(btnRequisition)) {
-			reporterLog("Botón deshabilitado, seleccionando cuenta...");
-			waitForBlockUIToDisappear();
-			click(txtSelectAccount);
-			click(slctSelectAccount);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		List<Integer> lines = getAvailableLines();
 
-		} else {
-			reporterLog("Botón habilitado, no se requiere acción.");
+		if (lines.isEmpty()) {
+			throw new AssertionError("No se detectaron líneas para procesar.");
 		}
 
-		if (isElementPresent(btnCCNewLine)) {
-			// Second Line
-			scrollDown(lblCantidad);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			click(btnCCNewLine);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			waitForElementPresent(lblCostCenterNewLine);
-			click(lblCostCenterNewLine);
-			waitForElementPresent(txtCostCenterNewLine);
-			type(txtCostCenterNewLine, costCenter);
-			waitForElementPresent(slctCostCenterNewLine);
-			click(slctCostCenterNewLine);
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			if (isElementDisabled(btnRequisition) == false) {
-				clickBtnRequisition();
-			} else {
-				click(txtSelectAccountNewLine);
-				type(slctSelectAccountNewLine, accountingAccount);
-				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		reporterLog("Total de líneas detectadas: " + lines.size());
+
+		for (int i = 0; i < lines.size(); i++) {
+			int lineIndex = lines.get(i);
+			reporterLog("Procesando línea: " + lineIndex);
+
+			activateCCForLine(lineIndex);
+
+			String targetCC = (lineData != null && i < lineData.size() && lineData.get(i) != null
+					&& lineData.get(i).length > 0) ? lineData.get(i)[0] : null;
+
+			String targetAccount = (lineData != null && i < lineData.size() && lineData.get(i) != null
+					&& lineData.get(i).length > 1) ? lineData.get(i)[1] : null;
+
+			boolean resolved = resolveLineWithData(lineIndex, targetCC, targetAccount);
+
+			if (!resolved) {
+				throw new AssertionError("No fue posible resolver la línea " + lineIndex + " con CC=[" + targetCC
+						+ "] Cuenta=[" + targetAccount + "]. "
+						+ "Verifique que el CC y la cuenta existan y tengan fondos disponibles.");
 			}
-			clickBtnRequisition();
-		} else {
-			System.out.println("I could not find the CC button on the second line...");
-			Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-			clickBtnRequisition();
 		}
-		return returnSaveImage(btnCC);
+
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+
+		if (isElementDisabled(btnRequisition)) {
+			throw new AssertionError("Todas las líneas fueron procesadas pero Crear Requisición "
+					+ "continúa deshabilitado. Los datos especificados no son "
+					+ "suficientes para habilitar la requisición.");
+		}
+
+		reporterLog("[SUCCESS] Crear Requisición habilitado correctamente.");
+		clickBtnRequisition();
+		return returnSaveImage(btnRequisition);
 	}
 
 	/*
@@ -198,25 +264,25 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * 
 	 * - No ejecuta ninguna acción adicional - Retorna false
 	 */
-	private boolean selectAndCheckRequisition(By label, By option) {
-
-		waitForBlockUIToDisappear();
-
-		waitForElementClickable(label);
-		click(label);
-
-		waitForElementClickable(option);
-		click(option);
-
-		waitForBlockUIToDisappear();
-
-		if (!isElementDisabled(btnRequisition)) {
-			clickBtnRequisition();
-			return true;
-		}
-
-		return false;
-	}
+//	private boolean selectAndCheckRequisition(By label, By option) {
+//
+//		waitForBlockUIToDisappear();
+//
+//		waitForElementClickable(label);
+//		click(label);
+//
+//		waitForElementClickable(option);
+//		click(option);
+//
+//		waitForBlockUIToDisappear();
+//
+//		if (!isElementDisabled(btnRequisition)) {
+//			clickBtnRequisition();
+//			return true;
+//		}
+//
+//		return false;
+//	}
 
 	/*
 	 * @name: processRequisitionLine
@@ -243,24 +309,24 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * Si después de completar todos los campos el botón continúa deshabilitado,
 	 * retorna false.
 	 */
-	private boolean processRequisitionLine(By btnLine, By lblProject, By slctProject, By lblTask, By slctTask,
-			By lblResource, By slctResource, By lblBuyer, By slctBuyer) throws InterruptedException {
-
-		click(btnLine);
-		waitForBlockUIToDisappear();
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-
-		if (selectAndCheckRequisition(lblProject, slctProject))
-			return true;
-		if (selectAndCheckRequisition(lblTask, slctTask))
-			return true;
-		if (selectAndCheckRequisition(lblResource, slctResource))
-			return true;
-		if (selectAndCheckRequisition(lblBuyer, slctBuyer))
-			return true;
-
-		return false;
-	}
+//	private boolean processRequisitionLine(By btnLine, By lblProject, By slctProject, By lblTask, By slctTask,
+//			By lblResource, By slctResource, By lblBuyer, By slctBuyer) throws InterruptedException {
+//
+//		click(btnLine);
+//		waitForBlockUIToDisappear();
+//		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+//
+//		if (selectAndCheckRequisition(lblProject, slctProject))
+//			return true;
+//		if (selectAndCheckRequisition(lblTask, slctTask))
+//			return true;
+//		if (selectAndCheckRequisition(lblResource, slctResource))
+//			return true;
+//		if (selectAndCheckRequisition(lblBuyer, slctBuyer))
+//			return true;
+//
+//		return false;
+//	}
 
 	/*
 	 * @name: selectTypeAccountForRequisitionProject
@@ -288,34 +354,62 @@ public class AccountConfigurationSPXPage extends SPXBase {
 	 * la ejecución marcando error.
 	 */
 
-	public TreeMap<String, String> selectTypeAccountForRequisitionProject(String project) throws InterruptedException {
-		reporterLog("Select Type Account For Requisition ...");
+//	public TreeMap<String, String> selectTypeAccountForRequisitionProject(String project) throws InterruptedException {
+//		reporterLog("Select Type Account For Requisition ...");
+//
+//		boolean requisitionClicked = processRequisitionLine(btnProject, lblSelectProject, slctSelectProject,
+//				lblSelectTask, slctSelectTask, lblSelectResource, slctSelectResource, lblSelectBuyer, slctSelectBuyer);
+//
+//		if (!requisitionClicked) {
+//			if (isElementPresent(btnProjectNewLine)) {
+//				scrollDown(btnProjectNewLine);
+//				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+//
+//				requisitionClicked = processRequisitionLine(btnProjectNewLine, lblSelectProjectNewLine,
+//						slctSelectProjectNewLine, lblSelectTaskNewLine, slctSelectTaskNewLine, lblSelectResourceNewLine,
+//						slctSelectResourceNewLine, lblSelectBuyerNewLine, slctSelectBuyerNewLine);
+//			} else {
+//				String errorMessage = "No se habilitó Requisition y no existe segunda línea para intentar nuevamente.";
+//				reporterLog(errorMessage);
+//				throw new AssertionError(errorMessage);
+//			}
+//		}
+//
+//		if (!requisitionClicked) {
+//			String errorMessage = "No se habilitó Requisition ni con la primera ni con la segunda línea.";
+//			reporterLog(errorMessage);
+//			throw new AssertionError(errorMessage);
+//		}
+//
+//		return returnSaveImage(btnProject);
+//	}
 
-		boolean requisitionClicked = processRequisitionLine(btnProject, lblSelectProject, slctSelectProject,
-				lblSelectTask, slctSelectTask, lblSelectResource, slctSelectResource, lblSelectBuyer, slctSelectBuyer);
+	public TreeMap<String, String> selectTypeAccountForRequisitionProject() throws InterruptedException {
 
-		if (!requisitionClicked) {
-			if (isElementPresent(btnProjectNewLine)) {
-				scrollDown(btnProjectNewLine);
-				Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+		reporterLog("Iniciando configuración automática de Proyecto...");
 
-				requisitionClicked = processRequisitionLine(btnProjectNewLine, lblSelectProjectNewLine,
-						slctSelectProjectNewLine, lblSelectTaskNewLine, slctSelectTaskNewLine, lblSelectResourceNewLine,
-						slctSelectResourceNewLine, lblSelectBuyerNewLine, slctSelectBuyerNewLine);
-			} else {
-				String errorMessage = "No se habilitó Requisition y no existe segunda línea para intentar nuevamente.";
-				reporterLog(errorMessage);
-				throw new AssertionError(errorMessage);
-			}
+		waitForBlockUIToDisappear();
+
+		List<Integer> lines = getAvailableProjectLines();
+
+		if (lines.isEmpty()) {
+			throw new AssertionError("No se detectaron líneas para procesar.");
 		}
 
-		if (!requisitionClicked) {
-			String errorMessage = "No se habilitó Requisition ni con la primera ni con la segunda línea.";
-			reporterLog(errorMessage);
-			throw new AssertionError(errorMessage);
+		boolean requisitionEnabled = processAllProjectLines(lines);
+
+		if (!requisitionEnabled) {
+			throw new AssertionError("No fue posible habilitar Crear Requisición "
+					+ "con ninguna combinación Proyecto/Task/Resource/Buyer.");
 		}
 
-		return returnSaveImage(btnProject);
+		reporterLog("[SUCCESS] Crear Requisición habilitado.");
+
+		TreeMap<String, String> evidence = returnSaveImage(btnRequisition);
+
+		clickBtnRequisition();
+
+		return evidence;
 	}
 
 	/*
@@ -348,4 +442,1060 @@ public class AccountConfigurationSPXPage extends SPXBase {
 		return returnSaveImage(btnRequisition);
 	}
 
+	// =========================================================
+	// MÉTODOS PRIVADOS DE SOPORTE
+	// =========================================================
+
+	/*
+	 * @name: processAllLines
+	 *
+	 * @date: 12/Jun/2026
+	 *
+	 * @description: Orquesta el procesamiento de todas las líneas siguiendo el
+	 * flujo correcto para múltiples líneas:
+	 *
+	 * 1. Por cada línea: activa CC y selecciona la primera combinación válida (CC +
+	 * Cuenta) disponible — NO espera que el botón se habilite línea por línea. 2.
+	 * Tras seleccionar una combinación en todas las líneas, valida btnRequisition.
+	 * 3. Si se habilita → termina exitosamente. 4. Si no se habilita → intenta con
+	 * la siguiente combinación en cada línea. 5. Si se agotan todas las
+	 * combinaciones → retorna false.
+	 *
+	 * CASO ESPECIAL — Una sola línea: Si solo hay una línea, valida el botón
+	 * después de cada combinación CC + Cuenta, ya que no hay otras líneas que
+	 * completar antes de la validación.
+	 */
+	private boolean processAllLines(List<Integer> lines) throws InterruptedException {
+
+		reporterLog("Iniciando configuración de Centros de Costos (automático)...");
+
+		// =====================================================
+		// UNA SOLA LÍNEA
+		// =====================================================
+		if (lines.size() == 1) {
+
+			int lineIndex = lines.get(0);
+
+			activateCCForLine(lineIndex);
+
+			return resolveLineAuto(lineIndex);
+		}
+
+		// =====================================================
+		// MÚLTIPLES LÍNEAS
+		// =====================================================
+
+		for (Integer lineIndex : lines) {
+
+			reporterLog("Activando CC para línea: " + lineIndex);
+
+			activateCCForLine(lineIndex);
+		}
+
+		// Configurar todas las líneas
+		for (Integer lineIndex : lines) {
+			reporterLog("[DEBUG] Iniciando configuración línea " + lineIndex);
+			boolean configured = resolveLineAutoWithoutButtonValidation(lineIndex);
+			reporterLog("[DEBUG] Resultado línea " + lineIndex + ": " + configured);
+			if (!configured) {
+				reporterLog("[WARNING] No fue posible configurar línea " + lineIndex);
+				return false;
+			}
+		}
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+
+		if (!isElementDisabled(btnRequisition)) {
+			reporterLog("[SUCCESS] btnRequisition habilitado.");
+			return true;
+		}
+		reporterLog("[WARNING] Todas las líneas fueron configuradas " + "pero btnRequisition continúa deshabilitado.");
+		return false;
+	}
+
+	/*
+	 * Detecta dinámicamente los índices de línea disponibles buscando los radio
+	 * buttons CC (value index :1 = tipo CC).
+	 */
+	private List<Integer> getAvailableLines() {
+		List<Integer> lines = new ArrayList<>();
+		List<WebElement> radios = driver.findElements(By.xpath("//input[contains(@id,'radioTipoCuentas:1')]"));
+		for (WebElement radio : radios) {
+			String id = radio.getAttribute("id");
+			java.util.regex.Matcher matcher = java.util.regex.Pattern.compile("carroCompra0:(\\d+):").matcher(id);
+			if (matcher.find()) {
+				lines.add(Integer.parseInt(matcher.group(1)));
+			}
+		}
+		return lines;
+	}
+
+	/*
+	 * Activa el radio button CC para la línea indicada. Usa clickJS porque el input
+	 * está en ui-helper-hidden-accessible. Valida existencia ANTES de intentar
+	 * interactuar.
+	 */
+	private boolean activateCCForLine(int lineIndex) throws InterruptedException {
+		By radioCC = By.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":radioTipoCuentas')]"
+				+ "/tbody/tr/td[3]//span[contains(@class,'ui-radiobutton-icon')]");
+
+		if (!isElementPresent(radioCC)) {
+			throw new AssertionError("No se encontró radio CC para línea " + lineIndex);
+		}
+
+		clickJS(radioCC);
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+
+//		if (!isElementDisabled(btnRequisition)) {
+//			reporterLog("[SUCCESS] btnRequisition habilitado antes de seleccionar CC en línea " + lineIndex);
+//			clickBtnRequisition();
+//			return true;
+//		}
+
+		return false;
+	}
+
+	/*
+	 * Valida si el label de CC de la línea ya tiene un valor seleccionado.
+	 */
+	private boolean isCCAlreadySelected(int lineIndex) {
+		By labelCC = By
+				.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') " + "and contains(@id,'cbmCC_label')]");
+		List<WebElement> elements = driver.findElements(labelCC);
+		if (elements.isEmpty())
+			return false;
+		String text = elements.get(0).getText().trim().toLowerCase();
+		return !text.isEmpty() && !CC_PLACEHOLDERS.contains(text);
+	}
+
+	/*
+	 * Valida si el label de Cuenta de la línea ya tiene un valor seleccionado.
+	 */
+	private boolean isAccountAlreadySelected(int lineIndex) {
+		By labelCuenta = By
+				.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') " + "and contains(@id,'cbmCuenta_label')]");
+		List<WebElement> elements = driver.findElements(labelCuenta);
+		if (elements.isEmpty())
+			return false;
+		String text = elements.get(0).getText().trim().toLowerCase();
+		return !text.isEmpty() && !ACCOUNT_PLACEHOLDERS.contains(text);
+	}
+
+	/*
+	 * Resuelve una línea en modo automático iterando todas las combinaciones CC +
+	 * Cuenta disponibles hasta habilitar btnRequisition.
+	 *
+	 * Flujo: 1. Si ya tiene CC y Cuenta → valida botón directamente. 2. Itera todos
+	 * los CC disponibles: a. Selecciona CC. b. Valida botón (algunos CC
+	 * auto-asignan cuenta y habilitan botón). c. Si no se habilita → itera cuentas
+	 * disponibles para ese CC. d. Por cada cuenta → valida botón. 3. Si ninguna
+	 * combinación habilita el botón → retorna false.
+	 */
+	private boolean resolveLineAuto(int lineIndex) throws InterruptedException {
+
+		List<String> ccLabels = getAvailableCostCenterLabels(lineIndex);
+
+		reporterLog("CC disponibles para línea " + lineIndex + ": " + ccLabels.size());
+
+		if (ccLabels.isEmpty()) {
+
+			reporterLog("[WARNING] No hay Centros de Costos disponibles para línea " + lineIndex);
+
+			return false;
+		}
+
+		for (String ccLabel : ccLabels) {
+
+			reporterLog("[INFO] Probando CC: " + ccLabel);
+
+			selectCostCenterByLabel(lineIndex, ccLabel);
+
+			waitForPrimefacesAjax();
+			waitForBlockUIToDisappear();
+
+			if (!isElementDisabled(btnRequisition)) {
+
+				reporterLog("[SUCCESS] CC habilita botón directamente: " + ccLabel);
+
+				return true;
+			}
+
+			List<String> accountLabels = getAvailableAccountLabels(lineIndex);
+
+			if (accountLabels.isEmpty()) {
+
+				continue;
+			}
+
+			for (String accountLabel : accountLabels) {
+
+				reporterLog("[INFO] Probando cuenta: " + accountLabel);
+
+				selectAccountByLabel(lineIndex, accountLabel);
+
+				waitForPrimefacesAjax();
+				waitForBlockUIToDisappear();
+
+				if (!isElementDisabled(btnRequisition)) {
+
+					reporterLog("[SUCCESS] Combinación válida:" + " CC=[" + ccLabel + "]" + " Cuenta=[" + accountLabel
+							+ "]");
+
+					return true;
+				}
+			}
+		}
+
+		reporterLog("[WARNING] Se agotaron todas las combinaciones para línea " + lineIndex);
+
+		return false;
+	}
+
+	/*
+	 * Resuelve una línea con datos predefinidos. Si el CC o la cuenta especificada
+	 * no funciona → cae al automático.
+	 */
+	private boolean resolveLineWithData(int lineIndex, String targetCC, String targetAccount)
+			throws InterruptedException {
+
+		// Validar si ya tiene datos correctos
+		if (isCCAlreadySelected(lineIndex) && isAccountAlreadySelected(lineIndex)) {
+			reporterLog("[INFO] Línea " + lineIndex + " ya tiene CC y Cuenta seleccionados.");
+			if (!isElementDisabled(btnRequisition)) {
+				return true;
+			}
+			reporterLog("[INFO] Datos previos no habilitan botón. " + "Intentando con datos especificados...");
+		}
+
+		if (targetCC != null && !targetCC.trim().isEmpty()) {
+			List<String> ccLabels = getAvailableCostCenterLabels(lineIndex);
+			boolean ccFound = ccLabels.stream().anyMatch(l -> l.trim().equalsIgnoreCase(targetCC.trim()));
+
+			if (ccFound) {
+				reporterLog("[INFO] CC especificado encontrado: " + targetCC);
+				selectCostCenterByLabel(lineIndex, targetCC.trim());
+
+				// CC habilita directamente
+				if (!isElementDisabled(btnRequisition)) {
+					reporterLog("[SUCCESS] CC especificado habilita botón: " + targetCC);
+					return true;
+				}
+
+				if (targetAccount != null && !targetAccount.trim().isEmpty()) {
+					// Intentar cuenta especificada
+					List<String> accountLabels = getAvailableAccountLabels(lineIndex);
+					boolean accountFound = accountLabels.stream()
+							.anyMatch(l -> l.trim().equalsIgnoreCase(targetAccount.trim()));
+
+					if (accountFound) {
+						selectAccountByLabel(lineIndex, targetAccount.trim());
+						if (!isElementDisabled(btnRequisition)) {
+							reporterLog("[SUCCESS] Cuenta especificada habilita botón: " + targetAccount);
+							return true;
+						}
+						reporterLog("[WARNING] Cuenta especificada [" + targetAccount
+								+ "] no habilita botón. Cayendo al automático...");
+					} else {
+						reporterLog("[WARNING] Cuenta especificada [" + targetAccount
+								+ "] no encontrada. Cayendo al automático...");
+					}
+				} else {
+					// Sin cuenta especificada → buscar primera disponible
+					List<String> accountLabels = getAvailableAccountLabels(lineIndex);
+					for (String accountLabel : accountLabels) {
+						selectAccountByLabel(lineIndex, accountLabel);
+						if (!isElementDisabled(btnRequisition)) {
+							reporterLog("[SUCCESS] Cuenta automática habilita botón: " + accountLabel);
+							return true;
+						}
+					}
+					reporterLog("[WARNING] Ninguna cuenta automática habilitó el botón " + "con CC=[" + targetCC
+							+ "]. Cayendo al automático...");
+				}
+			} else {
+				reporterLog("[WARNING] CC especificado [" + targetCC + "] no encontrado. Cayendo al automático...");
+			}
+		}
+
+		// Fallback — comportamiento completamente automático
+		reporterLog("[INFO] Iniciando búsqueda automática para línea: " + lineIndex);
+		return resolveLineAuto(lineIndex);
+	}
+
+	/*
+	 * resolveLineAutoWithoutButtonValidation
+	 */
+
+	private boolean resolveLineAutoWithoutButtonValidation(int lineIndex) throws InterruptedException {
+
+		reporterLog("[INFO] Configurando línea " + lineIndex);
+
+		List<String> ccLabels = getAvailableCostCenterLabels(lineIndex);
+
+		if (ccLabels.isEmpty()) {
+
+			reporterLog("[WARNING] No existen Centros de Costos para línea " + lineIndex);
+
+			return false;
+		}
+
+		for (String ccLabel : ccLabels) {
+
+			reporterLog("[INFO] Probando CC: " + ccLabel);
+
+			selectCostCenterByLabel(lineIndex, ccLabel);
+
+			waitForPrimefacesAjax();
+			waitForBlockUIToDisappear();
+
+			List<String> accountLabels = getAvailableAccountLabels(lineIndex);
+
+			// CC sin cuentas
+			if (accountLabels.isEmpty()) {
+
+				reporterLog("[WARNING] No existen cuentas para CC: " + ccLabel);
+				continue;
+			}
+
+			// Seleccionar primera cuenta disponible
+			String accountLabel = accountLabels.get(0);
+
+			selectAccountByLabel(lineIndex, accountLabel);
+
+			waitForPrimefacesAjax();
+			waitForBlockUIToDisappear();
+
+			reporterLog("[INFO] Línea " + lineIndex + " configurada con:" + " CC=[" + ccLabel + "]" + " Cuenta=["
+					+ accountLabel + "]");
+			return true;
+		}
+
+		return false;
+	}
+
+	/*
+	 * Obtiene los data-label válidos del panel CC. Trabaja con Strings — NO
+	 * WebElements — para evitar StaleElementReferenceException.
+	 */
+	private List<String> getAvailableCostCenterLabels(int lineIndex) {
+
+		reporterLog("[DEBUG] Abriendo dropdown CC línea " + lineIndex);
+		openCostCenterDropdown(lineIndex);
+
+		By validItems = By.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') "
+				+ "and contains(@id,'cbmCC_panel')]" + "//li[contains(@class,'ui-selectonemenu-item')]");
+
+		List<WebElement> items = driver.findElements(validItems);
+
+		reporterLog("[DEBUG] Items CC encontrados línea " + lineIndex + ": " + items.size());
+		List<String> labels = items
+				.stream().map(item -> item.getAttribute("data-label")).filter(label -> label != null
+						&& !label.trim().isEmpty() && !CC_PLACEHOLDERS.contains(label.trim().toLowerCase()))
+				.collect(Collectors.toList());
+
+		reporterLog("[DEBUG] CC encontrados línea " + lineIndex + ": " + labels);
+		return labels;
+	}
+
+	/*
+	 * Obtiene los data-label válidos del panel Cuenta. Verifica si cbmCuenta está
+	 * deshabilitado antes de intentar abrir el panel.
+	 */
+	private List<String> getAvailableAccountLabels(int lineIndex) {
+
+		// Verificar si el dropdown de cuenta está habilitado
+		By cbmCuenta = By
+				.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') " + "and contains(@id,'cbmCuenta') "
+						+ "and not(contains(@id,'_panel')) " + "and not(contains(@id,'_label')) "
+						+ "and not(contains(@id,'_focus')) " + "and not(contains(@id,'_input'))]");
+
+		List<WebElement> cuentaElements = driver.findElements(cbmCuenta);
+
+		if (!cuentaElements.isEmpty()) {
+
+			String classAttr = cuentaElements.get(0).getAttribute("class");
+
+			if (classAttr != null && classAttr.contains("ui-state-disabled")) {
+
+				reporterLog("[INFO] cbmCuenta deshabilitado para línea: " + lineIndex
+						+ ". Este CC no tiene combinaciones contables disponibles.");
+				return new ArrayList<>();
+			}
+		}
+
+		openAccountDropdown(lineIndex);
+
+		By validItems = By.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') "
+				+ "and contains(@id,'cbmCuenta_panel')]" + "//li[contains(@class,'ui-selectonemenu-item')]");
+
+		List<String> accountLabels = driver.findElements(validItems).stream()
+				.map(item -> item.getAttribute("data-label")).filter(label -> label != null && !label.trim().isEmpty()
+						&& !ACCOUNT_PLACEHOLDERS.contains(label.trim().toLowerCase()))
+				.collect(Collectors.toList());
+
+		// =========================================================
+		// DEBUG
+		// =========================================================
+		reporterLog("[DEBUG] Línea " + lineIndex + " - Cuentas encontradas: " + accountLabels.size() + " -> "
+				+ accountLabels);
+		// Verificar si siempre regresa la misma cuenta
+		if (!accountLabels.isEmpty()) {
+
+			WebElement panel = driver.findElement(By.xpath(
+					"//*[contains(@id,'carroCompra0:" + lineIndex + ":') " + "and contains(@id,'cbmCuenta_panel')]"));
+
+			reporterLog("[DEBUG] Panel Cuenta ID: " + panel.getAttribute("id"));
+
+			reporterLog("[DEBUG] Panel Cuenta Displayed: " + panel.isDisplayed());
+		}
+
+		return accountLabels;
+	}
+
+	/*
+	 * Selecciona un CC por su data-label. Re-localiza el elemento justo antes del
+	 * clic para evitar StaleElementReferenceException.
+	 */
+	private void selectCostCenterByLabel(int lineIndex, String ccLabel) throws InterruptedException {
+		reporterLog("Seleccionando Centro de Costos: " + ccLabel);
+		openCostCenterDropdown(lineIndex);
+		By itemLocator = By.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') "
+				+ "and contains(@id,'cbmCC_panel')]" + "//li[@data-label='" + ccLabel.replace("'", "\\'") + "']");
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVariablesSPX.DEFAULT_TIMEOUT));
+		WebElement item = wait.until(ExpectedConditions.presenceOfElementLocated(itemLocator));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block:'center'});", item);
+		js.executeScript("arguments[0].click();", item);
+
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+	}
+
+	/*
+	 * Selecciona una Cuenta por su data-label. Re-localiza el elemento justo antes
+	 * del clic para evitar StaleElementReferenceException.
+	 */
+	private void selectAccountByLabel(int lineIndex, String accountLabel) throws InterruptedException {
+		reporterLog("Seleccionando Cuenta Contable: " + accountLabel);
+		openAccountDropdown(lineIndex);
+		By itemLocator = By
+				.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') " + "and contains(@id,'cbmCuenta_panel')]"
+						+ "//li[@data-label='" + accountLabel.replace("'", "\\'") + "']");
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVariablesSPX.DEFAULT_TIMEOUT));
+		WebElement item = wait.until(ExpectedConditions.presenceOfElementLocated(itemLocator));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block:'center'});", item);
+		js.executeScript("arguments[0].click();", item);
+
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+	}
+
+	/*
+	 * Abre el dropdown de Centro de Costos para la línea indicada.
+	 */
+	private void openCostCenterDropdown(int lineIndex) {
+		By triggerCC = By.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') " + "and contains(@id,'cbmCC')]"
+				+ "//div[contains(@class,'ui-selectonemenu-trigger')]");
+		waitForElementClickable(triggerCC);
+		click(triggerCC);
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+	}
+
+	/*
+	 * Abre el dropdown de Cuenta Contable para la línea indicada.
+	 */
+	private void openAccountDropdown(int lineIndex) {
+		By triggerAccount = By.xpath("//*[contains(@id,'carroCompra0:" + lineIndex + ":') "
+				+ "and contains(@id,'cbmCuenta')]" + "//div[contains(@class,'ui-selectonemenu-trigger')]");
+		waitForElementClickable(triggerAccount);
+		click(triggerAccount);
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+	}
+
+	/*
+	 * @name: processAllProjectLines
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: List<Integer> lines
+	 * 
+	 * @return: boolean
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Orquesta el procesamiento de todas las líneas del flujo
+	 * Proyecto. Cada línea se resuelve probando combinaciones Proyecto / Task /
+	 * Resource / Buyer hasta habilitar el botón Crear Requisición.
+	 */
+	private boolean processAllProjectLines(List<Integer> lines) throws InterruptedException {
+
+		for (Integer line : lines) {
+
+			reporterLog("Procesando línea: " + line);
+
+			boolean success = resolveProjectLineAuto(line);
+
+			if (!success) {
+
+				reporterLog("No se encontró combinación válida para línea " + line);
+
+				return false;
+			}
+		}
+
+		return !isElementDisabled(btnRequisition);
+	}
+
+	/*
+	 * @name: resolveProjectLineAuto
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: boolean
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Resuelve una línea en modo automático probando todas las
+	 * combinaciones disponibles de Proyecto, Task, Resource y Buyer hasta habilitar
+	 * el botón Crear Requisición.
+	 */
+	private boolean resolveProjectLineAuto(int lineIndex) throws InterruptedException {
+
+		List<String> projects = getAvailableProjectLabels(lineIndex);
+
+		reporterLog("Proyectos disponibles para línea " + lineIndex + ": " + projects.size());
+
+		if (projects.isEmpty()) {
+			reporterLog("[WARNING] No hay Proyectos disponibles para línea " + lineIndex);
+			return false;
+		}
+
+		for (String project : projects) {
+
+			reporterLog("[INFO] Probando Proyecto: " + project);
+			selectProject(lineIndex, project);
+
+			if (!isElementDisabled(btnRequisition)) {
+				reporterLog("[SUCCESS] Proyecto habilita botón directamente: " + project);
+				return true;
+			}
+
+			List<String> tasks = getAvailableTaskLabels(lineIndex);
+
+			if (tasks.isEmpty()) {
+				continue;
+			}
+
+			for (String task : tasks) {
+
+				reporterLog("[INFO] Probando Task: " + task);
+				selectTask(lineIndex, task);
+
+				if (!isElementDisabled(btnRequisition)) {
+					reporterLog("[SUCCESS] Combinación válida: Proyecto=[" + project + "] Task=[" + task + "]");
+					return true;
+				}
+
+				List<String> resources = getAvailableResourceLabels(lineIndex);
+
+				if (resources.isEmpty()) {
+					continue;
+				}
+
+				for (String resource : resources) {
+
+					reporterLog("[INFO] Probando Resource: " + resource);
+					selectResource(lineIndex, resource);
+
+					if (!isElementDisabled(btnRequisition)) {
+						reporterLog("[SUCCESS] Combinación válida: Proyecto=[" + project + "] Task=[" + task
+								+ "] Resource=[" + resource + "]");
+						return true;
+					}
+
+					List<String> buyers = getAvailableBuyerLabels(lineIndex);
+
+					if (buyers.isEmpty()) {
+						continue;
+					}
+
+					for (String buyer : buyers) {
+
+						reporterLog("[INFO] Probando Buyer: " + buyer);
+						selectBuyer(lineIndex, buyer);
+
+						if (!isElementDisabled(btnRequisition)) {
+							reporterLog("[SUCCESS] Combinación válida encontrada: Proyecto=[" + project + "] Task=["
+									+ task + "] Resource=[" + resource + "] Buyer=[" + buyer + "]");
+							return true;
+						}
+					}
+				}
+			}
+		}
+
+		reporterLog("[WARNING] Se agotaron todas las combinaciones para línea " + lineIndex);
+		return false;
+	}
+
+	/*
+	 * @name: getAvailableProjectLines
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: List<Integer>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Detecta dinámicamente las líneas disponibles del bloque
+	 * Proyecto buscando los paneles de combinación existentes en la pantalla.
+	 */
+	private List<Integer> getAvailableProjectLines() {
+
+		List<Integer> lines = new ArrayList<>();
+
+		List<WebElement> panels = driver.findElements(By.cssSelector("div.panelCombos"));
+		List<WebElement> elements = driver.findElements(By.xpath("//*[contains(@id,'carroCompra0:')]"));
+
+		reporterLog("Elementos encontrados: " + elements.size());
+		System.out.println("Elementos encontrados: " + elements.size());
+
+		for (WebElement panel : panels) {
+
+			String id = panel.getAttribute("id");
+
+			if (id == null || id.trim().isEmpty()) {
+				continue;
+			}
+
+			java.util.regex.Matcher matcher = java.util.regex.Pattern.compile("carroCompra0:(\\d+):").matcher(id);
+
+			if (matcher.find()) {
+
+				Integer lineIndex = Integer.parseInt(matcher.group(1));
+
+				if (!lines.contains(lineIndex)) {
+					lines.add(lineIndex);
+				}
+			}
+		}
+
+		lines.sort(Integer::compareTo);
+		return lines;
+	}
+
+	/*
+	 * @name: getAvailableProjectLabels
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: List<String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene los valores válidos del combo Proyecto para la línea
+	 * indicada sin incluir el placeholder.
+	 */
+	private List<String> getAvailableProjectLabels(int lineIndex) {
+
+		return getAvailableLabels(lineIndex, "j_idt250", PROJECT_PLACEHOLDERS, "Proyecto");
+	}
+
+	/*
+	 * @name: getAvailableTaskLabels
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: List<String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene los valores válidos del combo Task para la línea
+	 * indicada sin incluir el placeholder.
+	 */
+	private List<String> getAvailableTaskLabels(int lineIndex) {
+
+		return getAvailableLabels(lineIndex, "j_idt253", TASK_PLACEHOLDERS, "Task");
+	}
+
+	/*
+	 * @name: getAvailableResourceLabels
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: List<String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene los valores válidos del combo Resource para la línea
+	 * indicada sin incluir el placeholder.
+	 */
+	private List<String> getAvailableResourceLabels(int lineIndex) {
+
+		return getAvailableLabels(lineIndex, "j_idt256", RESOURCE_PLACEHOLDERS, "Resource");
+	}
+
+	/*
+	 * @name: getAvailableBuyerLabels
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: List<String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene los valores válidos del combo Buyer para la línea
+	 * indicada sin incluir el placeholder.
+	 */
+	private List<String> getAvailableBuyerLabels(int lineIndex) {
+
+		return getAvailableLabels(lineIndex, "j_idt259", BUYER_PLACEHOLDERS, "Buyer");
+	}
+
+	/*
+	 * @name: selectProject
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String project
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Selecciona un Proyecto válido dentro del combo de la línea
+	 * indicada.
+	 */
+	private void selectProject(int lineIndex, String project) throws InterruptedException {
+
+		selectComboValue(lineIndex, "j_idt250", project, "Proyecto");
+	}
+
+	/*
+	 * @name: selectTask
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String task
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Selecciona una Task válida dentro del combo de la línea
+	 * indicada.
+	 */
+	private void selectTask(int lineIndex, String task) throws InterruptedException {
+
+		selectComboValue(lineIndex, "j_idt253", task, "Task");
+	}
+
+	/*
+	 * @name: selectResource
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String resource
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Selecciona un Resource válido dentro del combo de la línea
+	 * indicada.
+	 */
+	private void selectResource(int lineIndex, String resource) throws InterruptedException {
+
+		selectComboValue(lineIndex, "j_idt256", resource, "Resource");
+	}
+
+	/*
+	 * @name: selectBuyer
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String buyer
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Selecciona un Buyer válido dentro del combo de la línea
+	 * indicada.
+	 */
+	private void selectBuyer(int lineIndex, String buyer) throws InterruptedException {
+
+		selectComboValue(lineIndex, "j_idt259", buyer, "Buyer");
+	}
+
+	/*
+	 * @name: openProjectDropdown
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Abre el combo Proyecto para la línea indicada.
+	 */
+//	private void openProjectDropdown(int lineIndex) {
+//
+//		openComboDropdown(lineIndex, "j_idt250");
+//	}
+
+	/*
+	 * @name: openTaskDropdown
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Abre el combo Task para la línea indicada.
+	 */
+//	private void openTaskDropdown(int lineIndex) {
+//
+//		openComboDropdown(lineIndex, "j_idt253");
+//	}
+
+	/*
+	 * @name: openResourceDropdown
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Abre el combo Resource para la línea indicada.
+	 */
+//	private void openResourceDropdown(int lineIndex) {
+//
+//		openComboDropdown(lineIndex, "j_idt256");
+//	}
+
+	/*
+	 * @name: openBuyerDropdown
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Abre el combo Buyer para la línea indicada.
+	 */
+//	private void openBuyerDropdown(int lineIndex) {
+//
+//		openComboDropdown(lineIndex, "j_idt259");
+//	}
+
+	/*
+	 * @name: openComboDropdown
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String componentId
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Método genérico para abrir cualquier combo de Proyecto
+	 * reutilizando el mismo patrón de localización.
+	 */
+	private void openComboDropdown(int lineIndex, String componentId) {
+
+		By trigger = By.xpath("//div[@id='" + buildComboRootId(lineIndex, componentId) + "']"
+				+ "//div[contains(@class,'ui-selectonemenu-trigger')]");
+
+		waitForElementClickable(trigger);
+		click(trigger);
+
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+	}
+
+	/*
+	 * @name: getAvailableLabels
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String componentId, Set<String> placeholders, String
+	 * friendlyName
+	 * 
+	 * @return: List<String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene las opciones visibles de un combo, filtrando el
+	 * placeholder para evitar selecciones inválidas.
+	 */
+	private List<String> getAvailableLabels(int lineIndex, String componentId, Set<String> placeholders,
+			String friendlyName) {
+
+		reporterLog("[DEBUG] Abriendo dropdown " + friendlyName + " línea " + lineIndex);
+		openComboDropdown(lineIndex, componentId);
+
+		By itemsLocator = By.xpath("//div[@id='" + buildComboPanelId(lineIndex, componentId) + "']"
+				+ "//li[contains(@class,'ui-selectonemenu-item')]");
+
+		List<WebElement> items = driver.findElements(itemsLocator);
+
+		List<String> labels = items.stream().map(item -> item.getAttribute("data-label")).filter(
+				label -> label != null && !label.trim().isEmpty() && !placeholders.contains(label.trim().toLowerCase()))
+				.collect(Collectors.toList());
+
+		reporterLog("[DEBUG] " + friendlyName + " encontrados línea " + lineIndex + ": " + labels);
+		return labels;
+	}
+
+	/*
+	 * @name: selectComboValue
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String componentId, String value, String friendlyName
+	 * 
+	 * @return: void
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Selecciona una opción de un combo por su data-label de forma
+	 * segura, reubicando el elemento justo antes del clic para evitar stale
+	 * element.
+	 */
+	private void selectComboValue(int lineIndex, String componentId, String value, String friendlyName)
+			throws InterruptedException {
+
+		reporterLog("Seleccionando " + friendlyName + ": " + value);
+
+		openComboDropdown(lineIndex, componentId);
+
+		By itemLocator = By.xpath("//div[@id='" + buildComboPanelId(lineIndex, componentId) + "']" + "//li[@data-label="
+				+ toXPathLiteral(value) + "]");
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(GlobalVariablesSPX.DEFAULT_TIMEOUT));
+		WebElement item = wait.until(ExpectedConditions.presenceOfElementLocated(itemLocator));
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block:'center'});", item);
+		js.executeScript("arguments[0].click();", item);
+
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
+	}
+
+	/*
+	 * @name: buildComboRootId
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String componentId
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Construye el id base del combo para una línea específica.
+	 */
+	private String buildComboRootId(int lineIndex, String componentId) {
+
+		return "formCarroCompras:carroCompra0:" + lineIndex + ":j_idt246:0:" + componentId;
+	}
+
+	/*
+	 * @name: buildComboPanelId
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: int lineIndex, String componentId
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Construye el id del panel desplegable asociado al combo de una
+	 * línea específica.
+	 */
+	private String buildComboPanelId(int lineIndex, String componentId) {
+
+		return buildComboRootId(lineIndex, componentId) + "_panel";
+	}
+
+	/*
+	 * @name: toXPathLiteral
+	 * 
+	 * @date: 17/Jun/2026
+	 * 
+	 * @param: String value
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Convierte un texto en un literal XPath seguro para soportar
+	 * comillas simples y dobles dentro del valor.
+	 */
+	private String toXPathLiteral(String value) {
+
+		if (value == null) {
+			return "''";
+		}
+
+		if (!value.contains("'")) {
+			return "'" + value + "'";
+		}
+
+		if (!value.contains("\"")) {
+			return "\"" + value + "\"";
+		}
+
+		String[] parts = value.split("'");
+		StringBuilder sb = new StringBuilder("concat(");
+
+		for (int i = 0; i < parts.length; i++) {
+			if (i > 0) {
+				sb.append(", \"'\", ");
+			}
+			sb.append("'").append(parts[i]).append("'");
+		}
+
+		sb.append(")");
+		return sb.toString();
+	}
 }
