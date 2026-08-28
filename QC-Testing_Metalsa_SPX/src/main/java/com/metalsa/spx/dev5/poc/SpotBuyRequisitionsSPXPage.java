@@ -142,9 +142,9 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	// GENERIC ITEM
 	// =========================================================
 	By txtGenericItem = By.xpath(
-			"/html[1]/body[1]/div[3]/div[1]/span[2]/form[1]/div[4]/span[1]/div[2]/div[1]/div[1]/fieldset[1]/div[1]/div[4]/div[1]/div[2]/input[1]");
+			"//div[@id='formSpot:nwcboItemGenerico0_panel']//input[@role='textbox' and contains(@class, 'ui-selectonemenu-filter')]");
 	By lblGenericItemOsasco = By
-			.xpath("//label[contains(@id,'nwcboItemGenerico') and contains(normalize-space(),'tem')]");
+			.xpath("//label[contains(@id,'nwcboItemGenerico') and contains(normalize-space(),'isca')]");
 	By optGenericItemOsasco = By.xpath("//li[contains(@class,'ui-selectonemenu-item') and @data-label='"
 			+ GlobalVariablesSPX.SPX_GENERIC_ITEM_SPOT_PAGE + "']");
 

@@ -136,7 +136,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Roles Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorRolesMenu());
 		Assert.assertEquals(administradorRolesMenuSPXPage.textAdministradorRolesMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -173,7 +173,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Roles Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorRolesMenu());
 		Assert.assertEquals(administradorRolesMenuSPXPage.textAdministradorRolesMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -211,7 +211,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Roles Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorRolesMenu());
 		Assert.assertEquals(administradorRolesMenuSPXPage.textAdministradorRolesMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -257,7 +257,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorMenu());
 		Assert.assertEquals(administradorMenuSPXPage.textAdministradorMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -296,7 +296,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorMenu());
 		Assert.assertEquals(administradorMenuSPXPage.textAdministradorMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -335,7 +335,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorMenu());
 		Assert.assertEquals(administradorMenuSPXPage.textAdministradorMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -374,7 +374,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorMenu());
 		Assert.assertEquals(administradorMenuSPXPage.textAdministradorMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -416,7 +416,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Administrador Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministradorMenu());
 		Assert.assertEquals(administradorMenuSPXPage.textAdministradorMenuPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -457,7 +457,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Articulos Controlados
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToArticulosControlados());
 		Assert.assertEquals(articulosControladosSPXPage.textArticulosControladosPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -498,7 +498,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administración_Del_Sistema {
 
 		// Select to UEN and Access to Articulos Controlados
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToArticulosControlados());
 		Assert.assertEquals(articulosControladosSPXPage.textArticulosControladosPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list

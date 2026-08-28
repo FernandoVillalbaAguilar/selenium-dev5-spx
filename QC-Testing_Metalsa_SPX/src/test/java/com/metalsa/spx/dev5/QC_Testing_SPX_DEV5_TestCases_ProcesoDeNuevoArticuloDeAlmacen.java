@@ -101,7 +101,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 
 		// Select to UEN and Access to Articulos por Procesar
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToArticulosPorProcesar());
 		Assert.assertEquals(articulosPorProcesarSPXPage.textArticulosPorProcesarPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list
@@ -143,7 +143,7 @@ public class QC_Testing_SPX_DEV5_TestCases_ProcesoDeNuevoArticuloDeAlmacen {
 
 		// Select to UEN and Access to Captura de Cotizaciones
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToCapturadeCotizaciones());
 		Assert.assertEquals(capturadeCotizacionesSPXPage.textCapturadeCotizacionesPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list

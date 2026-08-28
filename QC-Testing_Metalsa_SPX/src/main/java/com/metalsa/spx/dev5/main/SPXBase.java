@@ -8,6 +8,7 @@ import java.io.InputStream;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
@@ -109,12 +110,12 @@ public class SPXBase {
 	 * comportamiento real del usuario. - Reducción de hardcodeo repetitivo.
 	 */
 	protected static final String[] SINGLE_SOURCE_FORMAT_REASON = {
-			"//table[contains(@class,'radioFad')]//input[@value='1']/../../div[contains(@class,'ui-radiobutton-box')]",
-			"//table[contains(@class,'radioFad')]//input[@value='2']/../../div[contains(@class,'ui-radiobutton-box')]",
-			"//table[contains(@class,'radioFad')]//input[@value='3']/../../div[contains(@class,'ui-radiobutton-box')]",
-			"//table[contains(@class,'radioFad')]//input[@value='4']/../../div[contains(@class,'ui-radiobutton-box')]",
-			"//table[contains(@class,'radioFad')]//input[@value='5']/../../div[contains(@class,'ui-radiobutton-box')]",
-			"//table[contains(@class,'radioFad')]//input[@value='6']/../../div[contains(@class,'ui-radiobutton-box')]" };
+			"//table[contains(@class,'radioFad')]/tbody/tr[1]//div[contains(@class,'ui-radiobutton-box')]",
+			"//table[contains(@class,'radioFad')]/tbody/tr[2]//div[contains(@class,'ui-radiobutton-box')]",
+			"//table[contains(@class,'radioFad')]/tbody/tr[3]//div[contains(@class,'ui-radiobutton-box')]",
+			"//table[contains(@class,'radioFad')]/tbody/tr[4]//div[contains(@class,'ui-radiobutton-box')]",
+			"//table[contains(@class,'radioFad')]/tbody/tr[5]//div[contains(@class,'ui-radiobutton-box')]",
+			"//table[contains(@class,'radioFad')]/tbody/tr[6]//div[contains(@class,'ui-radiobutton-box')]" };
 	// =========================================================================
 	// Constructor
 	// =========================================================================
@@ -133,16 +134,20 @@ public class SPXBase {
 	// Generic Random Utilities
 	// =========================================================================
 
-	/**
-	 * Obtiene un valor aleatorio desde cualquier arreglo recibido.
-	 *
-	 * Este método es reutilizable para cualquier catálogo de datos utilizado dentro
-	 * del framework.
-	 *
-	 * Validaciones: - Si el arreglo es nulo. - Si el arreglo está vacío.
-	 *
-	 * @param values arreglo fuente de datos.
-	 * @return valor aleatorio del arreglo o cadena vacía si no existen datos.
+	/*
+	 * @name: randomFrom
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: String[] values
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Selecciona y retorna un elemento aleatorio desde un arreglo de
+	 * cadenas especificadas; valida que el arreglo no sea nulo ni se encuentre
+	 * vacio para evitar excepciones.
 	 */
 	public static String randomFrom(String[] values) {
 
@@ -155,23 +160,37 @@ public class SPXBase {
 		return values[randomIndex];
 	}
 
-	/**
-	 * Obtiene un valor aleatorio desde un arreglo de Strings.
-	 *
-	 * @param array arreglo fuente.
-	 * @return valor aleatorio.
+	/*
+	 * @name: getRandomValue
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: String[] array
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Retorna un valor aleatorio de un arreglo de cadenas utilizando
+	 * la instancia global de Random.
 	 */
 	public static String getRandomValue(String[] array) {
 		return array[RANDOM.nextInt(array.length)];
 	}
 
-	/**
-	 * Genera un arreglo numérico secuencial del 1 al 1000.
-	 *
-	 * Uso común: - Cantidades. - Folios. - Datos incrementales. - Pruebas de
-	 * volumen ligero.
-	 *
-	 * @return arreglo String[] con valores del 1 al 1000.
+	/*
+	 * @name: generateNumbers
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String[]
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un arreglo de cadenas de texto con una secuencia
+	 * numerica del 1 al 1000 para su uso en pruebas de datos masivos o iterativos.
 	 */
 	public static String[] generateNumbers() {
 
@@ -188,112 +207,484 @@ public class SPXBase {
 	// Random Test Data Methods
 	// =========================================================================
 
-	/**
-	 * Obtiene un material aleatorio desde catálogo global.
-	 *
-	 * @return material aleatorio.
+	/*
+	 * @name: randomMaterial
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un valor aleatorio del catalogo de materiales definido
+	 * en las variables globales.
 	 */
 	public static String randomMaterial() {
 		return randomFrom(GlobalVariablesSPX.MATERIAL);
 	}
 
-	/**
-	 * Obtiene un color aleatorio desde catálogo global.
-	 *
-	 * @return color aleatorio.
+	/*
+	 * @name: randomColor
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un valor aleatorio del catalogo de colores definido en
+	 * las variables globales.
 	 */
 	public static String randomColor() {
 		return randomFrom(GlobalVariablesSPX.COLOR);
 	}
 
-	/**
-	 * Obtiene una marca aleatoria desde catálogo global.
-	 *
-	 * @return marca aleatoria.
+	/*
+	 * @name: randomBrand
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un valor aleatorio del catalogo de marcas definido en
+	 * las variables globales.
 	 */
 	public static String randomBrand() {
 		return randomFrom(GlobalVariablesSPX.MARCA);
 	}
 
-	/**
-	 * Obtiene una medida aleatoria desde catálogo global.
-	 *
-	 * @return medida aleatoria.
+	/*
+	 * @name: randomMeasurement
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un valor aleatorio del catalogo de medidas definido en
+	 * las variables globales.
 	 */
 	public static String randomMeasurement() {
 		return randomFrom(GlobalVariablesSPX.MEDIDAS);
 	}
 
-	/**
-	 * Obtiene un proveedor aleatorio desde catálogo global.
-	 *
-	 * @return proveedor aleatorio.
+	/*
+	 * @name: randomSupplier
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un valor aleatorio del catalogo de proveedores definido
+	 * en las variables globales.
 	 */
 	public static String randomSupplier() {
 		return randomFrom(GlobalVariablesSPX.PROVEEDORES);
 	}
 
-	/**
-	 * Obtiene una unidad de medida aleatoria en español.
-	 *
-	 * @return unidad de medida en español.
+	/*
+	 * @name: randomUnitOfMeasureES
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene una unidad de medida aleatoria en idioma espanol desde
+	 * el catalogo global.
 	 */
 	public static String randomUnitOfMeasureES() {
 		return randomFrom(GlobalVariablesSPX.UNIDAD_DE_MEDIDA_ES);
 	}
 
-	/**
-	 * Obtiene una unidad de medida aleatoria en inglés.
-	 *
-	 * @return unidad de medida en inglés.
+	/*
+	 * @name: randomUnitOfMeasureEN
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene una unidad de medida aleatoria en idioma ingles desde
+	 * el catalogo global.
 	 */
 	public static String randomUnitOfMeasureEN() {
 		return randomFrom(GlobalVariablesSPX.UNIDAD_DE_MEDIDA_EN);
 	}
 
-	/**
-	 * Obtiene una unidad de medida aleatoria en portugués.
-	 *
-	 * @return unidad de medida en portugués.
+	/*
+	 * @name: randomUnitOfMeasurePT
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene una unidad de medida aleatoria en idioma portugues
+	 * desde el catalogo global.
 	 */
 	public static String randomUnitOfMeasurePT() {
 		return randomFrom(GlobalVariablesSPX.UNIDAD_DE_MEDIDA_PT);
 	}
 
-	/**
-	 * Obtiene un valor numérico aleatorio desde catálogo global.
-	 *
-	 * @return número aleatorio.
+	/*
+	 * @name: randomNumber
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un valor numerico aleatorio almacenado en el catalogo
+	 * global de datos de prueba.
 	 */
 	public static String randomNumber() {
 		return randomFrom(GlobalVariablesSPX.NUM_RAND);
 	}
 
-	/**
-	 * Obtiene una cantidad aleatoria desde catálogo global.
-	 *
-	 * @return cantidad aleatoria.
+	/*
+	 * @name: randomQuantity
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene una cantidad aleatoria almacenada en el catalogo global
+	 * de datos de prueba.
 	 */
 	public static String randomQuantity() {
 		return randomFrom(GlobalVariablesSPX.QUANTITY);
 	}
 
-	/**
-	 * Obtiene una moneda aleatoria desde catálogo global.
-	 *
-	 * @return moneda aleatoria.
+	/*
+	 * @name: randomCurrency
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un tipo de moneda aleatorio almacenado en el catalogo
+	 * global.
 	 */
 	public static String randomCurrency() {
 		return randomFrom(GlobalVariablesSPX.MONEDA);
 	}
 
-	/**
-	 * Obtiene una razón de urgencia aleatoria.
-	 *
-	 * Lógica: - Prioriza catálogo en español. - Si no existe información, utiliza
-	 * catálogo en inglés como fallback.
-	 *
-	 * @return razón de urgencia aleatoria.
+	/*
+	 * @name: randomCodeSuggested
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera una cadena formateada de codigo sugerido que incluye la
+	 * etiqueta de prueba, un prefijo aleatorio del catalogo global y un sufijo
+	 * numerico aleatorio entre 100 y 9999.
+	 */
+	public static String randomCodeSuggested() {
+		String prefix = randomFrom(GlobalVariablesSPX.CODE_SUGGESTED_PREFIXES);
+		int number = 100 + new Random().nextInt(9900); // rango 100–9999
+		return String.format("[PRUEBA] %s-%04d", prefix, number);
+	}
+
+	/*
+	 * @name: randomEquipementMachineTool
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera una descripcion aleatoria formateada para equipos o
+	 * herramientas combinando tipo, numero correlativo aleatorio y ubicacion
+	 * tomados de los catalogos globales.
+	 */
+	public static String randomEquipementMachineTool() {
+		String type = randomFrom(GlobalVariablesSPX.EQUIPMENT_TYPES);
+		String location = randomFrom(GlobalVariablesSPX.EQUIPMENT_LOCATIONS);
+		int number = 100 + new Random().nextInt(9900); // rango 100–9999
+		return String.format("%s Nuevo-%04d Uso-%s", type, number, location);
+	}
+
+	/*
+	 * @name: randomMeasures
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un valor aleatorio de medicion (rango 1 a 100)
+	 * concatenado con su unidad correspondiente seleccionada del catalogo global.
+	 */
+	public static String randomMeasures() {
+		String unit = randomFrom(GlobalVariablesSPX.MEASURE_UNITS);
+		int value = 1 + new Random().nextInt(100); // rango 1–100
+		return value + " " + unit;
+	}
+
+	/*
+	 * @name: randomItem
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un nombre de item dinamico concatenando nombre,
+	 * identificador numerico de 4 digitos y ubicacion aleatoria desde catalogos
+	 * globales.
+	 */
+	public static String randomItem() {
+		String name = randomFrom(GlobalVariablesSPX.ITEM_NAMES);
+		String location = randomFrom(GlobalVariablesSPX.ITEM_LOCATIONS);
+		int number = 100 + new Random().nextInt(9900); // rango 100–9999
+		return String.format("[PRUEBA] %s %04d %s", name, number, location);
+	}
+
+	/*
+	 * @name: randomPhysicalChemical
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera una cadena que representa una propiedad fisico-quimica
+	 * asignando un valor aleatorio entre 1 y 1000 junto con su unidad de medida y
+	 * propiedad desde variables globales.
+	 */
+	public static String randomPhysicalChemical() {
+		String property = randomFrom(GlobalVariablesSPX.PHYSICAL_PROPERTIES);
+		String unit = randomFrom(GlobalVariablesSPX.PHYSICAL_UNITS);
+		int value = 1 + new Random().nextInt(1000); // rango 1–1000
+		return property + " = " + value + " " + unit;
+	}
+
+	/*
+	 * @name: randomReference
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera una referencia dinamica de prueba concatenando un
+	 * prefijo aleatorio, un numero de 4 digitos y una categoria obtenidos de las
+	 * variables globales.
+	 */
+	public static String randomReference() {
+		String prefix = randomFrom(GlobalVariablesSPX.REFERENCE_PREFIXES);
+		String category = randomFrom(GlobalVariablesSPX.REFERENCE_CATEGORIES);
+		int number = 1000 + new Random().nextInt(9000); // rango 1000–9999
+		return String.format("%s%04d-%s", prefix, number, category);
+	}
+
+	/*
+	 * @name: randomManufacturer
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un fabricante aleatorio desde el catalogo global de
+	 * datos de prueba.
+	 */
+	public static String randomManufacturer() {
+		return randomFrom(GlobalVariablesSPX.MANUFACTURER);
+	}
+
+	/*
+	 * @name: randomPurchaseSpotID
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un ID aleatorio para un punto de compra con una longitud
+	 * que varia entre 1 y 5 digitos.
+	 */
+	public static String randomPurchaseSpotID() {
+		return String.valueOf(randomNumberWithDigits(1, 5));
+	}
+
+	/*
+	 * @name: randomEstimated
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un valor estimado aleatorio representado en formato de
+	 * texto con una longitud de 1 a 3 digitos.
+	 */
+	public static String randomEstimated() {
+		return String.valueOf(randomNumberWithDigits(1, 3));
+	}
+
+	private static int lastSuggestedMin = 0;
+
+	/*
+	 * @name: randomSuggestedMin
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera y almacena un valor minimo sugerido aleatorio de 1 a 3
+	 * digitos, asegurando un techo maximo de 998 para garantizar consistencia en la
+	 * relacion min/max.
+	 */
+	public static String randomSuggestedMin() {
+		lastSuggestedMin = randomNumberWithDigits(1, 3);
+		// Evita que el min ya ocupe el techo (999), para que siempre quepa un max mayor
+		if (lastSuggestedMin >= 999) {
+			lastSuggestedMin = 998;
+		}
+		return String.valueOf(lastSuggestedMin);
+	}
+
+	/*
+	 * @name: randomSuggestedMax
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un valor maximo sugerido aleatorio garantizando
+	 * matematicamente que sea superior al ultimo valor minimo sugerido generado.
+	 */
+	public static String randomSuggestedMax() {
+		int max = lastSuggestedMin + 1 + RANDOM.nextInt(999 - lastSuggestedMin);
+		return String.valueOf(max);
+	}
+
+	/*
+	 * @name: randomPartNumber
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un numero de parte aleatorio bajo el patron formateado
+	 * "PN-XXXX-Y", utilizando un numero entre 1000 y 9999 y una letra mayuscula
+	 * aleatoria (A-Z).
+	 */
+	public static String randomPartNumber() {
+		int number = 1000 + new Random().nextInt(9000); // rango 1000–9999
+		char letter = (char) ('A' + new Random().nextInt(26)); // A–Z aleatoria
+		return String.format("PN-%04d-%c", number, letter);
+	}
+
+	/*
+	 * @name: randomDescriptionItem
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene una descripcion aleatoria para la creacion de nuevos
+	 * articulos desde el catalogo global.
+	 */
+	public static String randomDescriptionItem() {
+		return randomFrom(GlobalVariablesSPX.DESCRIPTION_NEW_ITEM);
+	}
+
+	/*
+	 * @name: randomUrgencyReason
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: String lang
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Selecciona y retorna una razon de urgencia aleatoria basada en
+	 * el idioma proporcionado ("PT", "EN" o por defecto "ES").
 	 */
 	public static String randomUrgencyReason(String lang) {
 
@@ -314,35 +705,113 @@ public class SPXBase {
 		return randomFrom(source);
 	}
 
-	/**
-	 * Obtiene un nombre genérico aleatorio para pruebas.
-	 *
-	 * @return nombre genérico aleatorio.
+	/*
+	 * @name: randomGenericName
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un nombre generico aleatorio desde el catalogo global
+	 * para su uso en formularios de prueba.
 	 */
 	public static String randomGenericName() {
 		return randomFrom(GlobalVariablesSPX.GENERIC_NAME);
 	}
 
-	/**
-	 * Obtiene un ítem genérico aleatorio para pruebas.
-	 *
-	 * @return ítem genérico aleatorio.
+	/*
+	 * @name: randomGenericItem
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un item generico aleatorio desde el catalogo global
+	 * para escenarios de prueba automatizados.
 	 */
 	public static String randomGenericItem() {
 		return randomFrom(GlobalVariablesSPX.GENERIC_ITEM);
 	}
 
-	/**
-	 * Obtiene un comentario aleatorio desde catálogo global.
-	 *
-	 * Uso: - Comentarios. - Observaciones. - Notas de captura.
-	 *
-	 * @return comentario aleatorio.
+	/*
+	 * @name: randomComments
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un texto de comentario u observacion aleatorio desde el
+	 * catalogo global para el llenado de notas o bitacoras.
 	 */
 	public static String randomComments() {
 		return randomFrom(GlobalVariablesSPX.COMENTARIOS);
 	}
 
+	/*
+	 * @name: randomDescFAD
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene una descripcion aleatoria asociada al flujo FAD desde
+	 * el catalogo global de datos.
+	 */
+	public static String randomDescFAD() {
+		return randomFrom(GlobalVariablesSPX.DESC_FAD);
+	}
+
+	/*
+	 * @name: randomRAD
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene una razon de asignacion directa aleatoria desde las
+	 * variables globales del sistema.
+	 */
+	public static String randomRAD() {
+		return randomFrom(GlobalVariablesSPX.RAZON_ASIGNACION_DIRECTA);
+	}
+
+	/*
+	 * @name: randomCommentsFad
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Obtiene un comentario aleatorio especifico para procesos FAD
+	 * desde el catalogo global de variables.
+	 */
+	public static String randomCommentsFad() {
+		return randomFrom(GlobalVariablesSPX.COMENTARIOS_FAD);
+	}
 	// =========================================================================
 	// WebDriver Initialization
 	// =========================================================================
@@ -417,7 +886,7 @@ public class SPXBase {
 	/*
 	 * @name: launchBrowser
 	 * 
-	 * @date: 28/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: String url
 	 * 
@@ -425,10 +894,10 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite ingresar a la URL de la pagina y maximiza
-	 * la ventana
+	 * @description: Inicializa la navegacion hacia la URL desencriptada
+	 * especificada y maximiza la ventana del navegador, capturando y registrando
+	 * posibles excepciones de tiempo de espera o ejecucion de WebDriver.
 	 */
-
 	public void launchBrowser(String url) {
 		try {
 			reporterLog("Launching ... " + url);
@@ -446,7 +915,7 @@ public class SPXBase {
 	/*
 	 * @name: reporterLog
 	 * 
-	 * @date: 28/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: String log
 	 * 
@@ -454,8 +923,9 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite generar un reporte de cada paso del
-	 * testcase
+	 * @description: Agrega un mensaje o traza personalizada en el reporte de
+	 * ejecucion del caso de prueba (TestNG Reporter) manejando posibles excepciones
+	 * durante el registro.
 	 */
 	public void reporterLog(String log) {
 		try {
@@ -469,18 +939,17 @@ public class SPXBase {
 	/*
 	 * @name: waitForElementPresent
 	 * 
-	 * @date: 22/Nov/2025
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: By locator
 	 * 
-	 * @return: N/A
+	 * @return: WebElement
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: M�todo que permite generar un Explicit Wait hasta que el
-	 * elemento exista dentro del DOM. A diferencia de visibilityOfElementLocated,
-	 * este método utiliza presenceOfElementLocated para mejorar la estabilidad en
-	 * componentes dinámicos como listas, paneles o dropdowns (PrimeFaces).
+	 * @description: Ejecuta una espera explicita hasta que el elemento especificado
+	 * por el localizador se encuentre presente en el DOM, utilizando el tiempo de
+	 * espera predeterminado del framework.
 	 */
 	public WebElement waitForElementPresent(By locator) {
 
@@ -489,6 +958,21 @@ public class SPXBase {
 		return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 	}
 
+	/*
+	 * @name: waitForElementVisible
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: By locator, int seconds
+	 * 
+	 * @return: boolean
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Evalua la visibilidad de un elemento en el DOM dentro de un
+	 * tiempo limite personalizado en segundos, retornando verdadero si se muestra o
+	 * falso en caso de timeout o excepcion.
+	 */
 	public boolean waitForElementVisible(By locator, int seconds) {
 		try {
 
@@ -507,16 +991,17 @@ public class SPXBase {
 	/*
 	 * @name: waitForElementPresent
 	 * 
-	 * @date: 28/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: By locator, int seconds
 	 * 
-	 * @return: N/A
+	 * @return: WebElement
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite generar un Explicit Wait o tiempo de espera
-	 * hasta que se muestre el elemento requerido con un valor de segundos variable
+	 * @description: Ejecuta una espera explicita configurada con un tiempo dinamico
+	 * en segundos hasta confirmar la presencia del elemento en el DOM; registra
+	 * errores en el reporte si expira el tiempo.
 	 */
 	public WebElement waitForElementPresent(By locator, int seconds) {
 		try {
@@ -534,7 +1019,7 @@ public class SPXBase {
 	/*
 	 * @name: type
 	 * 
-	 * @date: 28/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: By locator, String inputText
 	 * 
@@ -542,7 +1027,9 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite capturar un dato en un campo de texto
+	 * @description: Ingresa una cadena de texto en un campo de entrada tras limpiar
+	 * su contenido previo, implementando hasta 3 reintentos automaticos ante
+	 * excepciones de elementos obsoletos (StaleElementReferenceException).
 	 */
 	public void type(By locator, String inputText) {
 		int attempts = 0;
@@ -566,15 +1053,17 @@ public class SPXBase {
 	/*
 	 * @name: typeClear
 	 * 
-	 * @date: 28/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
-	 * @param: By locator, String inputText
+	 * @param: By locator
 	 * 
 	 * @return: N/A
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite borrar un dato en un campo de texto
+	 * @description: Realiza la limpieza forzada del contenido de un campo de texto
+	 * enviando la combinacion de teclas CONTROL + A y DELETE, finalizando con la
+	 * captura de evidencia visual.
 	 */
 	public void typeClear(By locator) {
 		try {
@@ -592,7 +1081,7 @@ public class SPXBase {
 	/*
 	 * @name: getElement
 	 * 
-	 * @date: 27/May/2026
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: By locator
 	 * 
@@ -600,24 +1089,10 @@ public class SPXBase {
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Método centralizado y robusto para obtener elementos utilizando
-	 * Explicit Waits y sincronización con PrimeFaces.
-	 * 
-	 * Características:
-	 * 
-	 * 1. Espera automática: - BlockUI PrimeFaces - AJAX PrimeFaces - Visibilidad
-	 * del elemento
-	 * 
-	 * 2. Manejo de errores dinámicos: - StaleElementReferenceException -
-	 * TimeoutException - Renderizados AJAX
-	 * 
-	 * 3. Funcionalidades adicionales: - Scroll automático al elemento - Reintentos
-	 * automáticos - Logging detallado
-	 * 
-	 * Beneficios:
-	 * 
-	 * - Reduce errores intermitentes - Mejora estabilidad del framework - Evita uso
-	 * de implicit waits - Centraliza sincronización Selenium + PrimeFaces
+	 * @description: Metodo centralizado para la obtencion de elementos
+	 * interactuables que sincroniza peticiones AJAX y overlays de PrimeFaces,
+	 * aplica desplazamiento centrado al elemento y gestiona reintentos por
+	 * elementos obsoletos.
 	 */
 	public WebElement getElement(By locator) {
 		int attempts = 0;
@@ -652,27 +1127,17 @@ public class SPXBase {
 	/*
 	 * @name: click
 	 * 
-	 * @date: 27/May/2026
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: By locator
 	 * 
-	 * @return: void
+	 * @return: N/A
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Método robusto para hacer clic sobre un elemento.
-	 * 
-	 * Características:
-	 * 
-	 * 1. Espera automáticamente: - BlockUI PrimeFaces - Elemento visible - Elemento
-	 * clickeable
-	 * 
-	 * 2. Maneja: - StaleElementReferenceException -
-	 * ElementClickInterceptedException - overlays dinámicos - renderizados AJAX
-	 * 
-	 * 3. Utiliza JavaScript Click como fallback.
-	 * 
-	 * 4. Genera evidencia automática.
+	 * @description: Executa una accion de clic sobre un elemento interactuable tras
+	 * verificar su estado; incluye manejo de reintentos por elementos obsoletos y
+	 * respaldo (fallback) con JavaScript si el clic nativo falla.
 	 */
 	public void click(By locator) {
 		int attempts = 0;
@@ -2643,8 +3108,20 @@ public class SPXBase {
 		return evidence;
 	}
 
-	/**
-	 * Permite capturar texto documentando evidencia antes y después del llenado.
+	/*
+	 * @name: typeWithEvidence
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: By locator, String value, String businessAction
+	 * 
+	 * @return: TreeMap<String, String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Ingresa texto en un campo objetivo registrando el flujo en la
+	 * bitacora y recopilando captura de evidencia visual antes y despues de la
+	 * interaccion.
 	 */
 	protected TreeMap<String, String> typeWithEvidence(By locator, String value, String businessAction) {
 
@@ -2665,8 +3142,21 @@ public class SPXBase {
 		return evidence;
 	}
 
-	/**
-	 * Ejecuta upload documentado.
+	/*
+	 * @name: uploadWithEvidence
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: String filePath, By uploadLocator, By validationLocator, String
+	 * businessAction
+	 * 
+	 * @return: TreeMap<String, String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Realiza la carga de un archivo en el sistema recopilando
+	 * evidencia previa, verificando la visibilidad del elemento de validacion
+	 * posterior al envio y capturando evidencia del resultado exitoso.
 	 */
 	protected TreeMap<String, String> uploadWithEvidence(String filePath, By uploadLocator, By validationLocator,
 			String businessAction) {
@@ -2691,13 +3181,21 @@ public class SPXBase {
 		return evidence;
 	}
 
-	/**
-	 * Ejecuta clic mediante JavaScript.
-	 *
-	 * Utilizar cuando Selenium no logra interactuar correctamente con componentes
-	 * PrimeFaces o elementos ocultos por overlays.
-	 *
-	 * @param locator Localizador del elemento.
+	/*
+	 * @name: clickJS
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: By locator
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Fuerza la ejecucion de un clic directo en el DOM mediante
+	 * JavaScript utilizando un localizador By; util para omitir bloqueos por
+	 * overlays o componentes nativos de PrimeFaces no interactuables directamente
+	 * por Selenium.
 	 */
 	protected void clickJS(By locator) {
 
@@ -2708,10 +3206,19 @@ public class SPXBase {
 		js.executeScript("arguments[0].click();", element);
 	}
 
-	/**
-	 * Ejecuta clic mediante JavaScript sobre un WebElement.
-	 *
-	 * @param element Elemento objetivo.
+	/*
+	 * @name: clickJS
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: WebElement element
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Fuerza la ejecucion de un clic directo en el DOM mediante
+	 * JavaScript sobre una instancia WebElement previamente localizada.
 	 */
 	protected void clickJS(WebElement element) {
 
@@ -2721,7 +3228,19 @@ public class SPXBase {
 	}
 
 	/*
-	 * Detectar Lenguaje
+	 * @name: detectLanguage
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: WebDriver driver
+	 * 
+	 * @return: String
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Consulta el idioma configurado en el navegador o en la etiqueta
+	 * HTML raiz mediante JavaScript y retorna el codigo estandarizado del idioma
+	 * ("PT", "EN" o "ES").
 	 */
 	public static String detectLanguage(WebDriver driver) {
 		String lang = (String) ((JavascriptExecutor) driver).executeScript(
@@ -2734,5 +3253,135 @@ public class SPXBase {
 		if (lang.startsWith("en"))
 			return "EN";
 		return "ES";
+	}
+
+	/*
+	 * @name: waitForAjaxAndBlockUiToFinish
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Sincroniza la ejecucion esperando la finalizacion de peticiones
+	 * asincronas de PrimeFaces y la desaparicion de capas de bloqueo (blockUI);
+	 * incluye monitoreo e impresion de metricas si el tiempo de espera excede el
+	 * umbral de rendimiento aceptable.
+	 */
+	protected void waitForAjaxAndBlockUiToFinish() throws InterruptedException {
+		long start = System.currentTimeMillis();
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
+		long elapsed = System.currentTimeMillis() - start;
+		if (elapsed > 3000) {
+			reporterLog("[PERF] waitForAjaxAndBlockUiToFinish tardo " + elapsed + "ms");
+		}
+	}
+
+	/*
+	 * @name: selectRandomPrimefacesOption
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: By label, By panel, By options, String fieldName
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Despliega un componente desplegable de PrimeFaces, omite la
+	 * opcion inicial por defecto, selecciona una de las opciones validas restantes
+	 * al azar de forma dinamica y reporta la seleccion realizada.
+	 */
+	public void selectRandomPrimefacesOption(By label, By panel, By options, String fieldName) {
+		click(label);
+		WebElement panelElement = waitForVisibility(panel);
+		waitForPrimefacesAjax();
+
+		List<WebElement> optionElements = driver.findElements(options);
+		List<String> optionLabels = new ArrayList<>();
+
+		// Comenzamos en i = 1 para omitir la primera opción (default)
+		for (int i = 1; i < optionElements.size(); i++) {
+			optionLabels.add(optionElements.get(i).getAttribute("data-label"));
+		}
+
+		// Validación por si la lista solo tenía la opción por defecto
+		if (optionLabels.isEmpty()) {
+			throw new RuntimeException("No hay opciones válidas para seleccionar en: " + fieldName);
+		}
+
+		String randomLabel = optionLabels.get(new Random().nextInt(optionLabels.size()));
+
+		String panelId = panelElement.getAttribute("id");
+		By optSelected = By.xpath("//div[@id='" + panelId + "']//li[@data-label='" + randomLabel + "']");
+		WebElement optionToClick = driver.findElement(optSelected);
+		scrollIntoView(optionToClick);
+		optionToClick.click();
+
+		reporterLog(fieldName + " seleccionado aleatoriamente: " + randomLabel);
+	}
+
+	/*
+	 * @name: waitForVisibility
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: By locator
+	 * 
+	 * @return: WebElement
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Aplica una espera explicita de hasta 20 segundos hasta que el
+	 * elemento especificado por el localizador sea plenamente visible e
+	 * interactuable en el DOM.
+	 */
+	public WebElement waitForVisibility(By locator) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+	}
+
+	/*
+	 * @name: scrollIntoView
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: WebElement element
+	 * 
+	 * @return: N/A
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Desplaza la vista de la ventana del navegador mediante
+	 * JavaScript para centrar el elemento objetivo dentro del viewport.
+	 */
+	public void scrollIntoView(WebElement element) {
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", element);
+	}
+
+	/*
+	 * @name: randomNumberWithDigits
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: int minDigits, int maxDigits
+	 * 
+	 * @return: int
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Genera un numero entero aleatorio cuyo total de digitos se
+	 * encuentra delimitado dentro de un rango especifico (minimo y maximo de
+	 * digitos).
+	 */
+	private static int randomNumberWithDigits(int minDigits, int maxDigits) {
+		int digits = minDigits + RANDOM.nextInt(maxDigits - minDigits + 1);
+		int min = (digits == 1) ? 0 : (int) Math.pow(10, digits - 1);
+		int max = (int) Math.pow(10, digits) - 1;
+		return min + RANDOM.nextInt(max - min + 1);
 	}
 }

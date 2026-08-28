@@ -131,6 +131,7 @@ public class GlobalVariablesSPX {
 
 	/** UEN activa utilizada en la ejecución actual. */
 	public static final String SPX_DEV5_NUM_UEN = SPX_DEV5_NUM_UEN_OSASCO;
+	public static final String SPX_DEV5_NAME_UEN = SPX_DEV5_NOM_UEN_OSASCO;
 
 	/** XPath para selección de UEN en el Home. */
 	public static final String SPX_DEV5_UEN_HOME = "//option[@value='number:" + SPX_DEV5_NUM_UEN + "']";
@@ -155,8 +156,8 @@ public class GlobalVariablesSPX {
 			"12 Centímetros", "15 Pies", "18 Pies", "20 Metros", "55 Centímetros", "98 Pulgadas", "145 Centímetros",
 			"54 Pies", "45 Centímetros", "1 Yarda", "2 Yardas", "3 Yardas", "1 Centímetro", "2 Pulgadas", "3 Pies" };
 
-	public static final String[] PROVEEDORES = { "CARLOS ROBERTO DONADELLI",
-			"TABELIAO DE PROTESTO DE LETRAS E TITULOS DA COMARCA DE OSASCO", "REVTERM PECAS E PARTES COMPONENTES DE CONTROLES E SISTEMAS SUPERVISORIOS LTDA","SCL OLIVEIRA PALESTRA E TREINAMENTOS EIRELI" };
+	public static final String[] PROVEEDORES = {
+			"SINDICATO NACIONAL DA INDUSTRIA DE COMPONENTES PARA VEICULOS AUTOMOTORES" };
 
 	public static final String[] UNIDAD_DE_MEDIDA_ES = { "HECTOLITRO", "PINT", "TONELADA", "METRO CUBICO", "ONZA",
 			"QUINCENAL", "MENSUAL", "B10", "CAJA", "CILINDRO" };
@@ -215,6 +216,100 @@ public class GlobalVariablesSPX {
 			"Mejoras estrategicas en la gestion de requisiciones automaticas utilizando las capacidades de Selenium WebDriver, garantizando una mayor precision y rapidez en los procesos.",
 			"Implementacion de soluciones de automatizacion para la gestion de requisiciones, optimizando recursos y procesos mediante el uso avanzado de Selenium WebDriver." };
 
+	public static final String[] DESC_FAD = {
+			"Registro de prueba automatizada para la validacion del flujo funcional en el Formato de Asignacion Directa mediante script de Selenium",
+			"Descripcion generada por herramienta de automatizacion para verificar la persistencia de datos en el modulo de Asignacion Directa",
+			"Data de test automatizado cargada para comprobar la correcta visualizacion del campo Descripcion en el entorno de pruebas",
+			"Prueba funcional automatizada ejecutada por Selenium Webdriver para validar la estabilidad de la pantalla de Formato de Asignacion Directa",
+			"Texto de prueba generado de forma automatica para el analisis de comportamiento de la interfaz de usuario en el flujo de asignacion" };
+
+	public static final String[] RAZON_ASIGNACION_DIRECTA = {
+			"Validacion tecnica del campo detalle de razon mediante pruebas automatizadas de Selenium para simular la seleccion de proveedor directo",
+			"Justificacion generada por script de QA Automation con la finalidad de comprobar las reglas de negocio y restricciones del formulario",
+			"Motivo de prueba automatizada ingresado para validar el correcto almacenamiento de la justificacion en el Formato de Asignacion Directa",
+			"Script de Selenium ejecuta la carga de esta razon de asignacion para verificar la respuesta del servidor en ambiente de testing",
+			"Detalle de simulacion automatizada requerido para completar el flujo feliz de la pantalla de asignacion directa sin datos reales" };
+
+	public static final String[] COMENTARIOS_FAD = {
+			"Comentario de seguimiento automatizado por Selenium para comprobar la adicion dinamica de notas en el historial del formato",
+			"Observacion de QA generada por script de automatizacion para verificar que el campo Comentarios soporta la carga de texto de prueba",
+			"Nota automatizada creada durante la ejecucion de la suite de pruebas funcionales para el Formato de Asignacion Directa",
+			"Registro dummy generado por herramienta de testing con el fin de auditar la seccion de comentarios en el ciclo de pruebas actual",
+			"Comentario tecnico de prueba ejecutado por robot de Selenium para la validacion de campos de texto libre en el formulario" };
+
+	public static final String[] DESCRIPTION_NEW_ITEM = {
+			"[DATO DE PRUEBA] Prueba automatizada de software completada sin errores críticos.",
+			"[DATO DE PRUEBA] El caso de prueba se ejecutó correctamente, sin incidencias registradas.",
+			"[DATO DE PRUEBA] No se detectaron defectos en la validación automatizada del módulo.",
+			"[DATO DE PRUEBA] Ejecución del script de prueba finalizada con éxito y sin fallos.",
+			"[DATO DE PRUEBA] Entorno de pruebas estable, sin impactos en la funcionalidad.",
+			"[DATO DE PRUEBA] Se aplicaron verificaciones de seguridad, sin vulnerabilidades expuestas.",
+			"[DATO DE PRUEBA] El componente mostró comportamiento esperado bajo carga simulada.",
+			"[DATO DE PRUEBA] Prueba finalizada sin necesidad de intervención manual.",
+			"[DATO DE PRUEBA] Automatización ejecutada sin requerir supervisión constante.",
+			"[DATO DE PRUEBA] Simulación exitosa, errores de rendimiento mitigados.",
+			"[DATO DE PRUEBA] El entorno virtual fue seguro, sin filtraciones de datos.",
+			"[DATO DE PRUEBA] No se generaron excepciones no controladas durante la prueba.",
+			"[DATO DE PRUEBA] Prueba de estrés completada, sin bloqueos ni caídas.",
+			"[DATO DE PRUEBA] La integridad del sistema se preservó gracias a los controles automáticos.",
+			"[DATO DE PRUEBA] Validación sin incidentes gracias al aislamiento del entorno.",
+			"[DATO DE PRUEBA] El módulo funcionó de manera predecible, sin errores inesperados.",
+			"[DATO DE PRUEBA] Impacto nulo sobre la configuración de usuario durante la prueba.",
+			"[DATO DE PRUEBA] Medidas preventivas aplicadas, sin pérdida de datos.",
+			"[DATO DE PRUEBA] La prueba no expuso información sensible en los logs.",
+			"[DATO DE PRUEBA] El sistema de monitoreo detectó y evitó condiciones anómalas.",
+			"[DATO DE PRUEBA] Condiciones de carga controladas, sin degradación de servicio.",
+			"[DATO DE PRUEBA] Los tests de regresión pasaron sin fallos.",
+			"[DATO DE PRUEBA] No se requirió intervención humana ante errores.",
+			"[DATO DE PRUEBA] La automatización permitió cobertura completa de escenarios.",
+			"[DATO DE PRUEBA] El script interrumpió la prueba ante desviaciones críticas.",
+			"[DATO DE PRUEBA] El personal permaneció fuera del entorno de prueba en vivo.",
+			"[DATO DE PRUEBA] No se observaron fallas que comprometan la estabilidad del software.",
+			"[DATO DE PRUEBA] La evaluación incluyó verificación de puntos de control.",
+			"[DATO DE PRUEBA] Los mecanismos de rollback funcionaron correctamente.",
+			"[DATO DE PRUEBA] No se presentó aumento indebido de tiempos de respuesta.",
+			"[DATO DE PRUEBA] Las métricas de rendimiento se mantuvieron dentro de los límites.",
+			"[DATO DE PRUEBA] Ensayo realizado bajo estándares de calidad de software.",
+			"[DATO DE PRUEBA] La latencia se mantuvo estable y dentro de parámetros seguros.",
+			"[DATO DE PRUEBA] No se activaron alertas de error durante la ejecución.",
+			"[DATO DE PRUEBA] La configuración de red fue adecuada para la prueba.",
+			"[DATO DE PRUEBA] No hubo necesidad de restablecer el entorno tras la ejecución.",
+			"[DATO DE PRUEBA] Protocolos de recuperación no fueron necesarios.",
+			"[DATO DE PRUEBA] El personal no requirió ajustes manuales al código.",
+			"[DATO DE PRUEBA] La interfaz de usuario respondió dentro de parámetros seguros.",
+			"[DATO DE PRUEBA] Los resultados confirman estabilidad en el entorno de pruebas.",
+			"[DATO DE PRUEBA] El módulo no generó errores de memoria durante la simulación." };
+	public static final String[] CODE_SUGGESTED_PREFIXES = { "ART", "PRO", "INV", "MAT", "EQU", "SUP", "HERR", "REP",
+			"COMP", "SEC" };
+	public static final String[] EQUIPMENT_TYPES = { "Equipo", "Maquinaria", "Herramienta" };
+	public static final String[] EQUIPMENT_LOCATIONS = { "Planta", "Taller", "Almacen", "Sitio", "Deposito", "Fabrica",
+			"Estacion", "Bodega", "Instalacion", "Campo" };
+	public static final String[] MEASURE_UNITS = { "yardas", "centímetros", "metros", "pulgadas", "milímetros" };
+	public static final String[] ITEM_NAMES = { "Tornillo", "Pieza", "Componente", "Accesorio", "Repuesto", "Material",
+			"Soporte", "Conector", "Engranaje", "Filtro", "Manguera", "Válvula", "Motor", "Sello", "Interruptor",
+			"Rodamiento", "Cinta", "Cable", "Perno", "Polea" };
+
+	public static final String[] ITEM_LOCATIONS = { "Almacen Principal", "Almacen Secundario", "Seccion A", "Seccion B",
+			"Seccion C", "Planta", "Taller", "Sitio", "Bodega", "Deposito" };
+	public static final String[] PHYSICAL_PROPERTIES = { "Densidad", "Punto de fusión", "Punto de ebullición",
+			"Viscosidad", "Conductividad térmica", "Resistencia a la tracción", "Dureza", "Elasticidad",
+			"Capacidad calorífica", "Expansión térmica", "Absorción de agua", "Solubilidad", "Conductividad eléctrica",
+			"Toxicidad", "Inflamabilidad", "Tensión superficial", "Porosidad", "Peso específico",
+			"Fuerza de compresión", "Resistencia química" };
+
+	public static final String[] PHYSICAL_UNITS = { "g/cm³", "°C", "°F", "Pa·s", "W/m·K", "MPa", "HRC", "GPa", "J/kg·K",
+			"µm/m·°C", "%", "g/L", "S/m", "mg/L", "kJ/mol", "mN/m", "% vol", "kg/m³", "kN", "% res" };
+	public static final String[] REFERENCE_PREFIXES = { "REF-", "ART-", "ITEM-", "COD-", "ALM-" };
+
+	public static final String[] REFERENCE_CATEGORIES = { "Herramientas", "Maquinaria", "Equipo", "Materiales",
+			"Accesorios", "Suministros", "Componentes", "Piezas", "Repuestos", "Consumibles", "Seguridad",
+			"Electricidad", "Neumática", "Mecánica", "Hidráulica", "Estructuras", "Muebles", "Plásticos", "Metales",
+			"Conexiones" };
+	public static final String[] MANUFACTURER = { "Siemens", "ABB", "Schneider Electric", "Rockwell Automation",
+			"Mitsubishi Electric", "Omron", "General Electric", "Bosch Rexroth", "Yaskawa", "Keyence",
+			"Phoenix Contact", "National Instruments", "Fanuc", "Delta Electronics", "Emerson", "Festo", "Cerwin-Vega",
+			"Pioneer", "Yokogawa", "Honeywell" };
+
 	// =========================================================================
 	// RANDOM VALUES — Valores aleatorios generados al iniciar la clase
 	// =========================================================================
@@ -256,18 +351,23 @@ public class GlobalVariablesSPX {
 
 	// Español
 	public static final String SPX_DEV5_CATEGORY_SPOT_PAGE_ESP = "Administrativo y Profesional";
-	public static final String SPX_DEV5_FAMILY_SPOT_PAGE_ESP = "Publicidad y Mercadotecnia";
-	public static final String SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP = "Medios impresos y Artículos promocionales";
+	public static final String SPX_DEV5_FAMILY_SPOT_PAGE_ESP = "Consultoría";
+	public static final String SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP = "Consultoría";
 
 	// Ingles
 	public static final String SPX_DEV5_CATEGORY_SPOT_PAGE_ENG = "Administrative & Professional";
-	public static final String SPX_DEV5_FAMILY_SPOT_PAGE_ENG = "Advertising & Marketing";
-	public static final String SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG = "Printed Media & Promotional Items";
+	public static final String SPX_DEV5_FAMILY_SPOT_PAGE_ENG = "Consulting";
+	public static final String SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG = "Consulting";
+
+	// Portugues
+	public static final String SPX_DEV5_CATEGORY_SPOT_PAGE_PT = "Administrativo e Profissional";
+	public static final String SPX_DEV5_FAMILY_SPOT_PAGE_PT = "Consultoria";
+	public static final String SPX_DEV5_SUBFAMILY_SPOT_PAGE_PT = "Consultoria";
 
 	public static final String SPX_DEV5_GENERIC_ITEM_SPOT_PAGE = SPXBase.randomGenericItem() + "-"
 			+ SPXBase.randomNumber();
 
-	public static final String SPX_GENERIC_ITEM_SPOT_PAGE = "NCM_9503.00.99_0 - Brindes";
+	public static final String SPX_GENERIC_ITEM_SPOT_PAGE = "NBS_112030000 - Serviços de pesquisa e desenvolvimento interdisciplinar";
 
 	public static final String SPX_DEV5_QUANTITY_SPOT_PAGE = SPXBase.randomQuantity();
 
@@ -278,23 +378,24 @@ public class GlobalVariablesSPX {
 
 	// XPath de selección — Category, Family, SubFamily (multilenguaje ES/EN)
 	public static final String SPX_DEV5_SELECT_CATEGORY_OPTION_SPOT_PAGE = "//li[contains(.,'"
-			+ SPX_DEV5_CATEGORY_SPOT_PAGE_ESP + "') " + "or contains(.,'" + SPX_DEV5_CATEGORY_SPOT_PAGE_ENG + "')]";
+			+ SPX_DEV5_CATEGORY_SPOT_PAGE_ESP + "') or contains(.,'" + SPX_DEV5_CATEGORY_SPOT_PAGE_ENG
+			+ "') or contains(.,'" + SPX_DEV5_CATEGORY_SPOT_PAGE_PT + "')]";
 
 	public static final String SPX_DEV5_SELECT_FAMILY_OPTION_SPOT_PAGE = "//div[contains(@id,'nwcboFamilias0') and contains(@class,'ui-selectonemenu-panel')]"
-			+ "//li[contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'"
-			+ SPX_DEV5_FAMILY_SPOT_PAGE_ENG + "')]";
+			+ "//li[contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ESP + "') or contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ENG
+			+ "') or contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_PT + "')]";
 
 	public static final String SPX_DEV5_SELECT_FAMILY_OPTION_NEW_LINE_SPOT_PAGE = "//div[contains(@id,'nwcboFamilias') and contains(@class,'ui-selectonemenu-panel')]"
-			+ "//li[contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'"
-			+ SPX_DEV5_FAMILY_SPOT_PAGE_ENG + "')]";
+			+ "//li[contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ESP + "') or contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_ENG
+			+ "') or contains(.,'" + SPX_DEV5_FAMILY_SPOT_PAGE_PT + "')]";
 
 	public static final String SPX_DEV5_SELECT_SUBFAMILY_OPTION_SPOT_PAGE = "//div[contains(@id,'nwcboSubFamilias0') and contains(@class,'ui-selectonemenu-panel')]"
-			+ "//li[contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'"
-			+ SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "')]";
+			+ "//li[contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP + "') or contains(.,'"
+			+ SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "') or contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_PT + "')]";
 
 	public static final String SPX_DEV5_SELECT_SUBFAMILY_OPTION_NEW_LINE_SPOT_PAGE = "//div[@id='formSpot:nwcboSubFamilias0_panel']"
-			+ "//li[contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP + "') " + "or contains(.,'"
-			+ SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "')]";
+			+ "//li[contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_ESP + "') or contains(.,'"
+			+ SPX_DEV5_SUBFAMILY_SPOT_PAGE_ENG + "') or contains(.,'" + SPX_DEV5_SUBFAMILY_SPOT_PAGE_PT + "')]";
 
 	/** XPath dinámico para selección de unidad de medida por valor exacto. */
 	public static final String getUnitOfMeasureXpath(String unitOfMeasure) {
@@ -385,11 +486,11 @@ public class GlobalVariablesSPX {
 	// SINGLE SOURCE FORMAT (FAD) — Datos de prueba
 	// =========================================================================
 
-	public static final String DESCRIPTION_FAD = "PRUEBA TEST CON FAD - " + SPXBase.randomNumber();
+	public static final String DESCRIPTION_FAD = SPXBase.randomDescFAD();
 	public static final String SUPPLIER_NAME_FAD = SPXBase.randomSupplier();
 	public static final String AMOUNT_FAD = SPXBase.randomQuantity();
-	public static final String DETAILS_FAD = "DETALLES DEL SERVICIO DE PRUEBA - " + SPXBase.randomNumber();
-	public static final String COMMENTS_FAD = "COMENTARIOS DE PRUEBA CON FAD - " + SPXBase.randomNumber();
+	public static final String DETAILS_FAD = SPXBase.randomRAD();
+	public static final String COMMENTS_FAD = SPXBase.randomCommentsFad();
 
 	/**
 	 * XPath de la razón seleccionada aleatoriamente para el formulario FAD.
@@ -515,4 +616,22 @@ public class GlobalVariablesSPX {
 	// =========================================================================
 
 	public static final String SPX_DEV5_DELEGADO = "SPX Cloud Dev";
+
+	// =========================================================================
+	// TEST DATA CATALOGS — Datos de prueba generales
+	// =========================================================================
+	public static final String SPX_DEV5_DESCRIPTION_NEW_ITEM_PAGE = SPXBase.randomDescriptionItem();
+	public static final String SPX_DEV5_COST_CENTER_NEW_ITEM_PAGE = "A003-Finance Plant Controllers / Adm";
+	public static final String SPX_DEV5_CODE_SUGGESTED_NEW_ITEM_PAGE = SPXBase.randomCodeSuggested();
+	public static final String SPX_DEV5_EQUIPEMENT_MACHINE_TOOL_NEW_ITEM_PAGE = SPXBase.randomEquipementMachineTool();
+	public static final String SPX_DEV5_MEASURES_NEW_ITEM_PAGE = SPXBase.randomMeasures();
+	public static final String SPX_DEV5_ITEM_NEW_ITEM_PAGE = SPXBase.randomItem();
+	public static final String SPX_DEV5_PHYSICAL_CHEMICAL_NEW_ITEM_PAGE = SPXBase.randomPhysicalChemical();
+	public static final String SPX_DEV5_REFERENSE_NEW_ITEM_PAGE = SPXBase.randomReference();
+	public static final String SPX_DEV5_MANUFACTURER_NEW_ITEM_PAGE = SPXBase.randomManufacturer();
+	public static final String SPX_DEV5_PART_NUMBER_NEW_ITEM_PAGE = SPXBase.randomPartNumber();
+	public static final String SPX_DEV5_PURCHASE_SPOT_ID_NEW_ITEM_PAGE = SPXBase.randomPurchaseSpotID();
+	public static final String SPX_DEV5_ESTIMATED_NEW_ITEM_PAGE = SPXBase.randomEstimated();
+	public static final String SPX_DEV5_SUGGESTED_MIN_NEW_ITEM_PAGE = SPXBase.randomSuggestedMin();
+	public static final String SPX_DEV5_SUGGESTED_MAX_NEW_ITEM_PAGE = SPXBase.randomSuggestedMax();
 }

@@ -83,7 +83,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales {
 
 		// Select to UEN and Access to Administrador Roles Menu
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministracionPorUENElearning());
 		Assert.assertEquals(administracionPorUenElearningSPXPage.textAdministracionPorUenElearningPageIsDisplayed(),
 				true);
@@ -122,7 +122,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Administracion_Compras_Globales {
 
 		// Select to UEN and Access to Administración de Accesos
 		listaScreenShotsAux = new TreeMap<>(); // List clear
-		listaScreenShotsAux.putAll(homeSPXPage.selectToUenFromHome());
+		listaScreenShotsAux.putAll(homeSPXPage.selectUenFromHome());
 		listaScreenShotsAux.putAll(homeSPXPage.accesToAdministracionAccesos());
 		Assert.assertEquals(administracionAccesosSPXPage.textAdministracionAccesosPageIsDisplayed(), true);
 		listaScreenShots.put("Step2", listaScreenShotsAux); // Add all list

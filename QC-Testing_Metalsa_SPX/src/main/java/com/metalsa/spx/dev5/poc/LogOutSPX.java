@@ -31,7 +31,6 @@ public class LogOutSPX extends SPXBase {
 	 */
 	public TreeMap<String, String> logout() throws InterruptedException {
 		reporterLog("LogOut to SPX ...");
-		isElementPresent(btnLogout);
 		TreeMap<String, String> evidence = returnSaveImage(btnLogout);
 		click(btnLogout);
 		return evidence;

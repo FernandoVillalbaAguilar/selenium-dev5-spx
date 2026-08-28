@@ -38,6 +38,8 @@ public class HomeSPX extends SPXBase {
 	By iconMenuRequisitionsCreateRequisition = By.xpath("//a[@href='#_menu_192']");
 	By iconMenuRequisitionsCreateRequisitionSpotBuyRequisitions = By
 			.xpath("//a[@href='" + GlobalVariablesSPX.SPX_DEV5_URL + "/pages/spot/index.xhtml']");
+	By iconMenuRequisitionCreateNewArticleAlmacen = By
+			.xpath("//a[@href='" + GlobalVariablesSPX.SPX_DEV5_URL + "pages/almacen/solicitud/nuevoArticulo.xhtml']");
 
 	// Compras Globales
 	By iconMenuAdministradorComprasGlobales = By.xpath("//li[.//a[@href='#_menu_222']]");
@@ -50,15 +52,16 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: menuHeaderHomeIsDisplayed
 	 * 
-	 * @date: 28/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: isDisplayed(menuHeaderHome);
+	 * @return: boolean
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite verificar que el elemento est� disponible
+	 * @description: Confirma el acceso a SPX verificando la visibilidad del icono
+	 * principal del menu en el encabezado de la pantalla de inicio.
 	 */
 	public boolean menuHeaderHomeIsDisplayed() {
 		reporterLog("Access to SPX ...");
@@ -67,26 +70,27 @@ public class HomeSPX extends SPXBase {
 	}
 
 	/*
-	 * @name: selectToUenFromHome
+	 * @name: selectUenFromHome
 	 * 
-	 * @date: 30/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite seleccionar una UEN
+	 * @description: Despliega el selector de UEN desde la pantalla principal,
+	 * selecciona la opcion correspondiente y captura la evidencia visual de la
+	 * seleccion.
 	 */
+	public TreeMap<String, String> selectUenFromHome() {
+		reporterLog("Selecting UEN from Home...");
 
-	public TreeMap<String, String> selectToUenFromHome() throws InterruptedException {
-		reporterLog("Access to Spot Buy Requisitions ...");
-		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
-		waitForElementPresent(selectUEN);
 		click(selectUEN);
 		waitForElementPresent(optUEN);
 		click(optUEN);
+
 		return returnSaveImage(optUEN);
 	}
 
@@ -94,15 +98,17 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToAdministradorRolesMenu
 	 * 
-	 * @date: 15/Feb/2024
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Navega a traves del menu lateral pasando por Administracion del
+	 * Sistema y Administrador TI hasta acceder al modulo Administrador de Roles,
+	 * retornando la evidencia visual.
 	 */
 	public TreeMap<String, String> accesToAdministradorRolesMenu() {
 		reporterLog("Access to Administrador Roles Menu ...");
@@ -120,15 +126,17 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToAdministradorMenu
 	 * 
-	 * @date: 15/Feb/2024
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Navega jerarquicamente en el menu lateral hasta la opcion
+	 * Administrador dentro de la seccion Administrador TI y guarda captura de
+	 * evidencia.
 	 */
 	public TreeMap<String, String> accesToAdministradorMenu() {
 		reporterLog("Access to Administrador Menu ...");
@@ -145,15 +153,16 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToArticulosControlados
 	 * 
-	 * @date: 15/Feb/2024
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Navega jerarquicamente en el menu principal hasta acceder al
+	 * modulo de Articulos Controlados, capturando la evidencia del acceso.
 	 */
 	public TreeMap<String, String> accesToArticulosControlados() {
 		reporterLog("Access to Administrador Menu ...");
@@ -170,15 +179,16 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToArticulosPorProcesar
 	 * 
-	 * @date: 15/Feb/2024
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Accede a la vista de Articulos por Procesar ingresando mediante
+	 * la seccion Proceso Nuevo Articulo Almacen y retorna la evidencia capturada.
 	 */
 	public TreeMap<String, String> accesToArticulosPorProcesar() {
 		reporterLog("Access to Articulos por Procesar ...");
@@ -193,15 +203,17 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToCapturadeCotizaciones
 	 * 
-	 * @date: 15/Feb/2024
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Navega a la seccion de Captura de Cotizaciones dentro de la
+	 * ruta Proceso Nuevo Articulo Almacen en el menu principal y recopila la
+	 * evidencia del paso.
 	 */
 	public TreeMap<String, String> accesToCapturadeCotizaciones() {
 		reporterLog("Access to Caputa de cotizaciones ...");
@@ -216,15 +228,17 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToSpotBuyRequisitions
 	 * 
-	 * @date: 30/Oct/2023
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Navega a traves de las subsecciones de Requisiciones hasta
+	 * ingresar a la pantalla Spot Buy Requisitions, capturando evidencia de la
+	 * navegacion.
 	 */
 	public TreeMap<String, String> accesToSpotBuyRequisitions() {
 		reporterLog("Access to Spot Buy Requisitions ...");
@@ -242,15 +256,16 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToAdministracionPorUENElearning
 	 * 
-	 * @date: 15/Feb/2024
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Accede a la seccion Administracion por UEN Elearning bajo la
+	 * ruta Administrador Compras Globales y genera captura del modulo.
 	 */
 	public TreeMap<String, String> accesToAdministracionPorUENElearning() {
 		reporterLog("Access to Administrador por UEN Elearning ...");
@@ -266,18 +281,19 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesToAdministracionAccesos
 	 * 
-	 * @date: 19/Dec/2025
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite acceder a la pagina indicada
+	 * @description: Navega al modulo Administracion de Accesos desde el menu
+	 * Administrador Compras Globales y registra la evidencia correspondiente.
 	 */
 	public TreeMap<String, String> accesToAdministracionAccesos() {
-		reporterLog("Access to Administraci�n de Accesos ...");
+		reporterLog("Access to Administracion de Accesos ...");
 		click(iconMenu);
 		waitForElementPresent(iconMenuAdministradorComprasGlobales);
 		click(iconMenuAdministradorComprasGlobales);
@@ -290,17 +306,18 @@ public class HomeSPX extends SPXBase {
 	/*
 	 * @name: accesMainPageSPX
 	 * 
-	 * @date: 27/April/2026
+	 * @date: 28/Ago/2026
 	 * 
 	 * @param: N/A
 	 * 
-	 * @return: N/A
+	 * @return: TreeMap<String, String>
 	 * 
 	 * @author: Fernando Villalba Aguilar
 	 * 
-	 * @description: Este metodo permite regresar a la pantalla principal de SPX
+	 * @description: Regresa a la pagina principal de SPX previa sincronizacion con
+	 * overlays de bloqueo (blockUI), retorna al dashboard de inicio y recopila
+	 * evidencia visual.
 	 */
-
 	public TreeMap<String, String> accesMainPageSPX() throws InterruptedException {
 		reporterLog("Access to Main Page SPX ...");
 		Thread.sleep(GlobalVariablesSPX.SHORT_TIMEOUT);
@@ -309,5 +326,32 @@ public class HomeSPX extends SPXBase {
 		TreeMap<String, String> evidence = returnSaveImage(iconMainPageSPX);
 		click(iconMainPageSPX);
 		return evidence;
+	}
+
+	/*
+	 * @name: accesToCreateNewArticleAlmacen
+	 * 
+	 * @date: 28/Ago/2026
+	 * 
+	 * @param: N/A
+	 * 
+	 * @return: TreeMap<String, String>
+	 * 
+	 * @author: Fernando Villalba Aguilar
+	 * 
+	 * @description: Navega a traves del menu Requisiciones para ingresar a la
+	 * pantalla de Creacion de Nuevo Articulo de Almacen y retorna la captura de
+	 * pantalla generada.
+	 */
+	public TreeMap<String, String> accesToCreateNewArticleAlmacen() {
+		reporterLog("Access to Spot Buy Requisitions ...");
+		click(iconMenu);
+		waitForElementPresent(iconMenuRequisitions);
+		click(iconMenuRequisitions);
+		waitForElementPresent(iconMenuRequisitionsCreateRequisition);
+		click(iconMenuRequisitionsCreateRequisition);
+		waitForElementPresent(iconMenuRequisitionCreateNewArticleAlmacen);
+		click(iconMenuRequisitionCreateNewArticleAlmacen);
+		return returnSaveImage(iconMenuRequisitionCreateNewArticleAlmacen);
 	}
 }
