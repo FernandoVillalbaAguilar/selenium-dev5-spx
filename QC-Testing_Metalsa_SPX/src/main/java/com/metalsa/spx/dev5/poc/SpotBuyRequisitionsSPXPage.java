@@ -143,10 +143,10 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	// =========================================================
 	By txtGenericItem = By.xpath(
 			"//div[@id='formSpot:nwcboItemGenerico0_panel']//input[@role='textbox' and contains(@class, 'ui-selectonemenu-filter')]");
-	By lblGenericItemOsasco = By
-			.xpath("//label[contains(@id,'nwcboItemGenerico') and contains(normalize-space(),'isca')]");
-	By optGenericItemOsasco = By.xpath("//li[contains(@class,'ui-selectonemenu-item') and @data-label='"
-			+ GlobalVariablesSPX.SPX_GENERIC_ITEM_SPOT_PAGE + "']");
+	By lblGenericItemOsasco = By.id("formSpot:nwcboItemGenerico0_label");
+	By optGenericItemOsasco = By.xpath(
+			"//div[@id='formSpot:nwcboItemGenerico0_panel']//li[contains(@class,'ui-selectonemenu-item') and @data-label='"
+					+ GlobalVariablesSPX.SPX_GENERIC_ITEM_SPOT_PAGE + "']");
 
 	// =========================================================
 	// QUANTITY
@@ -326,7 +326,6 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 
 		// =========================================================
 		// UNIT OF MEASURE
-		// Primero se intenta abrir el panel. Si no aparece, se reintenta.
 		// =========================================================
 		waitForBlockUIToDisappear();
 		click(lblUnitOfMeasure);
@@ -334,8 +333,6 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		boolean udmPanelOpened = waitForElementVisible(pnlUnitOfMeasure, 5);
 		if (!udmPanelOpened) {
 			reporterLog("[WARNING] UDM panel did not open on first click. Retrying...");
-
-			// Reintento con enfoque más directo
 			jsClick(lblUnitOfMeasure);
 			waitForPrimefacesAjax();
 			udmPanelOpened = waitForElementVisible(pnlUnitOfMeasure, 5);
@@ -343,26 +340,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		if (!udmPanelOpened) {
 			throw new RuntimeException("UDM panel could not be opened: " + pnlUnitOfMeasure);
 		}
-		waitForElementVisible(txtSearchUnitOfMeasure, 20);
 
-		// =========================================================
-		// Detectar idioma para seleccionar la unidad de medida correcta
-		// =========================================================
-		String unitOfMeasureSeleccionada;
-		if (isElementPresent(optUenSelectedOsasco) || isElementPresent(lblQuantidade)) {
-			unitOfMeasureSeleccionada = SPXBase.randomUnitOfMeasurePT();
-		} else if (isElementPresent(lblCantidad)) {
-			unitOfMeasureSeleccionada = SPXBase.randomUnitOfMeasureES();
-		} else if (isElementPresent(lblQuantity)) {
-			unitOfMeasureSeleccionada = SPXBase.randomUnitOfMeasureEN();
-		} else {
-			unitOfMeasureSeleccionada = SPXBase.randomUnitOfMeasureEN();
-		}
-		type(txtSearchUnitOfMeasure, unitOfMeasureSeleccionada);
-		By selectOptionUnitOfMeasure = By.xpath(GlobalVariablesSPX.getUnitOfMeasureXpath(unitOfMeasureSeleccionada));
-		waitForDropdownToLoad(selectOptionUnitOfMeasure);
-		click(selectOptionUnitOfMeasure);
-		waitForPrimefacesAjax();
+		selectRandomUnitOfMeasureExcludingFirst();
 
 		// =========================================================
 		// NEED BY DATE
@@ -414,6 +393,8 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
 		type(txtCommentsToBuyer, GlobalVariablesSPX.SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE);
 		uploadFile(pathFileSpot, btnChooseFiles);
+		waitForPrimefacesAjax();
+		waitForBlockUIToDisappear();
 		return returnSaveImage(btnChooseFiles);
 	}
 
@@ -593,65 +574,22 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 				// =====================================================
 
 				if (!hasInputValue(txtSearchUnitOfMeasure)) {
-
 					waitForElementClickable(lblUnitOfMeasure);
 					waitForBlockUIToDisappear();
-
-					// Primer intento normal
 					click(lblUnitOfMeasure);
-
 					boolean udmOpened = waitForElementVisible(pnlUnitOfMeasure, 5);
 
-					// Si no abrió, intentar con JS Click
 					if (!udmOpened) {
-
 						reporterLog("[WARNING] UDM panel did not open with normal click, trying JS click...");
-
 						jsClick(lblUnitOfMeasure);
-
 						udmOpened = waitForElementVisible(pnlUnitOfMeasure, 5);
 					}
-
-					// Si después del reintento sigue sin abrir, lanzar error
 					if (!udmOpened) {
-
 						throw new RuntimeException("UDM panel could not be opened: " + pnlUnitOfMeasure);
 					}
 
-					// =====================================================
-					// YA ABIERTO EL PANEL
-					// =====================================================
-
-					waitForElementVisible(txtSearchUnitOfMeasure, 10);
-
-					String unitOfMeasureSeleccionada = "";
-
-					// Detect language
-					if (isElementPresent(By.xpath("//*[contains(text(),'Cantidad')]"))) {
-
-						unitOfMeasureSeleccionada = SPXBase.randomUnitOfMeasureES();
-
-					} else if (isElementPresent(By.xpath("//*[contains(text(),'Quantity')]"))) {
-
-						unitOfMeasureSeleccionada = SPXBase.randomUnitOfMeasureEN();
-
-					} else {
-
-						unitOfMeasureSeleccionada = SPXBase.randomUnitOfMeasurePT();
-					}
-
-					type(txtSearchUnitOfMeasure, unitOfMeasureSeleccionada);
-
-					By selectOptionUnitOfMeasure = By
-							.xpath(GlobalVariablesSPX.getUnitOfMeasureXpath(unitOfMeasureSeleccionada));
-
-					waitForDropdownToLoad(selectOptionUnitOfMeasure);
-
-					click(selectOptionUnitOfMeasure);
-
-					waitForPrimefacesAjax();
-
-					System.out.println("FIELD COMPLETED: UNIT OF MEASURE -> " + unitOfMeasureSeleccionada);
+					selectRandomUnitOfMeasureExcludingFirst();
+					System.out.println("FIELD COMPLETED: UNIT OF MEASURE");
 				}
 
 				// =====================================================
@@ -821,5 +759,36 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			reporterLog("[INFO] Idioma detectado por contenido: PT");
 			return GlobalVariablesSPX.RAZON_URGENCIA_PT;
 		}
+	}
+
+	/*
+	 * @name: selectRandomUnitOfMeasureExcludingFirst
+	 * 
+	 * @description: Selecciona aleatoriamente cualquier opción del panel de Unit of
+	 * Measure REALMENTE presente en el DOM, excluyendo la primera opción (índice
+	 * 0). Evita depender del catálogo hardcodeado por idioma.
+	 */
+	private void selectRandomUnitOfMeasureExcludingFirst() throws InterruptedException {
+		By panelItems = By.xpath("//div[@id='formSpot:comboUDM0_panel']//li[contains(@class,'ui-selectonemenu-item')]");
+
+		waitForElementPresent(panelItems);
+		List<WebElement> availableOptions = driver.findElements(panelItems);
+
+		if (availableOptions.size() <= 1) {
+			throw new AssertionError("No hay suficientes opciones de Unit of Measure (excluyendo la primera).");
+		}
+
+		// Excluye índice 0 (primera opción)
+		int randomIndex = 1 + new Random().nextInt(availableOptions.size() - 1);
+		String selectedLabel = availableOptions.get(randomIndex).getAttribute("data-label");
+
+		reporterLog("[INFO] Unit of Measure seleccionada aleatoriamente: " + selectedLabel);
+
+		By optSelected = By.xpath(
+				"//div[@id='formSpot:comboUDM0_panel']//li[@data-label='" + selectedLabel.replace("'", "\\'") + "']");
+
+		waitForElementPresent(optSelected);
+		click(optSelected);
+		waitForPrimefacesAjax();
 	}
 }
