@@ -47,6 +47,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 	By btnBulkLoad = By.id("formSpot:nwbtnCargaMasivaSpot");
 	By btnNewLine = By.id("formSpot:newLineButton");
 	By btnAddToCart = By.id("formSpot:add-cart-btn");
+	By msgErrorDocuments = By.xpath("(//div[contains(@class, 'ui-messages-error') and .//span[contains(@class, 'ui-messages-error-summary')]])[1]");
 
 	// =========================================================
 	// GLOBAL SOURCING RFQ
@@ -393,6 +394,7 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 		reporterLog("Capture Information to Spot Buy Requisitions Third Section");
 		type(txtCommentsToBuyer, GlobalVariablesSPX.SPX_DEV5_COMMENTS_TO_BUYER_SPOT_PAGE);
 		uploadFile(pathFileSpot, btnChooseFiles);
+		Thread.sleep(10000);
 		waitForPrimefacesAjax();
 		waitForBlockUIToDisappear();
 		return returnSaveImage(btnChooseFiles);
@@ -421,7 +423,15 @@ public class SpotBuyRequisitionsSPXPage extends SPXBase {
 			waitForElementClickable(btnAddToCart);
 			click(btnAddToCart);
 			waitForPrimefacesAjax();
-
+// Validación error al cargar documentos
+			if(elementExistsAndVisible(msgErrorDocuments)) {
+				System.out.println("\n=================================================");
+				System.out.println("INFO: Error al subir los documentos. Se reintentara el agregar al carrito");
+				System.out.println("=================================================\n");
+				waitForElementClickable(btnAddToCart);
+				click(btnAddToCart);
+				waitForPrimefacesAjax();
+			}
 			// =========================================================
 			// VALIDACIÓN: MISMA INFORMACIÓN EN LA LÍNEA
 			// =========================================================

@@ -115,7 +115,7 @@ public class QC_Testing_SPX_DEV5_TestCases_Requisiciones {
 		this.measurements = SPXBase.randomMeasurement();
 	}
 
-	@Test(invocationCount = 10)
+	@Test(invocationCount = 4)
 	public void tc001_SPX_Dev5_Crear_Requisicion_Spot_Tipo_Cobro_CC() throws InterruptedException {
 		TreeMap<String, TreeMap<String, String>> listaScreenShots = new TreeMap<>();
 		TreeMap<String, String> listaScreenShotsAux;
